@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="label22.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+        DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQU
+        FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABCAJEDASIAAhEBAxEB/8QA
+        HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+        MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+        V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+        x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+        BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+        YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+        hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+        8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9UCQKbkdc/pTN21Pm7Dmvgr9tX9oD4g/DX4xQaR4b8RzaTp/9
+        lwzm3jhif940kq7vmRv7q1x4zFRwdJ1Zn0nDuQ4niXHLAYWUYzav73kffXrUbsM8nOPavyWsv2uvjZqd
+        3DZ2njO+ubmRtkUMVpAzs3/fqvrv9i34leP/ABafFv8AwsbU7iVYPsxsf7Qgig5bzfM2lFXd91a8zCZx
+        RxVT2cIyPsc98Osy4fwcsbia1OXLb3Yt82rttY+tMCjaKof21Yf9BC2/7/LVzzFXqwH4179z8scWt0OA
+        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
+        UAf/2Q==
+</value>
+  </data>
+  <data name="tabInicio.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabRegCliente.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabRegTécnico.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabEliminarCliente.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabBajaTécnico.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabCerrarCaso.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabRegProd.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabRegCaso.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabDismProd.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabAumProd.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabRegUsuario.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabEliminarUsuario.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabModCliente.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabModTécnico.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabCancelarCaso.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabMostrarCaso.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabMostrarCliente.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabMostrarTécnico.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabGenInforme.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabVerDetalle.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <data name="tabMostrarProducto.Text" xml:space="preserve">
+    <value>ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAABABABAB</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+</root>
