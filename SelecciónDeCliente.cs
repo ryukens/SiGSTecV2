@@ -134,6 +134,7 @@ namespace proyectoPantalla
                 dgvSeleccionar.Columns[3].HeaderText = "Identificación";
                 dgvSeleccionar.Columns[4].HeaderText = "SLA";
                 dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                this.dgvSeleccionar.Columns[5].Visible = false;
             }
             else if (cbBuscar.SelectedIndex == 2) // ruc
             {
@@ -154,6 +155,7 @@ namespace proyectoPantalla
                 dgvSeleccionar.Columns[3].HeaderText = "Identificación";
                 dgvSeleccionar.Columns[4].HeaderText = "SLA";
                 dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                this.dgvSeleccionar.Columns[5].Visible = false;
             }
             else // cuenta
             {
@@ -174,6 +176,7 @@ namespace proyectoPantalla
                 dgvSeleccionar.Columns[3].HeaderText = "Identificación";
                 dgvSeleccionar.Columns[4].HeaderText = "SLA";
                 dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                this.dgvSeleccionar.Columns[5].Visible = false;
             }
         }
 
@@ -186,6 +189,11 @@ namespace proyectoPantalla
         {
             tbBuscar.ResetText();
             this.Dispose();
+        }
+
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -200,6 +200,7 @@
             this.tbInformeInicial.Name = "tbInformeInicial";
             this.tbInformeInicial.Size = new System.Drawing.Size(670, 55);
             this.tbInformeInicial.TabIndex = 24;
+            this.tbInformeInicial.TextChanged += new System.EventHandler(this.TbInformeInicial_TextChanged);
             // 
             // panel12
             // 

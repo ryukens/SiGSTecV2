@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,24 +13,35 @@ namespace proyectoPantalla
 {
     public partial class RegistroDeInformeFinal : Form
     {
-        public RegistroDeInformeFinal()
+        SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
+        
+
+        public RegistroDeInformeFinal( String idcaso, String nombreCliente, String numeroCaso, String nombreTecnico, String nombreVendedor)
         {
             InitializeComponent();
-            
+            this.idcaso = idcaso;
+            this.nombreCliente = nombreCliente;
+            this.numeroCaso = numeroCaso;
+            this.nombreCliente = nombreTecnico;
+            this.nombreVendedor = nombreVendedor;
+
+
+            lMostrarCliente.Text = nombreCliente;
+            lMostrarCaso.Text = numeroCaso;
+            lMostrarTecnico.Text = nombreTecnico;
+            lMostrarVendedor.Text = nombreVendedor;
+
         }
+
+        String idcaso;
+        String nombreCliente;
+        String numeroCaso;
+        String nombreTecnico;
+        String nombreVendedor;
 
         OpenFileDialog openFileD = new OpenFileDialog();
 
-        private void CambioDeDatosCaso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Button2_Click(object sender, EventArgs e)
         {
             tbInformeFinal.ResetText();
@@ -41,7 +53,20 @@ namespace proyectoPantalla
         {
             if (MessageBox.Show("¿Está seguro que desea guardar esta información?", "Registrar Informe Final", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                
+
+                conexion.Open();
+
+                String consulta1 = "UPDATE Caso SET ESTADO = 'CERRADO', INFORME_FINAL = @INFORME_FINAL, PARTE_PATH = @PARTE_PATH WHERE IDCASO = @IDCASO;";
+
+                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                comando1.Parameters.AddWithValue("@IDCASO", idcaso);
+                comando1.Parameters.AddWithValue("@INFORME_FINAL", tbInformeFinal.Text);
+                comando1.Parameters.AddWithValue("@PARTE_PATH", labelImagen.Text);
+
+                comando1.ExecuteNonQuery();
+                conexion.Close();
+
+
                 MessageBox.Show("Informe Final Registrado Correctamente", "Informe Final Registrado");
             }
 

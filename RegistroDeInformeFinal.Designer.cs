@@ -296,7 +296,7 @@
             this.Name = "RegistroDeInformeFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Informe Final";
-            this.Load += new System.EventHandler(this.CambioDeDatosCaso_Load);
+          //  this.Load += new System.EventHandler(this.CambioDeDatosCaso_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -103,6 +103,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(306, 20);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
             // lBuscar
             // 
@@ -137,6 +138,7 @@
             this.dgvCerrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCerrar.Size = new System.Drawing.Size(480, 327);
             this.dgvCerrar.TabIndex = 1;
+            this.dgvCerrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCerrar_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
