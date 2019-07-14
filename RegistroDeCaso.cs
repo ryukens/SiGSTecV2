@@ -134,7 +134,7 @@ namespace proyectoPantalla
 
             SqlCommand comando1 = new SqlCommand(consulta1, conexion);
             comando1.Parameters.AddWithValue("@IDTECNICO", idt);
-            comando1.Parameters.AddWithValue("@IDUSUARIO", nombreu);
+            comando1.Parameters.AddWithValue("@IDUSUARIO", cbVendedor.GetItemText(cbVendedor.SelectedItem));
             comando1.Parameters.AddWithValue("@IDCLIENTE", idc);
             comando1.Parameters.AddWithValue("@NUMERO", lCaso.Text);
             comando1.Parameters.AddWithValue("@FECHA", lFechaActual.Text);
