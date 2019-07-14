@@ -21,9 +21,35 @@ namespace proyectoPantalla
             InitializeComponent();
             timer1.Enabled = true;
             cbSLA.SelectedIndex = 0;
-            cbVendedor.SelectedIndex = 0;
+            llenarCBVendedor();
+            if(cbVendedor.Items.Count != 0)
+            {
+                cbVendedor.SelectedIndex = 0;
+
+            }
 
 
+        }
+
+
+        public void llenarCBVendedor()
+        {
+            cbVendedor.Items.Clear();
+            conexion.Open();
+            String consulta1 = "select p.nombre from persona as p join usuario as u on p.idpersona = u.idpersona where u.TIPO = 'Empleado De Ventas' order by p.nombre;";
+            SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+            SqlDataReader reader = comando1.ExecuteReader();
+            while (reader.Read())
+            {
+                cbVendedor.Items.Add(reader[0].ToString());
+            }
+
+            conexion.Close();
+
+            if(cbVendedor.Items.Count > 0)
+            {
+                cbVendedor.SelectedIndex = 0;
+            }
         }
 
 
