@@ -159,5 +159,10 @@ namespace proyectoPantalla
             lIdUsuario.Text = cbVendedor.SelectedItem.ToString();
 
         }
+
+        private void TbInformeInicial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
