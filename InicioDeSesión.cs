@@ -16,8 +16,9 @@ namespace proyectoPantalla
 {
     public partial class InicioDeSesión : Form
     {
-        String salt = "salt";
-        String password = "pass";
+        public String salt = "salt";
+        public String password = "pass";
+        public int idUsuario = 0;
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog = SIGSTEC; Integrated Security = True");
         public static string MD5Hash(string input)
         {
@@ -42,7 +43,7 @@ namespace proyectoPantalla
         {
             PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(this);
             conexion.Open();
-            String consulta1 = "select [password] , salt from usuario where username = @username; ";
+            String consulta1 = "select [password] , salt, idusuario from usuario where username = @username; ";
             SqlCommand comando1 = new SqlCommand(consulta1, conexion);
             comando1.Parameters.AddWithValue("@username", tbUsuario.Text);
             SqlDataReader dr = comando1.ExecuteReader();
@@ -50,30 +51,43 @@ namespace proyectoPantalla
             {
                 password = dr.GetString(0);
                 salt = dr.GetString(1);
+                idUsuario = (int)dr.GetDecimal(2);
             }
 
             conexion.Close();
 
-            if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
+            if (idUsuario != 0)
             {
-                MessageBox.Show("Primer ingreso, por favor cambie su contraseña");
-                CambioDeContraseña cambioDeContraseña = new CambioDeContraseña();
-                cambioDeContraseña.ShowDialog();
-                this.Hide();
-                pantallaPrincipal.Show();
-            }
-            else if (MD5Hash(salt + tbContraseña.Text).Equals(password))
-            {
-                MessageBox.Show("Ingreso Exitoso");
+
+
+                if (MD5Hash(salt + tbContraseña.Text).Equals(password))
+                {
+                    if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
+                    {
+                        MessageBox.Show("Primer ingreso, por favor cambie su contraseña");
+                        CambioDeContraseña cambioDeContraseña = new CambioDeContraseña(salt, idUsuario, this);
+                        cambioDeContraseña.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingreso Exitoso");
+                        this.Hide();
+                        pantallaPrincipal.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales Incorrectas");
+
+                }
             }
             else
             {
                 MessageBox.Show("Credenciales Incorrectas");
-                CambioDeContraseña cambioDeContraseña = new CambioDeContraseña();
-                cambioDeContraseña.ShowDialog();
             }
-            this.Hide();
-            pantallaPrincipal.Show();
+
         }
 
         private void InicioDeSesión_Load(object sender, EventArgs e)
