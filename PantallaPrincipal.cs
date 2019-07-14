@@ -61,7 +61,8 @@ namespace proyectoPantalla
         
         private void ModificarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab(tabCerrarCaso);  
+            tabControl.SelectTab(tabCerrarCaso);
+            registroDeCaso1.llenarCBVendedor();
                        
         }
 
