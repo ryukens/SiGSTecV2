@@ -63,12 +63,12 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@IDCASO", idcaso);
 
                 comando1.ExecuteNonQuery();
-                conexion.Close();
 
 
                 MessageBox.Show("Caso Cancelado Correctamente", "Caso Cancelado");
 
-                
+                conexion.Close();
+
                 String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA order by c.estado;";
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
@@ -91,8 +91,6 @@ namespace proyectoPantalla
                 dgvCancelar.Columns[6].HeaderText = "Sector";
                 dgvCancelar.Columns[7].HeaderText = "ID Cliente";
                 this.dgvCancelar.Columns[7].Visible = false;
-
-                
 
             }
         }

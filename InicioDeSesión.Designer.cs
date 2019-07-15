@@ -151,7 +151,7 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(317, 41);
             this.tbUsuario.TabIndex = 3;
-            this.tbUsuario.Text = "USUARIO";
+            this.tbUsuario.Text = "1757279508";
             // 
             // tbContraseña
             // 
@@ -164,7 +164,7 @@
             this.tbContraseña.PasswordChar = '*';
             this.tbContraseña.Size = new System.Drawing.Size(317, 41);
             this.tbContraseña.TabIndex = 4;
-            this.tbContraseña.Text = "CONTRASEÑA";
+            this.tbContraseña.Text = "Antonio97";
             this.tbContraseña.TextChanged += new System.EventHandler(this.TbContraseña_TextChanged);
             // 
             // tableLayoutPanel3
