@@ -46,6 +46,8 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            mostrarTecnicos();
+
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
