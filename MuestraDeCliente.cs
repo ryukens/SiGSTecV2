@@ -40,6 +40,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public MuestraDeCliente()
+        {
+            InitializeComponent();
+        }
+
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)

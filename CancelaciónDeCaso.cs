@@ -45,7 +45,11 @@ namespace proyectoPantalla
             dgvCancelar.Columns[6].HeaderText = "Sector";
             dgvCancelar.Columns[7].HeaderText = "ID Cliente";
             this.dgvCancelar.Columns[7].Visible = false;
+        }
 
+        public CancelaciónDeCaso()
+        {
+            InitializeComponent();
         }
 
         private void CancelarButton_Click(object sender, EventArgs e)
@@ -55,7 +59,7 @@ namespace proyectoPantalla
                 conexion.Open();
 
                 String idcaso = dgvCancelar.CurrentRow.Cells[7].Value.ToString();
-                
+
 
                 String consulta1 = "UPDATE Caso SET ESTADO = 'CANCELADO' WHERE IDCASO = @IDCASO;";
 

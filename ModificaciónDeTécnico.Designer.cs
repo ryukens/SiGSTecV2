@@ -35,8 +35,8 @@
             this.lBuscar = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bModificar = new System.Windows.Forms.Button();
-            this.dgvModificar = new System.Windows.Forms.DataGridView();
             this.bCancelar = new System.Windows.Forms.Button();
+            this.dgvModificar = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -82,6 +82,7 @@
             // cbBuscar
             // 
             this.cbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
             "Nombre",
@@ -139,6 +140,17 @@
             this.bModificar.UseVisualStyleBackColor = true;
             this.bModificar.Click += new System.EventHandler(this.Button2_Click_1);
             // 
+            // bCancelar
+            // 
+            this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bCancelar.Location = new System.Drawing.Point(228, 3);
+            this.bCancelar.Name = "bCancelar";
+            this.bCancelar.Size = new System.Drawing.Size(219, 34);
+            this.bCancelar.TabIndex = 3;
+            this.bCancelar.Text = "Cancelar";
+            this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
+            // 
             // dgvModificar
             // 
             this.dgvModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,17 +162,6 @@
             this.dgvModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModificar.Size = new System.Drawing.Size(450, 354);
             this.dgvModificar.TabIndex = 7;
-            // 
-            // bCancelar
-            // 
-            this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(228, 3);
-            this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(219, 34);
-            this.bCancelar.TabIndex = 3;
-            this.bCancelar.Text = "Cancelar";
-            this.bCancelar.UseVisualStyleBackColor = true;
-            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // ModificaciónDeTécnico
             // 

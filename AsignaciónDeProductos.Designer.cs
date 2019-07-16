@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.4908F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.5092F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 2, 0);
@@ -117,14 +117,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(107, 29);
+            this.panel6.Size = new System.Drawing.Size(106, 29);
             this.panel6.TabIndex = 0;
             // 
             // lCantidad
             // 
             this.lCantidad.AutoSize = true;
             this.lCantidad.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lCantidad.Location = new System.Drawing.Point(55, 0);
+            this.lCantidad.Location = new System.Drawing.Point(54, 0);
             this.lCantidad.Name = "lCantidad";
             this.lCantidad.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.lCantidad.Size = new System.Drawing.Size(52, 15);
@@ -135,9 +135,9 @@
             // 
             this.panel7.Controls.Add(this.nudCantidad);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(116, 3);
+            this.panel7.Location = new System.Drawing.Point(115, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(161, 29);
+            this.panel7.Size = new System.Drawing.Size(160, 29);
             this.panel7.TabIndex = 1;
             // 
             // nudCantidad
@@ -145,15 +145,15 @@
             this.nudCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudCantidad.Location = new System.Drawing.Point(0, 0);
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(161, 20);
+            this.nudCantidad.Size = new System.Drawing.Size(160, 20);
             this.nudCantidad.TabIndex = 0;
             // 
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(283, 3);
+            this.bCancelar.Location = new System.Drawing.Point(281, 3);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(168, 29);
+            this.bCancelar.Size = new System.Drawing.Size(170, 29);
             this.bCancelar.TabIndex = 2;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
