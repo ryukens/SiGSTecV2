@@ -24,7 +24,7 @@ namespace proyectoPantalla
             this.numeroCaso = numeroCaso;
             this.nombreCliente = nombreTecnico;
             this.nombreVendedor = nombreVendedor;
-
+          
 
             lMostrarCliente.Text = nombreCliente;
             lMostrarCaso.Text = numeroCaso;
@@ -38,10 +38,11 @@ namespace proyectoPantalla
         String numeroCaso;
         String nombreTecnico;
         String nombreVendedor;
+       
 
         OpenFileDialog openFileD = new OpenFileDialog();
 
-        
+
         private void Button2_Click(object sender, EventArgs e)
         {
             tbInformeFinal.ResetText();
@@ -51,7 +52,18 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea guardar esta información?", "Registrar Informe Final", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (labelImagen.Text == "IMAGEN SIN SELECCIONAR")
+            {
+                MessageBox.Show("Debe seleccionar una imagen");
+
+            }
+            else if( tbInformeFinal.Text.Trim()=="")
+            {
+                MessageBox.Show("Debe ingresar informe final");
+                
+            }
+            else if (MessageBox.Show("¿Está seguro que desea guardar esta información?", "Registrar Informe Final", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
 
                 conexion.Open();
@@ -66,18 +78,25 @@ namespace proyectoPantalla
                 comando1.ExecuteNonQuery();
                 conexion.Close();
 
+                string direccion = @"..\..\Fotos\Parte";
+                System.IO.File.SetAttributes(direccion, System.IO.FileAttributes.Normal);
+                string destino = System.IO.Path.Combine(direccion, System.IO.Path.GetFileName(openFileD.FileName));
+                System.IO.File.Copy(openFileD.FileName, destino, true);
+
 
                 MessageBox.Show("Informe Final Registrado Correctamente", "Informe Final Registrado");
+
+                this.Dispose();
+
             }
 
-            string direccion = @"..\..\Fotos\Parte";
-            System.IO.File.SetAttributes(direccion, System.IO.FileAttributes.Normal);
-            string destino = System.IO.Path.Combine(direccion, System.IO.Path.GetFileName(openFileD.FileName));
-            System.IO.File.Copy(openFileD.FileName, destino, true);
-
-            this.Dispose();
             
+            
+
+           
         }
+
+        
 
         private void Panel3_Paint(object sender, PaintEventArgs e)
         {
