@@ -47,6 +47,7 @@ namespace proyectoPantalla
             SqlCommand command;
             SqlDataReader lector;
             conexion.Open();
+
             command = new SqlCommand("select TECNICO.IDPERSONA, NOMBRE, CORREO, IDENTIFICACION, SECTOR,ALCANCE,ESTADO from PERSONA, TECNICO where PERSONA.IDPERSONA=TECNICO.IDPERSONA;", conexion);
             lector = command.ExecuteReader();
             while (lector.Read())
