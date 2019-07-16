@@ -20,6 +20,13 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            mostrarCliente();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
+        public void mostrarCliente()
+        {
             String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
@@ -35,10 +42,7 @@ namespace proyectoPantalla
             dgvModificar.Columns[2].HeaderText = "Cuenta";
             dgvModificar.Columns[3].HeaderText = "Identificación";
             dgvModificar.Columns[4].HeaderText = "SLA";
-            this.tabControl = tabControl;
-            this.tabInicio = tabInicio;
         }
-
         public ModificaciónDeCliente()
         {
             InitializeComponent();
