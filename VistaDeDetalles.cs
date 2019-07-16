@@ -25,6 +25,7 @@ namespace proyectoPantalla
         public VistaDeDetalles()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void Button1_Click(object sender, EventArgs e)

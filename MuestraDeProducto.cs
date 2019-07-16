@@ -40,6 +40,7 @@ namespace proyectoPantalla
         public MuestraDeProducto()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

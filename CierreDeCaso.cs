@@ -52,6 +52,7 @@ namespace proyectoPantalla
         public CierreDeCaso()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)

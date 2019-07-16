@@ -43,6 +43,7 @@ namespace proyectoPantalla
         public MuestraDeCliente()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)

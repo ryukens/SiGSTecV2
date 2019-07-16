@@ -30,6 +30,7 @@ namespace proyectoPantalla
         public EliminaciónDeUsuario()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void mostrarDatos()

@@ -49,6 +49,7 @@ namespace proyectoPantalla
         public MuestraDeCaso()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
 

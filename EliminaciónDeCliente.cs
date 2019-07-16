@@ -28,6 +28,7 @@ namespace proyectoPantalla
         public EliminaciónDeCliente()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         public void mostrarDatosCompleto()

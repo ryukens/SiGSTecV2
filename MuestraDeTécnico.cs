@@ -43,6 +43,7 @@ namespace proyectoPantalla
         public MuestraDeTécnico()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void Label1_Click(object sender, EventArgs e)

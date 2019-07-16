@@ -50,6 +50,7 @@ namespace proyectoPantalla
         public CancelaciónDeCaso()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void CancelarButton_Click(object sender, EventArgs e)

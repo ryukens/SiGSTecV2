@@ -29,6 +29,7 @@ namespace proyectoPantalla
         public EliminaciónDeTécnico()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void mostrarTecnicos()

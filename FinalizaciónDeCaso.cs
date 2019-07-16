@@ -18,11 +18,13 @@ namespace proyectoPantalla
         public FinalizaciónDeCaso()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         public FinalizaciónDeCaso(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
         }

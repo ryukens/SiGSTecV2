@@ -21,11 +21,13 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            cbBuscar.SelectedIndex = 0;
         }
 
         public AumentoDeProducto()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
