@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace proyectoPantalla
 {
     public partial class CambioDeDatosTécnico : Form
     {
-
+        int ippersona;
         public static bool ComprobarFormatoEmail(string sEmailAComprobar)
         {
             String sFormato;
@@ -35,16 +36,52 @@ namespace proyectoPantalla
             }
         }
 
-        public CambioDeDatosTécnico()
+        public CambioDeDatosTécnico(String cedula)
         {
             InitializeComponent();
-            
+            consultaTecnico(cedula);
         }
+        private void consultaTecnico(String cedula)
+        {
+            SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
+            SqlCommand command;
+            SqlDataReader lector;
+            conexion.Open();
 
+            command = new SqlCommand("select TECNICO.IDPERSONA, NOMBRE, CORREO, IDENTIFICACION, SECTOR,ALCANCE,ESTADO from PERSONA, TECNICO where PERSONA.IDPERSONA=TECNICO.IDPERSONA;", conexion);
+            lector = command.ExecuteReader();
+            while (lector.Read())
+            {
+                tbNombre.Text = lector.GetValue(1).ToString();
+                tbCorreo.Text = lector.GetValue(2).ToString();
+                tbCedula.Text = lector.GetValue(3).ToString();
+                tbSector.Text = lector.GetValue(4).ToString();
+                tbAlcance.Text = lector.GetValue(5).ToString();
+                ippersona = Int32.Parse(lector.GetValue(0).ToString());
+            }
+            lector.Close();
+            conexion.Close();
+        }
         private void Button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Técnico Modificado Correctamente", "Técnico Modificado");
-            this.Dispose();
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
+                conexion.Open();
+                SqlCommand command;
+                command = new SqlCommand("update PERSONA set CORREO = '' where IDPERSONA = " + ippersona + "; " +
+                    "update TECNICO set SECTOR = '" + tbSector.Text + "'," +
+                    " ALCANCE = '" + tbAlcance.Text + "' " +
+                    "where IDPERSONA = " + ippersona + ";", conexion);
+                command.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Técnico Modificado Correctamente", "Técnico Modificado");
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base:" + ex);
+            }
         }
 
         private void CambioDeDatosTécnico_Load(object sender, EventArgs e)
