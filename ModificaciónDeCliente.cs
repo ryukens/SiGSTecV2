@@ -47,6 +47,7 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            mostrarCliente();
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
