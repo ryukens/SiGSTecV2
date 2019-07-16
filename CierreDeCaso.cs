@@ -16,7 +16,7 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
-
+        DataGridView dgv;
 
         public CierreDeCaso(TabControl tabControl, TabPage tabInicio)
         {
@@ -24,6 +24,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            
 
             String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA WHERE c.estado = 'ABIERTO' order by c.estado;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
@@ -55,6 +56,11 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
         }
 
+        public void actualizarAnterior()
+        {
+
+        }
+
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -74,6 +80,7 @@ namespace proyectoPantalla
             String idcaso = dgvCerrar.CurrentRow.Cells[7].Value.ToString();
             String nombreTecnico = "";
             String nombreVendedor = "";
+          
 
             String consulta2 = "select p.nombre from PERSONA as p join TECNICO as t on p.idpersona = t.idpersona join CASO as c on c.IDTECNICO = t.IDTECNICO where idcaso = @IDCASO";
             SqlCommand comando2 = new SqlCommand(consulta2, conexion);
@@ -102,7 +109,6 @@ namespace proyectoPantalla
 
 
 
-
             conexion.Close();
 
             RegistroDeInformeFinal cambioDeDatosCaso = new RegistroDeInformeFinal(idcaso, nombreCliente, numeroCaso, nombreTecnico, nombreVendedor);
@@ -119,11 +125,6 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
-        }
-
-        private void DgvCerrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
@@ -233,6 +234,11 @@ namespace proyectoPantalla
             }
 
 
+
+        }
+
+        private void DgvCerrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

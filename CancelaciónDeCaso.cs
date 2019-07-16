@@ -23,7 +23,7 @@ namespace proyectoPantalla
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
 
-            String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA order by c.estado;";
+            String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA and c.estado = 'ABIERTO' order by c.estado;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -119,7 +119,7 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0) //numero de caso
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla, c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.numero like '%" + tbBuscar.Text + "%'  order by c.estado;";
+                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla, c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.numero like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO' order by c.estado;";
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -145,7 +145,7 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 1) // Cliente
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where p.nombre like '%" + tbBuscar.Text + "%'  order by c.estado;";
+                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where p.nombre like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO'  order by c.estado;";
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -170,7 +170,7 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 2) // Cuenta
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where cl.cuenta like '%" + tbBuscar.Text + "%'  order by c.estado;";
+                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where cl.cuenta like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO'  order by c.estado;";
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -195,7 +195,7 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 3) // Sector
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.sector like '%" + tbBuscar.Text + "%'  order by c.estado;";
+                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.sector like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO' order by c.estado;";
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

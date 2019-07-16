@@ -202,12 +202,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button bCerrar;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DataGridView dgvCerrar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lBuscar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox cbBuscar;
-        private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Button bCancelar;
+        public System.Windows.Forms.DataGridView dgvCerrar;
+        public System.Windows.Forms.TextBox tbBuscar;
     }
 }
