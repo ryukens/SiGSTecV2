@@ -47,10 +47,11 @@ namespace proyectoPantalla
             dgvCerrar.Columns[6].HeaderText = "Sector";
             dgvCerrar.Columns[7].HeaderText = "ID Cliente";
             this.dgvCerrar.Columns[7].Visible = false;
+        }
 
-
-
-
+        public CierreDeCaso()
+        {
+            InitializeComponent();
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -78,7 +79,7 @@ namespace proyectoPantalla
             comando2.Parameters.AddWithValue("@IDCASO", idcaso);
             comando2.ExecuteNonQuery();
             SqlDataReader reader = comando2.ExecuteReader();
-            
+
             while (reader.Read())
             {
                 nombreTecnico = reader.GetString(0);

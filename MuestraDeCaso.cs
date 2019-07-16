@@ -17,6 +17,7 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
+
         public MuestraDeCaso(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
@@ -43,9 +44,13 @@ namespace proyectoPantalla
             dgvMostrar.Columns[6].HeaderText = "Sector";
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-
-
         }
+
+        public MuestraDeCaso()
+        {
+            InitializeComponent();
+        }
+
 
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -157,6 +162,7 @@ namespace proyectoPantalla
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
+            tbBuscar.ResetText();
             tabControl.SelectTab(tabInicio);
         }
     }

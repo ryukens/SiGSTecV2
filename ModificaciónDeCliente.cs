@@ -39,6 +39,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public ModificaciónDeCliente()
+        {
+            InitializeComponent();
+        }
+
         private void Button2_Click_1(object sender, EventArgs e)
         {
             String cedula = dgvModificar.CurrentRow.Cells[3].Value.ToString();

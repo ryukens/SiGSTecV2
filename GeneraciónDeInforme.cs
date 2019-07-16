@@ -21,6 +21,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public GeneraciónDeInforme()
+        {
+            InitializeComponent();
+        }
+
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 

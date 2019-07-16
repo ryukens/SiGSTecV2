@@ -40,6 +40,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public MuestraDeTécnico()
+        {
+            InitializeComponent();
+        }
+
         private void Label1_Click(object sender, EventArgs e)
         {
 

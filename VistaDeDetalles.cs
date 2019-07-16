@@ -22,6 +22,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public VistaDeDetalles()
+        {
+            InitializeComponent();
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             GeneraciónDelInforme ordenDeFacturación = new GeneraciónDelInforme();

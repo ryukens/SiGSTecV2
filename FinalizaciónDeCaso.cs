@@ -12,9 +12,31 @@ namespace proyectoPantalla
 {
     public partial class FinalizaciónDeCaso : UserControl
     {
+        TabControl tabControl;
+        TabPage tabInicio;
+
         public FinalizaciónDeCaso()
         {
             InitializeComponent();
+        }
+
+        public FinalizaciónDeCaso(TabControl tabControl, TabPage tabInicio)
+        {
+            InitializeComponent();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
+        private void FinalizaciónDeCaso_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            tbBuscar.ResetText();
+            tbFactura.ResetText();
+            tabControl.SelectTab(tabInicio);
         }
     }
 }

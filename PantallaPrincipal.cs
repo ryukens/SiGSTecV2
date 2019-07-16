@@ -167,5 +167,10 @@ namespace proyectoPantalla
         {
 
         }
+
+        private void FinalizarCasoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabFinalizarCaso);
+        }
     }
 }

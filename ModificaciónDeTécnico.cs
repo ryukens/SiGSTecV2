@@ -22,6 +22,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public ModificaciónDeTécnico()
+        {
+            InitializeComponent();
+        }
+
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 

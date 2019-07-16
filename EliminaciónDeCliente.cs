@@ -23,7 +23,11 @@ namespace proyectoPantalla
             mostrarDatosCompleto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+        }
 
+        public EliminaciónDeCliente()
+        {
+            InitializeComponent();
         }
 
         public void mostrarDatosCompleto()

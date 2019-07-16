@@ -27,6 +27,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public EliminaciónDeUsuario()
+        {
+            InitializeComponent();
+        }
+
         private void mostrarDatos()
         {
             String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona order by u.tipo;  ";

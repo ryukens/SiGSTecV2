@@ -37,6 +37,11 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
+        public MuestraDeProducto()
+        {
+            InitializeComponent();
+        }
+
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
