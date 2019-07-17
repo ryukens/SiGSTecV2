@@ -99,6 +99,18 @@
     <Compile Include="AumentoDeProducto.Designer.cs">
       <DependentUpon>AumentoDeProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="DarDeAltaCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DarDeAltaCliente.Designer.cs">
+      <DependentUpon>DarDeAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DarDeAltaTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DarDeAltaTécnico.Designer.cs">
+      <DependentUpon>DarDeAltaTécnico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinalizaciónDeCaso.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,11 +177,11 @@
     <Compile Include="CancelaciónDeCaso.Designer.cs">
       <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminaciónDeTécnico.cs">
+    <Compile Include="DarDeBajaTécnico.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EliminaciónDeTécnico.Designer.cs">
-      <DependentUpon>EliminaciónDeTécnico.cs</DependentUpon>
+    <Compile Include="DarDeBajaTécnico.Designer.cs">
+      <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
     </Compile>
     <Compile Include="EliminaciónDeUsuario.cs">
       <SubType>UserControl</SubType>
@@ -292,6 +304,12 @@
     <EmbeddedResource Include="AumentoDeProducto.resx">
       <DependentUpon>AumentoDeProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DarDeAltaCliente.resx">
+      <DependentUpon>DarDeAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DarDeAltaTécnico.resx">
+      <DependentUpon>DarDeAltaTécnico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinalizaciónDeCaso.resx">
       <DependentUpon>FinalizaciónDeCaso.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,8 +343,8 @@
     <EmbeddedResource Include="CancelaciónDeCaso.resx">
       <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminaciónDeTécnico.resx">
-      <DependentUpon>EliminaciónDeTécnico.cs</DependentUpon>
+    <EmbeddedResource Include="DarDeBajaTécnico.resx">
+      <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminaciónDeUsuario.resx">
       <DependentUpon>EliminaciónDeUsuario.cs</DependentUpon>
