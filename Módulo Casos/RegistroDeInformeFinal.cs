@@ -107,11 +107,7 @@ namespace proyectoPantalla
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            AsignaciónDeProductos asignaciónDeProductos = new AsignaciónDeProductos();
-            asignaciónDeProductos.Show();
-        }
+        
 
         private void Label6_Click(object sender, EventArgs e)
         {

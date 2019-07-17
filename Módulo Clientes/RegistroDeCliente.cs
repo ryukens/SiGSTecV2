@@ -121,7 +121,7 @@ namespace proyectoPantalla
         private void RbPersona_CheckedChanged(object sender, EventArgs e)
         {
             tbCuenta.Text = "N/A";
-
+            tbCedula.MaxLength = 10;
 
         }
 
@@ -129,6 +129,7 @@ namespace proyectoPantalla
         {
             tbCuenta.Enabled = rbEmpresa.Checked;
             tbCuenta.Text = "";
+            tbCedula.MaxLength = 13;
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)

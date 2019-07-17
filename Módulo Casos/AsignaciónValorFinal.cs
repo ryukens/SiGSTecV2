@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace proyectoPantalla
+namespace proyectoPantalla.Módulo_Casos
 {
-    public partial class SelecciónDeProductos : UserControl
+    public partial class AsignaciónValorFinal : UserControl
     {
-        public SelecciónDeProductos()
+        public AsignaciónValorFinal()
         {
             InitializeComponent();
         }
 
-        private void BAsignar_Click(object sender, EventArgs e)
+        private void BAsignación_Click(object sender, EventArgs e)
         {
-            new AsignaciónDeProductos().ShowDialog();
+            ValorFinal valorFinal = new ValorFinal();
+            valorFinal.ShowDialog();
         }
     }
 }

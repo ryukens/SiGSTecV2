@@ -2,15 +2,15 @@
 {
     partial class SelecciónDeProductos
     {
-        /// <summary> 
-        /// Variable del diseñador necesaria.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Limpiar los recursos que se estén usando.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de componentes
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -62,16 +62,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.55901F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.44099F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(513, 384);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 371);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvDisminuir);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(79, 39);
+            this.panel3.Location = new System.Drawing.Point(95, 37);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(378, 301);
+            this.panel3.Size = new System.Drawing.Size(454, 290);
             this.panel3.TabIndex = 4;
             // 
             // dgvDisminuir
@@ -83,15 +83,15 @@
             this.dgvDisminuir.ReadOnly = true;
             this.dgvDisminuir.RowHeadersWidth = 51;
             this.dgvDisminuir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisminuir.Size = new System.Drawing.Size(378, 301);
+            this.dgvDisminuir.Size = new System.Drawing.Size(454, 290);
             this.dgvDisminuir.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 39);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 37);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(70, 301);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(86, 290);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // lBuscar
@@ -102,7 +102,7 @@
             this.lBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.lBuscar.Location = new System.Drawing.Point(3, 0);
             this.lBuscar.Name = "lBuscar";
-            this.lBuscar.Size = new System.Drawing.Size(70, 36);
+            this.lBuscar.Size = new System.Drawing.Size(86, 34);
             this.lBuscar.TabIndex = 8;
             this.lBuscar.Text = "Número de orden de entrega:";
             this.lBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -118,19 +118,19 @@
             this.tableLayoutPanel2.Controls.Add(this.bAceptar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 346);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(95, 333);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(378, 35);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(454, 35);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // bAsignar
             // 
             this.bAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAsignar.Location = new System.Drawing.Point(129, 3);
+            this.bAsignar.Location = new System.Drawing.Point(154, 3);
             this.bAsignar.Name = "bAsignar";
-            this.bAsignar.Size = new System.Drawing.Size(120, 29);
+            this.bAsignar.Size = new System.Drawing.Size(145, 29);
             this.bAsignar.TabIndex = 8;
             this.bAsignar.Text = "Asignar Productos";
             this.bAsignar.UseVisualStyleBackColor = true;
@@ -141,36 +141,41 @@
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAceptar.Location = new System.Drawing.Point(3, 3);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(120, 29);
+            this.bAceptar.Size = new System.Drawing.Size(145, 29);
             this.bAceptar.TabIndex = 6;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.BAceptar_Click);
             // 
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(255, 3);
+            this.bCancelar.Location = new System.Drawing.Point(305, 3);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(120, 29);
+            this.bCancelar.Size = new System.Drawing.Size(146, 29);
             this.bCancelar.TabIndex = 7;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // tbBuscar
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbBuscar.Location = new System.Drawing.Point(79, 3);
+            this.tbBuscar.Location = new System.Drawing.Point(95, 3);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(378, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(454, 20);
             this.tbBuscar.TabIndex = 1;
             // 
             // SelecciónDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(614, 371);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(630, 410);
             this.Name = "SelecciónDeProductos";
-            this.Size = new System.Drawing.Size(513, 384);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Selección De Productos";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -44,7 +44,6 @@ namespace proyectoPantalla
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            new AsignaciónDeProductos().ShowDialog();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

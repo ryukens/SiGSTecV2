@@ -34,7 +34,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lBuscar = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bAsignar = new System.Windows.Forms.Button();
             this.bAceptar = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
@@ -110,11 +109,9 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.bAsignar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bAceptar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,23 +122,12 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(470, 35);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
-            // bAsignar
-            // 
-            this.bAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAsignar.Location = new System.Drawing.Point(159, 3);
-            this.bAsignar.Name = "bAsignar";
-            this.bAsignar.Size = new System.Drawing.Size(150, 29);
-            this.bAsignar.TabIndex = 8;
-            this.bAsignar.Text = "Asignar Productos";
-            this.bAsignar.UseVisualStyleBackColor = true;
-            this.bAsignar.Click += new System.EventHandler(this.Button3_Click);
-            // 
             // bAceptar
             // 
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAceptar.Location = new System.Drawing.Point(3, 3);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(150, 29);
+            this.bAceptar.Size = new System.Drawing.Size(229, 29);
             this.bAceptar.TabIndex = 6;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -150,9 +136,9 @@
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(315, 3);
+            this.bCancelar.Location = new System.Drawing.Point(238, 3);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(152, 29);
+            this.bCancelar.Size = new System.Drawing.Size(229, 29);
             this.bCancelar.TabIndex = 7;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -194,7 +180,6 @@
         private System.Windows.Forms.Label lBuscar;
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button bAsignar;
         private System.Windows.Forms.Button bCancelar;
     }
 }
