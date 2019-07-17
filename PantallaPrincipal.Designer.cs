@@ -33,6 +33,86 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabInicio = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tabRegCliente = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabRegTécnico = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabEliminarCliente = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabBajaTécnico = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tabCerrarCaso = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabRegProd = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabRegCaso = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabDismProd = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabAumProd = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabRegUsuario = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tabEliminarUsuario = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabModCliente = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tabModTécnico = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tabCancelarCaso = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tabMostrarCaso = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tabMostrarCliente = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tabMostrarTécnico = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tabGenInforme = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tabVerDetalle = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tabMostrarProducto = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabFinalizarCaso = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabAsignarProducto = new System.Windows.Forms.TabPage();
+            this.tabAsignarValorFinal = new System.Windows.Forms.TabPage();
+            this.tabNúmeroFactura = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MSRegCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.MSModCliente = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +126,9 @@
             this.casoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarValorFinalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarNúmeroDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,99 +145,31 @@
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parámetrosToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabInicio = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.muestraDeCaso2 = new proyectoPantalla.MuestraDeCaso(tabControl, tabInicio);
-            this.tabRegCliente = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.muestraDeCaso2 = new proyectoPantalla.MuestraDeCaso();
             this.registroDeCliente2 = new proyectoPantalla.RegistroDeCliente();
-            this.tabRegTécnico = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico();
-            this.tabEliminarCliente = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.eliminaciónDeCliente1 = new proyectoPantalla.DarDeBajaCliente();
-            this.tabBajaTécnico = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.eliminaciónDeTécnico1 = new proyectoPantalla.DarDeBajaTécnico();
-            this.tabCerrarCaso = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.cierreDeCaso1 = new proyectoPantalla.CierreDeCaso();
-            this.tabRegProd = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
             this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto();
-            this.tabRegCaso = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
             this.registroDeCaso1 = new proyectoPantalla.RegistroDeCaso();
-            this.tabDismProd = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
             this.disminuciónDeProducto1 = new proyectoPantalla.DisminuciónDeProducto();
-            this.tabAumProd = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
             this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto();
-            this.tabRegUsuario = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
             this.registroDeUsuario1 = new proyectoPantalla.RegistroDeUsuario();
-            this.tabEliminarUsuario = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
             this.eliminaciónDeUsuario1 = new proyectoPantalla.EliminaciónDeUsuario();
-            this.tabModCliente = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
             this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente();
-            this.tabModTécnico = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label14 = new System.Windows.Forms.Label();
             this.modificaciónDeTécnico1 = new proyectoPantalla.ModificaciónDeTécnico();
-            this.tabCancelarCaso = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
             this.cancelaciónDeCaso1 = new proyectoPantalla.CancelaciónDeCaso();
-            this.tabMostrarCaso = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
             this.muestraDeCaso1 = new proyectoPantalla.MuestraDeCaso();
-            this.tabMostrarCliente = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.muestraDeCliente1 = new proyectoPantalla.MuestraDeCliente();
-            this.label18 = new System.Windows.Forms.Label();
-            this.tabMostrarTécnico = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
             this.muestraDeTécnico1 = new proyectoPantalla.MuestraDeTécnico();
-            this.tabGenInforme = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
             this.generaciónDeInforme1 = new proyectoPantalla.GeneraciónDeInforme();
-            this.tabVerDetalle = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
             this.vistaDeDetalles1 = new proyectoPantalla.VistaDeDetalles();
-            this.tabMostrarProducto = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto();
-            this.tabFinalizarCaso = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.finalizaciónDeCaso1 = new proyectoPantalla.FinalizaciónDeCaso(tabControl, tabInicio);
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.finalizaciónDeCaso1 = new proyectoPantalla.FinalizaciónDeCaso();
+            this.asignaciónMuestraCaso1 = new proyectoPantalla.Módulo_Casos.AsignaciónMuestraCaso();
+            this.asignaciónNúmeroFactura1 = new proyectoPantalla.Módulo_Casos.AsignaciónNúmeroFactura();
+            this.asignaciónValorFinal1 = new proyectoPantalla.Módulo_Casos.AsignaciónValorFinal();
             label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
@@ -205,6 +220,12 @@
             this.tabFinalizarCaso.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
+            this.tabAsignarProducto.SuspendLayout();
+            this.tabAsignarValorFinal.SuspendLayout();
+            this.tabNúmeroFactura.SuspendLayout();
+            this.tableLayoutPanel26.SuspendLayout();
+            this.tableLayoutPanel27.SuspendLayout();
+            this.tableLayoutPanel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // label22
@@ -251,263 +272,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // clienteToolStripMenuItem
-            // 
-            this.clienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MSRegCliente,
-            this.MSModCliente,
-            this.MSElimCliente,
-            this.mostrarClienteToolStripMenuItem});
-            this.clienteToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.Cliente__rojo;
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(98, 46);
-            this.clienteToolStripMenuItem.Text = "Clientes";
-            // 
-            // MSRegCliente
-            // 
-            this.MSRegCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.MSRegCliente.Name = "MSRegCliente";
-            this.MSRegCliente.Size = new System.Drawing.Size(192, 24);
-            this.MSRegCliente.Text = "Registrar Cliente";
-            this.MSRegCliente.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
-            // 
-            // MSModCliente
-            // 
-            this.MSModCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.MSModCliente.Name = "MSModCliente";
-            this.MSModCliente.Size = new System.Drawing.Size(192, 24);
-            this.MSModCliente.Text = "Modificar Cliente";
-            this.MSModCliente.Click += new System.EventHandler(this.ModificarToolStripMenuItem_Click);
-            // 
-            // MSElimCliente
-            // 
-            this.MSElimCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.MSElimCliente.Name = "MSElimCliente";
-            this.MSElimCliente.Size = new System.Drawing.Size(192, 24);
-            this.MSElimCliente.Text = "Eliminar Cliente";
-            this.MSElimCliente.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
-            // 
-            // mostrarClienteToolStripMenuItem
-            // 
-            this.mostrarClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.mostrarClienteToolStripMenuItem.Name = "mostrarClienteToolStripMenuItem";
-            this.mostrarClienteToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.mostrarClienteToolStripMenuItem.Text = "Mostrar Cliente";
-            this.mostrarClienteToolStripMenuItem.Click += new System.EventHandler(this.MostrarClienteToolStripMenuItem_Click);
-            // 
-            // tecnicoToolStripMenuItem
-            // 
-            this.tecnicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MSRegTécnico,
-            this.MSModTécnico,
-            this.MSElimTécnico,
-            this.mostrarTécnicoToolStripMenuItem});
-            this.tecnicoToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.tecnicos___rojo;
-            this.tecnicoToolStripMenuItem.Name = "tecnicoToolStripMenuItem";
-            this.tecnicoToolStripMenuItem.Size = new System.Drawing.Size(102, 46);
-            this.tecnicoToolStripMenuItem.Text = "Técnicos";
-            // 
-            // MSRegTécnico
-            // 
-            this.MSRegTécnico.BackColor = System.Drawing.SystemColors.Window;
-            this.MSRegTécnico.Name = "MSRegTécnico";
-            this.MSRegTécnico.Size = new System.Drawing.Size(196, 24);
-            this.MSRegTécnico.Text = "Registrar Técnico";
-            this.MSRegTécnico.Click += new System.EventHandler(this.NuevoToolStripMenuItem1_Click);
-            // 
-            // MSModTécnico
-            // 
-            this.MSModTécnico.BackColor = System.Drawing.SystemColors.Window;
-            this.MSModTécnico.Name = "MSModTécnico";
-            this.MSModTécnico.Size = new System.Drawing.Size(196, 24);
-            this.MSModTécnico.Text = "Modificar Técnico";
-            this.MSModTécnico.Click += new System.EventHandler(this.ModificarToolStripMenuItem1_Click);
-            // 
-            // MSElimTécnico
-            // 
-            this.MSElimTécnico.BackColor = System.Drawing.SystemColors.Window;
-            this.MSElimTécnico.Name = "MSElimTécnico";
-            this.MSElimTécnico.Size = new System.Drawing.Size(196, 24);
-            this.MSElimTécnico.Text = "Eliminar Técnico";
-            this.MSElimTécnico.Click += new System.EventHandler(this.EliminarToolStripMenuItem1_Click);
-            // 
-            // mostrarTécnicoToolStripMenuItem
-            // 
-            this.mostrarTécnicoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.mostrarTécnicoToolStripMenuItem.Name = "mostrarTécnicoToolStripMenuItem";
-            this.mostrarTécnicoToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.mostrarTécnicoToolStripMenuItem.Text = "Mostrar Técnico";
-            this.mostrarTécnicoToolStripMenuItem.Click += new System.EventHandler(this.MostrarTécnicoToolStripMenuItem_Click);
-            // 
-            // casoToolStripMenuItem
-            // 
-            this.casoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.casoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem2,
-            this.modificarToolStripMenuItem2,
-            this.cancelarCasoToolStripMenuItem,
-            this.mostrarCasoToolStripMenuItem,
-            this.finalizarCasoToolStripMenuItem});
-            this.casoToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.Casos___rojo;
-            this.casoToolStripMenuItem.Name = "casoToolStripMenuItem";
-            this.casoToolStripMenuItem.Size = new System.Drawing.Size(84, 46);
-            this.casoToolStripMenuItem.Text = "Casos";
-            // 
-            // nuevoToolStripMenuItem2
-            // 
-            this.nuevoToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
-            this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(173, 24);
-            this.nuevoToolStripMenuItem2.Text = "Registrar Caso";
-            this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.NuevoToolStripMenuItem2_Click);
-            // 
-            // modificarToolStripMenuItem2
-            // 
-            this.modificarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
-            this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(173, 24);
-            this.modificarToolStripMenuItem2.Text = "Cerrar Caso";
-            this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.ModificarToolStripMenuItem2_Click);
-            // 
-            // cancelarCasoToolStripMenuItem
-            // 
-            this.cancelarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.cancelarCasoToolStripMenuItem.Name = "cancelarCasoToolStripMenuItem";
-            this.cancelarCasoToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.cancelarCasoToolStripMenuItem.Text = "Cancelar Caso";
-            this.cancelarCasoToolStripMenuItem.Click += new System.EventHandler(this.CancelarCasoToolStripMenuItem_Click);
-            // 
-            // mostrarCasoToolStripMenuItem
-            // 
-            this.mostrarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.mostrarCasoToolStripMenuItem.Name = "mostrarCasoToolStripMenuItem";
-            this.mostrarCasoToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.mostrarCasoToolStripMenuItem.Text = "Mostrar Caso";
-            this.mostrarCasoToolStripMenuItem.Click += new System.EventHandler(this.MostrarCasoToolStripMenuItem_Click);
-            // 
-            // finalizarCasoToolStripMenuItem
-            // 
-            this.finalizarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.finalizarCasoToolStripMenuItem.Name = "finalizarCasoToolStripMenuItem";
-            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.finalizarCasoToolStripMenuItem.Text = "Finalizar Caso";
-            this.finalizarCasoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarCasoToolStripMenuItem_Click);
-            // 
-            // estadisticasToolStripMenuItem
-            // 
-            this.estadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarInformeToolStripMenuItem,
-            this.verDetalleToolStripMenuItem});
-            this.estadisticasToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.orden_de_facturacion;
-            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(122, 46);
-            this.estadisticasToolStripMenuItem.Text = "Estadísticas";
-            // 
-            // generarInformeToolStripMenuItem
-            // 
-            this.generarInformeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
-            this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.generarInformeToolStripMenuItem.Text = "Generar Informe";
-            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.GenerarInformeToolStripMenuItem_Click);
-            // 
-            // verDetalleToolStripMenuItem
-            // 
-            this.verDetalleToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.verDetalleToolStripMenuItem.Text = "Ver Detalle";
-            this.verDetalleToolStripMenuItem.Click += new System.EventHandler(this.VerDetalleToolStripMenuItem_Click);
-            // 
-            // stockToolStripMenuItem
-            // 
-            this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresarProductoToolStripMenuItem,
-            this.darDeBajaProductoToolStripMenuItem,
-            this.aumentarProductosToolStripMenuItem,
-            this.mostrarProductoToolStripMenuItem});
-            this.stockToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.Inventario;
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(112, 46);
-            this.stockToolStripMenuItem.Text = "Inventario";
-            // 
-            // ingresarProductoToolStripMenuItem
-            // 
-            this.ingresarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.ingresarProductoToolStripMenuItem.Name = "ingresarProductoToolStripMenuItem";
-            this.ingresarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.ingresarProductoToolStripMenuItem.Text = "Registrar Producto";
-            this.ingresarProductoToolStripMenuItem.Click += new System.EventHandler(this.IngresarProductoToolStripMenuItem_Click);
-            // 
-            // darDeBajaProductoToolStripMenuItem
-            // 
-            this.darDeBajaProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.darDeBajaProductoToolStripMenuItem.Name = "darDeBajaProductoToolStripMenuItem";
-            this.darDeBajaProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.darDeBajaProductoToolStripMenuItem.Text = "Disminuir Producto";
-            this.darDeBajaProductoToolStripMenuItem.Click += new System.EventHandler(this.DarDeBajaProductoToolStripMenuItem_Click);
-            // 
-            // aumentarProductosToolStripMenuItem
-            // 
-            this.aumentarProductosToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.aumentarProductosToolStripMenuItem.Name = "aumentarProductosToolStripMenuItem";
-            this.aumentarProductosToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.aumentarProductosToolStripMenuItem.Text = "Aumentar Producto";
-            this.aumentarProductosToolStripMenuItem.Click += new System.EventHandler(this.AumentarProductosToolStripMenuItem_Click);
-            // 
-            // mostrarProductoToolStripMenuItem
-            // 
-            this.mostrarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.mostrarProductoToolStripMenuItem.Name = "mostrarProductoToolStripMenuItem";
-            this.mostrarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.mostrarProductoToolStripMenuItem.Text = "Mostrar Producto";
-            this.mostrarProductoToolStripMenuItem.Click += new System.EventHandler(this.MuestraProductoToolStripMenuItem_Click);
-            // 
-            // administraciónToolStripMenuItem
-            // 
-            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearUsusarioToolStripMenuItem,
-            this.parámetrosToolStripMenuItem3});
-            this.administraciónToolStripMenuItem.Image = global::proyectoPantalla.Properties.Resources.usuarios;
-            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(146, 46);
-            this.administraciónToolStripMenuItem.Text = "Administración";
-            // 
-            // crearUsusarioToolStripMenuItem
-            // 
-            this.crearUsusarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.crearUsusarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarUsuarioToolStripMenuItem,
-            this.eliminarUsuarioToolStripMenuItem});
-            this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
-            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
-            // 
-            // registrarUsuarioToolStripMenuItem
-            // 
-            this.registrarUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
-            this.registrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-            this.registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
-            this.registrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.RegistrarUsuarioToolStripMenuItem_Click);
-            // 
-            // eliminarUsuarioToolStripMenuItem
-            // 
-            this.eliminarUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
-            this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-            this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
-            this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem_Click);
-            // 
-            // parámetrosToolStripMenuItem3
-            // 
-            this.parámetrosToolStripMenuItem3.BackColor = System.Drawing.SystemColors.Window;
-            this.parámetrosToolStripMenuItem3.Name = "parámetrosToolStripMenuItem3";
-            this.parámetrosToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
-            this.parámetrosToolStripMenuItem3.Text = "Parámetros";
-            // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.ColumnCount = 3;
@@ -524,18 +288,6 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Size = new System.Drawing.Size(988, 50);
             this.tableLayoutPanel14.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(792, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 50);
-            this.label1.TabIndex = 0;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabControl
             // 
@@ -562,6 +314,9 @@
             this.tabControl.Controls.Add(this.tabVerDetalle);
             this.tabControl.Controls.Add(this.tabMostrarProducto);
             this.tabControl.Controls.Add(this.tabFinalizarCaso);
+            this.tabControl.Controls.Add(this.tabAsignarProducto);
+            this.tabControl.Controls.Add(this.tabAsignarValorFinal);
+            this.tabControl.Controls.Add(this.tabNúmeroFactura);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -635,17 +390,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // muestraDeCaso2
-            // 
-            this.muestraDeCaso2.BackColor = System.Drawing.SystemColors.Window;
-            this.muestraDeCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.muestraDeCaso2.Location = new System.Drawing.Point(4, 53);
-            this.muestraDeCaso2.Margin = new System.Windows.Forms.Padding(4);
-            this.muestraDeCaso2.Name = "muestraDeCaso2";
-            this.muestraDeCaso2.Size = new System.Drawing.Size(972, 433);
-            this.muestraDeCaso2.TabIndex = 1;
-            this.muestraDeCaso2.Load += new System.EventHandler(this.MuestraDeCaso2_Load);
-            // 
             // tabRegCliente
             // 
             this.tabRegCliente.BackColor = System.Drawing.SystemColors.Window;
@@ -682,16 +426,6 @@
             this.label2.Size = new System.Drawing.Size(974, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Registro de Cliente";
-            // 
-            // registroDeCliente2
-            // 
-            this.registroDeCliente2.BackColor = System.Drawing.SystemColors.Window;
-            this.registroDeCliente2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registroDeCliente2.Location = new System.Drawing.Point(4, 28);
-            this.registroDeCliente2.Margin = new System.Windows.Forms.Padding(4);
-            this.registroDeCliente2.Name = "registroDeCliente2";
-            this.registroDeCliente2.Size = new System.Drawing.Size(972, 458);
-            this.registroDeCliente2.TabIndex = 1;
             // 
             // tabRegTécnico
             // 
@@ -731,16 +465,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Registro de Técnico";
             // 
-            // tecnicos1
-            // 
-            this.tecnicos1.BackColor = System.Drawing.SystemColors.Window;
-            this.tecnicos1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tecnicos1.Location = new System.Drawing.Point(5, 29);
-            this.tecnicos1.Margin = new System.Windows.Forms.Padding(5);
-            this.tecnicos1.Name = "tecnicos1";
-            this.tecnicos1.Size = new System.Drawing.Size(970, 456);
-            this.tecnicos1.TabIndex = 1;
-            // 
             // tabEliminarCliente
             // 
             this.tabEliminarCliente.BackColor = System.Drawing.SystemColors.Window;
@@ -777,16 +501,6 @@
             this.label4.Size = new System.Drawing.Size(974, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Eliminación de Cliente";
-            // 
-            // eliminaciónDeCliente1
-            // 
-            this.eliminaciónDeCliente1.BackColor = System.Drawing.SystemColors.Window;
-            this.eliminaciónDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eliminaciónDeCliente1.Location = new System.Drawing.Point(4, 28);
-            this.eliminaciónDeCliente1.Margin = new System.Windows.Forms.Padding(4);
-            this.eliminaciónDeCliente1.Name = "eliminaciónDeCliente1";
-            this.eliminaciónDeCliente1.Size = new System.Drawing.Size(972, 458);
-            this.eliminaciónDeCliente1.TabIndex = 1;
             // 
             // tabBajaTécnico
             // 
@@ -825,16 +539,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Eliminación de Técnico";
             // 
-            // eliminaciónDeTécnico1
-            // 
-            this.eliminaciónDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
-            this.eliminaciónDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eliminaciónDeTécnico1.Location = new System.Drawing.Point(4, 28);
-            this.eliminaciónDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
-            this.eliminaciónDeTécnico1.Name = "eliminaciónDeTécnico1";
-            this.eliminaciónDeTécnico1.Size = new System.Drawing.Size(972, 458);
-            this.eliminaciónDeTécnico1.TabIndex = 1;
-            // 
             // tabCerrarCaso
             // 
             this.tabCerrarCaso.BackColor = System.Drawing.SystemColors.Window;
@@ -871,16 +575,6 @@
             this.label6.Size = new System.Drawing.Size(974, 24);
             this.label6.TabIndex = 0;
             this.label6.Text = "Cierre de Caso";
-            // 
-            // cierreDeCaso1
-            // 
-            this.cierreDeCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.cierreDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cierreDeCaso1.Location = new System.Drawing.Point(4, 28);
-            this.cierreDeCaso1.Margin = new System.Windows.Forms.Padding(4);
-            this.cierreDeCaso1.Name = "cierreDeCaso1";
-            this.cierreDeCaso1.Size = new System.Drawing.Size(972, 458);
-            this.cierreDeCaso1.TabIndex = 1;
             // 
             // tabRegProd
             // 
@@ -920,16 +614,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Registro de Producto";
             // 
-            // registroDeProducto1
-            // 
-            this.registroDeProducto1.BackColor = System.Drawing.SystemColors.Window;
-            this.registroDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registroDeProducto1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeProducto1.Margin = new System.Windows.Forms.Padding(4);
-            this.registroDeProducto1.Name = "registroDeProducto1";
-            this.registroDeProducto1.Size = new System.Drawing.Size(972, 458);
-            this.registroDeProducto1.TabIndex = 1;
-            // 
             // tabRegCaso
             // 
             this.tabRegCaso.BackColor = System.Drawing.SystemColors.Window;
@@ -967,16 +651,6 @@
             this.label8.Size = new System.Drawing.Size(974, 24);
             this.label8.TabIndex = 0;
             this.label8.Text = "Registro de Caso";
-            // 
-            // registroDeCaso1
-            // 
-            this.registroDeCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.registroDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registroDeCaso1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeCaso1.Margin = new System.Windows.Forms.Padding(4);
-            this.registroDeCaso1.Name = "registroDeCaso1";
-            this.registroDeCaso1.Size = new System.Drawing.Size(972, 458);
-            this.registroDeCaso1.TabIndex = 1;
             // 
             // tabDismProd
             // 
@@ -1016,16 +690,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Disminución de Producto";
             // 
-            // disminuciónDeProducto1
-            // 
-            this.disminuciónDeProducto1.BackColor = System.Drawing.SystemColors.Window;
-            this.disminuciónDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.disminuciónDeProducto1.Location = new System.Drawing.Point(4, 28);
-            this.disminuciónDeProducto1.Margin = new System.Windows.Forms.Padding(4);
-            this.disminuciónDeProducto1.Name = "disminuciónDeProducto1";
-            this.disminuciónDeProducto1.Size = new System.Drawing.Size(972, 458);
-            this.disminuciónDeProducto1.TabIndex = 1;
-            // 
             // tabAumProd
             // 
             this.tabAumProd.BackColor = System.Drawing.SystemColors.Window;
@@ -1062,16 +726,6 @@
             this.label10.Size = new System.Drawing.Size(974, 24);
             this.label10.TabIndex = 0;
             this.label10.Text = "Aumento de Producto\r\n";
-            // 
-            // aumentoDeProducto1
-            // 
-            this.aumentoDeProducto1.BackColor = System.Drawing.SystemColors.Window;
-            this.aumentoDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aumentoDeProducto1.Location = new System.Drawing.Point(4, 28);
-            this.aumentoDeProducto1.Margin = new System.Windows.Forms.Padding(4);
-            this.aumentoDeProducto1.Name = "aumentoDeProducto1";
-            this.aumentoDeProducto1.Size = new System.Drawing.Size(972, 458);
-            this.aumentoDeProducto1.TabIndex = 1;
             // 
             // tabRegUsuario
             // 
@@ -1111,16 +765,6 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Registro de Usuario";
             // 
-            // registroDeUsuario1
-            // 
-            this.registroDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
-            this.registroDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registroDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
-            this.registroDeUsuario1.Name = "registroDeUsuario1";
-            this.registroDeUsuario1.Size = new System.Drawing.Size(972, 458);
-            this.registroDeUsuario1.TabIndex = 1;
-            // 
             // tabEliminarUsuario
             // 
             this.tabEliminarUsuario.BackColor = System.Drawing.SystemColors.Window;
@@ -1157,16 +801,6 @@
             this.label12.Size = new System.Drawing.Size(974, 24);
             this.label12.TabIndex = 0;
             this.label12.Text = "Eliminación de Usuario";
-            // 
-            // eliminaciónDeUsuario1
-            // 
-            this.eliminaciónDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
-            this.eliminaciónDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eliminaciónDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
-            this.eliminaciónDeUsuario1.Name = "eliminaciónDeUsuario1";
-            this.eliminaciónDeUsuario1.Size = new System.Drawing.Size(972, 458);
-            this.eliminaciónDeUsuario1.TabIndex = 1;
             // 
             // tabModCliente
             // 
@@ -1206,16 +840,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Modificación de Cliente";
             // 
-            // modificaciónDeCliente1
-            // 
-            this.modificaciónDeCliente1.BackColor = System.Drawing.SystemColors.Window;
-            this.modificaciónDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modificaciónDeCliente1.Location = new System.Drawing.Point(4, 28);
-            this.modificaciónDeCliente1.Margin = new System.Windows.Forms.Padding(4);
-            this.modificaciónDeCliente1.Name = "modificaciónDeCliente1";
-            this.modificaciónDeCliente1.Size = new System.Drawing.Size(972, 458);
-            this.modificaciónDeCliente1.TabIndex = 1;
-            // 
             // tabModTécnico
             // 
             this.tabModTécnico.BackColor = System.Drawing.SystemColors.Window;
@@ -1253,16 +877,6 @@
             this.label14.Size = new System.Drawing.Size(974, 24);
             this.label14.TabIndex = 0;
             this.label14.Text = "Modificación de Técnico";
-            // 
-            // modificaciónDeTécnico1
-            // 
-            this.modificaciónDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
-            this.modificaciónDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modificaciónDeTécnico1.Location = new System.Drawing.Point(4, 28);
-            this.modificaciónDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
-            this.modificaciónDeTécnico1.Name = "modificaciónDeTécnico1";
-            this.modificaciónDeTécnico1.Size = new System.Drawing.Size(972, 458);
-            this.modificaciónDeTécnico1.TabIndex = 1;
             // 
             // tabCancelarCaso
             // 
@@ -1302,16 +916,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Cancelación de Caso";
             // 
-            // cancelaciónDeCaso1
-            // 
-            this.cancelaciónDeCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.cancelaciónDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelaciónDeCaso1.Location = new System.Drawing.Point(4, 28);
-            this.cancelaciónDeCaso1.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelaciónDeCaso1.Name = "cancelaciónDeCaso1";
-            this.cancelaciónDeCaso1.Size = new System.Drawing.Size(972, 458);
-            this.cancelaciónDeCaso1.TabIndex = 1;
-            // 
             // tabMostrarCaso
             // 
             this.tabMostrarCaso.BackColor = System.Drawing.SystemColors.Window;
@@ -1349,16 +953,6 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Muestra de Casos";
             // 
-            // muestraDeCaso1
-            // 
-            this.muestraDeCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.muestraDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.muestraDeCaso1.Location = new System.Drawing.Point(4, 28);
-            this.muestraDeCaso1.Margin = new System.Windows.Forms.Padding(4);
-            this.muestraDeCaso1.Name = "muestraDeCaso1";
-            this.muestraDeCaso1.Size = new System.Drawing.Size(972, 458);
-            this.muestraDeCaso1.TabIndex = 1;
-            // 
             // tabMostrarCliente
             // 
             this.tabMostrarCliente.BackColor = System.Drawing.SystemColors.Window;
@@ -1385,16 +979,6 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(980, 490);
             this.tableLayoutPanel20.TabIndex = 1;
-            // 
-            // muestraDeCliente1
-            // 
-            this.muestraDeCliente1.BackColor = System.Drawing.SystemColors.Window;
-            this.muestraDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.muestraDeCliente1.Location = new System.Drawing.Point(4, 28);
-            this.muestraDeCliente1.Margin = new System.Windows.Forms.Padding(4);
-            this.muestraDeCliente1.Name = "muestraDeCliente1";
-            this.muestraDeCliente1.Size = new System.Drawing.Size(972, 458);
-            this.muestraDeCliente1.TabIndex = 2;
             // 
             // label18
             // 
@@ -1443,16 +1027,6 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Muestra de Técnicos";
             // 
-            // muestraDeTécnico1
-            // 
-            this.muestraDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
-            this.muestraDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.muestraDeTécnico1.Location = new System.Drawing.Point(4, 28);
-            this.muestraDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
-            this.muestraDeTécnico1.Name = "muestraDeTécnico1";
-            this.muestraDeTécnico1.Size = new System.Drawing.Size(972, 458);
-            this.muestraDeTécnico1.TabIndex = 1;
-            // 
             // tabGenInforme
             // 
             this.tabGenInforme.Controls.Add(this.tableLayoutPanel23);
@@ -1490,16 +1064,6 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Generación de Informe";
             // 
-            // generaciónDeInforme1
-            // 
-            this.generaciónDeInforme1.BackColor = System.Drawing.SystemColors.Window;
-            this.generaciónDeInforme1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.generaciónDeInforme1.Location = new System.Drawing.Point(4, 28);
-            this.generaciónDeInforme1.Margin = new System.Windows.Forms.Padding(4);
-            this.generaciónDeInforme1.Name = "generaciónDeInforme1";
-            this.generaciónDeInforme1.Size = new System.Drawing.Size(972, 458);
-            this.generaciónDeInforme1.TabIndex = 1;
-            // 
             // tabVerDetalle
             // 
             this.tabVerDetalle.BackColor = System.Drawing.SystemColors.Window;
@@ -1536,14 +1100,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Vista de Detalles";
             // 
-            // vistaDeDetalles1
-            // 
-            this.vistaDeDetalles1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vistaDeDetalles1.Location = new System.Drawing.Point(3, 27);
-            this.vistaDeDetalles1.Name = "vistaDeDetalles1";
-            this.vistaDeDetalles1.Size = new System.Drawing.Size(974, 460);
-            this.vistaDeDetalles1.TabIndex = 1;
-            // 
             // tabMostrarProducto
             // 
             this.tabMostrarProducto.BackColor = System.Drawing.SystemColors.Window;
@@ -1569,16 +1125,6 @@
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tableLayoutPanel24.Size = new System.Drawing.Size(980, 490);
             this.tableLayoutPanel24.TabIndex = 0;
-            // 
-            // muestraDeProducto1
-            // 
-            this.muestraDeProducto1.BackColor = System.Drawing.SystemColors.Window;
-            this.muestraDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.muestraDeProducto1.Location = new System.Drawing.Point(4, 28);
-            this.muestraDeProducto1.Margin = new System.Windows.Forms.Padding(4);
-            this.muestraDeProducto1.Name = "muestraDeProducto1";
-            this.muestraDeProducto1.Size = new System.Drawing.Size(972, 458);
-            this.muestraDeProducto1.TabIndex = 1;
             // 
             // tabFinalizarCaso
             // 
@@ -1617,15 +1163,6 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "Finalización de Caso";
             // 
-            // finalizaciónDeCaso1
-            // 
-            this.finalizaciónDeCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.finalizaciónDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.finalizaciónDeCaso1.Location = new System.Drawing.Point(3, 27);
-            this.finalizaciónDeCaso1.Name = "finalizaciónDeCaso1";
-            this.finalizaciónDeCaso1.Size = new System.Drawing.Size(974, 460);
-            this.finalizaciónDeCaso1.TabIndex = 1;
-            // 
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 1;
@@ -1641,6 +1178,657 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
             this.tableLayoutPanel15.TabIndex = 1;
+            // 
+            // tabAsignarProducto
+            // 
+            this.tabAsignarProducto.Controls.Add(this.tableLayoutPanel28);
+            this.tabAsignarProducto.Location = new System.Drawing.Point(4, 5);
+            this.tabAsignarProducto.Name = "tabAsignarProducto";
+            this.tabAsignarProducto.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsignarProducto.Size = new System.Drawing.Size(986, 496);
+            this.tabAsignarProducto.TabIndex = 23;
+            this.tabAsignarProducto.Text = resources.GetString("tabAsignarProducto.Text");
+            this.tabAsignarProducto.UseVisualStyleBackColor = true;
+            // 
+            // tabAsignarValorFinal
+            // 
+            this.tabAsignarValorFinal.Controls.Add(this.tableLayoutPanel26);
+            this.tabAsignarValorFinal.Location = new System.Drawing.Point(4, 5);
+            this.tabAsignarValorFinal.Name = "tabAsignarValorFinal";
+            this.tabAsignarValorFinal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsignarValorFinal.Size = new System.Drawing.Size(986, 496);
+            this.tabAsignarValorFinal.TabIndex = 24;
+            this.tabAsignarValorFinal.Text = resources.GetString("tabAsignarValorFinal.Text");
+            this.tabAsignarValorFinal.UseVisualStyleBackColor = true;
+            // 
+            // tabNúmeroFactura
+            // 
+            this.tabNúmeroFactura.Controls.Add(this.tableLayoutPanel27);
+            this.tabNúmeroFactura.Location = new System.Drawing.Point(4, 5);
+            this.tabNúmeroFactura.Name = "tabNúmeroFactura";
+            this.tabNúmeroFactura.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNúmeroFactura.Size = new System.Drawing.Size(986, 496);
+            this.tabNúmeroFactura.TabIndex = 25;
+            this.tabNúmeroFactura.Text = resources.GetString("tabNúmeroFactura.Text");
+            this.tabNúmeroFactura.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel26
+            // 
+            this.tableLayoutPanel26.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel26.ColumnCount = 1;
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.asignaciónValorFinal1, 0, 1);
+            this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            this.tableLayoutPanel26.RowCount = 2;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(980, 490);
+            this.tableLayoutPanel26.TabIndex = 0;
+            // 
+            // tableLayoutPanel27
+            // 
+            this.tableLayoutPanel27.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel27.ColumnCount = 1;
+            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel27.Controls.Add(this.asignaciónNúmeroFactura1, 0, 1);
+            this.tableLayoutPanel27.Controls.Add(this.label26, 0, 0);
+            this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
+            this.tableLayoutPanel27.RowCount = 2;
+            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel27.Size = new System.Drawing.Size(980, 490);
+            this.tableLayoutPanel27.TabIndex = 1;
+            // 
+            // tableLayoutPanel28
+            // 
+            this.tableLayoutPanel28.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel28.ColumnCount = 1;
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel28.Controls.Add(this.label24, 0, 0);
+            this.tableLayoutPanel28.Controls.Add(this.asignaciónMuestraCaso1, 0, 1);
+            this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
+            this.tableLayoutPanel28.RowCount = 2;
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(980, 490);
+            this.tableLayoutPanel28.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Location = new System.Drawing.Point(3, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(974, 24);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Asignación de Productos";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(974, 24);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Asignación de Valor Final";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Location = new System.Drawing.Point(3, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(974, 24);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Asignación De Número De Factura";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(792, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 50);
+            this.label1.TabIndex = 0;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MSRegCliente,
+            this.MSModCliente,
+            this.MSElimCliente,
+            this.mostrarClienteToolStripMenuItem});
+            this.clienteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clienteToolStripMenuItem.Image")));
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(98, 46);
+            this.clienteToolStripMenuItem.Text = "Clientes";
+            // 
+            // MSRegCliente
+            // 
+            this.MSRegCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.MSRegCliente.Name = "MSRegCliente";
+            this.MSRegCliente.Size = new System.Drawing.Size(192, 24);
+            this.MSRegCliente.Text = "Registrar Cliente";
+            this.MSRegCliente.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
+            // 
+            // MSModCliente
+            // 
+            this.MSModCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.MSModCliente.Name = "MSModCliente";
+            this.MSModCliente.Size = new System.Drawing.Size(192, 24);
+            this.MSModCliente.Text = "Modificar Cliente";
+            this.MSModCliente.Click += new System.EventHandler(this.ModificarToolStripMenuItem_Click);
+            // 
+            // MSElimCliente
+            // 
+            this.MSElimCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.MSElimCliente.Name = "MSElimCliente";
+            this.MSElimCliente.Size = new System.Drawing.Size(192, 24);
+            this.MSElimCliente.Text = "Eliminar Cliente";
+            this.MSElimCliente.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
+            // 
+            // mostrarClienteToolStripMenuItem
+            // 
+            this.mostrarClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.mostrarClienteToolStripMenuItem.Name = "mostrarClienteToolStripMenuItem";
+            this.mostrarClienteToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.mostrarClienteToolStripMenuItem.Text = "Mostrar Cliente";
+            this.mostrarClienteToolStripMenuItem.Click += new System.EventHandler(this.MostrarClienteToolStripMenuItem_Click);
+            // 
+            // tecnicoToolStripMenuItem
+            // 
+            this.tecnicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MSRegTécnico,
+            this.MSModTécnico,
+            this.MSElimTécnico,
+            this.mostrarTécnicoToolStripMenuItem});
+            this.tecnicoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tecnicoToolStripMenuItem.Image")));
+            this.tecnicoToolStripMenuItem.Name = "tecnicoToolStripMenuItem";
+            this.tecnicoToolStripMenuItem.Size = new System.Drawing.Size(102, 46);
+            this.tecnicoToolStripMenuItem.Text = "Técnicos";
+            // 
+            // MSRegTécnico
+            // 
+            this.MSRegTécnico.BackColor = System.Drawing.SystemColors.Window;
+            this.MSRegTécnico.Name = "MSRegTécnico";
+            this.MSRegTécnico.Size = new System.Drawing.Size(196, 24);
+            this.MSRegTécnico.Text = "Registrar Técnico";
+            this.MSRegTécnico.Click += new System.EventHandler(this.NuevoToolStripMenuItem1_Click);
+            // 
+            // MSModTécnico
+            // 
+            this.MSModTécnico.BackColor = System.Drawing.SystemColors.Window;
+            this.MSModTécnico.Name = "MSModTécnico";
+            this.MSModTécnico.Size = new System.Drawing.Size(196, 24);
+            this.MSModTécnico.Text = "Modificar Técnico";
+            this.MSModTécnico.Click += new System.EventHandler(this.ModificarToolStripMenuItem1_Click);
+            // 
+            // MSElimTécnico
+            // 
+            this.MSElimTécnico.BackColor = System.Drawing.SystemColors.Window;
+            this.MSElimTécnico.Name = "MSElimTécnico";
+            this.MSElimTécnico.Size = new System.Drawing.Size(196, 24);
+            this.MSElimTécnico.Text = "Eliminar Técnico";
+            this.MSElimTécnico.Click += new System.EventHandler(this.EliminarToolStripMenuItem1_Click);
+            // 
+            // mostrarTécnicoToolStripMenuItem
+            // 
+            this.mostrarTécnicoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.mostrarTécnicoToolStripMenuItem.Name = "mostrarTécnicoToolStripMenuItem";
+            this.mostrarTécnicoToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.mostrarTécnicoToolStripMenuItem.Text = "Mostrar Técnico";
+            this.mostrarTécnicoToolStripMenuItem.Click += new System.EventHandler(this.MostrarTécnicoToolStripMenuItem_Click);
+            // 
+            // casoToolStripMenuItem
+            // 
+            this.casoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.casoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem2,
+            this.modificarToolStripMenuItem2,
+            this.asignarProductoToolStripMenuItem,
+            this.asignarValorFinalToolStripMenuItem,
+            this.asignarNúmeroDeFacturaToolStripMenuItem,
+            this.cancelarCasoToolStripMenuItem,
+            this.mostrarCasoToolStripMenuItem,
+            this.finalizarCasoToolStripMenuItem});
+            this.casoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("casoToolStripMenuItem.Image")));
+            this.casoToolStripMenuItem.Name = "casoToolStripMenuItem";
+            this.casoToolStripMenuItem.Size = new System.Drawing.Size(84, 46);
+            this.casoToolStripMenuItem.Text = "Casos";
+            // 
+            // nuevoToolStripMenuItem2
+            // 
+            this.nuevoToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
+            this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
+            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(258, 24);
+            this.nuevoToolStripMenuItem2.Text = "Registrar Caso";
+            this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.NuevoToolStripMenuItem2_Click);
+            // 
+            // modificarToolStripMenuItem2
+            // 
+            this.modificarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
+            this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(258, 24);
+            this.modificarToolStripMenuItem2.Text = "Cerrar Caso";
+            this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.ModificarToolStripMenuItem2_Click);
+            // 
+            // asignarProductoToolStripMenuItem
+            // 
+            this.asignarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.asignarProductoToolStripMenuItem.Name = "asignarProductoToolStripMenuItem";
+            this.asignarProductoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.asignarProductoToolStripMenuItem.Text = "Asignar Producto";
+            this.asignarProductoToolStripMenuItem.Click += new System.EventHandler(this.AsignarProductoToolStripMenuItem_Click);
+            // 
+            // asignarValorFinalToolStripMenuItem
+            // 
+            this.asignarValorFinalToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.asignarValorFinalToolStripMenuItem.Name = "asignarValorFinalToolStripMenuItem";
+            this.asignarValorFinalToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.asignarValorFinalToolStripMenuItem.Text = "Asignar Valor Final";
+            this.asignarValorFinalToolStripMenuItem.Click += new System.EventHandler(this.AsignarValorFinalToolStripMenuItem_Click);
+            // 
+            // asignarNúmeroDeFacturaToolStripMenuItem
+            // 
+            this.asignarNúmeroDeFacturaToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.asignarNúmeroDeFacturaToolStripMenuItem.Name = "asignarNúmeroDeFacturaToolStripMenuItem";
+            this.asignarNúmeroDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.asignarNúmeroDeFacturaToolStripMenuItem.Text = "Asignar Número de Factura";
+            this.asignarNúmeroDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.AsignarNúmeroDeFacturaToolStripMenuItem_Click);
+            // 
+            // cancelarCasoToolStripMenuItem
+            // 
+            this.cancelarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.cancelarCasoToolStripMenuItem.Name = "cancelarCasoToolStripMenuItem";
+            this.cancelarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.cancelarCasoToolStripMenuItem.Text = "Cancelar Caso";
+            this.cancelarCasoToolStripMenuItem.Click += new System.EventHandler(this.CancelarCasoToolStripMenuItem_Click);
+            // 
+            // mostrarCasoToolStripMenuItem
+            // 
+            this.mostrarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.mostrarCasoToolStripMenuItem.Name = "mostrarCasoToolStripMenuItem";
+            this.mostrarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.mostrarCasoToolStripMenuItem.Text = "Mostrar Caso";
+            this.mostrarCasoToolStripMenuItem.Click += new System.EventHandler(this.MostrarCasoToolStripMenuItem_Click);
+            // 
+            // finalizarCasoToolStripMenuItem
+            // 
+            this.finalizarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.finalizarCasoToolStripMenuItem.Name = "finalizarCasoToolStripMenuItem";
+            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.finalizarCasoToolStripMenuItem.Text = "Finalizar Caso";
+            this.finalizarCasoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarCasoToolStripMenuItem_Click);
+            // 
+            // estadisticasToolStripMenuItem
+            // 
+            this.estadisticasToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarInformeToolStripMenuItem,
+            this.verDetalleToolStripMenuItem});
+            this.estadisticasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("estadisticasToolStripMenuItem.Image")));
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(122, 46);
+            this.estadisticasToolStripMenuItem.Text = "Estadísticas";
+            // 
+            // generarInformeToolStripMenuItem
+            // 
+            this.generarInformeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
+            this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.GenerarInformeToolStripMenuItem_Click);
+            // 
+            // verDetalleToolStripMenuItem
+            // 
+            this.verDetalleToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
+            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.verDetalleToolStripMenuItem.Text = "Ver Detalle";
+            this.verDetalleToolStripMenuItem.Click += new System.EventHandler(this.VerDetalleToolStripMenuItem_Click);
+            // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingresarProductoToolStripMenuItem,
+            this.darDeBajaProductoToolStripMenuItem,
+            this.aumentarProductosToolStripMenuItem,
+            this.mostrarProductoToolStripMenuItem});
+            this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(112, 46);
+            this.stockToolStripMenuItem.Text = "Inventario";
+            // 
+            // ingresarProductoToolStripMenuItem
+            // 
+            this.ingresarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.ingresarProductoToolStripMenuItem.Name = "ingresarProductoToolStripMenuItem";
+            this.ingresarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.ingresarProductoToolStripMenuItem.Text = "Registrar Producto";
+            this.ingresarProductoToolStripMenuItem.Click += new System.EventHandler(this.IngresarProductoToolStripMenuItem_Click);
+            // 
+            // darDeBajaProductoToolStripMenuItem
+            // 
+            this.darDeBajaProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.darDeBajaProductoToolStripMenuItem.Name = "darDeBajaProductoToolStripMenuItem";
+            this.darDeBajaProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.darDeBajaProductoToolStripMenuItem.Text = "Disminuir Producto";
+            this.darDeBajaProductoToolStripMenuItem.Click += new System.EventHandler(this.DarDeBajaProductoToolStripMenuItem_Click);
+            // 
+            // aumentarProductosToolStripMenuItem
+            // 
+            this.aumentarProductosToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.aumentarProductosToolStripMenuItem.Name = "aumentarProductosToolStripMenuItem";
+            this.aumentarProductosToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.aumentarProductosToolStripMenuItem.Text = "Aumentar Producto";
+            this.aumentarProductosToolStripMenuItem.Click += new System.EventHandler(this.AumentarProductosToolStripMenuItem_Click);
+            // 
+            // mostrarProductoToolStripMenuItem
+            // 
+            this.mostrarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.mostrarProductoToolStripMenuItem.Name = "mostrarProductoToolStripMenuItem";
+            this.mostrarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.mostrarProductoToolStripMenuItem.Text = "Mostrar Producto";
+            this.mostrarProductoToolStripMenuItem.Click += new System.EventHandler(this.MuestraProductoToolStripMenuItem_Click);
+            // 
+            // administraciónToolStripMenuItem
+            // 
+            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearUsusarioToolStripMenuItem,
+            this.parámetrosToolStripMenuItem3});
+            this.administraciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("administraciónToolStripMenuItem.Image")));
+            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(146, 46);
+            this.administraciónToolStripMenuItem.Text = "Administración";
+            // 
+            // crearUsusarioToolStripMenuItem
+            // 
+            this.crearUsusarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.crearUsusarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarUsuarioToolStripMenuItem,
+            this.eliminarUsuarioToolStripMenuItem});
+            this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
+            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
+            // 
+            // registrarUsuarioToolStripMenuItem
+            // 
+            this.registrarUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
+            this.registrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
+            this.registrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.RegistrarUsuarioToolStripMenuItem_Click);
+            // 
+            // eliminarUsuarioToolStripMenuItem
+            // 
+            this.eliminarUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
+            this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
+            this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem_Click);
+            // 
+            // parámetrosToolStripMenuItem3
+            // 
+            this.parámetrosToolStripMenuItem3.BackColor = System.Drawing.SystemColors.Window;
+            this.parámetrosToolStripMenuItem3.Name = "parámetrosToolStripMenuItem3";
+            this.parámetrosToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.parámetrosToolStripMenuItem3.Text = "Parámetros";
+            // 
+            // muestraDeCaso2
+            // 
+            this.muestraDeCaso2.BackColor = System.Drawing.SystemColors.Window;
+            this.muestraDeCaso2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.muestraDeCaso2.Location = new System.Drawing.Point(4, 53);
+            this.muestraDeCaso2.Margin = new System.Windows.Forms.Padding(4);
+            this.muestraDeCaso2.Name = "muestraDeCaso2";
+            this.muestraDeCaso2.Size = new System.Drawing.Size(972, 433);
+            this.muestraDeCaso2.TabIndex = 1;
+            this.muestraDeCaso2.Load += new System.EventHandler(this.MuestraDeCaso2_Load);
+            // 
+            // registroDeCliente2
+            // 
+            this.registroDeCliente2.BackColor = System.Drawing.SystemColors.Window;
+            this.registroDeCliente2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registroDeCliente2.Location = new System.Drawing.Point(4, 28);
+            this.registroDeCliente2.Margin = new System.Windows.Forms.Padding(4);
+            this.registroDeCliente2.Name = "registroDeCliente2";
+            this.registroDeCliente2.Size = new System.Drawing.Size(972, 458);
+            this.registroDeCliente2.TabIndex = 1;
+            // 
+            // tecnicos1
+            // 
+            this.tecnicos1.BackColor = System.Drawing.SystemColors.Window;
+            this.tecnicos1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tecnicos1.Location = new System.Drawing.Point(5, 29);
+            this.tecnicos1.Margin = new System.Windows.Forms.Padding(5);
+            this.tecnicos1.Name = "tecnicos1";
+            this.tecnicos1.Size = new System.Drawing.Size(970, 456);
+            this.tecnicos1.TabIndex = 1;
+            // 
+            // eliminaciónDeCliente1
+            // 
+            this.eliminaciónDeCliente1.BackColor = System.Drawing.SystemColors.Window;
+            this.eliminaciónDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eliminaciónDeCliente1.Location = new System.Drawing.Point(4, 28);
+            this.eliminaciónDeCliente1.Margin = new System.Windows.Forms.Padding(4);
+            this.eliminaciónDeCliente1.Name = "eliminaciónDeCliente1";
+            this.eliminaciónDeCliente1.Size = new System.Drawing.Size(972, 458);
+            this.eliminaciónDeCliente1.TabIndex = 1;
+            // 
+            // eliminaciónDeTécnico1
+            // 
+            this.eliminaciónDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
+            this.eliminaciónDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eliminaciónDeTécnico1.Location = new System.Drawing.Point(4, 28);
+            this.eliminaciónDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
+            this.eliminaciónDeTécnico1.Name = "eliminaciónDeTécnico1";
+            this.eliminaciónDeTécnico1.Size = new System.Drawing.Size(972, 458);
+            this.eliminaciónDeTécnico1.TabIndex = 1;
+            // 
+            // cierreDeCaso1
+            // 
+            this.cierreDeCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.cierreDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cierreDeCaso1.Location = new System.Drawing.Point(4, 28);
+            this.cierreDeCaso1.Margin = new System.Windows.Forms.Padding(4);
+            this.cierreDeCaso1.Name = "cierreDeCaso1";
+            this.cierreDeCaso1.Size = new System.Drawing.Size(972, 458);
+            this.cierreDeCaso1.TabIndex = 1;
+            // 
+            // registroDeProducto1
+            // 
+            this.registroDeProducto1.BackColor = System.Drawing.SystemColors.Window;
+            this.registroDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registroDeProducto1.Location = new System.Drawing.Point(4, 28);
+            this.registroDeProducto1.Margin = new System.Windows.Forms.Padding(4);
+            this.registroDeProducto1.Name = "registroDeProducto1";
+            this.registroDeProducto1.Size = new System.Drawing.Size(972, 458);
+            this.registroDeProducto1.TabIndex = 1;
+            // 
+            // registroDeCaso1
+            // 
+            this.registroDeCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.registroDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registroDeCaso1.Location = new System.Drawing.Point(4, 28);
+            this.registroDeCaso1.Margin = new System.Windows.Forms.Padding(4);
+            this.registroDeCaso1.Name = "registroDeCaso1";
+            this.registroDeCaso1.Size = new System.Drawing.Size(972, 458);
+            this.registroDeCaso1.TabIndex = 1;
+            // 
+            // disminuciónDeProducto1
+            // 
+            this.disminuciónDeProducto1.BackColor = System.Drawing.SystemColors.Window;
+            this.disminuciónDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.disminuciónDeProducto1.Location = new System.Drawing.Point(4, 28);
+            this.disminuciónDeProducto1.Margin = new System.Windows.Forms.Padding(4);
+            this.disminuciónDeProducto1.Name = "disminuciónDeProducto1";
+            this.disminuciónDeProducto1.Size = new System.Drawing.Size(972, 458);
+            this.disminuciónDeProducto1.TabIndex = 1;
+            // 
+            // aumentoDeProducto1
+            // 
+            this.aumentoDeProducto1.BackColor = System.Drawing.SystemColors.Window;
+            this.aumentoDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.aumentoDeProducto1.Location = new System.Drawing.Point(4, 28);
+            this.aumentoDeProducto1.Margin = new System.Windows.Forms.Padding(4);
+            this.aumentoDeProducto1.Name = "aumentoDeProducto1";
+            this.aumentoDeProducto1.Size = new System.Drawing.Size(972, 458);
+            this.aumentoDeProducto1.TabIndex = 1;
+            // 
+            // registroDeUsuario1
+            // 
+            this.registroDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
+            this.registroDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registroDeUsuario1.Location = new System.Drawing.Point(4, 28);
+            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
+            this.registroDeUsuario1.Name = "registroDeUsuario1";
+            this.registroDeUsuario1.Size = new System.Drawing.Size(972, 458);
+            this.registroDeUsuario1.TabIndex = 1;
+            // 
+            // eliminaciónDeUsuario1
+            // 
+            this.eliminaciónDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
+            this.eliminaciónDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eliminaciónDeUsuario1.Location = new System.Drawing.Point(4, 28);
+            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
+            this.eliminaciónDeUsuario1.Name = "eliminaciónDeUsuario1";
+            this.eliminaciónDeUsuario1.Size = new System.Drawing.Size(972, 458);
+            this.eliminaciónDeUsuario1.TabIndex = 1;
+            // 
+            // modificaciónDeCliente1
+            // 
+            this.modificaciónDeCliente1.BackColor = System.Drawing.SystemColors.Window;
+            this.modificaciónDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modificaciónDeCliente1.Location = new System.Drawing.Point(4, 28);
+            this.modificaciónDeCliente1.Margin = new System.Windows.Forms.Padding(4);
+            this.modificaciónDeCliente1.Name = "modificaciónDeCliente1";
+            this.modificaciónDeCliente1.Size = new System.Drawing.Size(972, 458);
+            this.modificaciónDeCliente1.TabIndex = 1;
+            // 
+            // modificaciónDeTécnico1
+            // 
+            this.modificaciónDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
+            this.modificaciónDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modificaciónDeTécnico1.Location = new System.Drawing.Point(4, 28);
+            this.modificaciónDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
+            this.modificaciónDeTécnico1.Name = "modificaciónDeTécnico1";
+            this.modificaciónDeTécnico1.Size = new System.Drawing.Size(972, 458);
+            this.modificaciónDeTécnico1.TabIndex = 1;
+            // 
+            // cancelaciónDeCaso1
+            // 
+            this.cancelaciónDeCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.cancelaciónDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cancelaciónDeCaso1.Location = new System.Drawing.Point(4, 28);
+            this.cancelaciónDeCaso1.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelaciónDeCaso1.Name = "cancelaciónDeCaso1";
+            this.cancelaciónDeCaso1.Size = new System.Drawing.Size(972, 458);
+            this.cancelaciónDeCaso1.TabIndex = 1;
+            // 
+            // muestraDeCaso1
+            // 
+            this.muestraDeCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.muestraDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.muestraDeCaso1.Location = new System.Drawing.Point(4, 28);
+            this.muestraDeCaso1.Margin = new System.Windows.Forms.Padding(4);
+            this.muestraDeCaso1.Name = "muestraDeCaso1";
+            this.muestraDeCaso1.Size = new System.Drawing.Size(972, 458);
+            this.muestraDeCaso1.TabIndex = 1;
+            // 
+            // muestraDeCliente1
+            // 
+            this.muestraDeCliente1.BackColor = System.Drawing.SystemColors.Window;
+            this.muestraDeCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.muestraDeCliente1.Location = new System.Drawing.Point(4, 28);
+            this.muestraDeCliente1.Margin = new System.Windows.Forms.Padding(4);
+            this.muestraDeCliente1.Name = "muestraDeCliente1";
+            this.muestraDeCliente1.Size = new System.Drawing.Size(972, 458);
+            this.muestraDeCliente1.TabIndex = 2;
+            // 
+            // muestraDeTécnico1
+            // 
+            this.muestraDeTécnico1.BackColor = System.Drawing.SystemColors.Window;
+            this.muestraDeTécnico1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.muestraDeTécnico1.Location = new System.Drawing.Point(4, 28);
+            this.muestraDeTécnico1.Margin = new System.Windows.Forms.Padding(4);
+            this.muestraDeTécnico1.Name = "muestraDeTécnico1";
+            this.muestraDeTécnico1.Size = new System.Drawing.Size(972, 458);
+            this.muestraDeTécnico1.TabIndex = 1;
+            // 
+            // generaciónDeInforme1
+            // 
+            this.generaciónDeInforme1.BackColor = System.Drawing.SystemColors.Window;
+            this.generaciónDeInforme1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.generaciónDeInforme1.Location = new System.Drawing.Point(4, 28);
+            this.generaciónDeInforme1.Margin = new System.Windows.Forms.Padding(4);
+            this.generaciónDeInforme1.Name = "generaciónDeInforme1";
+            this.generaciónDeInforme1.Size = new System.Drawing.Size(972, 458);
+            this.generaciónDeInforme1.TabIndex = 1;
+            // 
+            // vistaDeDetalles1
+            // 
+            this.vistaDeDetalles1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vistaDeDetalles1.Location = new System.Drawing.Point(3, 27);
+            this.vistaDeDetalles1.Name = "vistaDeDetalles1";
+            this.vistaDeDetalles1.Size = new System.Drawing.Size(974, 460);
+            this.vistaDeDetalles1.TabIndex = 1;
+            // 
+            // muestraDeProducto1
+            // 
+            this.muestraDeProducto1.BackColor = System.Drawing.SystemColors.Window;
+            this.muestraDeProducto1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.muestraDeProducto1.Location = new System.Drawing.Point(4, 28);
+            this.muestraDeProducto1.Margin = new System.Windows.Forms.Padding(4);
+            this.muestraDeProducto1.Name = "muestraDeProducto1";
+            this.muestraDeProducto1.Size = new System.Drawing.Size(972, 458);
+            this.muestraDeProducto1.TabIndex = 1;
+            // 
+            // finalizaciónDeCaso1
+            // 
+            this.finalizaciónDeCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.finalizaciónDeCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.finalizaciónDeCaso1.Location = new System.Drawing.Point(3, 27);
+            this.finalizaciónDeCaso1.Name = "finalizaciónDeCaso1";
+            this.finalizaciónDeCaso1.Size = new System.Drawing.Size(974, 460);
+            this.finalizaciónDeCaso1.TabIndex = 1;
+            // 
+            // asignaciónMuestraCaso1
+            // 
+            this.asignaciónMuestraCaso1.BackColor = System.Drawing.SystemColors.Window;
+            this.asignaciónMuestraCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.asignaciónMuestraCaso1.Location = new System.Drawing.Point(3, 27);
+            this.asignaciónMuestraCaso1.Name = "asignaciónMuestraCaso1";
+            this.asignaciónMuestraCaso1.Size = new System.Drawing.Size(974, 460);
+            this.asignaciónMuestraCaso1.TabIndex = 1;
+            // 
+            // asignaciónNúmeroFactura1
+            // 
+            this.asignaciónNúmeroFactura1.BackColor = System.Drawing.SystemColors.Window;
+            this.asignaciónNúmeroFactura1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.asignaciónNúmeroFactura1.Location = new System.Drawing.Point(3, 27);
+            this.asignaciónNúmeroFactura1.Name = "asignaciónNúmeroFactura1";
+            this.asignaciónNúmeroFactura1.Size = new System.Drawing.Size(974, 460);
+            this.asignaciónNúmeroFactura1.TabIndex = 0;
+            // 
+            // asignaciónValorFinal1
+            // 
+            this.asignaciónValorFinal1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.asignaciónValorFinal1.Location = new System.Drawing.Point(3, 27);
+            this.asignaciónValorFinal1.Name = "asignaciónValorFinal1";
+            this.asignaciónValorFinal1.Size = new System.Drawing.Size(974, 460);
+            this.asignaciónValorFinal1.TabIndex = 1;
             // 
             // PantallaPrincipal
             // 
@@ -1729,6 +1917,15 @@
             this.tableLayoutPanel25.ResumeLayout(false);
             this.tableLayoutPanel25.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tabAsignarProducto.ResumeLayout(false);
+            this.tabAsignarValorFinal.ResumeLayout(false);
+            this.tabNúmeroFactura.ResumeLayout(false);
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
+            this.tableLayoutPanel27.ResumeLayout(false);
+            this.tableLayoutPanel27.PerformLayout();
+            this.tableLayoutPanel28.ResumeLayout(false);
+            this.tableLayoutPanel28.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1858,7 +2055,21 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.Label label23;
         private FinalizaciónDeCaso finalizaciónDeCaso1;
-        
+        private System.Windows.Forms.ToolStripMenuItem asignarProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarValorFinalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarNúmeroDeFacturaToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabAsignarProducto;
+        private System.Windows.Forms.TabPage tabAsignarValorFinal;
+        private System.Windows.Forms.TabPage tabNúmeroFactura;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private Módulo_Casos.AsignaciónMuestraCaso asignaciónMuestraCaso1;
+        private Módulo_Casos.AsignaciónNúmeroFactura asignaciónNúmeroFactura1;
+        private System.Windows.Forms.Label label26;
+        private Módulo_Casos.AsignaciónValorFinal asignaciónValorFinal1;
     }
 }
 

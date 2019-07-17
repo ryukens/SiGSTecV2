@@ -172,5 +172,20 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabFinalizarCaso);
         }
+
+        private void AsignarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabAsignarProducto);
+        }
+
+        private void AsignarNúmeroDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabNúmeroFactura);
+        }
+
+        private void AsignarValorFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabAsignarValorFinal);
+        }
     }
 }
