@@ -1,6 +1,6 @@
 ﻿namespace proyectoPantalla
 {
-    partial class EliminaciónDeTécnico
+    partial class DarDeBajaTécnico
     {
         /// <summary> 
         /// Required designer variable.
@@ -171,7 +171,7 @@
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
-            // EliminaciónDeTécnico
+            // DarDeBajaTécnico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
