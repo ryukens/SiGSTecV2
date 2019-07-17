@@ -117,10 +117,10 @@
     <Compile Include="FinalizaciónDeCaso.Designer.cs">
       <DependentUpon>FinalizaciónDeCaso.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuestraDeProducto.cs">
+    <Compile Include="Módulo Inventario\MuestraDeProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MuestraDeProducto.Designer.cs">
+    <Compile Include="Módulo Inventario\MuestraDeProducto.Designer.cs">
       <DependentUpon>MuestraDeProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenDeFacturación.cs">
@@ -159,16 +159,16 @@
     <Compile Include="MuestraDeCaso.Designer.cs">
       <DependentUpon>MuestraDeCaso.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuestraDeCliente.cs">
+    <Compile Include="Módulo Clientes\MuestraDeCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MuestraDeCliente.Designer.cs">
+    <Compile Include="Módulo Clientes\MuestraDeCliente.Designer.cs">
       <DependentUpon>MuestraDeCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuestraDeTécnico.cs">
+    <Compile Include="Módulo Técnicos\MuestraDeTécnico.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MuestraDeTécnico.Designer.cs">
+    <Compile Include="Módulo Técnicos\MuestraDeTécnico.Designer.cs">
       <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
     </Compile>
     <Compile Include="Módulo Casos\CancelaciónDeCaso.cs">
@@ -183,10 +183,10 @@
     <Compile Include="DarDeBajaTécnico.Designer.cs">
       <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminaciónDeUsuario.cs">
+    <Compile Include="Módulo Administración\EliminaciónDeUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EliminaciónDeUsuario.Designer.cs">
+    <Compile Include="Módulo Administración\EliminaciónDeUsuario.Designer.cs">
       <DependentUpon>EliminaciónDeUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneraciónDeInforme.cs">
@@ -206,6 +206,12 @@
     </Compile>
     <Compile Include="SelecciónDeCliente.Designer.cs">
       <DependentUpon>SelecciónDeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecciónDeProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelecciónDeProductos.Designer.cs">
+      <DependentUpon>SelecciónDeProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="SelecciónDeTécnico.cs">
       <SubType>Form</SubType>
@@ -286,10 +292,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sigstecDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="VistaDeDetalles.cs">
+    <Compile Include="Módulo Estadísticas\VistaDeDetalles.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VistaDeDetalles.Designer.cs">
+    <Compile Include="Módulo Estadísticas\VistaDeDetalles.Designer.cs">
       <DependentUpon>VistaDeDetalles.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CambioDeContraseña.resx">
@@ -313,7 +319,7 @@
     <EmbeddedResource Include="FinalizaciónDeCaso.resx">
       <DependentUpon>FinalizaciónDeCaso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MuestraDeProducto.resx">
+    <EmbeddedResource Include="Módulo Inventario\MuestraDeProducto.resx">
       <DependentUpon>MuestraDeProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenDeFacturación.resx">
@@ -334,10 +340,10 @@
     <EmbeddedResource Include="MuestraDeCaso.resx">
       <DependentUpon>MuestraDeCaso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MuestraDeCliente.resx">
+    <EmbeddedResource Include="Módulo Clientes\MuestraDeCliente.resx">
       <DependentUpon>MuestraDeCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MuestraDeTécnico.resx">
+    <EmbeddedResource Include="Módulo Técnicos\MuestraDeTécnico.resx">
       <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Casos\CancelaciónDeCaso.resx">
@@ -346,7 +352,7 @@
     <EmbeddedResource Include="DarDeBajaTécnico.resx">
       <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminaciónDeUsuario.resx">
+    <EmbeddedResource Include="Módulo Administración\EliminaciónDeUsuario.resx">
       <DependentUpon>EliminaciónDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneraciónDeInforme.resx">
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelecciónDeCliente.resx">
       <DependentUpon>SelecciónDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecciónDeProductos.resx">
+      <DependentUpon>SelecciónDeProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelecciónDeTécnico.resx">
       <DependentUpon>SelecciónDeTécnico.cs</DependentUpon>
@@ -404,7 +413,7 @@
     <EmbeddedResource Include="DisminuciónDeProducto.resx">
       <DependentUpon>DisminuciónDeProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VistaDeDetalles.resx">
+    <EmbeddedResource Include="Módulo Estadísticas\VistaDeDetalles.resx">
       <DependentUpon>VistaDeDetalles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
