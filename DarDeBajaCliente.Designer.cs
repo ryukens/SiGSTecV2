@@ -1,6 +1,6 @@
 ﻿namespace proyectoPantalla
 {
-    partial class EliminaciónDeCliente
+    partial class DarDeBajaCliente
     {
         /// <summary> 
         /// Required designer variable.
@@ -166,13 +166,13 @@
             this.dgvEliminar.Size = new System.Drawing.Size(471, 327);
             this.dgvEliminar.TabIndex = 6;
             // 
-            // EliminaciónDeCliente
+            // DarDeBajaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "EliminaciónDeCliente";
+            this.Name = "DarDeBajaCliente";
             this.Size = new System.Drawing.Size(636, 417);
             this.Load += new System.EventHandler(this.EliminarCliente_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

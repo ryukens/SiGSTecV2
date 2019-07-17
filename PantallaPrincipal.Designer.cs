@@ -82,7 +82,7 @@
             this.tabEliminarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.eliminaciónDeCliente1 = new proyectoPantalla.EliminaciónDeCliente();
+            this.eliminaciónDeCliente1 = new proyectoPantalla.DarDeBajaCliente();
             this.tabBajaTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -1810,7 +1810,7 @@
         private ModificaciónDeTécnico modificaciónDeTécnico1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.ToolStripMenuItem cancelarCasoToolStripMenuItem;
-        private EliminaciónDeCliente eliminaciónDeCliente1;
+        private DarDeBajaCliente eliminaciónDeCliente1;
         private EliminaciónDeUsuario eliminaciónDeUsuario1;
         private EliminaciónDeTécnico eliminaciónDeTécnico1;
         private System.Windows.Forms.TabPage tabCancelarCaso;

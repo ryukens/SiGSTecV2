@@ -245,11 +245,11 @@
     <Compile Include="RegistroDeTécnico.Designer.cs">
       <DependentUpon>RegistroDeTécnico.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminaciónDeCliente.cs">
+    <Compile Include="DarDeBajaCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EliminaciónDeCliente.Designer.cs">
-      <DependentUpon>EliminaciónDeCliente.cs</DependentUpon>
+    <Compile Include="DarDeBajaCliente.Designer.cs">
+      <DependentUpon>DarDeBajaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistroDeCaso.cs">
       <SubType>UserControl</SubType>
@@ -374,8 +374,8 @@
     <EmbeddedResource Include="RegistroDeTécnico.resx">
       <DependentUpon>RegistroDeTécnico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminaciónDeCliente.resx">
-      <DependentUpon>EliminaciónDeCliente.cs</DependentUpon>
+    <EmbeddedResource Include="DarDeBajaCliente.resx">
+      <DependentUpon>DarDeBajaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroDeCaso.resx">
       <DependentUpon>RegistroDeCaso.cs</DependentUpon>
