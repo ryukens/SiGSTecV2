@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace proyectoPantalla
 {
-    public partial class EliminaciónDeTécnico : UserControl
+    public partial class DarDeBajaTécnico : UserControl
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
-        public EliminaciónDeTécnico(TabControl tabControl, TabPage tabInicio)
+        public DarDeBajaTécnico(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public EliminaciónDeTécnico()
+        public DarDeBajaTécnico()
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;

@@ -38,17 +38,17 @@ namespace proyectoPantalla
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dgvEliminar.DataSource = dt;
-            dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvEliminar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvEliminar.Columns[0].HeaderText = "Tipo";
-            dgvEliminar.Columns[1].HeaderText = "Nombre";
-            dgvEliminar.Columns[2].HeaderText = "Cuenta";
-            dgvEliminar.Columns[3].HeaderText = "Identificación";
-            dgvEliminar.Columns[4].HeaderText = "SLA";
+            dgvBajar.DataSource = dt;
+            dgvBajar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvBajar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvBajar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvBajar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvBajar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvBajar.Columns[0].HeaderText = "Tipo";
+            dgvBajar.Columns[1].HeaderText = "Nombre";
+            dgvBajar.Columns[2].HeaderText = "Cuenta";
+            dgvBajar.Columns[3].HeaderText = "Identificación";
+            dgvBajar.Columns[4].HeaderText = "SLA";
 
         }
 
@@ -91,7 +91,7 @@ namespace proyectoPantalla
 
                 String consulta1 = "delete from persona where identificacion = @identificacion;";
                 SqlCommand comando1 = new SqlCommand(consulta1, conexion);
-                comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[3].Value.ToString());
+                comando1.Parameters.AddWithValue("@identificacion", dgvBajar.CurrentRow.Cells[3].Value.ToString());
 
                 comando1.ExecuteNonQuery();
 
@@ -111,17 +111,17 @@ namespace proyectoPantalla
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cuenta";
-                dgvEliminar.Columns[3].HeaderText = "Identificación";
-                dgvEliminar.Columns[4].HeaderText = "SLA";
+                dgvBajar.DataSource = dt;
+                dgvBajar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvBajar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[0].HeaderText = "Tipo";
+                dgvBajar.Columns[1].HeaderText = "Nombre";
+                dgvBajar.Columns[2].HeaderText = "Cuenta";
+                dgvBajar.Columns[3].HeaderText = "Identificación";
+                dgvBajar.Columns[4].HeaderText = "SLA";
             }
             else if (cbBuscar.SelectedIndex == 1) // cedula
             {
@@ -129,17 +129,17 @@ namespace proyectoPantalla
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cuenta";
-                dgvEliminar.Columns[3].HeaderText = "Identificación";
-                dgvEliminar.Columns[4].HeaderText = "SLA";
+                dgvBajar.DataSource = dt;
+                dgvBajar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvBajar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[0].HeaderText = "Tipo";
+                dgvBajar.Columns[1].HeaderText = "Nombre";
+                dgvBajar.Columns[2].HeaderText = "Cuenta";
+                dgvBajar.Columns[3].HeaderText = "Identificación";
+                dgvBajar.Columns[4].HeaderText = "SLA";
             }
             else if (cbBuscar.SelectedIndex == 2) // ruc
             {
@@ -147,17 +147,17 @@ namespace proyectoPantalla
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cuenta";
-                dgvEliminar.Columns[3].HeaderText = "Identificación";
-                dgvEliminar.Columns[4].HeaderText = "SLA";
+                dgvBajar.DataSource = dt;
+                dgvBajar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvBajar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[0].HeaderText = "Tipo";
+                dgvBajar.Columns[1].HeaderText = "Nombre";
+                dgvBajar.Columns[2].HeaderText = "Cuenta";
+                dgvBajar.Columns[3].HeaderText = "Identificación";
+                dgvBajar.Columns[4].HeaderText = "SLA";
             }
             else // cuenta
             {
@@ -165,17 +165,17 @@ namespace proyectoPantalla
                 SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cuenta";
-                dgvEliminar.Columns[3].HeaderText = "Identificación";
-                dgvEliminar.Columns[4].HeaderText = "SLA";
+                dgvBajar.DataSource = dt;
+                dgvBajar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvBajar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvBajar.Columns[0].HeaderText = "Tipo";
+                dgvBajar.Columns[1].HeaderText = "Nombre";
+                dgvBajar.Columns[2].HeaderText = "Cuenta";
+                dgvBajar.Columns[3].HeaderText = "Identificación";
+                dgvBajar.Columns[4].HeaderText = "SLA";
             }
         }
 
