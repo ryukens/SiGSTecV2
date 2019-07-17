@@ -159,10 +159,10 @@
     <Compile Include="MuestraDeTécnico.Designer.cs">
       <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
     </Compile>
-    <Compile Include="CancelaciónDeCaso.cs">
+    <Compile Include="Módulo Casos\CancelaciónDeCaso.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CancelaciónDeCaso.Designer.cs">
+    <Compile Include="Módulo Casos\CancelaciónDeCaso.Designer.cs">
       <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
     </Compile>
     <Compile Include="EliminaciónDeTécnico.cs">
@@ -322,7 +322,7 @@
     <EmbeddedResource Include="MuestraDeTécnico.resx">
       <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CancelaciónDeCaso.resx">
+    <EmbeddedResource Include="Módulo Casos\CancelaciónDeCaso.resx">
       <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminaciónDeTécnico.resx">
