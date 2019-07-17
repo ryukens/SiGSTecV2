@@ -39,6 +39,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lFactura = new System.Windows.Forms.Label();
             this.tbFactura = new System.Windows.Forms.TextBox();
+            this.bFinalizar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -138,6 +139,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.bCancelar, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bFinalizar, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(113, 421);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -194,6 +196,16 @@
             this.tbFactura.Size = new System.Drawing.Size(350, 20);
             this.tbFactura.TabIndex = 1;
             // 
+            // bFinalizar
+            // 
+            this.bFinalizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bFinalizar.Location = new System.Drawing.Point(3, 3);
+            this.bFinalizar.Name = "bFinalizar";
+            this.bFinalizar.Size = new System.Drawing.Size(267, 36);
+            this.bFinalizar.TabIndex = 1;
+            this.bFinalizar.Text = "Finalizar";
+            this.bFinalizar.UseVisualStyleBackColor = true;
+            // 
             // FinalizaciónDeCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,5 +240,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lFactura;
         private System.Windows.Forms.TextBox tbFactura;
+        private System.Windows.Forms.Button bFinalizar;
     }
 }
