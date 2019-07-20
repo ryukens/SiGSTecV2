@@ -16,5 +16,21 @@ namespace proyectoPantalla.Módulo_Casos
         {
             InitializeComponent();
         }
+
+        TabControl tabControl;
+        TabPage tabInicio;
+        public AsignaciónNúmeroFactura(TabControl tabControl, TabPage tabInicio)
+        {
+            InitializeComponent();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabInicio);
+            tbBuscar.ResetText();
+            tbFactura.ResetText();
+        }
     }
 }

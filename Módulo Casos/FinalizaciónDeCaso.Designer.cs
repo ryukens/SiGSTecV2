@@ -36,10 +36,10 @@
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.bCancelar = new System.Windows.Forms.Button();
+            this.bFinalizar = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lFactura = new System.Windows.Forms.Label();
             this.tbFactura = new System.Windows.Forms.TextBox();
-            this.bFinalizar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -160,6 +160,16 @@
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
+            // bFinalizar
+            // 
+            this.bFinalizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bFinalizar.Location = new System.Drawing.Point(3, 3);
+            this.bFinalizar.Name = "bFinalizar";
+            this.bFinalizar.Size = new System.Drawing.Size(267, 36);
+            this.bFinalizar.TabIndex = 1;
+            this.bFinalizar.Text = "Finalizar";
+            this.bFinalizar.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -185,7 +195,7 @@
             this.lFactura.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.lFactura.Size = new System.Drawing.Size(185, 40);
             this.lFactura.TabIndex = 0;
-            this.lFactura.Text = "Número de Factura:";
+            this.lFactura.Text = "QUE VA AQUI?";
             this.lFactura.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tbFactura
@@ -195,16 +205,6 @@
             this.tbFactura.Name = "tbFactura";
             this.tbFactura.Size = new System.Drawing.Size(350, 20);
             this.tbFactura.TabIndex = 1;
-            // 
-            // bFinalizar
-            // 
-            this.bFinalizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bFinalizar.Location = new System.Drawing.Point(3, 3);
-            this.bFinalizar.Name = "bFinalizar";
-            this.bFinalizar.Size = new System.Drawing.Size(267, 36);
-            this.bFinalizar.TabIndex = 1;
-            this.bFinalizar.Text = "Finalizar";
-            this.bFinalizar.UseVisualStyleBackColor = true;
             // 
             // FinalizaciónDeCaso
             // 

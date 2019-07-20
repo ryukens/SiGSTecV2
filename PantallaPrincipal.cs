@@ -23,17 +23,17 @@ namespace proyectoPantalla
         public PantallaPrincipal()
         {
             InitializeComponent();
-            
+
             TopMost = false;
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
-                
+
         }
 
-        
+
         private void NuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabRegCliente);
@@ -65,20 +65,20 @@ namespace proyectoPantalla
             tabControl.SelectTab(tabRegCaso);
         }
 
-        
+
         private void ModificarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabCerrarCaso);
             registroDeCaso1.llenarCBVendedor();
-                       
+
         }
 
         private void EliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabRegProd);
-            
+
         }
-           
+
         private void ModificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabModTécnico);
@@ -122,8 +122,8 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
             inicioDeSesión.Show();
+            this.Dispose();
         }
 
         private void GenerarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,13 +136,13 @@ namespace proyectoPantalla
             tabControl.SelectTab(tabVerDetalle);
         }
 
-        
+
         private void MuestraProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabMostrarProducto);
         }
 
-        
+
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

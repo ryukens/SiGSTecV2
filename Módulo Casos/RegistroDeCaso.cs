@@ -15,22 +15,18 @@ namespace proyectoPantalla
     {
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog = SIGSTEC; Integrated Security = True");
 
-        
+
         public RegistroDeCaso()
         {
             InitializeComponent();
             timer1.Enabled = true;
             cbSLA.SelectedIndex = 0;
             llenarCBVendedor();
-            if(cbVendedor.Items.Count != 0)
+            if (cbVendedor.Items.Count != 0)
             {
                 cbVendedor.SelectedIndex = 0;
-
             }
-
-
         }
-
 
         public void llenarCBVendedor()
         {
@@ -46,7 +42,7 @@ namespace proyectoPantalla
 
             conexion.Close();
 
-            if(cbVendedor.Items.Count > 0)
+            if (cbVendedor.Items.Count > 0)
             {
                 cbVendedor.SelectedIndex = 0;
             }
@@ -75,7 +71,7 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -117,14 +113,14 @@ namespace proyectoPantalla
 
 
         }
-        
+
         private void BAceptar_Click(object sender, EventArgs e)
         {
             conexion.Open();
 
 
             //String consulta1 = "insert into caso(IDUSUARIO, IDTECNICO, IDCLIENTE, NUMERO, FECHA, SLA, INFORME_INICIAL, SECTOR, ESTADO, PARTE_PATH, INFORME_FINAL) values((select IDPERSONA from PERSONA where NOMBRE = @USUARIO), @IDTECNICO, @IDCLIENTE, @NUMERO, @FECHA, @SLA, @INFORME_INICIAL, @SECTOR, 'ABIERTO', 'No asignado', 'No Asigando'); ";
-            
+
             String consulta1 = "insert into caso(IDUSUARIO, IDTECNICO, IDCLIENTE, NUMERO, FECHA, SLA, INFORME_INICIAL, SECTOR, ESTADO, PARTE_PATH, INFORME_FINAL) values((select u.idusuario from usuario as u join persona as p on u.idpersona = p.idpersona where p.nombre like @IDUSUARIO), @IDTECNICO, @IDCLIENTE, @NUMERO, @FECHA, @SLA, @INFORME_INICIAL, @SECTOR, 'ABIERTO', 'No asignado', 'No Asigando');";
 
 
@@ -178,7 +174,7 @@ namespace proyectoPantalla
 
         }
 
-       
+
 
         private void CbVendedor_TextChanged(object sender, EventArgs e)
         {

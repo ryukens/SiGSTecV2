@@ -17,7 +17,7 @@ namespace proyectoPantalla
     {
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog =SIGSTEC; Integrated Security = True");
 
-        
+
         static string RandomString(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -90,7 +90,6 @@ namespace proyectoPantalla
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Panel5_Paint(object sender, PaintEventArgs e)
@@ -135,7 +134,7 @@ namespace proyectoPantalla
 
 
                 conexion.Close();
-                
+
                 MessageBox.Show("Usuario Registrado Correctamente", "Usuario Registrado");
             }
         }
@@ -289,6 +288,11 @@ namespace proyectoPantalla
         private void CbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }

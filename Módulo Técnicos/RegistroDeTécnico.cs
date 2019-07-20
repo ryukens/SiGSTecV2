@@ -192,16 +192,7 @@ namespace proyectoPantalla
             }
         }
 
-        private void TextBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void TbCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -284,7 +275,18 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-
+            if (formatoTelefono(tbTelefono2.Text))
+            {
+                errorProvider1.SetError(tbTelefono2, null);
+                tbTelefono2.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
+                    "- Iniciar con prefijo (02 - 07)\r\n" +
+                    "- Tener 9 dígitos");
+                tbTelefono2.ForeColor = Color.Red;
+            }
         }
 
         private void TextBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -342,6 +344,96 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+        }
+
+        public static bool formatoTelefono(string telefono)
+        {
+            String formato;
+            formato = "^0([2-7])([0-9]{7})$";
+            if (Regex.IsMatch(telefono, formato))
+            {
+                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool formatoCelular(string celular)
+        {
+            String formato;
+            formato = "^09([0-9]{8})$";
+            if (Regex.IsMatch(celular, formato))
+            {
+                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void TbTelefono1_TextChanged(object sender, EventArgs e)
+        {
+            if (formatoTelefono(tbTelefono1.Text))
+            {
+                errorProvider1.SetError(tbTelefono1, null);
+                tbTelefono1.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                    "- Iniciar con prefijo (02 - 07)\r\n" +
+                    "- Tener 9 dígitos");
+                tbTelefono1.ForeColor = Color.Red;
+            }
+        }
+
+        private void TbCelular1_TextChanged(object sender, EventArgs e)
+        {
+            if (formatoCelular(tbCelular1.Text))
+            {
+                errorProvider1.SetError(tbCelular1, null);
+                tbCelular1.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
+                    "- Iniciar con prefijo 09\r\n" +
+                    "- Tener 10 dígitos");
+                tbCelular1.ForeColor = Color.Red;
+            }
+        }
+
+        private void TbCelular2_TextChanged(object sender, EventArgs e)
+        {
+            if (formatoCelular(tbCelular2.Text))
+            {
+                errorProvider1.SetError(tbCelular2, null);
+                tbCelular2.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
+                    "- Iniciar con prefijo 09\r\n" +
+                    "- Tener 10 dígitos");
+                tbCelular2.ForeColor = Color.Red;
+            }
         }
     }
 }

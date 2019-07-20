@@ -113,6 +113,7 @@ namespace proyectoPantalla
         private void Button1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
+            tbBuscar.ResetText();
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
