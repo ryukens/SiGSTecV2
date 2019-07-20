@@ -37,8 +37,9 @@ namespace proyectoPantalla
 
             conexion.Open();
 
-            String consulta1 = "insert into persona (nombre, correo, identificacion) values (@nombre, @correo,@identificacion); insert into cliente ( idpersona, nombre_contacto, descripcion_contacto,sla,cuenta,tipo_pago, tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @nombre_contacto, @descripcion_contacto, @sla, @cuenta, @tipo_pago, @tipo); ";
-            SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+            
+            SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
+            comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
             comando1.Parameters.AddWithValue("@correo", tbCorreo.Text);
             comando1.Parameters.AddWithValue("@identificacion", tbCedula.Text);
@@ -74,9 +75,8 @@ namespace proyectoPantalla
             if (!tbTelefono1.Text.Trim().Equals(""))
             {
 
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CONVENCIONAL1');";
-                SqlCommand comando2 = new SqlCommand(consulta1, conexion);
-
+                SqlCommand comando2 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
+                comando2.CommandType = CommandType.StoredProcedure;
                 comando2.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
                 comando2.ExecuteNonQuery();
             }
@@ -84,9 +84,8 @@ namespace proyectoPantalla
             if (!tbTelefono2.Text.Trim().Equals(""))
             {
 
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CONVENCIONAL2');";
-                SqlCommand comando3 = new SqlCommand(consulta1, conexion);
-
+                SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
+                comando3.CommandType = CommandType.StoredProcedure;
                 comando3.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
                 comando3.ExecuteNonQuery();
             }
@@ -94,18 +93,16 @@ namespace proyectoPantalla
             if (!tbCelular1.Text.Trim().Equals(""))
             {
 
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CELULAR1');";
-                SqlCommand comando4 = new SqlCommand(consulta1, conexion);
-
+                SqlCommand comando4 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
+                comando4.CommandType = CommandType.StoredProcedure;
                 comando4.Parameters.AddWithValue("@telefono", tbCelular1.Text);
                 comando4.ExecuteNonQuery();
             }
             if (!tbCelular2.Text.Trim().Equals(""))
             {
 
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CELULAR2');";
-                SqlCommand comando5 = new SqlCommand(consulta1, conexion);
-
+                SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
+                comando5.CommandType = CommandType.StoredProcedure;
                 comando5.Parameters.AddWithValue("@telefono", tbCelular2.Text);
                 comando5.ExecuteNonQuery();
             }
