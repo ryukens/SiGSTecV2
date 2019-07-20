@@ -55,5 +55,11 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabInicio);
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AsignaciónDeProductos asignaciónDeProductos = new AsignaciónDeProductos();
+            asignaciónDeProductos.ShowDialog();
+        }
     }
 }
