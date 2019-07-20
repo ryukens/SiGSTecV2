@@ -187,5 +187,15 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabAsignarValorFinal);
         }
+
+        private void MSAlzarCliente_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabAlzarCliente);
+        }
+
+        private void MSAlzarTécnico_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabAlzarTécnico);
+        }
     }
 }

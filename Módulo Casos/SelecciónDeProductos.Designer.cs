@@ -62,16 +62,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.55901F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.44099F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 371);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(702, 441);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvDisminuir);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(95, 37);
+            this.panel3.Location = new System.Drawing.Point(108, 45);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(454, 290);
+            this.panel3.Size = new System.Drawing.Size(520, 352);
             this.panel3.TabIndex = 4;
             // 
             // dgvDisminuir
@@ -83,15 +83,15 @@
             this.dgvDisminuir.ReadOnly = true;
             this.dgvDisminuir.RowHeadersWidth = 51;
             this.dgvDisminuir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisminuir.Size = new System.Drawing.Size(454, 290);
+            this.dgvDisminuir.Size = new System.Drawing.Size(520, 352);
             this.dgvDisminuir.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 37);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 45);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(86, 290);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(99, 352);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // lBuscar
@@ -102,9 +102,9 @@
             this.lBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.lBuscar.Location = new System.Drawing.Point(3, 0);
             this.lBuscar.Name = "lBuscar";
-            this.lBuscar.Size = new System.Drawing.Size(86, 34);
+            this.lBuscar.Size = new System.Drawing.Size(99, 42);
             this.lBuscar.TabIndex = 8;
-            this.lBuscar.Text = "Número de orden de entrega:";
+            this.lBuscar.Text = "¿QUE VA AQUÍ??";
             this.lBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lBuscar.UseMnemonic = false;
             // 
@@ -118,19 +118,19 @@
             this.tableLayoutPanel2.Controls.Add(this.bAceptar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(95, 333);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(108, 403);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(454, 35);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 35);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // bAsignar
             // 
             this.bAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAsignar.Location = new System.Drawing.Point(154, 3);
+            this.bAsignar.Location = new System.Drawing.Point(176, 3);
             this.bAsignar.Name = "bAsignar";
-            this.bAsignar.Size = new System.Drawing.Size(145, 29);
+            this.bAsignar.Size = new System.Drawing.Size(167, 29);
             this.bAsignar.TabIndex = 8;
             this.bAsignar.Text = "Asignar Productos";
             this.bAsignar.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAceptar.Location = new System.Drawing.Point(3, 3);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(145, 29);
+            this.bAceptar.Size = new System.Drawing.Size(167, 29);
             this.bAceptar.TabIndex = 6;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(305, 3);
+            this.bCancelar.Location = new System.Drawing.Point(349, 3);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(146, 29);
+            this.bCancelar.Size = new System.Drawing.Size(168, 29);
             this.bCancelar.TabIndex = 7;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -161,16 +161,18 @@
             // tbBuscar
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbBuscar.Location = new System.Drawing.Point(95, 3);
+            this.tbBuscar.Location = new System.Drawing.Point(108, 3);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(454, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(520, 20);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.Text = "¿¿QUE VA EN ESTA PARTE DE LA PANTALLA??";
             // 
             // SelecciónDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 371);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(702, 441);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(630, 410);
             this.Name = "SelecciónDeProductos";
