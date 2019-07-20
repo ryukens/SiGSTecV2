@@ -36,7 +36,6 @@ namespace proyectoPantalla
             }
 
             conexion.Open();
-
             SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
             comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
@@ -72,6 +71,7 @@ namespace proyectoPantalla
 
             if (!tbTelefono1.Text.Trim().Equals(""))
             {
+
                 SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
                 comando3.CommandType = CommandType.StoredProcedure;
                 comando3.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
