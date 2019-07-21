@@ -87,12 +87,6 @@
     <Compile Include="Correo.Designer.cs">
       <DependentUpon>Correo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Módulo Casos\AsignaciónDeProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Módulo Casos\AsignaciónDeProductos.Designer.cs">
-      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Módulo Casos\AsignaciónMuestraCaso.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -331,9 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Correo.resx">
       <DependentUpon>Correo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Módulo Casos\AsignaciónDeProductos.resx">
-      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Casos\AsignaciónMuestraCaso.resx">
       <DependentUpon>AsignaciónMuestraCaso.cs</DependentUpon>
