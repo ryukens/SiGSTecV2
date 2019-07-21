@@ -29,13 +29,13 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            mostrarDatosCompleto();
         }
 
         public void mostrarDatosCompleto()
         {
-
-            String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_CLIENTE", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvBajar.DataSource = dt;
@@ -85,20 +85,15 @@ namespace proyectoPantalla
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea eliminar este cliente?", "Eliminar Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Dar de Baja este Cliente?", "Dar de Baja Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 conexion.Open();
-
-                String consulta1 = "delete from persona where identificacion = @identificacion;";
-                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@identificacion", dgvBajar.CurrentRow.Cells[3].Value.ToString());
-
                 comando1.ExecuteNonQuery();
-
-
                 conexion.Close();
-
-                MessageBox.Show("Cliente Eliminado Correctamente", "Cliente Eliminado");
+                MessageBox.Show("Cliente Dado de Baja Correctamente", "Cliente Dado de Baja");
                 mostrarDatosCompleto();
             }
         }
