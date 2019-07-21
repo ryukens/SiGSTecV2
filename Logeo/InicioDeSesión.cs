@@ -44,7 +44,8 @@ namespace proyectoPantalla
             PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(this);
             conexion.Open();
             String consulta1 = "select [password] , salt, idusuario from usuario where username = @username; ";
-            SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+            SqlCommand comando1 = new SqlCommand("SP_INICIO_DE_SESION", conexion);
+            comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@username", tbUsuario.Text);
             SqlDataReader dr = comando1.ExecuteReader();
             while (dr.Read())

@@ -56,7 +56,9 @@ namespace proyectoPantalla
         {
             conexion.Open();
             String consulta = "update usuario set [password] = @pass where idusuario = @id; ";
-            SqlCommand comando = new SqlCommand(consulta, conexion);
+            SqlCommand comando = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
             comando.Parameters.AddWithValue("@pass", MD5Hash(salt + tbContraseña1.Text));
             comando.Parameters.AddWithValue("@id", idUsuario);
 

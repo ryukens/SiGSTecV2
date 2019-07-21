@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -73,7 +73,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tbBuscar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(117, 5);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -89,7 +89,7 @@
             "Nombre",
             "Cédula de Ciudadanía"});
             this.cbBuscar.Location = new System.Drawing.Point(5, 5);
-            this.cbBuscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cbBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(183, 24);
             this.cbBuscar.TabIndex = 0;
@@ -98,10 +98,11 @@
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbBuscar.Location = new System.Drawing.Point(198, 5);
-            this.tbBuscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(350, 22);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbBuscar_KeyPress);
             // 
             // lBuscar
             // 
@@ -122,7 +123,7 @@
             this.dgvAlzar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlzar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlzar.Location = new System.Drawing.Point(117, 56);
-            this.dgvAlzar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvAlzar.Margin = new System.Windows.Forms.Padding(5);
             this.dgvAlzar.Name = "dgvAlzar";
             this.dgvAlzar.ReadOnly = true;
             this.dgvAlzar.RowHeadersWidth = 51;
@@ -139,7 +140,7 @@
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(117, 470);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -151,18 +152,19 @@
             // 
             this.bAlzar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAlzar.Location = new System.Drawing.Point(5, 5);
-            this.bAlzar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bAlzar.Margin = new System.Windows.Forms.Padding(5);
             this.bAlzar.Name = "bAlzar";
             this.bAlzar.Size = new System.Drawing.Size(266, 33);
             this.bAlzar.TabIndex = 0;
             this.bAlzar.Text = "Dar De Alta";
             this.bAlzar.UseVisualStyleBackColor = true;
+            this.bAlzar.Click += new System.EventHandler(this.BAlzar_Click);
             // 
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(280, 4);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(269, 35);
             this.bCancelar.TabIndex = 1;
@@ -175,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DarDeAltaTécnico";
             this.Size = new System.Drawing.Size(751, 518);
             this.tableLayoutPanel1.ResumeLayout(false);

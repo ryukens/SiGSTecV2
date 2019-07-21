@@ -24,6 +24,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
 
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
+            
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
