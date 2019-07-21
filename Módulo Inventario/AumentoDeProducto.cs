@@ -24,10 +24,7 @@ namespace proyectoPantalla
             mostrarProducto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-        }
-
-        
-
+        }     
         public AumentoDeProducto()
         {
             InitializeComponent(); cbBuscar.SelectedIndex = 0;
