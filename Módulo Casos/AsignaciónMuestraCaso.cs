@@ -12,11 +12,6 @@ namespace proyectoPantalla.Módulo_Casos
 {
     public partial class AsignaciónMuestraCaso : UserControl
     {
-        public AsignaciónMuestraCaso()
-        {
-            InitializeComponent();
-        }
-
         TabControl tabControl;
         TabPage tabInicio;
         public AsignaciónMuestraCaso(TabControl tabControl, TabPage tabInicio)

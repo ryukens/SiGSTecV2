@@ -24,7 +24,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-            
+
 
             String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA WHERE c.estado = 'ABIERTO' order by c.estado;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
@@ -48,12 +48,6 @@ namespace proyectoPantalla
             dgvCerrar.Columns[6].HeaderText = "Sector";
             dgvCerrar.Columns[7].HeaderText = "ID Cliente";
             this.dgvCerrar.Columns[7].Visible = false;
-        }
-
-        public CierreDeCaso()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
         }
 
         public void actualizarAnterior()
@@ -80,7 +74,7 @@ namespace proyectoPantalla
             String idcaso = dgvCerrar.CurrentRow.Cells[7].Value.ToString();
             String nombreTecnico = "";
             String nombreVendedor = "";
-          
+
 
             String consulta2 = "select p.nombre from PERSONA as p join TECNICO as t on p.idpersona = t.idpersona join CASO as c on c.IDTECNICO = t.IDTECNICO where idcaso = @IDCASO";
             SqlCommand comando2 = new SqlCommand(consulta2, conexion);

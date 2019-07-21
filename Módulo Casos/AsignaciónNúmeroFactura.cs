@@ -12,11 +12,6 @@ namespace proyectoPantalla.Módulo_Casos
 {
     public partial class AsignaciónNúmeroFactura : UserControl
     {
-        public AsignaciónNúmeroFactura()
-        {
-            InitializeComponent();
-        }
-
         TabControl tabControl;
         TabPage tabInicio;
         public AsignaciónNúmeroFactura(TabControl tabControl, TabPage tabInicio)
