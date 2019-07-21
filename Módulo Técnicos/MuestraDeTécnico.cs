@@ -20,11 +20,14 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            SqlCommand command = new SqlCommand("SP_MUESTRA_TECNICOS", conexion);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            conexion.Open();
+
             DataTable dt = new DataTable();
-            sda.Fill(dt);
+
+            dt.Load(command.ExecuteReader());
             dgvMostrar.DataSource = dt;
             dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -36,14 +39,35 @@ namespace proyectoPantalla
             dgvMostrar.Columns[2].HeaderText = "Cédula de Ciudadanía";
             dgvMostrar.Columns[3].HeaderText = "Sector";
             dgvMostrar.Columns[4].HeaderText = "Alcance";
+            conexion.Close();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+
+
         }
 
         public MuestraDeTécnico()
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgvMostrar.DataSource = dt;
+            dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMostrar.Columns[0].HeaderText = "Estado";
+            dgvMostrar.Columns[1].HeaderText = "Nombre";
+            dgvMostrar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvMostrar.Columns[3].HeaderText = "Sector";
+            dgvMostrar.Columns[4].HeaderText = "Alcance";
+            conexion.Close();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -56,10 +80,12 @@ namespace proyectoPantalla
             if (cbBuscar.SelectedIndex == 0)
             {
 
-                String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where nombre like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+
                 dgvMostrar.DataSource = dt;
                 dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -77,11 +103,12 @@ namespace proyectoPantalla
 
 
 
-
-                String consulta = "select t.estado, p.nombre, p.identificacion,  t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where p.identificacion like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_IDENTIFICACION", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+
                 dgvMostrar.DataSource = dt;
                 dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
