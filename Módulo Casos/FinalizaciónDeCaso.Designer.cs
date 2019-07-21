@@ -195,7 +195,7 @@
             this.lFactura.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.lFactura.Size = new System.Drawing.Size(185, 40);
             this.lFactura.TabIndex = 0;
-            this.lFactura.Text = "QUE VA AQUI?";
+            this.lFactura.Text = "Número De Factura";
             this.lFactura.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tbFactura

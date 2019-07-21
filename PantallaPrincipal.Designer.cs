@@ -37,18 +37,18 @@
             this.MSRegCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.MSModCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.MSBajarCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSAlzarCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tecnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MSRegTécnico = new System.Windows.Forms.ToolStripMenuItem();
             this.MSModTécnico = new System.Windows.Forms.ToolStripMenuItem();
             this.MSBajarTécnico = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSAlzarTécnico = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarTécnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarValorFinalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarNúmeroDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,11 +73,9 @@
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.muestraDeCaso2 = new proyectoPantalla.MuestraDeCaso(tabControl, tabInicio);
             this.tabRegCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.registroDeCliente2 = new proyectoPantalla.RegistroDeCliente(tabControl, tabInicio);
             this.tabRegTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,15 +83,12 @@
             this.tabEliminarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.eliminaciónDeCliente1 = new proyectoPantalla.DarDeBajaCliente(tabControl, tabInicio);
             this.tabBajaTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.eliminaciónDeTécnico1 = new proyectoPantalla.DarDeBajaTécnico(tabControl, tabInicio);
             this.tabCerrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.cierreDeCaso1 = new proyectoPantalla.CierreDeCaso(tabControl, tabInicio);
             this.tabRegProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,84 +96,61 @@
             this.tabRegCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.registroDeCaso1 = new proyectoPantalla.RegistroDeCaso(tabControl, tabInicio);
             this.tabDismProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.disminuciónDeProducto1 = new proyectoPantalla.DisminuciónDeProducto(tabControl, tabInicio);
             this.tabAumProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
+            this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto();
             this.tabRegUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.registroDeUsuario1 = new proyectoPantalla.RegistroDeUsuario(tabControl, tabInicio);
             this.tabEliminarUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
-            this.eliminaciónDeUsuario1 = new proyectoPantalla.EliminaciónDeUsuario(tabControl, tabInicio);
             this.tabModCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente(tabControl, tabInicio);
+            this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente();
             this.tabModTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.modificaciónDeTécnico1 = new proyectoPantalla.ModificaciónDeTécnico(tabControl, tabInicio);
             this.tabCancelarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
-            this.cancelaciónDeCaso1 = new proyectoPantalla.CancelaciónDeCaso(tabControl, tabInicio);
             this.tabMostrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
-            this.muestraDeCaso1 = new proyectoPantalla.MuestraDeCaso(tabControl, tabInicio);
             this.tabMostrarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.muestraDeCliente1 = new proyectoPantalla.MuestraDeCliente(tabControl, tabInicio);
             this.label18 = new System.Windows.Forms.Label();
             this.tabMostrarTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
-            this.muestraDeTécnico1 = new proyectoPantalla.MuestraDeTécnico(tabControl, tabInicio);
+            this.muestraDeTécnico1 = new proyectoPantalla.MuestraDeTécnico();
             this.tabGenInforme = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
-            this.generaciónDeInforme1 = new proyectoPantalla.GeneraciónDeInforme(tabControl, tabInicio);
             this.tabVerDetalle = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
-            this.vistaDeDetalles1 = new proyectoPantalla.VistaDeDetalles(tabControl, tabInicio);
             this.tabMostrarProducto = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
+            this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto();
             this.tabFinalizarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
-            this.finalizaciónDeCaso1 = new proyectoPantalla.FinalizaciónDeCaso(tabControl, tabInicio);
             this.tabAsignarProducto = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
-            this.asignaciónMuestraCaso1 = new proyectoPantalla.Módulo_Casos.AsignaciónMuestraCaso(tabControl, tabInicio);
-            this.tabAsignarValorFinal = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tabNúmeroFactura = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
-            this.asignaciónNúmeroFactura1 = new proyectoPantalla.Módulo_Casos.AsignaciónNúmeroFactura(tabControl, tabInicio);
-            this.label26 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.MSAlzarCliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.MSAlzarTécnico = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAlzarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.label27 = new System.Windows.Forms.Label();
             this.tabAlzarTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
-            this.darDeAltaTécnico1 = new proyectoPantalla.DarDeAltaTécnico(tabControl, tabInicio);
-            this.darDeAltaCliente1 = new proyectoPantalla.DarDeAltaCliente(tabControl, tabInicio);
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
@@ -230,15 +202,11 @@
             this.tableLayoutPanel25.SuspendLayout();
             this.tabAsignarProducto.SuspendLayout();
             this.tableLayoutPanel28.SuspendLayout();
-            this.tabAsignarValorFinal.SuspendLayout();
-            this.tableLayoutPanel26.SuspendLayout();
-            this.tabNúmeroFactura.SuspendLayout();
-            this.tableLayoutPanel27.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
             this.tabAlzarCliente.SuspendLayout();
             this.tableLayoutPanel29.SuspendLayout();
             this.tabAlzarTécnico.SuspendLayout();
             this.tableLayoutPanel30.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // label22
@@ -323,6 +291,14 @@
             this.MSBajarCliente.Text = "Dar De Baja Cliente";
             this.MSBajarCliente.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
             // 
+            // MSAlzarCliente
+            // 
+            this.MSAlzarCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.MSAlzarCliente.Name = "MSAlzarCliente";
+            this.MSAlzarCliente.Size = new System.Drawing.Size(208, 24);
+            this.MSAlzarCliente.Text = "Dar De Alta Cliente";
+            this.MSAlzarCliente.Click += new System.EventHandler(this.MSAlzarCliente_Click);
+            // 
             // mostrarClienteToolStripMenuItem
             // 
             this.mostrarClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
@@ -368,6 +344,14 @@
             this.MSBajarTécnico.Text = "Dar De Baja Técnico";
             this.MSBajarTécnico.Click += new System.EventHandler(this.EliminarToolStripMenuItem1_Click);
             // 
+            // MSAlzarTécnico
+            // 
+            this.MSAlzarTécnico.BackColor = System.Drawing.SystemColors.Window;
+            this.MSAlzarTécnico.Name = "MSAlzarTécnico";
+            this.MSAlzarTécnico.Size = new System.Drawing.Size(212, 24);
+            this.MSAlzarTécnico.Text = "Dar De Alta Técnico";
+            this.MSAlzarTécnico.Click += new System.EventHandler(this.MSAlzarTécnico_Click);
+            // 
             // mostrarTécnicoToolStripMenuItem
             // 
             this.mostrarTécnicoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
@@ -383,11 +367,9 @@
             this.nuevoToolStripMenuItem2,
             this.modificarToolStripMenuItem2,
             this.asignarProductoToolStripMenuItem,
-            this.asignarValorFinalToolStripMenuItem,
-            this.asignarNúmeroDeFacturaToolStripMenuItem,
+            this.finalizarCasoToolStripMenuItem,
             this.cancelarCasoToolStripMenuItem,
-            this.mostrarCasoToolStripMenuItem,
-            this.finalizarCasoToolStripMenuItem});
+            this.mostrarCasoToolStripMenuItem});
             this.casoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("casoToolStripMenuItem.Image")));
             this.casoToolStripMenuItem.Name = "casoToolStripMenuItem";
             this.casoToolStripMenuItem.Size = new System.Drawing.Size(84, 46);
@@ -397,7 +379,7 @@
             // 
             this.nuevoToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
             this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(258, 24);
+            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
             this.nuevoToolStripMenuItem2.Text = "Registrar Caso";
             this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.NuevoToolStripMenuItem2_Click);
             // 
@@ -405,7 +387,7 @@
             // 
             this.modificarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(258, 24);
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
             this.modificarToolStripMenuItem2.Text = "Cerrar Caso";
             this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.ModificarToolStripMenuItem2_Click);
             // 
@@ -413,31 +395,15 @@
             // 
             this.asignarProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.asignarProductoToolStripMenuItem.Name = "asignarProductoToolStripMenuItem";
-            this.asignarProductoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
-            this.asignarProductoToolStripMenuItem.Text = "Asignar Producto";
+            this.asignarProductoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.asignarProductoToolStripMenuItem.Text = "Asignar Productos";
             this.asignarProductoToolStripMenuItem.Click += new System.EventHandler(this.AsignarProductoToolStripMenuItem_Click);
-            // 
-            // asignarValorFinalToolStripMenuItem
-            // 
-            this.asignarValorFinalToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.asignarValorFinalToolStripMenuItem.Name = "asignarValorFinalToolStripMenuItem";
-            this.asignarValorFinalToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
-            this.asignarValorFinalToolStripMenuItem.Text = "Asignar Valor Final";
-            this.asignarValorFinalToolStripMenuItem.Click += new System.EventHandler(this.AsignarValorFinalToolStripMenuItem_Click);
-            // 
-            // asignarNúmeroDeFacturaToolStripMenuItem
-            // 
-            this.asignarNúmeroDeFacturaToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.asignarNúmeroDeFacturaToolStripMenuItem.Name = "asignarNúmeroDeFacturaToolStripMenuItem";
-            this.asignarNúmeroDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
-            this.asignarNúmeroDeFacturaToolStripMenuItem.Text = "Asignar Número de Factura";
-            this.asignarNúmeroDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.AsignarNúmeroDeFacturaToolStripMenuItem_Click);
             // 
             // cancelarCasoToolStripMenuItem
             // 
             this.cancelarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.cancelarCasoToolStripMenuItem.Name = "cancelarCasoToolStripMenuItem";
-            this.cancelarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.cancelarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.cancelarCasoToolStripMenuItem.Text = "Cancelar Caso";
             this.cancelarCasoToolStripMenuItem.Click += new System.EventHandler(this.CancelarCasoToolStripMenuItem_Click);
             // 
@@ -445,7 +411,7 @@
             // 
             this.mostrarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.mostrarCasoToolStripMenuItem.Name = "mostrarCasoToolStripMenuItem";
-            this.mostrarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.mostrarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.mostrarCasoToolStripMenuItem.Text = "Mostrar Caso";
             this.mostrarCasoToolStripMenuItem.Click += new System.EventHandler(this.MostrarCasoToolStripMenuItem_Click);
             // 
@@ -453,7 +419,7 @@
             // 
             this.finalizarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.finalizarCasoToolStripMenuItem.Name = "finalizarCasoToolStripMenuItem";
-            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.finalizarCasoToolStripMenuItem.Text = "Finalizar Caso";
             this.finalizarCasoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarCasoToolStripMenuItem_Click);
             // 
@@ -626,8 +592,6 @@
             this.tabControl.Controls.Add(this.tabMostrarProducto);
             this.tabControl.Controls.Add(this.tabFinalizarCaso);
             this.tabControl.Controls.Add(this.tabAsignarProducto);
-            this.tabControl.Controls.Add(this.tabAsignarValorFinal);
-            this.tabControl.Controls.Add(this.tabNúmeroFactura);
             this.tabControl.Controls.Add(this.tabAlzarCliente);
             this.tabControl.Controls.Add(this.tabAlzarTécnico);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1184,7 +1148,7 @@
             this.registroDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
             this.registroDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registroDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
+            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.registroDeUsuario1.Name = "registroDeUsuario1";
             this.registroDeUsuario1.Size = new System.Drawing.Size(972, 458);
             this.registroDeUsuario1.TabIndex = 1;
@@ -1231,7 +1195,7 @@
             this.eliminaciónDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
             this.eliminaciónDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eliminaciónDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
+            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eliminaciónDeUsuario1.Name = "eliminaciónDeUsuario1";
             this.eliminaciónDeUsuario1.Size = new System.Drawing.Size(972, 458);
             this.eliminaciónDeUsuario1.TabIndex = 1;
@@ -1740,124 +1704,6 @@
             this.asignaciónMuestraCaso1.Size = new System.Drawing.Size(974, 460);
             this.asignaciónMuestraCaso1.TabIndex = 1;
             // 
-            // tabAsignarValorFinal
-            // 
-            this.tabAsignarValorFinal.Controls.Add(this.tableLayoutPanel26);
-            this.tabAsignarValorFinal.Location = new System.Drawing.Point(4, 5);
-            this.tabAsignarValorFinal.Name = "tabAsignarValorFinal";
-            this.tabAsignarValorFinal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAsignarValorFinal.Size = new System.Drawing.Size(986, 496);
-            this.tabAsignarValorFinal.TabIndex = 24;
-            this.tabAsignarValorFinal.Text = resources.GetString("tabAsignarValorFinal.Text");
-            this.tabAsignarValorFinal.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel26
-            // 
-            this.tableLayoutPanel26.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel26.ColumnCount = 1;
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
-
-            this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
-            this.tableLayoutPanel26.RowCount = 2;
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(980, 490);
-            this.tableLayoutPanel26.TabIndex = 0;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label25.Location = new System.Drawing.Point(3, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(974, 24);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Asignación de Valor Final";
-            // 
-            // asignaciónValorFinal1
-            // 
-            // 
-            // tabNúmeroFactura
-            // 
-            this.tabNúmeroFactura.Controls.Add(this.tableLayoutPanel27);
-            this.tabNúmeroFactura.Location = new System.Drawing.Point(4, 5);
-            this.tabNúmeroFactura.Name = "tabNúmeroFactura";
-            this.tabNúmeroFactura.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNúmeroFactura.Size = new System.Drawing.Size(986, 496);
-            this.tabNúmeroFactura.TabIndex = 25;
-            this.tabNúmeroFactura.Text = resources.GetString("tabNúmeroFactura.Text");
-            this.tabNúmeroFactura.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel27
-            // 
-            this.tableLayoutPanel27.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel27.ColumnCount = 1;
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel27.Controls.Add(this.asignaciónNúmeroFactura1, 0, 1);
-            this.tableLayoutPanel27.Controls.Add(this.label26, 0, 0);
-            this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
-            this.tableLayoutPanel27.RowCount = 2;
-            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(980, 490);
-            this.tableLayoutPanel27.TabIndex = 1;
-            // 
-            // asignaciónNúmeroFactura1
-            // 
-            this.asignaciónNúmeroFactura1.BackColor = System.Drawing.SystemColors.Window;
-            this.asignaciónNúmeroFactura1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.asignaciónNúmeroFactura1.Location = new System.Drawing.Point(3, 27);
-            this.asignaciónNúmeroFactura1.Name = "asignaciónNúmeroFactura1";
-            this.asignaciónNúmeroFactura1.Size = new System.Drawing.Size(974, 460);
-            this.asignaciónNúmeroFactura1.TabIndex = 0;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Location = new System.Drawing.Point(3, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(974, 24);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Asignación De Número De Factura";
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel14, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.tabControl, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
-            this.tableLayoutPanel15.TabIndex = 1;
-            // 
-            // MSAlzarCliente
-            // 
-            this.MSAlzarCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.MSAlzarCliente.Name = "MSAlzarCliente";
-            this.MSAlzarCliente.Size = new System.Drawing.Size(208, 24);
-            this.MSAlzarCliente.Text = "Dar De Alta Cliente";
-            this.MSAlzarCliente.Click += new System.EventHandler(this.MSAlzarCliente_Click);
-            // 
-            // MSAlzarTécnico
-            // 
-            this.MSAlzarTécnico.BackColor = System.Drawing.SystemColors.Window;
-            this.MSAlzarTécnico.Name = "MSAlzarTécnico";
-            this.MSAlzarTécnico.Size = new System.Drawing.Size(212, 24);
-            this.MSAlzarTécnico.Text = "Dar De Alta Técnico";
-            this.MSAlzarTécnico.Click += new System.EventHandler(this.MSAlzarTécnico_Click);
-            // 
             // tabAlzarCliente
             // 
             this.tabAlzarCliente.Controls.Add(this.tableLayoutPanel29);
@@ -1894,6 +1740,14 @@
             this.label27.Size = new System.Drawing.Size(974, 24);
             this.label27.TabIndex = 0;
             this.label27.Text = "Alza De Cliente";
+            // 
+            // darDeAltaCliente1
+            // 
+            this.darDeAltaCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.darDeAltaCliente1.Location = new System.Drawing.Point(3, 27);
+            this.darDeAltaCliente1.Name = "darDeAltaCliente1";
+            this.darDeAltaCliente1.Size = new System.Drawing.Size(974, 460);
+            this.darDeAltaCliente1.TabIndex = 1;
             // 
             // tabAlzarTécnico
             // 
@@ -1940,13 +1794,21 @@
             this.darDeAltaTécnico1.Size = new System.Drawing.Size(974, 460);
             this.darDeAltaTécnico1.TabIndex = 1;
             // 
-            // darDeAltaCliente1
+            // tableLayoutPanel15
             // 
-            this.darDeAltaCliente1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.darDeAltaCliente1.Location = new System.Drawing.Point(3, 27);
-            this.darDeAltaCliente1.Name = "darDeAltaCliente1";
-            this.darDeAltaCliente1.Size = new System.Drawing.Size(974, 460);
-            this.darDeAltaCliente1.TabIndex = 1;
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel14, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tabControl, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
+            this.tableLayoutPanel15.TabIndex = 1;
             // 
             // PantallaPrincipal
             // 
@@ -2037,19 +1899,13 @@
             this.tabAsignarProducto.ResumeLayout(false);
             this.tableLayoutPanel28.ResumeLayout(false);
             this.tableLayoutPanel28.PerformLayout();
-            this.tabAsignarValorFinal.ResumeLayout(false);
-            this.tableLayoutPanel26.ResumeLayout(false);
-            this.tableLayoutPanel26.PerformLayout();
-            this.tabNúmeroFactura.ResumeLayout(false);
-            this.tableLayoutPanel27.ResumeLayout(false);
-            this.tableLayoutPanel27.PerformLayout();
-            this.tableLayoutPanel15.ResumeLayout(false);
             this.tabAlzarCliente.ResumeLayout(false);
             this.tableLayoutPanel29.ResumeLayout(false);
             this.tableLayoutPanel29.PerformLayout();
             this.tabAlzarTécnico.ResumeLayout(false);
             this.tableLayoutPanel30.ResumeLayout(false);
             this.tableLayoutPanel30.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2180,19 +2036,10 @@
         private System.Windows.Forms.Label label23;
         private FinalizaciónDeCaso finalizaciónDeCaso1;
         private System.Windows.Forms.ToolStripMenuItem asignarProductoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarValorFinalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarNúmeroDeFacturaToolStripMenuItem;
         private System.Windows.Forms.TabPage tabAsignarProducto;
-        private System.Windows.Forms.TabPage tabAsignarValorFinal;
-        private System.Windows.Forms.TabPage tabNúmeroFactura;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
         private Módulo_Casos.AsignaciónMuestraCaso asignaciónMuestraCaso1;
-        private Módulo_Casos.AsignaciónNúmeroFactura asignaciónNúmeroFactura1;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarCliente;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarTécnico;
         private System.Windows.Forms.TabPage tabAlzarCliente;
