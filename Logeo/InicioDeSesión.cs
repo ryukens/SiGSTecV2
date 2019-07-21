@@ -106,7 +106,10 @@ namespace proyectoPantalla
 
         }
 
+        private void TbUsuario_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 
 }

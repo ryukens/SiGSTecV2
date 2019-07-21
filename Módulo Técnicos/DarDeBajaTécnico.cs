@@ -62,7 +62,7 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea eliminar este técnico?", "Eliminar Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea dar de baja este técnico?", "Dar de Baja a Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 conexion.Open();
 
