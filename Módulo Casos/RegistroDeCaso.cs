@@ -112,36 +112,63 @@ namespace proyectoPantalla
 
         private void BAceptar_Click(object sender, EventArgs e)
         {
-            conexion.Open();
 
+            bool flagVacios = ValidarCamposVacios();
+            if (flagVacios == true)
+            {
+                conexion.Open();
 
-            //String consulta1 = "insert into caso(IDUSUARIO, IDTECNICO, IDCLIENTE, NUMERO, FECHA, SLA, INFORME_INICIAL, SECTOR, ESTADO, PARTE_PATH, INFORME_FINAL) values((select IDPERSONA from PERSONA where NOMBRE = @USUARIO), @IDTECNICO, @IDCLIENTE, @NUMERO, @FECHA, @SLA, @INFORME_INICIAL, @SECTOR, 'ABIERTO', 'No asignado', 'No Asigando'); ";
+                int idt = int.Parse(lIdTecnico.Text);
+                int idc = int.Parse(lIdCliente.Text);
+                String nombreu = lIdUsuario.Text;
 
-            int idt = int.Parse(lIdTecnico.Text);
-            int idc = int.Parse(lIdCliente.Text);
-            String nombreu = lIdUsuario.Text;
-
-            SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CASO", conexion);
-            comando1.CommandType = CommandType.StoredProcedure;
-            comando1.Parameters.AddWithValue("@IDTECNICO", idt);
-            comando1.Parameters.AddWithValue("@IDUSUARIO", cbVendedor.GetItemText(cbVendedor.SelectedItem));
-            comando1.Parameters.AddWithValue("@IDCLIENTE", idc);
-            comando1.Parameters.AddWithValue("@NUMERO", lCaso.Text);
-            comando1.Parameters.AddWithValue("@FECHA", lFechaActual.Text);
-            comando1.Parameters.AddWithValue("@SLA", cbSLA.Text);
-            comando1.Parameters.AddWithValue("@INFORME_INICIAL", tbInformeInicial.Text);
-            comando1.Parameters.AddWithValue("@SECTOR", tbSector.Text);
-
-            comando1.ExecuteNonQuery();
-
-
-            MessageBox.Show("Caso Registrado Correctamente", "Caso Registrado");
-
-            conexion.Close();
+                SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CASO", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
+                comando1.Parameters.AddWithValue("@IDTECNICO", idt);
+                comando1.Parameters.AddWithValue("@IDUSUARIO", cbVendedor.GetItemText(cbVendedor.SelectedItem));
+                comando1.Parameters.AddWithValue("@IDCLIENTE", idc);
+                comando1.Parameters.AddWithValue("@NUMERO", lCaso.Text);
+                comando1.Parameters.AddWithValue("@FECHA", lFechaActual.Text);
+                comando1.Parameters.AddWithValue("@SLA", cbSLA.Text);
+                comando1.Parameters.AddWithValue("@INFORME_INICIAL", tbInformeInicial.Text);
+                comando1.Parameters.AddWithValue("@SECTOR", tbSector.Text);
+                comando1.ExecuteNonQuery();
+                MessageBox.Show("Caso Registrado Correctamente", "Caso Registrado");
+            }
+            else
+            {
+                conexion.Close();
+                limpiarCampos();
+                MessageBox.Show("Existen campos vacios", "Campos Vacios");
+            }
 
             limpiarCampos();
-
         }
+
+
+        public bool ValidarCamposVacios()
+        {
+            bool flag = true;
+            if (tbSector.Text.Equals(""))
+                {
+                    flag = false;
+                }
+            if (lClienteSeleccionado.Text.Equals("CLIENTE SIN SELECCIONAR"))
+            {
+                flag = false;
+            }
+            if (lTecnicoSeleccionado.Text.Equals("TÉCNICO SIN SELECCIONAR"))
+            {
+                flag = false;
+            }
+
+
+            return flag;
+        }
+
+      
+
+
 
         private void LClienteSeleccionado_Click(object sender, EventArgs e)
         {
