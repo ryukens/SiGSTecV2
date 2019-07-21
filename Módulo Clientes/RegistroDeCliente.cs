@@ -36,8 +36,6 @@ namespace proyectoPantalla
             }
 
             conexion.Open();
-
-            
             SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
             comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
@@ -57,7 +55,6 @@ namespace proyectoPantalla
             {
                 comando1.Parameters.AddWithValue("@tipo_pago", rbDefinido.Text);
             }
-
             if (rbEmpresa.Checked)
             {
                 comando1.Parameters.AddWithValue("@tipo", rbEmpresa.Text);
@@ -70,41 +67,38 @@ namespace proyectoPantalla
             comando1.ExecuteNonQuery();
 
 
-
+            String consulta1;
 
             if (!tbTelefono1.Text.Trim().Equals(""))
             {
 
-                SqlCommand comando2 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
-                comando2.CommandType = CommandType.StoredProcedure;
-                comando2.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
-                comando2.ExecuteNonQuery();
+                SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
+                comando3.CommandType = CommandType.StoredProcedure;
+                comando3.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
+                comando3.ExecuteNonQuery();
             }
 
             if (!tbTelefono2.Text.Trim().Equals(""))
             {
-
-                SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
-                comando3.CommandType = CommandType.StoredProcedure;
-                comando3.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
-                comando3.ExecuteNonQuery();
+                SqlCommand comando4 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
+                comando4.CommandType = CommandType.StoredProcedure;
+                comando4.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
+                comando4.ExecuteNonQuery();
             }
 
             if (!tbCelular1.Text.Trim().Equals(""))
             {
-
-                SqlCommand comando4 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
-                comando4.CommandType = CommandType.StoredProcedure;
-                comando4.Parameters.AddWithValue("@telefono", tbCelular1.Text);
-                comando4.ExecuteNonQuery();
+                SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
+                comando5.CommandType = CommandType.StoredProcedure;
+                comando5.Parameters.AddWithValue("@telefono", tbCelular1.Text);
+                comando5.ExecuteNonQuery();
             }
             if (!tbCelular2.Text.Trim().Equals(""))
             {
-
-                SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
-                comando5.CommandType = CommandType.StoredProcedure;
-                comando5.Parameters.AddWithValue("@telefono", tbCelular2.Text);
-                comando5.ExecuteNonQuery();
+                SqlCommand comando6 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
+                comando6.CommandType = CommandType.StoredProcedure;
+                comando6.Parameters.AddWithValue("@telefono", tbCelular2.Text);
+                comando6.ExecuteNonQuery();
             }
 
             conexion.Close();
