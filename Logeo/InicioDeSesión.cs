@@ -97,7 +97,7 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            new PantallaPrincipal().Show();
+            new PantallaPrincipal(this).Show();
             //Application.Exit();
         }
 
