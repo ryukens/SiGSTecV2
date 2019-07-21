@@ -31,14 +31,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.lFechaFinal = new System.Windows.Forms.Label();
-            this.lFechaInicio = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bCancelar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lFechaFinal = new System.Windows.Forms.Label();
             this.bAceptar = new System.Windows.Forms.Button();
+            this.lFechaInicio = new System.Windows.Forms.Label();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -84,30 +84,6 @@
             this.panel26.Size = new System.Drawing.Size(25, 33);
             this.panel26.TabIndex = 12;
             // 
-            // lFechaFinal
-            // 
-            this.lFechaFinal.AutoSize = true;
-            this.lFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lFechaFinal.Location = new System.Drawing.Point(225, 0);
-            this.lFechaFinal.Name = "lFechaFinal";
-            this.lFechaFinal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lFechaFinal.Size = new System.Drawing.Size(105, 33);
-            this.lFechaFinal.TabIndex = 1;
-            this.lFechaFinal.Text = "Fecha Final:";
-            this.lFechaFinal.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lFechaInicio
-            // 
-            this.lFechaInicio.AutoSize = true;
-            this.lFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lFechaInicio.Location = new System.Drawing.Point(3, 0);
-            this.lFechaInicio.Name = "lFechaInicio";
-            this.lFechaInicio.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lFechaInicio.Size = new System.Drawing.Size(105, 33);
-            this.lFechaInicio.TabIndex = 1;
-            this.lFechaInicio.Text = "Fecha Inicial:";
-            this.lFechaInicio.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -119,7 +95,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(555, 33);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
@@ -133,34 +109,6 @@
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
-            // 
-            // bAceptar
-            // 
-            this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAceptar.Location = new System.Drawing.Point(447, 3);
-            this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(105, 27);
-            this.bAceptar.TabIndex = 1;
-            this.bAceptar.Text = "Aceptar";
-            this.bAceptar.UseVisualStyleBackColor = true;
-            this.bAceptar.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // dtFechaInicio
-            // 
-            this.dtFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtFechaInicio.Location = new System.Drawing.Point(114, 3);
-            this.dtFechaInicio.Name = "dtFechaInicio";
-            this.dtFechaInicio.Size = new System.Drawing.Size(105, 20);
-            this.dtFechaInicio.TabIndex = 16;
-            this.dtFechaInicio.Value = new System.DateTime(2019, 7, 6, 21, 49, 10, 0);
-            // 
-            // dtFechaFinal
-            // 
-            this.dtFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtFechaFinal.Location = new System.Drawing.Point(336, 3);
-            this.dtFechaFinal.Name = "dtFechaFinal";
-            this.dtFechaFinal.Size = new System.Drawing.Size(105, 20);
-            this.dtFechaFinal.TabIndex = 17;
             // 
             // tableLayoutPanel3
             // 
@@ -182,6 +130,64 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(555, 33);
             this.tableLayoutPanel3.TabIndex = 18;
+            // 
+            // lFechaFinal
+            // 
+            this.lFechaFinal.AutoSize = true;
+            this.lFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lFechaFinal.Location = new System.Drawing.Point(225, 0);
+            this.lFechaFinal.Name = "lFechaFinal";
+            this.lFechaFinal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lFechaFinal.Size = new System.Drawing.Size(105, 33);
+            this.lFechaFinal.TabIndex = 1;
+            this.lFechaFinal.Text = "Fecha Final:";
+            this.lFechaFinal.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // bAceptar
+            // 
+            this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bAceptar.Location = new System.Drawing.Point(447, 3);
+            this.bAceptar.Name = "bAceptar";
+            this.bAceptar.Size = new System.Drawing.Size(105, 27);
+            this.bAceptar.TabIndex = 1;
+            this.bAceptar.Text = "Aceptar";
+            this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // lFechaInicio
+            // 
+            this.lFechaInicio.AutoSize = true;
+            this.lFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lFechaInicio.Location = new System.Drawing.Point(3, 0);
+            this.lFechaInicio.Name = "lFechaInicio";
+            this.lFechaInicio.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lFechaInicio.Size = new System.Drawing.Size(105, 33);
+            this.lFechaInicio.TabIndex = 1;
+            this.lFechaInicio.Text = "Fecha Inicial:";
+            this.lFechaInicio.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dtFechaInicio
+            // 
+            this.dtFechaInicio.CustomFormat = "yyyy-MM-dd";
+            this.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtFechaInicio.Location = new System.Drawing.Point(114, 3);
+            this.dtFechaInicio.Name = "dtFechaInicio";
+            this.dtFechaInicio.Size = new System.Drawing.Size(105, 20);
+            this.dtFechaInicio.TabIndex = 16;
+            this.dtFechaInicio.Value = new System.DateTime(2019, 7, 6, 21, 49, 0, 0);
+            // 
+            // dtFechaFinal
+            // 
+            this.dtFechaFinal.CustomFormat = "yyyy-MM-dd";
+            this.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtFechaFinal.Location = new System.Drawing.Point(336, 3);
+            this.dtFechaFinal.Name = "dtFechaFinal";
+            this.dtFechaFinal.Size = new System.Drawing.Size(105, 20);
+            this.dtFechaFinal.TabIndex = 17;
+            this.dtFechaFinal.Value = new System.DateTime(2019, 7, 21, 12, 14, 0, 0);
+            this.dtFechaFinal.ValueChanged += new System.EventHandler(this.DtFechaFinal_ValueChanged);
             // 
             // dataGridView1
             // 
