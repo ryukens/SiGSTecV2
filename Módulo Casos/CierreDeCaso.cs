@@ -24,7 +24,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-            
+
 
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -48,12 +48,6 @@ namespace proyectoPantalla
             dgvCerrar.Columns[6].HeaderText = "Sector";
             dgvCerrar.Columns[7].HeaderText = "ID Cliente";
             this.dgvCerrar.Columns[7].Visible = false;
-        }
-
-        public CierreDeCaso()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
         }
 
         public void actualizarAnterior()
@@ -80,7 +74,7 @@ namespace proyectoPantalla
             String idcaso = dgvCerrar.CurrentRow.Cells[7].Value.ToString();
             String nombreTecnico = "";
             String nombreVendedor = "";
-          
+
 
             
             SqlCommand comando2 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO1", conexion);

@@ -93,7 +93,7 @@
             this.tabCerrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.cierreDeCaso1 = new proyectoPantalla.CierreDeCaso();
+            this.cierreDeCaso1 = new proyectoPantalla.CierreDeCaso(tabControl, tabInicio);
             this.tabRegProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
             this.tabRegUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.registroDeUsuario1 = new proyectoPantalla.RegistroDeUsuario();
+            this.registroDeUsuario1 = new proyectoPantalla.RegistroDeUsuario(tabControl, tabInicio);
             this.tabEliminarUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             this.tabCancelarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
-            this.cancelaciónDeCaso1 = new proyectoPantalla.CancelaciónDeCaso();
+            this.cancelaciónDeCaso1 = new proyectoPantalla.CancelaciónDeCaso(tabControl, tabInicio);
             this.tabMostrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
@@ -156,7 +156,7 @@
             this.tabFinalizarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
-            this.finalizaciónDeCaso1 = new proyectoPantalla.FinalizaciónDeCaso();
+            this.finalizaciónDeCaso1 = new proyectoPantalla.FinalizaciónDeCaso(tabControl, tabInicio);
             this.tabAsignarProducto = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();

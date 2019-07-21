@@ -82,10 +82,15 @@ namespace proyectoPantalla
         }
 
 
-        public RegistroDeUsuario()
+
+        TabControl tabControl;
+        TabPage tabInicio;
+        public RegistroDeUsuario(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             cbTipo.SelectedIndex = 0;
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
         }
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
@@ -293,6 +298,7 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            tabControl.SelectTab(tabInicio);
         }
     }
 }
