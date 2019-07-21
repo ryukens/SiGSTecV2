@@ -160,7 +160,6 @@
             this.bAsignación.TabIndex = 1;
             this.bAsignación.Text = "Asignar Valor Final";
             this.bAsignación.UseVisualStyleBackColor = true;
-            this.bAsignación.Click += new System.EventHandler(this.BAsignación_Click);
             // 
             // AsignaciónValorFinal
             // 
