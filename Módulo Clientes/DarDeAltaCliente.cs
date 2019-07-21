@@ -12,10 +12,10 @@ namespace proyectoPantalla
 {
     public partial class DarDeAltaCliente : UserControl
     {
-        public DarDeAltaCliente()
-        {
-            InitializeComponent();
-        }
+        //public DarDeAltaCliente()
+        //{
+         //   InitializeComponent();
+        //}
 
         TabControl tabControl;
         TabPage tabInicio;

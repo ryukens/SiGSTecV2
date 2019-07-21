@@ -64,8 +64,9 @@ namespace proyectoPantalla
 
             conexion.Open();
 
-            String consulta1 = "insert into producto (codigo,descripcion, cantidad, precio) values (@codigo,@descripcion,@cantidad,CAST(@precio AS FLOAT));";
-            SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+            
+            SqlCommand comando1 = new SqlCommand("SP_REGISTRO_PRODUCTO", conexion);
+            comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@codigo", tbCodigo.Text);
             comando1.Parameters.AddWithValue("@descripcion", tbDescripcion.Text);
             comando1.Parameters.AddWithValue("@cantidad", nudCantidad.Value);
