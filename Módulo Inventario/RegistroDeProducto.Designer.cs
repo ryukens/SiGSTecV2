@@ -70,7 +70,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.12195F));
@@ -99,7 +99,7 @@
             this.panel21.Controls.Add(this.tbDescripcion);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(116, 85);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(552, 34);
             this.panel21.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             this.tbDescripcion.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbDescripcion.Location = new System.Drawing.Point(0, 0);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(552, 22);
             this.tbDescripcion.TabIndex = 1;
@@ -118,7 +118,7 @@
             this.panel20.Controls.Add(this.lDescripcion);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(4, 85);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(104, 34);
             this.panel20.TabIndex = 6;
@@ -139,7 +139,7 @@
             this.panel18.Controls.Add(this.tbCodigo);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(116, 42);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(552, 35);
             this.panel18.TabIndex = 4;
@@ -148,7 +148,8 @@
             // 
             this.tbCodigo.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbCodigo.Location = new System.Drawing.Point(0, 0);
-            this.tbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCodigo.MaxLength = 8;
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(552, 22);
             this.tbCodigo.TabIndex = 2;
@@ -158,7 +159,7 @@
             this.panel17.Controls.Add(this.lCodigo);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(4, 42);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(104, 35);
             this.panel17.TabIndex = 3;
@@ -183,11 +184,11 @@
             this.tableLayoutPanel1.Controls.Add(this.bAceptar, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(116, 169);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 37);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
@@ -195,7 +196,7 @@
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(280, 4);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(268, 29);
             this.bCancelar.TabIndex = 1;
@@ -207,7 +208,7 @@
             // 
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAceptar.Location = new System.Drawing.Point(4, 4);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(268, 29);
             this.bAceptar.TabIndex = 1;
@@ -226,7 +227,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tbPrecio, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(116, 127);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -249,7 +250,7 @@
             // 
             this.nudCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nudCantidad.Location = new System.Drawing.Point(4, 4);
-            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(212, 22);
             this.nudCantidad.TabIndex = 1;
@@ -259,7 +260,7 @@
             // 
             this.tbPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbPrecio.Location = new System.Drawing.Point(334, 4);
-            this.tbPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(214, 22);
             this.tbPrecio.TabIndex = 2;
@@ -272,7 +273,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegistroDeProducto";
             this.Size = new System.Drawing.Size(747, 252);
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
