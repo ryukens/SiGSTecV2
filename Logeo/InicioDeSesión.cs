@@ -58,8 +58,6 @@ namespace proyectoPantalla
 
             if (idUsuario != 0)
             {
-
-
                 if (MD5Hash(salt + tbContraseña.Text).Equals(password))
                 {
                     if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
@@ -80,7 +78,6 @@ namespace proyectoPantalla
                 else
                 {
                     MessageBox.Show("Credenciales Incorrectas");
-
                 }
             }
             else
@@ -98,6 +95,7 @@ namespace proyectoPantalla
         private void Button2_Click(object sender, EventArgs e)
         {
             new PantallaPrincipal().Show();
+            this.Hide();
             //Application.Exit();
         }
 

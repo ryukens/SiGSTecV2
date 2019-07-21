@@ -17,10 +17,25 @@ namespace proyectoPantalla.Módulo_Casos
             InitializeComponent();
         }
 
+        TabControl tabControl;
+        TabPage tabInicio;
+        public AsignaciónMuestraCaso(TabControl tabControl, TabPage tabInicio)
+        {
+            InitializeComponent();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             SelecciónDeProductos selecciónDeProductos = new SelecciónDeProductos();
             selecciónDeProductos.ShowDialog();
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabInicio);
+            tbBuscar.ResetText();
         }
     }
 }

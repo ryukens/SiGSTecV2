@@ -73,7 +73,7 @@
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.muestraDeCaso2 = new proyectoPantalla.MuestraDeCaso();
+            this.muestraDeCaso2 = new proyectoPantalla.MuestraDeCaso(tabControl, tabInicio);
             this.tabRegCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.tabBajaTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.eliminaciónDeTécnico1 = new proyectoPantalla.DarDeBajaTécnico();
+            this.eliminaciónDeTécnico1 = new proyectoPantalla.DarDeBajaTécnico(tabControl, tabInicio);
             this.tabCerrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -117,7 +117,7 @@
             this.tabEliminarUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
-            this.eliminaciónDeUsuario1 = new proyectoPantalla.EliminaciónDeUsuario();
+            this.eliminaciónDeUsuario1 = new proyectoPantalla.EliminaciónDeUsuario(tabControl, tabInicio);
             this.tabModCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@
             this.tabMostrarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
-            this.muestraDeCaso1 = new proyectoPantalla.MuestraDeCaso();
+            this.muestraDeCaso1 = new proyectoPantalla.MuestraDeCaso(tabControl, tabInicio);
             this.tabMostrarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.muestraDeCliente1 = new proyectoPantalla.MuestraDeCliente();
@@ -160,14 +160,14 @@
             this.tabAsignarProducto = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.label24 = new System.Windows.Forms.Label();
-            this.asignaciónMuestraCaso1 = new proyectoPantalla.Módulo_Casos.AsignaciónMuestraCaso();
+            this.asignaciónMuestraCaso1 = new proyectoPantalla.Módulo_Casos.AsignaciónMuestraCaso(tabControl, tabInicio);
             this.tabAsignarValorFinal = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
-            this.asignaciónValorFinal1 = new proyectoPantalla.Módulo_Casos.AsignaciónValorFinal();
+            this.asignaciónValorFinal1 = new proyectoPantalla.Módulo_Casos.AsignaciónValorFinal(tabControl, tabInicio);
             this.tabNúmeroFactura = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
-            this.asignaciónNúmeroFactura1 = new proyectoPantalla.Módulo_Casos.AsignaciónNúmeroFactura();
+            this.asignaciónNúmeroFactura1 = new proyectoPantalla.Módulo_Casos.AsignaciónNúmeroFactura(tabControl, tabInicio);
             this.label26 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.MSAlzarCliente = new System.Windows.Forms.ToolStripMenuItem();
@@ -178,8 +178,8 @@
             this.tabAlzarTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
-            this.darDeAltaTécnico1 = new proyectoPantalla.DarDeAltaTécnico();
-            this.darDeAltaCliente1 = new proyectoPantalla.DarDeAltaCliente();
+            this.darDeAltaTécnico1 = new proyectoPantalla.DarDeAltaTécnico(tabControl, tabInicio);
+            this.darDeAltaCliente1 = new proyectoPantalla.DarDeAltaCliente(tabControl, tabInicio);
             label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();

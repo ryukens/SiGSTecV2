@@ -36,8 +36,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bAceptar = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisminuir)).BeginInit();
@@ -147,14 +147,6 @@
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
-            // tbBuscar
-            // 
-            this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbBuscar.Location = new System.Drawing.Point(98, 3);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(470, 20);
-            this.tbBuscar.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,6 +157,14 @@
             this.button1.Text = "Asignar Producto\r\n";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbBuscar.Location = new System.Drawing.Point(98, 3);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(470, 20);
+            this.tbBuscar.TabIndex = 1;
             // 
             // DisminuciónDeProducto
             // 

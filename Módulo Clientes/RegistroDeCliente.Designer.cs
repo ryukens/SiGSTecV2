@@ -561,10 +561,11 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel6.Controls.Add(this.tbCelular1, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.tbTelefono2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lCelulares, 1, 0);
@@ -583,11 +584,13 @@
             // tbCelular1
             // 
             this.tbCelular1.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbCelular1.Location = new System.Drawing.Point(478, 4);
             this.tbCelular1.Margin = new System.Windows.Forms.Padding(4);
             this.tbCelular1.MaxLength = 10;
             this.tbCelular1.Name = "tbCelular1";
             this.tbCelular1.Size = new System.Drawing.Size(310, 22);
+
             this.tbCelular1.TabIndex = 5;
             this.tbCelular1.TextChanged += new System.EventHandler(this.TbCel1_TextChanged);
             this.tbCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCel1_KeyPress);
@@ -595,11 +598,13 @@
             // tbTelefono2
             // 
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbTelefono2.Location = new System.Drawing.Point(4, 40);
             this.tbTelefono2.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelefono2.MaxLength = 10;
             this.tbTelefono2.Name = "tbTelefono2";
             this.tbTelefono2.Size = new System.Drawing.Size(308, 22);
+
             this.tbTelefono2.TabIndex = 4;
             this.tbTelefono2.TextChanged += new System.EventHandler(this.TbTelf2_TextChanged);
             this.tbTelefono2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTelf2_KeyPress);
@@ -609,8 +614,10 @@
             this.lCelulares.AutoSize = true;
             this.lCelulares.Dock = System.Windows.Forms.DockStyle.Right;
             this.lCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.lCelulares.Location = new System.Drawing.Point(385, 0);
             this.lCelulares.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lCelulares.Name = "lCelulares";
             this.lCelulares.Size = new System.Drawing.Size(85, 36);
             this.lCelulares.TabIndex = 2;
@@ -620,11 +627,13 @@
             // tbTelefono1
             // 
             this.tbTelefono1.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbTelefono1.Location = new System.Drawing.Point(4, 4);
             this.tbTelefono1.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelefono1.MaxLength = 10;
             this.tbTelefono1.Name = "tbTelefono1";
             this.tbTelefono1.Size = new System.Drawing.Size(308, 22);
+
             this.tbTelefono1.TabIndex = 3;
             this.tbTelefono1.TextChanged += new System.EventHandler(this.TbTelf1_TextChanged);
             this.tbTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTelf1_KeyPress);
@@ -632,11 +641,13 @@
             // tbCelular2
             // 
             this.tbCelular2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbCelular2.Location = new System.Drawing.Point(478, 40);
             this.tbCelular2.Margin = new System.Windows.Forms.Padding(4);
             this.tbCelular2.MaxLength = 10;
             this.tbCelular2.Name = "tbCelular2";
             this.tbCelular2.Size = new System.Drawing.Size(310, 22);
+
             this.tbCelular2.TabIndex = 6;
             this.tbCelular2.TextChanged += new System.EventHandler(this.TbCel2_TextChanged);
             this.tbCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCel2_KeyPress);
