@@ -350,10 +350,11 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel6.Controls.Add(this.tbCelular1, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.tbTelefono2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lCelulares, 1, 0);
@@ -378,6 +379,7 @@
             this.tbCelular1.Name = "tbCelular1";
             this.tbCelular1.Size = new System.Drawing.Size(279, 22);
             this.tbCelular1.TabIndex = 5;
+            this.tbCelular1.TextChanged += new System.EventHandler(this.TbCelular1_TextChanged);
             this.tbCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox8_KeyPress);
             // 
             // tbTelefono2
@@ -415,7 +417,7 @@
             this.tbTelefono1.Name = "tbTelefono1";
             this.tbTelefono1.Size = new System.Drawing.Size(277, 22);
             this.tbTelefono1.TabIndex = 3;
-            this.tbTelefono1.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
+            this.tbTelefono1.TextChanged += new System.EventHandler(this.TbTelefono1_TextChanged);
             this.tbTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox6_KeyPress);
             // 
             // tbCelular2
@@ -427,7 +429,7 @@
             this.tbCelular2.Name = "tbCelular2";
             this.tbCelular2.Size = new System.Drawing.Size(279, 22);
             this.tbCelular2.TabIndex = 6;
-            this.tbCelular2.TextChanged += new System.EventHandler(this.TextBox9_TextChanged);
+            this.tbCelular2.TextChanged += new System.EventHandler(this.TbCelular2_TextChanged);
             this.tbCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox9_KeyPress);
             // 
             // tbCedula

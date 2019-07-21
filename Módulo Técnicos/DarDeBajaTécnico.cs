@@ -19,7 +19,6 @@ namespace proyectoPantalla
         public DarDeBajaTécnico(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
-
             cbBuscar.SelectedIndex = 0;
             mostrarTecnicos();
             this.tabControl = tabControl;

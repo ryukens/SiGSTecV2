@@ -71,6 +71,7 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
+            tbBuscar.ResetText();
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)

@@ -111,12 +111,14 @@
     <Compile Include="Módulo Casos\AsignaciónValorFinal.Designer.cs">
       <DependentUpon>AsignaciónValorFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Módulo Casos\Caso.cs" />
     <Compile Include="Módulo Casos\ValorFinal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Módulo Casos\ValorFinal.Designer.cs">
       <DependentUpon>ValorFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Módulo Clientes\Cliente.cs" />
     <Compile Include="Módulo Inventario\AumentoDeProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,6 +131,7 @@
     <Compile Include="Módulo Clientes\DarDeAltaCliente.Designer.cs">
       <DependentUpon>DarDeAltaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Módulo Inventario\Producto.cs" />
     <Compile Include="Módulo Técnicos\DarDeAltaTécnico.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +222,7 @@
     <Compile Include="Módulo Estadísticas\GeneraciónDeInforme.Designer.cs">
       <DependentUpon>GeneraciónDeInforme.cs</DependentUpon>
     </Compile>
+    <Compile Include="Módulo Técnicos\Tecnico.cs" />
     <Compile Include="ReporteGenerado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,16 +315,16 @@
     <Compile Include="Módulo Casos\SelecciónDeProductos.Designer.cs">
       <DependentUpon>SelecciónDeProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="sigstecDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sigstecDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Módulo Estadísticas\VistaDeDetalles.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Módulo Estadísticas\VistaDeDetalles.Designer.cs">
       <DependentUpon>VistaDeDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sigstecDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sigstecDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Logeo\CambioDeContraseña.resx">
       <DependentUpon>CambioDeContraseña.cs</DependentUpon>

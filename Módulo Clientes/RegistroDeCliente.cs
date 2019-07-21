@@ -36,9 +36,8 @@ namespace proyectoPantalla
             }
 
             conexion.Open();
-
-            String consulta1 = "insert into persona (nombre, correo, identificacion) values (@nombre, @correo,@identificacion); insert into cliente ( idpersona, nombre_contacto, descripcion_contacto,sla,cuenta,tipo_pago, tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @nombre_contacto, @descripcion_contacto, @sla, @cuenta, @tipo_pago, @tipo); ";
-            SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+            SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
+            comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
             comando1.Parameters.AddWithValue("@correo", tbCorreo.Text);
             comando1.Parameters.AddWithValue("@identificacion", tbCedula.Text);
@@ -56,7 +55,6 @@ namespace proyectoPantalla
             {
                 comando1.Parameters.AddWithValue("@tipo_pago", rbDefinido.Text);
             }
-
             if (rbEmpresa.Checked)
             {
                 comando1.Parameters.AddWithValue("@tipo", rbEmpresa.Text);
@@ -69,45 +67,38 @@ namespace proyectoPantalla
             comando1.ExecuteNonQuery();
 
 
-
+            String consulta1;
 
             if (!tbTelefono1.Text.Trim().Equals(""))
             {
 
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CONVENCIONAL1');";
-                SqlCommand comando2 = new SqlCommand(consulta1, conexion);
-
-                comando2.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
-                comando2.ExecuteNonQuery();
+                SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
+                comando3.CommandType = CommandType.StoredProcedure;
+                comando3.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
+                comando3.ExecuteNonQuery();
             }
 
             if (!tbTelefono2.Text.Trim().Equals(""))
             {
-
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CONVENCIONAL2');";
-                SqlCommand comando3 = new SqlCommand(consulta1, conexion);
-
-                comando3.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
-                comando3.ExecuteNonQuery();
+                SqlCommand comando4 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
+                comando4.CommandType = CommandType.StoredProcedure;
+                comando4.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
+                comando4.ExecuteNonQuery();
             }
 
             if (!tbCelular1.Text.Trim().Equals(""))
             {
-
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CELULAR1');";
-                SqlCommand comando4 = new SqlCommand(consulta1, conexion);
-
-                comando4.Parameters.AddWithValue("@telefono", tbCelular1.Text);
-                comando4.ExecuteNonQuery();
+                SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
+                comando5.CommandType = CommandType.StoredProcedure;
+                comando5.Parameters.AddWithValue("@telefono", tbCelular1.Text);
+                comando5.ExecuteNonQuery();
             }
             if (!tbCelular2.Text.Trim().Equals(""))
             {
-
-                consulta1 = "insert into telefono (idpersona,telefono,tipo) values ((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @telefono,'CELULAR2');";
-                SqlCommand comando5 = new SqlCommand(consulta1, conexion);
-
-                comando5.Parameters.AddWithValue("@telefono", tbCelular2.Text);
-                comando5.ExecuteNonQuery();
+                SqlCommand comando6 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
+                comando6.CommandType = CommandType.StoredProcedure;
+                comando6.Parameters.AddWithValue("@telefono", tbCelular2.Text);
+                comando6.ExecuteNonQuery();
             }
 
             conexion.Close();
@@ -272,13 +263,24 @@ namespace proyectoPantalla
 
         private void TbTelf1_TextChanged(object sender, EventArgs e)
         {
+            if (formatoTelefono(tbTelefono1.Text))
+            {
+                errorProvider1.SetError(tbTelefono1, null);
+                tbTelefono1.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                    "- Iniciar con prefijo (02 - 07)\r\n" +
+                    "- Tener 9 dígitos");
+                tbTelefono1.ForeColor = Color.Red;
+            }
         }
 
         private void TbTelf1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                //           MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -286,14 +288,24 @@ namespace proyectoPantalla
 
         private void TbTelf2_TextChanged(object sender, EventArgs e)
         {
-
+            if (formatoTelefono(tbTelefono2.Text))
+            {
+                errorProvider1.SetError(tbTelefono2, null);
+                tbTelefono2.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
+                    "- Iniciar con prefijo (02 - 07)\r\n" +
+                    "- Tener 9 dígitos");
+                tbTelefono2.ForeColor = Color.Red;
+            }
         }
 
         private void TbTelf2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                //             MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -301,7 +313,18 @@ namespace proyectoPantalla
 
         private void TbCel1_TextChanged(object sender, EventArgs e)
         {
-
+            if (formatoCelular(tbCelular1.Text))
+            {
+                errorProvider1.SetError(tbCelular1, null);
+                tbCelular1.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
+                    "- Iniciar con prefijo 09\r\n" +
+                    "- Tener 10 dígitos");
+                tbCelular1.ForeColor = Color.Red;
+            }
         }
 
         private void TbCel1_KeyPress(object sender, KeyPressEventArgs e)
@@ -316,7 +339,18 @@ namespace proyectoPantalla
 
         private void TbCel2_TextChanged(object sender, EventArgs e)
         {
-
+            if (formatoCelular(tbCelular2.Text))
+            {
+                errorProvider1.SetError(tbCelular2, null);
+                tbCelular2.ForeColor = Color.Green;
+            }
+            else
+            {
+                errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
+                    "- Iniciar con prefijo 09\r\n" +
+                    "- Tener 10 dígitos");
+                tbCelular2.ForeColor = Color.Red;
+            }
         }
 
         private void TbCel2_KeyPress(object sender, KeyPressEventArgs e)
@@ -410,5 +444,48 @@ namespace proyectoPantalla
             }
 
         }
+
+        public static bool formatoTelefono(string telefono)
+        {
+            String formato;
+            formato = "^0([2-7])([0-9]{7})$";
+            if (Regex.IsMatch(telefono, formato))
+            {
+                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool formatoCelular(string celular)
+        {
+            String formato;
+            formato = "^09([0-9]{8})$";
+            if (Regex.IsMatch(celular, formato))
+            {
+                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    
     }
 }
