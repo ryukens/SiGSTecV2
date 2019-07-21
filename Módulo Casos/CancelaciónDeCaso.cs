@@ -23,8 +23,8 @@ namespace proyectoPantalla
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
 
-            String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA and c.estado = 'ABIERTO' order by c.estado;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvCancelar.DataSource = dt;
@@ -55,12 +55,9 @@ namespace proyectoPantalla
 
                 String idcaso = dgvCancelar.CurrentRow.Cells[7].Value.ToString();
 
-
-                String consulta1 = "UPDATE Caso SET ESTADO = 'CANCELADO' WHERE IDCASO = @IDCASO;";
-
-                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                SqlCommand comando1 = new SqlCommand("SP_CANCELAR_CASO", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@IDCASO", idcaso);
-
                 comando1.ExecuteNonQuery();
 
 
@@ -68,8 +65,8 @@ namespace proyectoPantalla
 
                 conexion.Close();
 
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvCancelar.DataSource = dt;
@@ -114,8 +111,9 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0) //numero de caso
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla, c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.numero like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO' order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CASO_POR_NUMERO_DE_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvCancelar.DataSource = dt;
@@ -140,8 +138,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 1) // Cliente
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where p.nombre like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CASO_POR_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvCancelar.DataSource = dt;
@@ -165,8 +164,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 2) // Cuenta
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where cl.cuenta like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CASO_POR_CUENTA", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvCancelar.DataSource = dt;
@@ -190,8 +190,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 3) // Sector
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector, c.idcaso from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.sector like '%" + tbBuscar.Text + "%' and c.estado = 'ABIERTO' order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CASO_POR_SECTOR", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvCancelar.DataSource = dt;
