@@ -17,12 +17,6 @@ namespace proyectoPantalla
             InitializeComponent();
         }
 
-        private void BAsignar_Click(object sender, EventArgs e)
-        {
-            AsignaciónDeProductos asignaciónDeProductos = new AsignaciónDeProductos();
-            asignaciónDeProductos.ShowDialog();
-        }
-
         private void BCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -32,5 +26,7 @@ namespace proyectoPantalla
         {
             this.Dispose();
         }
+
+
     }
 }

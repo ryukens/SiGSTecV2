@@ -16,5 +16,10 @@ namespace proyectoPantalla.Módulo_Casos
         {
             InitializeComponent();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
