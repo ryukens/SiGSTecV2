@@ -167,7 +167,7 @@ namespace proyectoPantalla
         public static bool soloNumero(string valor)
         {
             String formato;
-            formato = "^09([0-9]{8})$";
+            formato = "/^[0-9]+$/";
             if (Regex.IsMatch(valor, formato))
             {
                 if (Regex.Replace(valor, formato, String.Empty).Length == 0)
@@ -192,3 +192,5 @@ namespace proyectoPantalla
         }
     }
 }
+
+
