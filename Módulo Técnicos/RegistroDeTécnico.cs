@@ -84,7 +84,6 @@ namespace proyectoPantalla
 
                 if (!tbTelefono2.Text.Trim().Equals(""))
                 {
-
                     SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
                     comando3.CommandType = CommandType.StoredProcedure;
                     comando3.Parameters.AddWithValue("@telefono", tbTelefono2.Text);

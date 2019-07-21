@@ -12,11 +12,6 @@ namespace proyectoPantalla.Módulo_Casos
 {
     public partial class AsignaciónValorFinal : UserControl
     {
-        public AsignaciónValorFinal()
-        {
-            InitializeComponent();
-        }
-
         TabControl tabControl;
         TabPage tabInicio;
         public AsignaciónValorFinal(TabControl tabControl, TabPage tabInicio)

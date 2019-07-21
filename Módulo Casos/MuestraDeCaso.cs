@@ -46,13 +46,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public MuestraDeCaso()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-        }
-
-
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 

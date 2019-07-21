@@ -12,10 +12,6 @@ namespace proyectoPantalla
 {
     public partial class DarDeAltaTécnico : UserControl
     {
-        public DarDeAltaTécnico()
-        {
-            InitializeComponent();
-        }
         TabControl tabControl;
         TabPage tabInicio;
         public DarDeAltaTécnico(TabControl tabControl, TabPage tabInicio)

@@ -25,13 +25,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public DarDeBajaCliente()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-            mostrarDatosCompleto();
-        }
-
         public void mostrarDatosCompleto()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_CLIENTE", conexion);

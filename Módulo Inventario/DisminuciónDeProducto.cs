@@ -22,11 +22,6 @@ namespace proyectoPantalla
 
         }
 
-        public DisminuciónDeProducto()
-        {
-            InitializeComponent();
-        }
-
         private void UserControl1_Load(object sender, EventArgs e)
         {
 

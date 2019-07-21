@@ -47,12 +47,6 @@ namespace proyectoPantalla
             this.dgvCancelar.Columns[7].Visible = false;
         }
 
-        public CancelaciónDeCaso()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-        }
-
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea cancelar este caso?", "Cancelar Caso", MessageBoxButtons.YesNo) == DialogResult.Yes)

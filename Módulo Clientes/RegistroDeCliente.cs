@@ -16,10 +16,15 @@ namespace proyectoPantalla
     public partial class RegistroDeCliente : UserControl
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        public RegistroDeCliente()
+        TabControl tabControl;
+        TabPage tabInicio;
+
+        public RegistroDeCliente(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             cbSLA.SelectedIndex = 0;
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
 
         }
 
@@ -409,6 +414,7 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            tabControl.SelectTab(tabInicio);
         }
 
         private void TbNombre_TextChanged(object sender, EventArgs e)
@@ -486,6 +492,6 @@ namespace proyectoPantalla
                 return false;
             }
         }
-    
+
     }
 }

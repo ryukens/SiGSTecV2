@@ -21,11 +21,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public GeneraciónDeInforme()
-        {
-            InitializeComponent();
-        }
-
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -34,7 +29,7 @@ namespace proyectoPantalla
         private void Button3_Click(object sender, EventArgs e)
         {
             ReporteGenerado reporteGenerado = new ReporteGenerado();
-            reporteGenerado.Show();
+            reporteGenerado.ShowDialog();
         }
 
         private void BCancelar_Click(object sender, EventArgs e)

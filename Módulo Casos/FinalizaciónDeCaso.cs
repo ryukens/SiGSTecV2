@@ -15,12 +15,6 @@ namespace proyectoPantalla
         TabControl tabControl;
         TabPage tabInicio;
 
-        public FinalizaciónDeCaso()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-        }
-
         public FinalizaciónDeCaso(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
