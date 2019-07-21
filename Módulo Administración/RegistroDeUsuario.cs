@@ -124,8 +124,9 @@ namespace proyectoPantalla
 
                 conexion.Open();
 
-                String consulta1 = "insert into persona(nombre, correo, identificacion) values(@nombre, @correo, @identificacion); insert into usuario(idpersona, tipo, username, [password], salt) values((select idpersona from persona where idpersona = (select max(idpersona) from persona)), @tipo,@username,@pass, @salt); ";
-                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                
+                SqlCommand comando1 = new SqlCommand("SP_REGISTRO_USUARIO", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
                 comando1.Parameters.AddWithValue("@correo", tbCorreo.Text);
                 comando1.Parameters.AddWithValue("@identificacion", tbCedula.Text);

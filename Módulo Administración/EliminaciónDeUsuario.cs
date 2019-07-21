@@ -29,8 +29,9 @@ namespace proyectoPantalla
 
         private void mostrarDatos()
         {
-            String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona order by u.tipo;  ";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvEliminar.DataSource = dt;
@@ -58,8 +59,9 @@ namespace proyectoPantalla
 
                 conexion.Open();
 
-                String consulta1 = "delete from persona where identificacion = @identificacion;";
-                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                
+                SqlCommand comando1 = new SqlCommand("SP_ELIMINACION_USUARIO", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
 
                 comando1.ExecuteNonQuery();
@@ -78,47 +80,61 @@ namespace proyectoPantalla
 
         }
 
+        public void mostrarUsuarioPorNombre()
+        {
+            String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.nombre like '%" + tbBuscar.Text + "%' order by u.tipo;  ";
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_NOMBRE", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvEliminar.DataSource = dt;
+            dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            dgvEliminar.Columns[0].HeaderText = "Tipo";
+            dgvEliminar.Columns[1].HeaderText = "Nombre";
+            dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvEliminar.Columns[3].HeaderText = "Correo";
+
+        }
+
+
+        public void mostrarUsuarioPorIdentificacion()
+        {
+            String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.identificacion like '%" + tbBuscar.Text + "%' order by u.tipo;";
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_IDENTIFICACION", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvEliminar.DataSource = dt;
+
+            dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvEliminar.Columns[0].HeaderText = "Tipo";
+            dgvEliminar.Columns[1].HeaderText = "Nombre";
+            dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvEliminar.Columns[3].HeaderText = "Correo";
+
+        }
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-
-                String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.nombre like '%" + tbBuscar.Text + "%' order by u.tipo;  ";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvEliminar.Columns[3].HeaderText = "Correo";
-
+                mostrarUsuarioPorNombre();
+            
             }
             else
             {
 
+                mostrarUsuarioPorIdentificacion();
 
 
-
-                String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.identificacion like '%" + tbBuscar.Text + "%' order by u.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvEliminar.DataSource = dt;
-
-                dgvEliminar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvEliminar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvEliminar.Columns[0].HeaderText = "Tipo";
-                dgvEliminar.Columns[1].HeaderText = "Nombre";
-                dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvEliminar.Columns[3].HeaderText = "Correo";
             }
         }
 
