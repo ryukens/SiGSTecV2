@@ -27,8 +27,8 @@ namespace proyectoPantalla
 
         private void mostrarTecnicos()
         {
-            String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_TECNICO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvEliminar.DataSource = dt;
@@ -62,20 +62,14 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea eliminar este técnico?", "Eliminar Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea Dar de Baja este técnico?", "Dar de Baja Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 conexion.Open();
-
-                String consulta1 = "delete from persona where identificacion = @identificacion;";
-                SqlCommand comando1 = new SqlCommand(consulta1, conexion);
+                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA_TECNICO", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
-
                 comando1.ExecuteNonQuery();
-
-
                 conexion.Close();
-
-
                 MessageBox.Show("Técnico Eliminado Correctamente", "Técnico Eliminado");
                 mostrarTecnicos();
             }
@@ -90,9 +84,9 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-
-                String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where nombre like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvEliminar.DataSource = dt;
@@ -109,12 +103,9 @@ namespace proyectoPantalla
             }
             else
             {
-
-
-
-
-                String consulta = "select t.estado, p.nombre, p.identificacion,  t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where p.identificacion like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_IDENTIFICACION", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvEliminar.DataSource = dt;

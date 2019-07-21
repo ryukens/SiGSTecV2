@@ -13,11 +13,13 @@ namespace proyectoPantalla
 {
     public partial class DarDeAltaCliente : UserControl
     {
+        SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
         public DarDeAltaCliente(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
+            mostrarDatosCompleto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
         }
