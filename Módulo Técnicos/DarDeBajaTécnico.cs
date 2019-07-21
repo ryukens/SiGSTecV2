@@ -25,12 +25,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public DarDeBajaTécnico()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-        }
-
         private void mostrarTecnicos()
         {
             String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA;";

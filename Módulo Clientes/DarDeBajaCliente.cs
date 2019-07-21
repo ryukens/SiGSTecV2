@@ -25,12 +25,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public DarDeBajaCliente()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-        }
-
         public void mostrarDatosCompleto()
         {
 

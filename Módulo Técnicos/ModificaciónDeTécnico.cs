@@ -42,13 +42,6 @@ namespace proyectoPantalla
             dgvModificar.Columns[3].HeaderText = "Sector";
             dgvModificar.Columns[4].HeaderText = "Alcance";
         }
-        public ModificaciónDeTécnico()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-            mostrarTecnicos();
-
-        }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

@@ -15,8 +15,9 @@ namespace proyectoPantalla
     {
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog = SIGSTEC; Integrated Security = True");
 
-
-        public RegistroDeCaso()
+        TabControl tabControl;
+        TabPage tabInicio;
+        public RegistroDeCaso(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             timer1.Enabled = true;
@@ -26,6 +27,8 @@ namespace proyectoPantalla
             {
                 cbVendedor.SelectedIndex = 0;
             }
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
         }
 
         public void llenarCBVendedor()
@@ -58,8 +61,6 @@ namespace proyectoPantalla
         {
             SelecciónDeCliente selecciónDeCliente = new SelecciónDeCliente(lClienteSeleccionado, lIdCliente);
             selecciónDeCliente.ShowDialog();
-
-
         }
 
 
@@ -73,9 +74,6 @@ namespace proyectoPantalla
         {
 
         }
-
-
-
 
         private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -108,10 +106,8 @@ namespace proyectoPantalla
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
-
             limpiarCampos();
-
-
+            tabControl.SelectTab(tabInicio);
         }
 
         private void BAceptar_Click(object sender, EventArgs e)
