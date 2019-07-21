@@ -164,7 +164,6 @@
             this.tabAsignarValorFinal = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
-            this.asignaciónValorFinal1 = new proyectoPantalla.Módulo_Casos.AsignaciónValorFinal(tabControl, tabInicio);
             this.tabNúmeroFactura = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.asignaciónNúmeroFactura1 = new proyectoPantalla.Módulo_Casos.AsignaciónNúmeroFactura(tabControl, tabInicio);
@@ -1758,7 +1757,7 @@
             this.tableLayoutPanel26.ColumnCount = 1;
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
-            this.tableLayoutPanel26.Controls.Add(this.asignaciónValorFinal1, 0, 1);
+
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
@@ -1780,11 +1779,6 @@
             // 
             // asignaciónValorFinal1
             // 
-            this.asignaciónValorFinal1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.asignaciónValorFinal1.Location = new System.Drawing.Point(3, 27);
-            this.asignaciónValorFinal1.Name = "asignaciónValorFinal1";
-            this.asignaciónValorFinal1.Size = new System.Drawing.Size(974, 460);
-            this.asignaciónValorFinal1.TabIndex = 1;
             // 
             // tabNúmeroFactura
             // 
@@ -2199,7 +2193,6 @@
         private Módulo_Casos.AsignaciónMuestraCaso asignaciónMuestraCaso1;
         private Módulo_Casos.AsignaciónNúmeroFactura asignaciónNúmeroFactura1;
         private System.Windows.Forms.Label label26;
-        private Módulo_Casos.AsignaciónValorFinal asignaciónValorFinal1;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarCliente;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarTécnico;
         private System.Windows.Forms.TabPage tabAlzarCliente;

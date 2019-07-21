@@ -99,12 +99,6 @@
     <Compile Include="Módulo Casos\AsignaciónNúmeroFactura.Designer.cs">
       <DependentUpon>AsignaciónNúmeroFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Módulo Casos\AsignaciónValorFinal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Módulo Casos\AsignaciónValorFinal.Designer.cs">
-      <DependentUpon>AsignaciónValorFinal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Módulo Casos\Caso.cs" />
     <Compile Include="Módulo Clientes\Cliente.cs" />
     <Compile Include="Módulo Inventario\AumentoDeProducto.cs">
@@ -325,9 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Casos\AsignaciónNúmeroFactura.resx">
       <DependentUpon>AsignaciónNúmeroFactura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Módulo Casos\AsignaciónValorFinal.resx">
-      <DependentUpon>AsignaciónValorFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Inventario\AumentoDeProducto.resx">
       <DependentUpon>AumentoDeProducto.cs</DependentUpon>
