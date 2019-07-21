@@ -19,43 +19,13 @@ namespace proyectoPantalla
             InitializeComponent();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Productos Disminuidos Correctamente", "Productos Dismunuidos");
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BCancelar_Click(object sender, EventArgs e)
+        private void BCancelar_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
-            tbBuscar.ResetText();
+            tbFactura.ResetText();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            AsignaciónDeProductos asignaciónDeProductos = new AsignaciónDeProductos();
-            asignaciónDeProductos.ShowDialog();
-        }
     }
 }

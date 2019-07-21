@@ -23,8 +23,7 @@ namespace proyectoPantalla
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
 
-            String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA order by c.estado;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
@@ -60,8 +59,9 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0) //numero de caso
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.numero like '%" + tbBuscar.Text + "%'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvMostrar.DataSource = dt;
@@ -72,6 +72,7 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvMostrar.Columns[0].HeaderText = "Estado";
                 dgvMostrar.Columns[1].HeaderText = "Número";
                 dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -79,12 +80,15 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].HeaderText = "Fecha";
                 dgvMostrar.Columns[5].HeaderText = "SLA";
                 dgvMostrar.Columns[6].HeaderText = "Sector";
+                dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+                this.dgvMostrar.Columns[7].Visible = false;
 
             }
             else if (cbBuscar.SelectedIndex == 1) // Cliente
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where p.nombre like '%" + tbBuscar.Text + "%'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvMostrar.DataSource = dt;
@@ -95,6 +99,7 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvMostrar.Columns[0].HeaderText = "Estado";
                 dgvMostrar.Columns[1].HeaderText = "Número";
                 dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -102,12 +107,14 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].HeaderText = "Fecha";
                 dgvMostrar.Columns[5].HeaderText = "SLA";
                 dgvMostrar.Columns[6].HeaderText = "Sector";
-
+                dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+                this.dgvMostrar.Columns[7].Visible = false;
             }
             else if (cbBuscar.SelectedIndex == 2) // Cuenta
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where cl.cuenta like '%" + tbBuscar.Text + "%'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvMostrar.DataSource = dt;
@@ -118,6 +125,7 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvMostrar.Columns[0].HeaderText = "Estado";
                 dgvMostrar.Columns[1].HeaderText = "Número";
                 dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -125,11 +133,15 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].HeaderText = "Fecha";
                 dgvMostrar.Columns[5].HeaderText = "SLA";
                 dgvMostrar.Columns[6].HeaderText = "Sector";
+                dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+                this.dgvMostrar.Columns[7].Visible = false;
+
             }
             else if (cbBuscar.SelectedIndex == 3) // Sector
             {
-                String consulta = "select c.estado, c.numero, p.nombre, cl.cuenta, c.fecha, c.sla , c.sector from caso as c join cliente as cl on c.IDCLIENTE = cl.IDCLIENTE join persona as p on cl.IDPERSONA = p.IDPERSONA where c.sector like '%" + tbBuscar.Text + "%'  order by c.estado;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvMostrar.DataSource = dt;
@@ -140,6 +152,7 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvMostrar.Columns[0].HeaderText = "Estado";
                 dgvMostrar.Columns[1].HeaderText = "Número";
                 dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -147,7 +160,8 @@ namespace proyectoPantalla
                 dgvMostrar.Columns[4].HeaderText = "Fecha";
                 dgvMostrar.Columns[5].HeaderText = "SLA";
                 dgvMostrar.Columns[6].HeaderText = "Sector";
-
+                dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+                this.dgvMostrar.Columns[7].Visible = false;
             }
 
 

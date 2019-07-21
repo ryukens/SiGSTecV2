@@ -157,7 +157,7 @@
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(328, 31);
             this.bEliminar.TabIndex = 0;
-            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.Text = "Dar de Baja";
             this.bEliminar.UseVisualStyleBackColor = true;
             this.bEliminar.Click += new System.EventHandler(this.Button1_Click);
             // 

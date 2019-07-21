@@ -21,12 +21,6 @@ namespace proyectoPantalla.Módulo_Casos
             this.tabInicio = tabInicio;
         }
 
-        private void BAsignación_Click(object sender, EventArgs e)
-        {
-            ValorFinal valorFinal = new ValorFinal();
-            valorFinal.ShowDialog();
-        }
-
         private void BCancelar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
