@@ -20,8 +20,46 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
-            String consulta = "select codigo, descripcion, cantidad, precio from producto; ";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            mostrarProductos();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
+        public MuestraDeProducto()
+        {
+            InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
+            mostrarProductos();
+
+
+
+
+        }
+
+        public void mostrarProductos()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_PRODUCTO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgvMostrar.DataSource = dt;
+            dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[0].HeaderText = "Código";
+            dgvMostrar.Columns[1].HeaderText = "Descripción";
+            dgvMostrar.Columns[2].HeaderText = "Cantidad";
+            dgvMostrar.Columns[3].HeaderText = "Precio";
+
+        }
+
+        public void mostrarProductosPorCodigo()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_PRODUCTO_CODIGO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@codigo", tbBuscar.Text);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
@@ -33,14 +71,25 @@ namespace proyectoPantalla
             dgvMostrar.Columns[1].HeaderText = "Descripción";
             dgvMostrar.Columns[2].HeaderText = "Cantidad";
             dgvMostrar.Columns[3].HeaderText = "Precio";
-            this.tabControl = tabControl;
-            this.tabInicio = tabInicio;
         }
 
-        public MuestraDeProducto()
+        public void mostrarProductoPorDescripcion()
         {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
+
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_PRODUCTO_DESCRIPCION", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@descripcion", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvMostrar.DataSource = dt;
+            dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvMostrar.Columns[0].HeaderText = "Código";
+            dgvMostrar.Columns[1].HeaderText = "Descripción";
+            dgvMostrar.Columns[2].HeaderText = "Cantidad";
+            dgvMostrar.Columns[3].HeaderText = "Precio";
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,36 +101,13 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0)
             {
+                mostrarProductosPorCodigo();
 
-                String consulta = "select codigo, descripcion, cantidad, precio from producto where codigo like '%" + tbBuscar.Text + "%'; ";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[0].HeaderText = "Código";
-                dgvMostrar.Columns[1].HeaderText = "Descripción";
-                dgvMostrar.Columns[2].HeaderText = "Cantidad";
-                dgvMostrar.Columns[3].HeaderText = "Precio";
+                
             }
             else
             {
-                String consulta = "select codigo, descripcion, cantidad, precio from producto where descripcion like '%" + tbBuscar.Text + "%'; ";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvMostrar.Columns[0].HeaderText = "Código";
-                dgvMostrar.Columns[1].HeaderText = "Descripción";
-                dgvMostrar.Columns[2].HeaderText = "Cantidad";
-                dgvMostrar.Columns[3].HeaderText = "Precio";
+                mostrarProductoPorDescripcion();
             }
         }
 
