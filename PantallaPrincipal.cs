@@ -178,16 +178,6 @@ namespace proyectoPantalla
             tabControl.SelectTab(tabAsignarProducto);
         }
 
-        private void AsignarNúmeroDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabNúmeroFactura);
-        }
-
-        private void AsignarValorFinalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabAsignarValorFinal);
-        }
-
         private void MSAlzarCliente_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAlzarCliente);
