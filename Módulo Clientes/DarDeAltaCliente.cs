@@ -19,6 +19,7 @@ namespace proyectoPantalla
         public DarDeAltaCliente(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
+            mostrarDatosCompleto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
         }
