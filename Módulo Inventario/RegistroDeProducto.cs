@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace proyectoPantalla
 {
@@ -130,7 +131,6 @@ namespace proyectoPantalla
             tbCodigo.ResetText();
             tbDescripcion.ResetText();
             tbPrecio.ResetText();
-            nudCantidad.ResetText();
         }
 
         public bool ValidarCamposVacios()
@@ -159,8 +159,32 @@ namespace proyectoPantalla
 
         private void NudCantidad_ValueChanged(object sender, EventArgs e)
         {
+            soloNumero(nudCantidad.ToString());
+           
 
         }
+
+        public static bool soloNumero(string valor)
+        {
+            String formato;
+            formato = "^09([0-9]{8})$";
+            if (Regex.IsMatch(valor, formato))
+            {
+                if (Regex.Replace(valor, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
