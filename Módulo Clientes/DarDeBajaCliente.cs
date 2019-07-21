@@ -107,8 +107,9 @@ namespace proyectoPantalla
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.nombre like '%" + tbBuscar.Text + "%' order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvBajar.DataSource = dt;
@@ -125,8 +126,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 1) // cedula
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.identificacion like '%" + tbBuscar.Text + "%'  and c.tipo = Persona order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CEDULA", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CEDULA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvBajar.DataSource = dt;
@@ -143,8 +145,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 2) // ruc
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.identificacion like '%" + tbBuscar.Text + "%'  and c.tipo = Empresa order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_RUC", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@RUC", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvBajar.DataSource = dt;
@@ -161,8 +164,9 @@ namespace proyectoPantalla
             }
             else // cuenta
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where c.cuenta like '%" + tbBuscar.Text + "%'  and c.tipo = Empresa order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CUENTA", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvBajar.DataSource = dt;
