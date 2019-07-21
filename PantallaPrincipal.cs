@@ -122,7 +122,7 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            inicioDeSesión.Show();
+            new InicioDeSesión().Show();
             this.Dispose();
         }
 

@@ -24,6 +24,7 @@ namespace proyectoPantalla
             String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
+            var topLeftHeaderCell = dgvMostrar.TopLeftHeaderCell;
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
             dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
