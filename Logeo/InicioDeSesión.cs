@@ -97,7 +97,10 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           // Application.Exit();
+            PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
+            pantallaprincipal.Show();
+            this.Hide();
         }
 
         private void TbContraseña_TextChanged(object sender, EventArgs e)
