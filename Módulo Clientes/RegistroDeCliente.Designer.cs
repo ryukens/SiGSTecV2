@@ -561,7 +561,7 @@
             // 
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono2.Location = new System.Drawing.Point(3, 32);
-            this.tbTelefono2.MaxLength = 10;
+            this.tbTelefono2.MaxLength = 9;
             this.tbTelefono2.Name = "tbTelefono2";
             this.tbTelefono2.Size = new System.Drawing.Size(219, 20);
             this.tbTelefono2.TabIndex = 4;
@@ -584,7 +584,7 @@
             // 
             this.tbTelefono1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono1.Location = new System.Drawing.Point(3, 3);
-            this.tbTelefono1.MaxLength = 10;
+            this.tbTelefono1.MaxLength = 9;
             this.tbTelefono1.Name = "tbTelefono1";
             this.tbTelefono1.Size = new System.Drawing.Size(219, 20);
             this.tbTelefono1.TabIndex = 3;

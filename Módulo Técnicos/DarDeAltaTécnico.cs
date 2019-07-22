@@ -22,6 +22,7 @@ namespace proyectoPantalla
             mostrarTecnicos();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            cbBuscar.SelectedIndex = 0;
         }
 
         public void mostrarTecnicos()
