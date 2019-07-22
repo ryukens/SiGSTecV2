@@ -82,7 +82,7 @@ namespace proyectoPantalla
 
         private void Timer1_Tick_1(object sender, EventArgs e)
         {
-            lFechaActual.Text = DateTime.Now.ToString();
+            lFechaActual.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void Label12_Click(object sender, EventArgs e)
@@ -206,6 +206,11 @@ namespace proyectoPantalla
         private void TbInformeInicial_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LFechaActual_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

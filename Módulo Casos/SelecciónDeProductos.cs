@@ -15,6 +15,7 @@ namespace proyectoPantalla
         public SelecciónDeProductos()
         {
             InitializeComponent();
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void BCancelar_Click(object sender, EventArgs e)

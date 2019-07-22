@@ -64,6 +64,7 @@
             this.crearUsusarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -149,6 +150,7 @@
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.bAyuda = new System.Windows.Forms.Button();
             this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
             this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
             this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
@@ -263,7 +265,8 @@
             this.casoToolStripMenuItem,
             this.estadisticasToolStripMenuItem,
             this.stockToolStripMenuItem,
-            this.administraciónToolStripMenuItem});
+            this.administraciónToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(98, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -528,7 +531,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.eliminarUsuarioToolStripMenuItem});
             this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
-            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -546,6 +549,12 @@
             this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
             this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 46);
+            this.toolStripMenuItem1.Text = "ayudaStripMenuItem1";
             // 
             // tableLayoutPanel14
             // 
@@ -643,11 +652,13 @@
             // 
             // tableLayoutPanel18
             // 
-            this.tableLayoutPanel18.ColumnCount = 2;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel18.ColumnCount = 3;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
             this.tableLayoutPanel18.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.bAyuda, 2, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -662,16 +673,16 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Location = new System.Drawing.Point(3, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(821, 43);
+            this.label15.Size = new System.Drawing.Size(805, 43);
             this.label15.TabIndex = 0;
             this.label15.Text = "Inicio";
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(830, 3);
+            this.button2.Location = new System.Drawing.Point(814, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 37);
+            this.button2.Size = new System.Drawing.Size(102, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Cerrar Sesión";
             this.button2.UseVisualStyleBackColor = true;
@@ -1820,6 +1831,17 @@
             this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
+            // bAyuda
+            // 
+            this.bAyuda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAyuda.Location = new System.Drawing.Point(922, 3);
+            this.bAyuda.Name = "bAyuda";
+            this.bAyuda.Size = new System.Drawing.Size(49, 37);
+            this.bAyuda.TabIndex = 2;
+            this.bAyuda.Text = "?";
+            this.bAyuda.UseVisualStyleBackColor = true;
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1936,7 +1958,6 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem generarInformeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darDeBajaProductoToolStripMenuItem;
@@ -2059,6 +2080,9 @@
         private System.Windows.Forms.Label label28;
         private DarDeAltaTécnico darDeAltaTécnico1;
         private DarDeAltaCliente darDeAltaCliente1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bAyuda;
     }
 }
 

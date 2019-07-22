@@ -88,7 +88,7 @@ namespace proyectoPantalla
             }
             if (formatoContraseña(tbContraseña2.Text))
             {
-                errorProvider1.SetError(tbContraseña2, null);
+                //errorProvider1.SetError(tbContraseña2, null);
             }
             else
             {

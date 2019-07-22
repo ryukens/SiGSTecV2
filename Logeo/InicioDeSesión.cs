@@ -79,7 +79,7 @@ namespace proyectoPantalla
                 else
                 {
                     MessageBox.Show("Credenciales Incorrectas");
-                    
+
 
                 }
             }
@@ -97,11 +97,7 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
-            new PantallaPrincipal().Show();
-            this.Hide();
-
-            //Application.Exit();
+            Application.Exit();
         }
 
         private void TbContraseña_TextChanged(object sender, EventArgs e)
