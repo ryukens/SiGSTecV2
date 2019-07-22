@@ -49,9 +49,9 @@
             this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalizarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finalizarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +64,6 @@
             this.crearUsusarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parámetrosToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -128,7 +127,6 @@
             this.tabMostrarTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
-            this.muestraDeTécnico1 = new proyectoPantalla.MuestraDeTécnico(tabControl, tabInicio);
             this.tabGenInforme = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
@@ -151,26 +149,6 @@
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
-            this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
-            this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
-            this.registroDeCliente2 = new RegistroDeCliente(tabControl, tabInicio);
-            this.eliminaciónDeCliente1 = new DarDeBajaCliente(tabControl, tabInicio);
-            this.eliminaciónDeTécnico1 = new DarDeBajaTécnico(tabControl, tabInicio);
-            this.cierreDeCaso1 = new CierreDeCaso(tabControl, tabInicio);
-            this.disminuciónDeProducto1 = new DisminuciónDeProducto(tabControl, tabInicio);
-            this.registroDeUsuario1 = new RegistroDeUsuario(tabControl, tabInicio);
-            this.eliminaciónDeUsuario1 = new EliminaciónDeUsuario(tabControl, tabInicio);
-            this.modificaciónDeTécnico1 = new ModificaciónDeTécnico(tabControl, tabInicio);
-            this.cancelaciónDeCaso1 = new CancelaciónDeCaso(tabControl, tabInicio);
-            this.muestraDeCliente1 = new MuestraDeCliente(tabControl, tabInicio);
-            this.generaciónDeInforme1 = new GeneraciónDeInforme(tabControl, tabInicio);
-            this.vistaDeDetalles1 = new VistaDeDetalles(tabControl, tabInicio);
-            this.finalizaciónDeCaso1 = new FinalizaciónDeCaso(tabControl, tabInicio);
-            this.asignaciónMuestraCaso1 = new Módulo_Casos.AsignaciónMuestraCaso(tabControl, tabInicio);
-            this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
-            this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
-
             label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
@@ -419,6 +397,14 @@
             this.asignarProductoToolStripMenuItem.Text = "Asignar Productos";
             this.asignarProductoToolStripMenuItem.Click += new System.EventHandler(this.AsignarProductoToolStripMenuItem_Click);
             // 
+            // finalizarCasoToolStripMenuItem
+            // 
+            this.finalizarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.finalizarCasoToolStripMenuItem.Name = "finalizarCasoToolStripMenuItem";
+            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.finalizarCasoToolStripMenuItem.Text = "Finalizar Caso";
+            this.finalizarCasoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarCasoToolStripMenuItem_Click);
+            // 
             // cancelarCasoToolStripMenuItem
             // 
             this.cancelarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
@@ -434,14 +420,6 @@
             this.mostrarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.mostrarCasoToolStripMenuItem.Text = "Mostrar Caso";
             this.mostrarCasoToolStripMenuItem.Click += new System.EventHandler(this.MostrarCasoToolStripMenuItem_Click);
-            // 
-            // finalizarCasoToolStripMenuItem
-            // 
-            this.finalizarCasoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.finalizarCasoToolStripMenuItem.Name = "finalizarCasoToolStripMenuItem";
-            this.finalizarCasoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.finalizarCasoToolStripMenuItem.Text = "Finalizar Caso";
-            this.finalizarCasoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarCasoToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 
@@ -517,8 +495,7 @@
             // administraciónToolStripMenuItem
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearUsusarioToolStripMenuItem,
-            this.parámetrosToolStripMenuItem3});
+            this.crearUsusarioToolStripMenuItem});
             this.administraciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("administraciónToolStripMenuItem.Image")));
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(146, 46);
@@ -531,7 +508,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.eliminarUsuarioToolStripMenuItem});
             this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
-            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -549,13 +526,6 @@
             this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
             this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem_Click);
-            // 
-            // parámetrosToolStripMenuItem3
-            // 
-            this.parámetrosToolStripMenuItem3.BackColor = System.Drawing.SystemColors.Window;
-            this.parámetrosToolStripMenuItem3.Name = "parámetrosToolStripMenuItem3";
-            this.parámetrosToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
-            this.parámetrosToolStripMenuItem3.Text = "Parámetros";
             // 
             // tableLayoutPanel14
             // 
@@ -1953,7 +1923,6 @@
         private System.Windows.Forms.ToolStripMenuItem aumentarProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearUsusarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parámetrosToolStripMenuItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabRegCliente;
