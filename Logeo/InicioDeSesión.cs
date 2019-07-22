@@ -79,6 +79,8 @@ namespace proyectoPantalla
                 else
                 {
                     MessageBox.Show("Credenciales Incorrectas");
+                    
+
                 }
             }
             else
