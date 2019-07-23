@@ -64,7 +64,6 @@
             this.crearUsusarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -80,7 +79,6 @@
             this.tabRegTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico();
             this.tabEliminarCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -103,7 +101,6 @@
             this.tabAumProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto();
             this.tabRegUsuario = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -113,7 +110,6 @@
             this.tabModCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente();
             this.tabModTécnico = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
@@ -137,7 +133,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.tabMostrarProducto = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto();
             this.tabFinalizarCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
@@ -152,27 +147,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             label22 = new System.Windows.Forms.Label();
-            this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
-            this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
-            this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
-            this.registroDeCliente2 = new RegistroDeCliente(tabControl, tabInicio);
-            this.eliminaciónDeCliente1 = new DarDeBajaCliente(tabControl, tabInicio);
-            this.eliminaciónDeTécnico1 = new DarDeBajaTécnico(tabControl, tabInicio);
-            this.cierreDeCaso1 = new CierreDeCaso(tabControl, tabInicio);
-            this.disminuciónDeProducto1 = new DisminuciónDeProducto(tabControl, tabInicio);
-            this.registroDeUsuario1 = new RegistroDeUsuario(tabControl, tabInicio);
-            this.eliminaciónDeUsuario1 = new EliminaciónDeUsuario(tabControl, tabInicio);
-            this.modificaciónDeTécnico1 = new ModificaciónDeTécnico(tabControl, tabInicio);
-            this.cancelaciónDeCaso1 = new CancelaciónDeCaso(tabControl, tabInicio);
-            this.muestraDeCliente1 = new MuestraDeCliente(tabControl, tabInicio);
-            this.generaciónDeInforme1 = new GeneraciónDeInforme(tabControl, tabInicio);
-            this.vistaDeDetalles1 = new VistaDeDetalles(tabControl, tabInicio);
-            this.finalizaciónDeCaso1 = new FinalizaciónDeCaso(tabControl, tabInicio);
-            this.asignaciónDeProductos1 = new Módulo_Casos.AsignaciónDeProductos(tabControl, tabInicio);
-            this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
-            this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
-            this.muestraDeTécnico1 = new MuestraDeTécnico(tabControl, tabInicio);
-
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -229,6 +203,30 @@
             this.tableLayoutPanel30.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
+            this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
+            this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
+            this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
+            this.registroDeCliente2 = new RegistroDeCliente(tabControl, tabInicio);
+            this.eliminaciónDeCliente1 = new DarDeBajaCliente(tabControl, tabInicio);
+            this.eliminaciónDeTécnico1 = new DarDeBajaTécnico(tabControl, tabInicio);
+            this.cierreDeCaso1 = new CierreDeCaso(tabControl, tabInicio);
+            this.disminuciónDeProducto1 = new DisminuciónDeProducto(tabControl, tabInicio);
+            this.registroDeUsuario1 = new RegistroDeUsuario(tabControl, tabInicio);
+            this.eliminaciónDeUsuario1 = new EliminaciónDeUsuario(tabControl, tabInicio);
+            this.modificaciónDeTécnico1 = new ModificaciónDeTécnico(tabControl, tabInicio);
+            this.cancelaciónDeCaso1 = new CancelaciónDeCaso(tabControl, tabInicio);
+            this.muestraDeCliente1 = new MuestraDeCliente(tabControl, tabInicio);
+            this.generaciónDeInforme1 = new GeneraciónDeInforme(tabControl, tabInicio);
+            this.vistaDeDetalles1 = new VistaDeDetalles(tabControl, tabInicio);
+            this.finalizaciónDeCaso1 = new FinalizaciónDeCaso(tabControl, tabInicio);
+            this.asignaciónDeProductos1 = new Módulo_Casos.AsignaciónDeProductos(tabControl, tabInicio);
+            this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
+            this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
+            this.muestraDeTécnico1 = new MuestraDeTécnico(tabControl, tabInicio);
+            this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente(tabControl, tabInicio);
+            this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico(tabControl, tabInicio);
+            this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
+            this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
             // 
             // label22
             // 
@@ -266,8 +264,7 @@
             this.casoToolStripMenuItem,
             this.estadisticasToolStripMenuItem,
             this.stockToolStripMenuItem,
-            this.administraciónToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.administraciónToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(98, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -532,7 +529,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.eliminarUsuarioToolStripMenuItem});
             this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
-            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -550,12 +547,6 @@
             this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
             this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 46);
-            this.toolStripMenuItem1.Text = "ayudaStripMenuItem1";
             // 
             // tableLayoutPanel14
             // 
@@ -2081,7 +2072,6 @@
         private System.Windows.Forms.Label label28;
         private DarDeAltaTécnico darDeAltaTécnico1;
         private DarDeAltaCliente darDeAltaCliente1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bAyuda;
     }

@@ -612,7 +612,7 @@
             this.tbCedula.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCedula.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbCedula.Location = new System.Drawing.Point(123, 73);
-            this.tbCedula.MaxLength = 13;
+            this.tbCedula.MaxLength = 10;
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(594, 20);
             this.tbCedula.TabIndex = 1;

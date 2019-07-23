@@ -36,18 +36,20 @@ namespace proyectoPantalla
             }
         }
 
-        public RegistroDeTécnico()
+        TabControl tabControl;
+        TabPage tabInicio;
+
+        public RegistroDeTécnico(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
         }
 
         private void Label4_Click(object sender, EventArgs e)
         {
 
         }
-
-
-
 
         private void Label6_Click(object sender, EventArgs e)
         {
@@ -187,7 +189,7 @@ namespace proyectoPantalla
             }
         }
 
-        
+
         private void TbCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -314,8 +316,6 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCedula, "Ingrese una cédula correcta");
             }
-
-
         }
 
         private void LTelfCelular_Click(object sender, EventArgs e)
@@ -339,6 +339,7 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            tabControl.SelectTab(tabInicio);
         }
 
         public static bool formatoTelefono(string telefono)

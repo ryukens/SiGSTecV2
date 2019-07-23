@@ -43,12 +43,7 @@ namespace proyectoPantalla
             dgvModificar.Columns[3].HeaderText = "Identificación";
             dgvModificar.Columns[4].HeaderText = "SLA";
         }
-        public ModificaciónDeCliente()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-            mostrarCliente();
-        }
+
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
