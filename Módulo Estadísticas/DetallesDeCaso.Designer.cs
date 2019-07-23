@@ -1,6 +1,6 @@
 ﻿namespace proyectoPantalla
 {
-    partial class GeneraciónDelInforme
+    partial class DetallesDeCaso
     {
         /// <summary>
         /// Required designer variable.
@@ -193,7 +193,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(661, 294);
             this.dataGridView1.TabIndex = 1;
             // 
-            // GeneraciónDelInforme
+            // DetallesDeCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +201,7 @@
             this.ClientSize = new System.Drawing.Size(667, 400);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(415, 300);
-            this.Name = "GeneraciónDelInforme";
+            this.Name = "DetallesDeCaso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden De Facturación";
             this.Load += new System.EventHandler(this.OrdenDeFacturación_Load);

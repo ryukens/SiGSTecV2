@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace proyectoPantalla.Módulo_Casos
 {
-    public partial class AsignaciónMuestraCaso : UserControl
+    public partial class AsignaciónDeProductos : UserControl
     {
         TabControl tabControl;
         TabPage tabInicio;
-        public AsignaciónMuestraCaso(TabControl tabControl, TabPage tabInicio)
+        public AsignaciónDeProductos(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             this.tabControl = tabControl;
