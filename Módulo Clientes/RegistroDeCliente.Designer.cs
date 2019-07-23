@@ -220,7 +220,12 @@
             this.cbSLA.Items.AddRange(new object[] {
             "Media Hora",
             "1 Hora",
-            "2 Horas"});
+            "2 Horas",
+            "4 Horas",
+            "8 Horas",
+            "24 Horas",
+            "48 Horas",
+            "N/A"});
             this.cbSLA.Location = new System.Drawing.Point(0, 0);
             this.cbSLA.Name = "cbSLA";
             this.cbSLA.Size = new System.Drawing.Size(594, 21);

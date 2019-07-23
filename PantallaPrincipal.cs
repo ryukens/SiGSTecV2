@@ -42,6 +42,9 @@ namespace proyectoPantalla
         private void ModificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabModCliente);
+            modificaciónDeCliente1.mostrarCliente();
+
+            
         }
 
 
@@ -53,6 +56,7 @@ namespace proyectoPantalla
         private void EliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabEliminarCliente);
+            eliminaciónDeCliente1.mostrarDatosCompleto();
         }
 
         private void EliminarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -108,6 +112,7 @@ namespace proyectoPantalla
         private void MostrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabMostrarCliente);
+            muestraDeCliente1.llenarCampos();
         }
 
         private void MostrarTécnicoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,6 +186,7 @@ namespace proyectoPantalla
         private void MSAlzarCliente_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAlzarCliente);
+            darDeAltaCliente1.mostrarDatosCompleto();
         }
 
         private void MSAlzarTécnico_Click(object sender, EventArgs e)
