@@ -172,6 +172,7 @@
             this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
             this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
             this.muestraDeTécnico1 = new MuestraDeTécnico(tabControl, tabInicio);
+
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();

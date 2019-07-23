@@ -37,7 +37,7 @@ namespace proyectoPantalla
             }
             else
             {
-                MessageBox.Show("Existen campos vacios", "Campos Vacios");
+                //MessageBox.Show("Existen campos vacios", "Campos Vacios");
             }
 
             conexion.Open();
@@ -448,7 +448,6 @@ namespace proyectoPantalla
                     return;
                 }
             }
-
         }
 
         public static bool formatoTelefono(string telefono)

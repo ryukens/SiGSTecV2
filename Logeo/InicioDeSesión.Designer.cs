@@ -151,7 +151,6 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(317, 41);
             this.tbUsuario.TabIndex = 3;
-            this.tbUsuario.Text = "1757279508";
             this.tbUsuario.TextChanged += new System.EventHandler(this.TbUsuario_TextChanged);
             // 
             // tbContraseña
@@ -165,7 +164,6 @@
             this.tbContraseña.PasswordChar = '*';
             this.tbContraseña.Size = new System.Drawing.Size(317, 41);
             this.tbContraseña.TabIndex = 4;
-            this.tbContraseña.Text = "Juan1234";
             this.tbContraseña.TextChanged += new System.EventHandler(this.TbContraseña_TextChanged);
             // 
             // tableLayoutPanel3
@@ -179,7 +177,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(317, 41);
             this.tableLayoutPanel3.TabIndex = 5;
             // 

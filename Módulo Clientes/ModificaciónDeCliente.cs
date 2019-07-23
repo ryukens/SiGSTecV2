@@ -52,7 +52,7 @@ namespace proyectoPantalla
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            String cedula = dgvModificar.CurrentRow.Cells[3].Value.ToString();
+            String cedula = dgvModificar.SelectedRows[0].Cells[3].Value.ToString();
             CambioDeDatosCliente cambioDeDatosCliente = new CambioDeDatosCliente(cedula);
             cambioDeDatosCliente.ShowDialog();
         }

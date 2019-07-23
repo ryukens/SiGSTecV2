@@ -21,6 +21,13 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            llenarCampos();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
+
+        public void llenarCampos()
+        {
             String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
@@ -37,8 +44,6 @@ namespace proyectoPantalla
             dgvMostrar.Columns[2].HeaderText = "Cuenta";
             dgvMostrar.Columns[3].HeaderText = "Identificación";
             dgvMostrar.Columns[4].HeaderText = "SLA";
-            this.tabControl = tabControl;
-            this.tabInicio = tabInicio;
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
@@ -130,6 +135,11 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabInicio);
             tbBuscar.ResetText();
+        }
+
+        private void DgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
