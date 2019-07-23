@@ -403,7 +403,7 @@ namespace proyectoPantalla
             tbCelular1.ResetText();
             tbCelular2.ResetText();
             tbCorreo.ResetText();
-            tbCuenta.ResetText();
+            tbCuenta.Text = "N/A";
             tbDescripcion.ResetText();
             tbNombre.ResetText();
             tbNombreCont.ResetText();

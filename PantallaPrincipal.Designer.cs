@@ -73,6 +73,7 @@
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.bAyuda = new System.Windows.Forms.Button();
             this.tabRegCliente = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -150,7 +151,7 @@
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.bAyuda = new System.Windows.Forms.Button();
+            label22 = new System.Windows.Forms.Label();
             this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
             this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
             this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
@@ -167,11 +168,10 @@
             this.generaciónDeInforme1 = new GeneraciónDeInforme(tabControl, tabInicio);
             this.vistaDeDetalles1 = new VistaDeDetalles(tabControl, tabInicio);
             this.finalizaciónDeCaso1 = new FinalizaciónDeCaso(tabControl, tabInicio);
-            this.asignaciónMuestraCaso1 = new Módulo_Casos.AsignaciónMuestraCaso(tabControl, tabInicio);
+            this.asignaciónDeProductos1 = new Módulo_Casos.AsignaciónDeProductos(tabControl, tabInicio);
             this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
             this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
             this.muestraDeTécnico1 = new MuestraDeTécnico(tabControl, tabInicio);
-            label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -228,7 +228,6 @@
             this.tableLayoutPanel30.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
-
             // 
             // label22
             // 
@@ -689,6 +688,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // bAyuda
+            // 
+            this.bAyuda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAyuda.Location = new System.Drawing.Point(922, 3);
+            this.bAyuda.Name = "bAyuda";
+            this.bAyuda.Size = new System.Drawing.Size(49, 37);
+            this.bAyuda.TabIndex = 2;
+            this.bAyuda.Text = "?";
+            this.bAyuda.UseVisualStyleBackColor = true;
+            // 
             // muestraDeCaso2
             // 
             this.muestraDeCaso2.BackColor = System.Drawing.SystemColors.Window;
@@ -830,7 +840,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(974, 24);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Eliminación de Cliente";
+            this.label4.Text = "Baja de Cliente";
             // 
             // eliminaciónDeCliente1
             // 
@@ -1697,7 +1707,7 @@
             this.tableLayoutPanel28.ColumnCount = 1;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel28.Controls.Add(this.label24, 0, 0);
-            this.tableLayoutPanel28.Controls.Add(this.asignaciónMuestraCaso1, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.asignaciónDeProductos1, 0, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
@@ -1717,14 +1727,14 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Asignación de Productos";
             // 
-            // asignaciónMuestraCaso1
+            // asignaciónDeProductos1
             // 
-            this.asignaciónMuestraCaso1.BackColor = System.Drawing.SystemColors.Window;
-            this.asignaciónMuestraCaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.asignaciónMuestraCaso1.Location = new System.Drawing.Point(3, 27);
-            this.asignaciónMuestraCaso1.Name = "asignaciónMuestraCaso1";
-            this.asignaciónMuestraCaso1.Size = new System.Drawing.Size(974, 460);
-            this.asignaciónMuestraCaso1.TabIndex = 1;
+            this.asignaciónDeProductos1.BackColor = System.Drawing.SystemColors.Window;
+            this.asignaciónDeProductos1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.asignaciónDeProductos1.Location = new System.Drawing.Point(3, 27);
+            this.asignaciónDeProductos1.Name = "asignaciónDeProductos1";
+            this.asignaciónDeProductos1.Size = new System.Drawing.Size(974, 460);
+            this.asignaciónDeProductos1.TabIndex = 1;
             // 
             // tabAlzarCliente
             // 
@@ -1831,17 +1841,6 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
             this.tableLayoutPanel15.TabIndex = 1;
-            // 
-            // bAyuda
-            // 
-            this.bAyuda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAyuda.Location = new System.Drawing.Point(922, 3);
-            this.bAyuda.Name = "bAyuda";
-            this.bAyuda.Size = new System.Drawing.Size(49, 37);
-            this.bAyuda.TabIndex = 2;
-            this.bAyuda.Text = "?";
-            this.bAyuda.UseVisualStyleBackColor = true;
             // 
             // PantallaPrincipal
             // 
@@ -2070,7 +2069,7 @@
         private System.Windows.Forms.TabPage tabAsignarProducto;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
         private System.Windows.Forms.Label label24;
-        private Módulo_Casos.AsignaciónMuestraCaso asignaciónMuestraCaso1;
+        private Módulo_Casos.AsignaciónDeProductos asignaciónDeProductos1;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarCliente;
         private System.Windows.Forms.ToolStripMenuItem MSAlzarTécnico;
         private System.Windows.Forms.TabPage tabAlzarCliente;

@@ -24,8 +24,8 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            GeneraciónDelInforme ordenDeFacturación = new GeneraciónDelInforme();
-            ordenDeFacturación.Show();
+            DetallesDeCaso detallesDeCaso = new DetallesDeCaso();
+            detallesDeCaso.ShowDialog();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

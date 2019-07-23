@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace proyectoPantalla
 {
-    public partial class GeneraciónDelInforme : Form
+    public partial class DetallesDeCaso : Form
     {
-        public GeneraciónDelInforme()
+        public DetallesDeCaso()
         {
             InitializeComponent();
             TopMost = true;

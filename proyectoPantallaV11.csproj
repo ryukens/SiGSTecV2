@@ -87,11 +87,11 @@
     <Compile Include="Correo.Designer.cs">
       <DependentUpon>Correo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Módulo Casos\AsignaciónMuestraCaso.cs">
+    <Compile Include="Módulo Casos\AsignaciónDeProductos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Módulo Casos\AsignaciónMuestraCaso.Designer.cs">
-      <DependentUpon>AsignaciónMuestraCaso.cs</DependentUpon>
+    <Compile Include="Módulo Casos\AsignaciónDeProductos.Designer.cs">
+      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Módulo Casos\Caso.cs" />
     <Compile Include="Módulo Clientes\Cliente.cs" />
@@ -126,11 +126,11 @@
     <Compile Include="Módulo Inventario\MuestraDeProducto.Designer.cs">
       <DependentUpon>MuestraDeProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Módulo Estadísticas\OrdenDeFacturación.cs">
+    <Compile Include="Módulo Estadísticas\DetallesDeCaso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Módulo Estadísticas\OrdenDeFacturación.Designer.cs">
-      <DependentUpon>OrdenDeFacturación.cs</DependentUpon>
+    <Compile Include="Módulo Estadísticas\DetallesDeCaso.Designer.cs">
+      <DependentUpon>DetallesDeCaso.cs</DependentUpon>
     </Compile>
     <Compile Include="Módulo Casos\RegistroDeInformeFinal.cs">
       <SubType>Form</SubType>
@@ -308,8 +308,8 @@
     <EmbeddedResource Include="Correo.resx">
       <DependentUpon>Correo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Módulo Casos\AsignaciónMuestraCaso.resx">
-      <DependentUpon>AsignaciónMuestraCaso.cs</DependentUpon>
+    <EmbeddedResource Include="Módulo Casos\AsignaciónDeProductos.resx">
+      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Inventario\AumentoDeProducto.resx">
       <DependentUpon>AumentoDeProducto.cs</DependentUpon>
@@ -326,8 +326,8 @@
     <EmbeddedResource Include="Módulo Inventario\MuestraDeProducto.resx">
       <DependentUpon>MuestraDeProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Módulo Estadísticas\OrdenDeFacturación.resx">
-      <DependentUpon>OrdenDeFacturación.cs</DependentUpon>
+    <EmbeddedResource Include="Módulo Estadísticas\DetallesDeCaso.resx">
+      <DependentUpon>DetallesDeCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Casos\RegistroDeInformeFinal.resx">
       <DependentUpon>RegistroDeInformeFinal.cs</DependentUpon>
