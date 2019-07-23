@@ -66,7 +66,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void TbBuscar_KeyPress(object sender, KeyPressEventArgs e)
+
+
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
