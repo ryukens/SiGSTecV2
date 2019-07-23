@@ -146,7 +146,7 @@
             this.tbUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.Location = new System.Drawing.Point(164, 97);
-            this.tbUsuario.MaxLength = 16;
+            this.tbUsuario.MaxLength = 10;
             this.tbUsuario.Multiline = true;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(317, 41);
