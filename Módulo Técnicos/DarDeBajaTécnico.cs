@@ -25,7 +25,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        private void mostrarTecnicos()
+        public void mostrarTecnicos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_TECNICO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -70,7 +70,7 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Técnico Eliminado Correctamente", "Técnico Eliminado");
+                MessageBox.Show("Técnico Dado de Baja Correctamente", "Técnico Dado de Baja");
                 mostrarTecnicos();
             }
         }

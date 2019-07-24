@@ -62,6 +62,7 @@ namespace proyectoPantalla
         private void EliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabBajaTécnico);
+            eliminaciónDeTécnico1.mostrarTecnicos();
         }
 
         private void NuevoToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -192,6 +193,7 @@ namespace proyectoPantalla
         private void MSAlzarTécnico_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAlzarTécnico);
+            darDeAltaTécnico1.mostrarTecnicos();
         }
     }
 }

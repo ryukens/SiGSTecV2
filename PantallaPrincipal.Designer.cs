@@ -171,6 +171,7 @@
             this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
             this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
             this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
+            
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
