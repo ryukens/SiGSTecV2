@@ -20,7 +20,7 @@ namespace proyectoPantalla.Módulo_Casos
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
-            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO_PARA_ASIGANCION_PRODUCTO", conexion);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
@@ -47,7 +47,10 @@ namespace proyectoPantalla.Módulo_Casos
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SelecciónDeProductos selecciónDeProductos = new SelecciónDeProductos();
+            String numero = dgvMostrar.SelectedRows[0].Cells[1].Value.ToString();
+            String cliente = dgvMostrar.SelectedRows[0].Cells[2].Value.ToString();
+           // MessageBox.Show(numero, cliente);
+            SelecciónDeProductos selecciónDeProductos = new SelecciónDeProductos(numero, cliente);
             selecciónDeProductos.ShowDialog();
         }
 
@@ -61,7 +64,7 @@ namespace proyectoPantalla.Módulo_Casos
         {
             if (cbBuscar.SelectedIndex == 0) //numero de caso
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO", conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO_PARA_ASIGANCION_PRODUCTO", conexion);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
                 DataTable dt = new DataTable();
@@ -72,7 +75,7 @@ namespace proyectoPantalla.Módulo_Casos
             else if (cbBuscar.SelectedIndex == 1) // Cliente
             {
 
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE", conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE_PARA_ASIGANCION_PRODUCTO", conexion);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
                 DataTable dt = new DataTable();
@@ -82,7 +85,7 @@ namespace proyectoPantalla.Módulo_Casos
             }
             else if (cbBuscar.SelectedIndex == 2) // Cuenta
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA", conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA_PARA_ASIGANCION_PRODUCTO", conexion);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
                 DataTable dt = new DataTable();
@@ -92,7 +95,7 @@ namespace proyectoPantalla.Módulo_Casos
             }
             else if (cbBuscar.SelectedIndex == 3) // Sector
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR", conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR_PARA_ASIGANCION_PRODUCTO", conexion);
                 sda.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
                 DataTable dt = new DataTable();
