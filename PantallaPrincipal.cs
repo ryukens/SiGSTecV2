@@ -44,7 +44,6 @@ namespace proyectoPantalla
             tabControl.SelectTab(tabModCliente);
             modificaciónDeCliente1.mostrarCliente();
 
-            
         }
 
 
@@ -62,11 +61,13 @@ namespace proyectoPantalla
         private void EliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabBajaTécnico);
+            eliminaciónDeTécnico1.mostrarTecnicos();
         }
 
         private void NuevoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabRegCaso);
+
         }
 
 
@@ -74,7 +75,7 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabCerrarCaso);
             registroDeCaso1.llenarCBVendedor();
-
+            cierreDeCaso1.muestraCasos();
         }
 
         private void EliminarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace proyectoPantalla
         private void ModificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabModTécnico);
+            modificaciónDeTécnico1.mostrarTecnicos();
         }
 
 
@@ -107,6 +109,7 @@ namespace proyectoPantalla
         private void CancelarCasoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabCancelarCaso);
+            cancelaciónDeCaso1.muestraCasos();
         }
 
         private void MostrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,6 +121,7 @@ namespace proyectoPantalla
         private void MostrarTécnicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabMostrarTécnico);
+            muestraDeTécnico1.muestraTecnicos();
         }
 
         private void MostrarCasoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,6 +185,7 @@ namespace proyectoPantalla
         private void AsignarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAsignarProducto);
+            asignaciónDeProductos1.muestraCasos();
         }
 
         private void MSAlzarCliente_Click(object sender, EventArgs e)
@@ -192,6 +197,7 @@ namespace proyectoPantalla
         private void MSAlzarTécnico_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAlzarTécnico);
+            darDeAltaTécnico1.mostrarTecnicos();
         }
     }
 }
