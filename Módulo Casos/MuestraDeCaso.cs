@@ -24,10 +24,9 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
 
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
-            
+
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dgvMostrar.DataSource = dt;
             dgvMostrar.DataSource = dt;
             dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -36,7 +35,7 @@ namespace proyectoPantalla
             dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[0].HeaderText = "Estado";
             dgvMostrar.Columns[1].HeaderText = "Número";
             dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -177,11 +176,6 @@ namespace proyectoPantalla
         {
             tbBuscar.ResetText();
             tabControl.SelectTab(tabInicio);
-        }
-
-        private void DgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
