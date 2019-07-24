@@ -25,7 +25,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        private void mostrarTecnicos()
+        public void mostrarTecnicos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_TECNICO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -44,22 +44,6 @@ namespace proyectoPantalla
             dgvEliminar.Columns[4].HeaderText = "Alcance";
         }
 
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea Dar de Baja este técnico?", "Dar de Baja Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -70,7 +54,7 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Técnico Eliminado Correctamente", "Técnico Eliminado");
+                MessageBox.Show("Técnico Dado de Baja Correctamente", "Técnico Dado de Baja");
                 mostrarTecnicos();
             }
         }

@@ -317,7 +317,6 @@
             this.cbSLA.Name = "cbSLA";
             this.cbSLA.Size = new System.Drawing.Size(694, 21);
             this.cbSLA.TabIndex = 0;
-            this.cbSLA.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // panel12
             // 
@@ -664,7 +663,6 @@
             this.Name = "CambioDeDatosCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio De Datos Cliente";
-            this.Load += new System.EventHandler(this.CambioDeDatosCliente_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);

@@ -302,6 +302,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sigstecDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Logeo\CambioDeContraseña.resx">
       <DependentUpon>CambioDeContraseña.cs</DependentUpon>
     </EmbeddedResource>

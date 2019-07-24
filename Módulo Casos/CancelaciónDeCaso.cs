@@ -22,7 +22,11 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            muestraCasos();
+        }
 
+        public void muestraCasos()
+        {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
