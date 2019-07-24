@@ -110,7 +110,10 @@
             this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
-            "POR DEFINIR"});
+            "Número de Caso",
+            "Cliente",
+            "Cuenta",
+            "Sector"});
             this.cbBuscar.Location = new System.Drawing.Point(3, 3);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(150, 21);
@@ -123,6 +126,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(285, 20);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -162,13 +166,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // AsignaciónDeProductos
+            // AsignaciónMuestraCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "AsignaciónDeProductos";
+            this.Name = "AsignaciónMuestraCaso";
             this.Size = new System.Drawing.Size(604, 427);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
