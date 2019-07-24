@@ -124,7 +124,7 @@ namespace proyectoPantalla
 
                 conexion.Open();
 
-                
+
                 SqlCommand comando1 = new SqlCommand("SP_REGISTRO_USUARIO", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
@@ -228,19 +228,6 @@ namespace proyectoPantalla
 
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = VerificaCedula(tbCedula.Text);
-            if (flag)
-            {
-                Console.WriteLine("Cédula correcta");
-                tbCedula.ForeColor = Color.Green;
-
-            }
-            else
-            {
-                tbCedula.ForeColor = Color.Red;
-            }
-
-
         }
 
         private void TbCorreo_KeyUp(object sender, KeyEventArgs e)
@@ -275,14 +262,40 @@ namespace proyectoPantalla
         {
             if (VerificaCedula(tbCedula.Text))
             {
-                errorProvider1.SetError(tbCedula, null);
+                if (verificarCedulaRepetida(tbCedula.Text) != 0)
+                {
+                    tbCedula.ForeColor = Color.Red;
+                    errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCedula, null);
+                    tbCedula.ForeColor = Color.Green;
+                }
             }
             else
             {
                 errorProvider1.SetError(tbCedula, "Ingrese cédula correctamente");
+                tbCedula.ForeColor = Color.Red;
             }
         }
 
+        public int verificarCedulaRepetida(String ced)
+        {
+            int result = -1;
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SP_VERIFICAR_CEDULA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@identificacion", tbCedula.Text);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                result = reader.GetInt32(0);
+            }
+            conexion.Close();
+            return result;
+        }
         private void limpiarCampos()
         {
             tbCedula.ResetText();
