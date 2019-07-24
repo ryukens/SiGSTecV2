@@ -16,7 +16,9 @@ namespace proyectoPantalla
     public partial class RegistroDeUsuario : UserControl
     {
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog =SIGSTEC; Integrated Security = True");
-
+        bool flagNombre = false;
+        bool flagCedula = false;
+        bool flagCorreo = false;
 
         static string RandomString(int length)
         {
@@ -91,6 +93,7 @@ namespace proyectoPantalla
             cbTipo.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            bCrear.Enabled = false;
         }
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
@@ -142,8 +145,11 @@ namespace proyectoPantalla
                 conexion.Close();
 
                 MessageBox.Show("Usuario Registrado Correctamente", "Usuario Registrado");
+                limpiarCampos();
             }
         }
+
+    
 
         private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -185,7 +191,29 @@ namespace proyectoPantalla
 
         private void TextBox3_TextChanged(object sender, EventArgs e)
         {
+            if (tbNombre.Text.Trim() == "")
+            {
+                flagNombre = false;
+                cambiarBoton();
 
+            }
+            else
+            {
+                flagNombre = true;
+                cambiarBoton();
+            }
+        }
+
+        public void cambiarBoton()
+        {
+            if (flagNombre && flagCedula && flagCorreo)
+            {
+                bCrear.Enabled = true;
+            }
+            else
+            {
+                bCrear.Enabled = false;
+            }
         }
 
         private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -248,36 +276,64 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (ComprobarFormatoEmail(tbCorreo.Text))
+            if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
+                flagCorreo = false;
+                cambiarBoton();
             }
             else
             {
-                errorProvider1.SetError(tbCorreo, "Ingrese correo electrónico correctamente");
+                if (ComprobarFormatoEmail(tbCorreo.Text))
+                {
+                    errorProvider1.SetError(tbCorreo, null);
+                    flagCorreo = true;
+                    cambiarBoton();
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCorreo, "Ingrese correo electrónico correctamente");
+                    flagCorreo = false;
+                    cambiarBoton();
+                }
             }
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-            if (VerificaCedula(tbCedula.Text))
+            if (tbCedula.Text.Trim() == "")
             {
-                if (verificarCedulaRepetida(tbCedula.Text) != 0)
-                {
-                    tbCedula.ForeColor = Color.Red;
-                    errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
-
-                }
-                else
-                {
-                    errorProvider1.SetError(tbCedula, null);
-                    tbCedula.ForeColor = Color.Green;
-                }
+                errorProvider1.SetError(tbCedula, null);
+               
+                flagCedula = false;
+                cambiarBoton();
             }
             else
             {
-                errorProvider1.SetError(tbCedula, "Ingrese cédula correctamente");
-                tbCedula.ForeColor = Color.Red;
+                if (VerificaCedula(tbCedula.Text))
+                {
+                    if (verificarCedulaRepetida(tbCedula.Text) != 0)
+                    {
+                        tbCedula.ForeColor = Color.Red;
+                        errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
+                        flagCedula = false;
+                        cambiarBoton();
+
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(tbCedula, null);
+                        tbCedula.ForeColor = Color.Green;
+                        flagCedula = true;
+                        cambiarBoton();
+                    }
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCedula, "Ingrese cédula correctamente");
+                    tbCedula.ForeColor = Color.Red;
+                    flagCedula = false;
+                }
             }
         }
 
@@ -301,6 +357,7 @@ namespace proyectoPantalla
             tbCedula.ResetText();
             tbCorreo.ResetText();
             tbNombre.ResetText();
+            cbTipo.SelectedIndex = 0;
 
         }
 

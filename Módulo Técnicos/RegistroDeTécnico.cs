@@ -152,7 +152,7 @@ namespace proyectoPantalla
             }
             else
             {
-                if (ComprobarFormatoEmail(tbCorreo.Text))
+                if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
                 {
                     errorProvider1.SetError(tbCorreo, null);
                 }
@@ -205,7 +205,7 @@ namespace proyectoPantalla
             }
             else
             {
-                if (formatoTelefono(tbTelefono1.Text))
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
                 {
                     errorProvider1.SetError(tbTelefono1, null);
                     tbTelefono1.ForeColor = Color.Green;
@@ -249,7 +249,7 @@ namespace proyectoPantalla
                 errorProvider1.SetError(tbCedula, null);
             }
             else { 
-                if (VerificaCedula(tbCedula.Text))
+                if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
                     int r = verificarCedulaRepetida(tbCedula.Text);
                     if (r != 0)
@@ -325,7 +325,7 @@ if (tbTelefono1.Text.Trim() == "")
             }
             else
             {
-                if (formatoTelefono(tbTelefono1.Text))
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
                 {
                     errorProvider1.SetError(tbTelefono1, null);
                     tbTelefono1.ForeColor = Color.Green;

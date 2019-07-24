@@ -161,6 +161,7 @@ namespace proyectoPantalla
         private void EliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabEliminarUsuario);
+            eliminaciónDeUsuario1.mostrarDatos();
         }
 
         private void PantallaPrincipal_Load(object sender, EventArgs e)

@@ -440,7 +440,6 @@
             this.tbCedula.TabIndex = 1;
             this.tbCedula.TextChanged += new System.EventHandler(this.TbCedula_TextChanged);
             this.tbCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCedula_KeyPress);
-            this.tbCedula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbCedula_KeyUp);
             // 
             // tbCorreo
             // 
