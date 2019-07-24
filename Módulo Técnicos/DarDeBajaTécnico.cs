@@ -54,7 +54,7 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Técnico Eliminado Correctamente", "Técnico Eliminado");
+                MessageBox.Show("Técnico Dado de Baja Correctamente", "Técnico Dado de Baja");
                 mostrarTecnicos();
             }
         }
