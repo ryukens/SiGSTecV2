@@ -91,7 +91,6 @@
             this.tabRegProd = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto();
             this.tabRegCaso = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
@@ -171,6 +170,7 @@
             this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico(tabControl, tabInicio);
             this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
             this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
+            this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();

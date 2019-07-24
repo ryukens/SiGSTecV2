@@ -118,6 +118,27 @@ namespace proyectoPantalla
                 return false;
             }
         }
+
+        public static bool soloNumero(string valor)
+        {
+            String formato;
+            formato = "/^[0-9]+$/";
+            if (Regex.IsMatch(valor, formato))
+            {
+                if (Regex.Replace(valor, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 
