@@ -210,8 +210,14 @@
             this.cbSLA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSLA.FormattingEnabled = true;
             this.cbSLA.Items.AddRange(new object[] {
-            "1/2 hora",
-            "1 hora"});
+            "Media hora",
+            "1 hora",
+            "2 hora",
+            "4 hora",
+            "8 hora",
+            "24 hora",
+            "48 hora",
+            "N/A"});
             this.cbSLA.Location = new System.Drawing.Point(0, 0);
             this.cbSLA.Name = "cbSLA";
             this.cbSLA.Size = new System.Drawing.Size(503, 21);

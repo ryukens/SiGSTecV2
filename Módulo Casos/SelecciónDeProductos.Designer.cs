@@ -37,7 +37,7 @@
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvGeneral = new System.Windows.Forms.DataGridView();
+            this.dgvDisminuir = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.bAsignar = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisminuir)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -94,6 +94,7 @@
             this.bAceptar.TabIndex = 18;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.BAceptar_Click_1);
             // 
             // bCancelar
             // 
@@ -104,6 +105,7 @@
             this.bCancelar.TabIndex = 16;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // dgvAsignar
             // 
@@ -144,6 +146,7 @@
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(95, 21);
             this.cbBuscar.TabIndex = 0;
+            this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.CbBuscar_SelectedIndexChanged);
             // 
             // tbBuscar
             // 
@@ -153,6 +156,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(231, 32);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
             // label1
             // 
@@ -171,24 +175,24 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dgvGeneral);
+            this.panel3.Controls.Add(this.dgvDisminuir);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(101, 47);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(338, 370);
             this.panel3.TabIndex = 4;
             // 
-            // dgvGeneral
+            // dgvDisminuir
             // 
-            this.dgvGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGeneral.Location = new System.Drawing.Point(0, 0);
-            this.dgvGeneral.Name = "dgvGeneral";
-            this.dgvGeneral.ReadOnly = true;
-            this.dgvGeneral.RowHeadersWidth = 51;
-            this.dgvGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGeneral.Size = new System.Drawing.Size(338, 370);
-            this.dgvGeneral.TabIndex = 0;
+            this.dgvDisminuir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisminuir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDisminuir.Location = new System.Drawing.Point(0, 0);
+            this.dgvDisminuir.Name = "dgvDisminuir";
+            this.dgvDisminuir.ReadOnly = true;
+            this.dgvDisminuir.RowHeadersWidth = 51;
+            this.dgvDisminuir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDisminuir.Size = new System.Drawing.Size(338, 370);
+            this.dgvDisminuir.TabIndex = 0;
             // 
             // label3
             // 
@@ -233,6 +237,7 @@
             this.bAsignar.TabIndex = 15;
             this.bAsignar.Text = "Asignar\r\n<---------";
             this.bAsignar.UseVisualStyleBackColor = true;
+            this.bAsignar.Click += new System.EventHandler(this.BAsignar_Click);
             // 
             // bQuitar
             // 
@@ -243,6 +248,7 @@
             this.bQuitar.TabIndex = 16;
             this.bQuitar.Text = "Quitar\r\n--------->";
             this.bQuitar.UseVisualStyleBackColor = true;
+            this.bQuitar.Click += new System.EventHandler(this.BQuitar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -322,7 +328,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisminuir)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
@@ -343,7 +349,7 @@
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvGeneral;
+        private System.Windows.Forms.DataGridView dgvDisminuir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button bAsignar;
         private System.Windows.Forms.Button bQuitar;

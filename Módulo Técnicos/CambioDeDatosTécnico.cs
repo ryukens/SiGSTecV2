@@ -97,6 +97,15 @@ namespace proyectoPantalla
                 conexion.Close();
                 MessageBox.Show("Técnico Modificado Correctamente", "Técnico Modificado");
                 this.Dispose();
+
+                SqlCommand command2 = new SqlCommand("SP_MODIFICACION_TELFONOS", conexion);
+                command2.CommandType = CommandType.StoredProcedure;
+                command2.Parameters.AddWithValue("@convencional1", tbTelefono1.Text);
+                command2.Parameters.AddWithValue("@convencional2", tbTelefono2.Text);
+                command2.Parameters.AddWithValue("@movil1", tbCelular1.Text);
+                command2.Parameters.AddWithValue("@movil2", tbCelular2.Text);
+                command2.Parameters.AddWithValue("@idpersona", ippersona);
+                command2.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

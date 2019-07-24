@@ -163,6 +163,7 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(540, 20);
             this.tbNombre.TabIndex = 3;
+            this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             // 
             // lCuenta
             // 
@@ -566,7 +567,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel6.Controls.Add(this.tbCelular1, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.tbTelefono2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lCelulares, 1, 0);
