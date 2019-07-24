@@ -159,6 +159,7 @@
             // tbNombre
             // 
             this.tbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNombre.Enabled = false;
             this.tbNombre.Location = new System.Drawing.Point(202, 4);
             this.tbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tbNombre.MaxLength = 128;
@@ -317,6 +318,15 @@
             this.cbSLA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbSLA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSLA.FormattingEnabled = true;
+            this.cbSLA.Items.AddRange(new object[] {
+            "Media Hora",
+            "1 Hora",
+            "2 Horas",
+            "4 Horas",
+            "8 Horas",
+            "24 Horas",
+            "48 Horas",
+            "N/A"});
             this.cbSLA.Location = new System.Drawing.Point(0, 0);
             this.cbSLA.Margin = new System.Windows.Forms.Padding(4);
             this.cbSLA.Name = "cbSLA";
@@ -444,6 +454,7 @@
             this.tbCedula.Enabled = false;
             this.tbCedula.Location = new System.Drawing.Point(0, 0);
             this.tbCedula.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCedula.MaxLength = 13;
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(925, 22);
             this.tbCedula.TabIndex = 1;
@@ -590,10 +601,11 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnCount = 4;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel6.Controls.Add(this.tbCelular1, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.tbTelefono2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lCelulares, 1, 0);
@@ -612,11 +624,11 @@
             // tbCelular1
             // 
             this.tbCelular1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCelular1.Location = new System.Drawing.Point(559, 4);
+            this.tbCelular1.Location = new System.Drawing.Point(541, 4);
             this.tbCelular1.Margin = new System.Windows.Forms.Padding(4);
             this.tbCelular1.MaxLength = 10;
             this.tbCelular1.Name = "tbCelular1";
-            this.tbCelular1.Size = new System.Drawing.Size(362, 22);
+            this.tbCelular1.Size = new System.Drawing.Size(350, 22);
             this.tbCelular1.TabIndex = 5;
             this.tbCelular1.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
             this.tbCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox8_KeyPress);
@@ -626,9 +638,11 @@
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono2.Location = new System.Drawing.Point(4, 34);
             this.tbTelefono2.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelefono2.MaxLength = 9;
             this.tbTelefono2.Name = "tbTelefono2";
-            this.tbTelefono2.Size = new System.Drawing.Size(362, 22);
+            this.tbTelefono2.Size = new System.Drawing.Size(350, 22);
             this.tbTelefono2.TabIndex = 4;
+            this.tbTelefono2.TextChanged += new System.EventHandler(this.TbTelefono2_TextChanged_1);
             this.tbTelefono2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox5_KeyPress);
             // 
             // lCelulares
@@ -636,7 +650,7 @@
             this.lCelulares.AutoSize = true;
             this.lCelulares.Dock = System.Windows.Forms.DockStyle.Right;
             this.lCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCelulares.Location = new System.Drawing.Point(466, 0);
+            this.lCelulares.Location = new System.Drawing.Point(448, 0);
             this.lCelulares.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lCelulares.Name = "lCelulares";
             this.lCelulares.Size = new System.Drawing.Size(85, 30);
@@ -649,20 +663,23 @@
             this.tbTelefono1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono1.Location = new System.Drawing.Point(4, 4);
             this.tbTelefono1.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTelefono1.MaxLength = 9;
             this.tbTelefono1.Name = "tbTelefono1";
-            this.tbTelefono1.Size = new System.Drawing.Size(362, 22);
+            this.tbTelefono1.Size = new System.Drawing.Size(350, 22);
             this.tbTelefono1.TabIndex = 3;
+            this.tbTelefono1.TextChanged += new System.EventHandler(this.TbTelefono1_TextChanged);
             this.tbTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox2_KeyPress);
             // 
             // tbCelular2
             // 
             this.tbCelular2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCelular2.Location = new System.Drawing.Point(559, 34);
+            this.tbCelular2.Location = new System.Drawing.Point(541, 34);
             this.tbCelular2.Margin = new System.Windows.Forms.Padding(4);
             this.tbCelular2.MaxLength = 10;
             this.tbCelular2.Name = "tbCelular2";
-            this.tbCelular2.Size = new System.Drawing.Size(362, 22);
+            this.tbCelular2.Size = new System.Drawing.Size(350, 22);
             this.tbCelular2.TabIndex = 6;
+            this.tbCelular2.TextChanged += new System.EventHandler(this.TbCelular2_TextChanged_1);
             this.tbCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox9_KeyPress);
             // 
             // tbCorreo
@@ -670,6 +687,7 @@
             this.tbCorreo.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbCorreo.Location = new System.Drawing.Point(190, 150);
             this.tbCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCorreo.MaxLength = 64;
             this.tbCorreo.Name = "tbCorreo";
             this.tbCorreo.Size = new System.Drawing.Size(925, 22);
             this.tbCorreo.TabIndex = 2;
@@ -687,7 +705,7 @@
             this.ClientSize = new System.Drawing.Size(1245, 567);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1261, 603);
+            this.MinimumSize = new System.Drawing.Size(1261, 601);
             this.Name = "CambioDeDatosCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio De Datos Cliente";

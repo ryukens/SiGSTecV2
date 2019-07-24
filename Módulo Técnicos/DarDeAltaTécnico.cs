@@ -22,6 +22,7 @@ namespace proyectoPantalla
             mostrarTecnicos();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            cbBuscar.SelectedIndex = 0;
         }
 
         public void mostrarTecnicos()
@@ -65,7 +66,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void TbBuscar_KeyPress(object sender, KeyPressEventArgs e)
+
+
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {

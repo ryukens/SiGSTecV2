@@ -173,7 +173,6 @@
             this.lAlcance.Size = new System.Drawing.Size(64, 18);
             this.lAlcance.TabIndex = 1;
             this.lAlcance.Text = "Alcance:";
-            this.lAlcance.Click += new System.EventHandler(this.Label6_Click);
             // 
             // panel10
             // 
@@ -194,7 +193,6 @@
             this.tbSector.Name = "tbSector";
             this.tbSector.Size = new System.Drawing.Size(719, 22);
             this.tbSector.TabIndex = 23;
-            this.tbSector.TextChanged += new System.EventHandler(this.TextBox7_TextChanged);
             // 
             // panel9
             // 
@@ -261,7 +259,6 @@
             this.lCedula.Size = new System.Drawing.Size(152, 18);
             this.lCedula.TabIndex = 1;
             this.lCedula.Text = "Cédula de ciudadanía:";
-            this.lCedula.Click += new System.EventHandler(this.Label2_Click);
             // 
             // panel2
             // 
@@ -282,7 +279,6 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(719, 22);
             this.tbNombre.TabIndex = 0;
-            this.tbNombre.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // panel1
@@ -385,8 +381,10 @@
             // tbTelefono2
             // 
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbTelefono2.Location = new System.Drawing.Point(5, 34);
             this.tbTelefono2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
             this.tbTelefono2.MaxLength = 9;
             this.tbTelefono2.Name = "tbTelefono2";
             this.tbTelefono2.Size = new System.Drawing.Size(263, 22);
@@ -406,7 +404,6 @@
             this.lCelulares.TabIndex = 2;
             this.lCelulares.Text = "Celulares:";
             this.lCelulares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lCelulares.Click += new System.EventHandler(this.LTelfCelular_Click);
             // 
             // tbTelefono1
             // 

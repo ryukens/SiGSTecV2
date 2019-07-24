@@ -15,28 +15,10 @@ namespace proyectoPantalla
     public partial class RegistroDeTécnico : UserControl
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
-        {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
+        TabControl tabControl;
+        TabPage tabInicio;
 
-        public RegistroDeTécnico()
+        public RegistroDeTécnico(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             tbTelefono2.Enabled = false;
@@ -54,12 +36,13 @@ namespace proyectoPantalla
         private void Label6_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            bool flag = VerificaCedula(tbCedula.Text);
-            bool flag2 = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.VerificaCedula(tbCedula.Text);
+            bool flag2 = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag && flag2)
             {
                 conexion.Open();
@@ -115,52 +98,6 @@ namespace proyectoPantalla
 
         }
 
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        public bool VerificaCedula(string ced)
-        {
-            int isNumeric;
-            var total = 0;
-            const int tamanoLongitudCedula = 10;
-            int[] coeficientes = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
-            const int numeroProvincia = 24;
-            const int tercerDigito = 6;
-
-            if (int.TryParse(ced, out isNumeric) && ced.Length == tamanoLongitudCedula)
-            {
-                var provincia = Convert.ToInt32(string.Concat(ced[0], ced[1], string.Empty));
-                var digitoTres = Convert.ToInt32(ced[2] + string.Empty);
-                if ((provincia > 0 && provincia <= numeroProvincia) && digitoTres < tercerDigito)
-                {
-                    var digitoVerificadorRecibido = Convert.ToInt32(ced[9] + string.Empty);
-                    for (var k = 0; k < coeficientes.Length; k++)
-                    {
-                        var valor = Convert.ToInt32(coeficientes[k] + string.Empty) * Convert.ToInt32(ced[k] + string.Empty);
-                        total = valor >= 10 ? total + (valor - 9) : total + valor;
-                    }
-                    var digitoVerificadorObtenido = total >= 10 ? (total % 10) != 0 ? 10 - (total % 10) : (total % 10) : total;
-                    return digitoVerificadorObtenido == digitoVerificadorRecibido;
-                }
-                return false;
-            }
-            return false;
-        }
-
-
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -202,13 +139,6 @@ namespace proyectoPantalla
 
         }
 
-        private void TbCedula_KeyUp(object sender, KeyEventArgs e)
-        {
-
-
-
-        }
-
         private void TbCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -216,7 +146,7 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (tbCorreo.Text.Trim() == "")
+  if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
@@ -235,11 +165,10 @@ namespace proyectoPantalla
 
         private void TbCorreo_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 tbCorreo.ForeColor = Color.Green;
-
             }
             else
             {
@@ -270,23 +199,24 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (tbTelefono2.Text.Trim() == "")
+ if (tbTelefono1.Text.Trim() == "")
             {
-                errorProvider1.SetError(tbTelefono2, null);
+                errorProvider1.SetError(tbTelefono1, null);
             }
             else
             {
-                if (formatoTelefono(tbTelefono2.Text))
+                if (formatoTelefono(tbTelefono1.Text))
                 {
-                    errorProvider1.SetError(tbTelefono2, null);
-                    tbTelefono2.ForeColor = Color.Green;
+                    errorProvider1.SetError(tbTelefono1, null);
+                    tbTelefono1.ForeColor = Color.Green;
+                    tbTelefono2.Enabled = true;
                 }
                 else
                 {
-                    errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
+                    errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
                         "- Iniciar con prefijo (02 - 07)\r\n" +
                         "- Tener 9 dígitos");
-                    tbTelefono2.ForeColor = Color.Red;
+                    tbTelefono1.ForeColor = Color.Red;
                 }
             }
         }
@@ -313,6 +243,7 @@ namespace proyectoPantalla
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
+
             if (tbCedula.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCedula, null);
@@ -340,6 +271,8 @@ namespace proyectoPantalla
                     tbCedula.ForeColor = Color.Red;
                 }
             }
+            
+
 
 
         }
@@ -363,7 +296,6 @@ namespace proyectoPantalla
 
         private void LTelfCelular_Click(object sender, EventArgs e)
         {
-
         }
 
         public void limpiarCampos()
@@ -382,53 +314,12 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
-        }
-
-        public static bool formatoTelefono(string telefono)
-        {
-            String formato;
-            formato = "^0([2-7])([0-9]{7})$";
-            if (Regex.IsMatch(telefono, formato))
-            {
-                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool formatoCelular(string celular)
-        {
-            String formato;
-            formato = "^09([0-9]{8})$";
-            if (Regex.IsMatch(celular, formato))
-            {
-                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            tabControl.SelectTab(tabInicio);
         }
 
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-            if (tbTelefono1.Text.Trim() == "")
+if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
             }
@@ -452,7 +343,7 @@ namespace proyectoPantalla
 
         private void TbCelular1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -469,7 +360,7 @@ namespace proyectoPantalla
 
         private void TbCelular2_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular2.Text))
+            if (Validaciones.formatoCelular(tbCelular2.Text))
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
@@ -483,5 +374,6 @@ namespace proyectoPantalla
                 tbCelular2.ForeColor = Color.Red;
             }
         }
+
     }
 }

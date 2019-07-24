@@ -220,7 +220,12 @@
             this.cbSLA.Items.AddRange(new object[] {
             "Media Hora",
             "1 Hora",
-            "2 Horas"});
+            "2 Horas",
+            "4 Horas",
+            "8 Horas",
+            "24 Horas",
+            "48 Horas",
+            "N/A"});
             this.cbSLA.Location = new System.Drawing.Point(0, 0);
             this.cbSLA.Name = "cbSLA";
             this.cbSLA.Size = new System.Drawing.Size(594, 21);
@@ -284,7 +289,6 @@
             this.lNombreCont.Size = new System.Drawing.Size(64, 32);
             this.lNombreCont.TabIndex = 1;
             this.lNombreCont.Text = "Contacto:\r\n Nombre:";
-            this.lNombreCont.Click += new System.EventHandler(this.Label4_Click);
             // 
             // panel5
             // 
@@ -561,7 +565,7 @@
             // 
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono2.Location = new System.Drawing.Point(3, 32);
-            this.tbTelefono2.MaxLength = 10;
+            this.tbTelefono2.MaxLength = 9;
             this.tbTelefono2.Name = "tbTelefono2";
             this.tbTelefono2.Size = new System.Drawing.Size(219, 20);
             this.tbTelefono2.TabIndex = 4;
@@ -584,7 +588,7 @@
             // 
             this.tbTelefono1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTelefono1.Location = new System.Drawing.Point(3, 3);
-            this.tbTelefono1.MaxLength = 10;
+            this.tbTelefono1.MaxLength = 9;
             this.tbTelefono1.Name = "tbTelefono1";
             this.tbTelefono1.Size = new System.Drawing.Size(219, 20);
             this.tbTelefono1.TabIndex = 3;
@@ -607,7 +611,7 @@
             this.tbCedula.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCedula.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbCedula.Location = new System.Drawing.Point(123, 73);
-            this.tbCedula.MaxLength = 13;
+            this.tbCedula.MaxLength = 10;
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(594, 20);
             this.tbCedula.TabIndex = 1;
@@ -634,7 +638,6 @@
             this.tbNombreCont.Name = "tbNombreCont";
             this.tbNombreCont.Size = new System.Drawing.Size(594, 20);
             this.tbNombreCont.TabIndex = 2;
-            this.tbNombreCont.TextChanged += new System.EventHandler(this.TbNombreCont_TextChanged);
             // 
             // errorProvider1
             // 

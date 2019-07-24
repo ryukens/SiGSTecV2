@@ -25,17 +25,6 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public MuestraDeProducto()
-        {
-            InitializeComponent();
-            cbBuscar.SelectedIndex = 0;
-            mostrarProductos();
-
-
-
-
-        }
-
         public void mostrarProductos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_PRODUCTO", conexion);
@@ -103,7 +92,7 @@ namespace proyectoPantalla
             {
                 mostrarProductosPorCodigo();
 
-                
+
             }
             else
             {

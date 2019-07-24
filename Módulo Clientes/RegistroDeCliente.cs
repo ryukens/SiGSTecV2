@@ -25,7 +25,6 @@ namespace proyectoPantalla
             cbSLA.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -37,7 +36,7 @@ namespace proyectoPantalla
             }
             else
             {
-                MessageBox.Show("Existen campos vacios", "Campos Vacios");
+                //MessageBox.Show("Existen campos vacios", "Campos Vacios");
             }
 
             conexion.Open();
@@ -71,8 +70,6 @@ namespace proyectoPantalla
 
             comando1.ExecuteNonQuery();
 
-
-            String consulta1;
 
             if (!tbTelefono1.Text.Trim().Equals(""))
             {
@@ -109,8 +106,6 @@ namespace proyectoPantalla
             conexion.Close();
             MessageBox.Show("Cliente Registrado Correctamente", "Cliente Registrado");
             limpiarCampos();
-
-
         }
 
 
@@ -118,7 +113,7 @@ namespace proyectoPantalla
         {
             tbCuenta.Text = "N/A";
             tbCedula.MaxLength = 10;
-
+            tbCedula.ResetText();
         }
 
         private void RbEmpresa_CheckedChanged(object sender, EventArgs e)
@@ -126,79 +121,12 @@ namespace proyectoPantalla
             tbCuenta.Enabled = rbEmpresa.Checked;
             tbCuenta.Text = "";
             tbCedula.MaxLength = 13;
+            tbCedula.ResetText();
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        public bool VerificaCedula(string ced)
-        {
-            int isNumeric;
-            var total = 0;
-            const int tamanoLongitudCedula = 10;
-            int[] coeficientes = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
-            const int numeroProvincia = 24;
-            const int tercerDigito = 6;
-
-            if (int.TryParse(ced, out isNumeric) && ced.Length == tamanoLongitudCedula)
-            {
-                var provincia = Convert.ToInt32(string.Concat(ced[0], ced[1], string.Empty));
-                var digitoTres = Convert.ToInt32(ced[2] + string.Empty);
-                if ((provincia > 0 && provincia <= numeroProvincia) && digitoTres < tercerDigito)
-                {
-                    var digitoVerificadorRecibido = Convert.ToInt32(ced[9] + string.Empty);
-                    for (var k = 0; k < coeficientes.Length; k++)
-                    {
-                        var valor = Convert.ToInt32(coeficientes[k] + string.Empty) * Convert.ToInt32(ced[k] + string.Empty);
-                        total = valor >= 10 ? total + (valor - 9) : total + valor;
-                    }
-                    var digitoVerificadorObtenido = total >= 10 ? (total % 10) != 0 ? 10 - (total % 10) : (total % 10) : total;
-                    return digitoVerificadorObtenido == digitoVerificadorRecibido;
-                }
-                return false;
-            }
-            return false;
-        }
-
-        public bool RucPersonaNatural(string ruc)
-        {
-            long isNumeric;
-            const int tamanoLongitudRuc = 13;
-            const string establecimiento = "001";
-            if (long.TryParse(ruc, out isNumeric) && ruc.Length.Equals(tamanoLongitudRuc))
-            {
-                var numeroProvincia = Convert.ToInt32(string.Concat(ruc[0] + string.Empty, ruc[1] + string.Empty));
-                var personaNatural = Convert.ToInt32(ruc[2] + string.Empty);
-                if ((numeroProvincia >= 1 && numeroProvincia <= 24) && (personaNatural >= 0 && personaNatural < 6))
-                {
-                    return ruc.Substring(10, 3) == establecimiento && VerificaCedula(ruc.Substring(0, 10));
-                }
-                return false;
-            }
-            return false;
-        }
-
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
-        {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public bool ValidarCamposVacios()
@@ -242,7 +170,7 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (ComprobarFormatoEmail(tbCorreo.Text))
+            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
@@ -254,11 +182,10 @@ namespace proyectoPantalla
 
         private void TbCorreo_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 tbCorreo.ForeColor = Color.Green;
-
             }
             else
             {
@@ -268,7 +195,7 @@ namespace proyectoPantalla
 
         private void TbTelf1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono1.Text))
+            if (Validaciones.formatoTelefono(tbTelefono1.Text))
             {
                 errorProvider1.SetError(tbTelefono1, null);
                 tbTelefono1.ForeColor = Color.Green;
@@ -293,7 +220,7 @@ namespace proyectoPantalla
 
         private void TbTelf2_TextChanged(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono2.Text))
+            if (Validaciones.formatoTelefono(tbTelefono2.Text))
             {
                 errorProvider1.SetError(tbTelefono2, null);
                 tbTelefono2.ForeColor = Color.Green;
@@ -318,7 +245,7 @@ namespace proyectoPantalla
 
         private void TbCel1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -344,7 +271,7 @@ namespace proyectoPantalla
 
         private void TbCel2_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular2.Text))
+            if (Validaciones.formatoCelular(tbCelular2.Text))
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
@@ -370,7 +297,7 @@ namespace proyectoPantalla
 
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
-            if (VerificaCedula(tbCedula.Text) || RucPersonaNatural(tbCedula.Text))
+            if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
             {
                 errorProvider1.SetError(tbCedula, null);
                 tbCedula.ForeColor = Color.Green;
@@ -383,27 +310,13 @@ namespace proyectoPantalla
             }
         }
 
-        private void Panel10_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void Label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TbNombreCont_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void limpiarCampos()
         {
             tbCedula.ResetText();
             tbCelular1.ResetText();
             tbCelular2.ResetText();
             tbCorreo.ResetText();
-            tbCuenta.ResetText();
+            tbCuenta.Text = "N/A";
             tbDescripcion.ResetText();
             tbNombre.ResetText();
             tbNombreCont.ResetText();
@@ -448,50 +361,6 @@ namespace proyectoPantalla
                     return;
                 }
             }
-
         }
-
-        public static bool formatoTelefono(string telefono)
-        {
-            String formato;
-            formato = "^0([2-7])([0-9]{7})$";
-            if (Regex.IsMatch(telefono, formato))
-            {
-                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool formatoCelular(string celular)
-        {
-            String formato;
-            formato = "^09([0-9]{8})$";
-            if (Regex.IsMatch(celular, formato))
-            {
-                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
     }
 }

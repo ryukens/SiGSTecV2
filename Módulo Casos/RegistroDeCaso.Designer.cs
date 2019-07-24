@@ -235,6 +235,7 @@
             this.lFechaActual.Size = new System.Drawing.Size(41, 13);
             this.lFechaActual.TabIndex = 0;
             this.lFechaActual.Text = "label11";
+            this.lFechaActual.Click += new System.EventHandler(this.LFechaActual_Click);
             // 
             // panel10
             // 

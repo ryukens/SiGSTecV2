@@ -24,12 +24,6 @@ namespace proyectoPantalla
             mostrarProducto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-        }     
-        public AumentoDeProducto()
-        {
-            InitializeComponent(); cbBuscar.SelectedIndex = 0;
-            cbBuscar.SelectedIndex = 0;
-            mostrarProducto();
         }
 
         public void mostrarProducto()
@@ -102,7 +96,7 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if(nudCantidad.Value == 0)
+            if (nudCantidad.Value == 0)
             {
                 MessageBox.Show("La cantidad debe ser mayor a 0", "Error en Cantidad");
             }
@@ -115,7 +109,7 @@ namespace proyectoPantalla
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@codigo", dgvAumentar.SelectedRows[0].Cells[0].Value);
                 comando1.Parameters.AddWithValue("@cantidad", nudCantidad.Value);
-                
+
 
                 comando1.ExecuteNonQuery();
 
@@ -153,7 +147,7 @@ namespace proyectoPantalla
             {
 
                 mostrarProductoPorCodigo();
-                
+
             }
             else
             {

@@ -41,9 +41,13 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            iniciarSesión();
+        }
+
+        public void iniciarSesión()
+        {
             PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(this);
             conexion.Open();
-            String consulta1 = "select [password] , salt, idusuario from usuario where username = @username; ";
             SqlCommand comando1 = new SqlCommand("SP_INICIO_DE_SESION", conexion);
             comando1.CommandType = CommandType.StoredProcedure;
             comando1.Parameters.AddWithValue("@username", tbUsuario.Text);
@@ -54,19 +58,16 @@ namespace proyectoPantalla
                 salt = dr.GetString(1);
                 idUsuario = (int)dr.GetDecimal(2);
             }
-
             conexion.Close();
-
             if (idUsuario != 0)
             {
                 if (MD5Hash(salt + tbContraseña.Text).Equals(password))
                 {
                     if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
                     {
-                        MessageBox.Show("Primer ingreso, por favor cambie su contraseña");
+                        MessageBox.Show("Primer ingreso, por favor cambie su contraseña", "Primer Ingreso");
                         CambioDeContraseña cambioDeContraseña = new CambioDeContraseña(salt, idUsuario, this);
                         cambioDeContraseña.ShowDialog();
-
                     }
                     else
                     {
@@ -74,45 +75,32 @@ namespace proyectoPantalla
                         this.Hide();
                         pantallaPrincipal.Show();
                     }
-
                 }
                 else
                 {
                     MessageBox.Show("Credenciales Incorrectas");
-                    
-
                 }
             }
             else
             {
                 MessageBox.Show("Credenciales Incorrectas");
             }
-
-        }
-
-        private void InicioDeSesión_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
-            new PantallaPrincipal().Show();
+            // Application.Exit();
+            PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
+            pantallaprincipal.Show();
             this.Hide();
-
-            //Application.Exit();
         }
 
-        private void TbContraseña_TextChanged(object sender, EventArgs e)
+        private void TbContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void TbUsuario_TextChanged(object sender, EventArgs e)
-        {
-
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                iniciarSesión();
+            }
         }
     }
-
 }

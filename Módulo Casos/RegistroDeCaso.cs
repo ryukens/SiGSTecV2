@@ -82,7 +82,7 @@ namespace proyectoPantalla
 
         private void Timer1_Tick_1(object sender, EventArgs e)
         {
-            lFechaActual.Text = DateTime.Now.ToString();
+            lFechaActual.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void Label12_Click(object sender, EventArgs e)
@@ -101,13 +101,12 @@ namespace proyectoPantalla
             lIdTecnico.Text = "id del técnico";
             lIdCliente.Text = "id del Cliente";
             lIdUsuario.Text = "id del Usuario";
-
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
-            limpiarCampos();
             tabControl.SelectTab(tabInicio);
+            limpiarCampos();
         }
 
         private void BAceptar_Click(object sender, EventArgs e)
@@ -150,9 +149,9 @@ namespace proyectoPantalla
         {
             bool flag = true;
             if (tbSector.Text.Equals(""))
-                {
-                    flag = false;
-                }
+            {
+                flag = false;
+            }
             if (lClienteSeleccionado.Text.Equals("CLIENTE SIN SELECCIONAR"))
             {
                 flag = false;
@@ -165,10 +164,6 @@ namespace proyectoPantalla
 
             return flag;
         }
-
-      
-
-
 
         private void LClienteSeleccionado_Click(object sender, EventArgs e)
         {
@@ -195,8 +190,6 @@ namespace proyectoPantalla
 
         }
 
-
-
         private void CbVendedor_TextChanged(object sender, EventArgs e)
         {
             lIdUsuario.Text = cbVendedor.SelectedItem.ToString();
@@ -205,7 +198,10 @@ namespace proyectoPantalla
 
         private void TbInformeInicial_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private void LFechaActual_Click(object sender, EventArgs e)
+        {
         }
     }
 }

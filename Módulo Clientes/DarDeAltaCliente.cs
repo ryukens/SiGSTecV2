@@ -22,6 +22,7 @@ namespace proyectoPantalla
             mostrarDatosCompleto();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            cbBuscar.SelectedIndex = 0;
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
