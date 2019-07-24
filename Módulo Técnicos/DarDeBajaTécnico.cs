@@ -25,7 +25,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        private void mostrarTecnicos()
+        public void mostrarTecnicos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_TECNICO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -42,22 +42,6 @@ namespace proyectoPantalla
             dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
             dgvEliminar.Columns[3].HeaderText = "Sector";
             dgvEliminar.Columns[4].HeaderText = "Alcance";
-        }
-
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Button1_Click(object sender, EventArgs e)

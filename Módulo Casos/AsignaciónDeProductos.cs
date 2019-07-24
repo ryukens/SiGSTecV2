@@ -20,6 +20,11 @@ namespace proyectoPantalla.Módulo_Casos
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            
+        }
+
+        public void muestraCasos()
+        {
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -100,8 +105,6 @@ namespace proyectoPantalla.Módulo_Casos
                 dgvMostrar.DataSource = dt;
                 llenarTabla();
             }
-
-
         }
 
         public void llenarTabla()

@@ -23,20 +23,8 @@ namespace proyectoPantalla
             InitializeComponent();
             tbTelefono2.Enabled = false;
             tbCelular2.Enabled = false;
-        }
-
-        private void Label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void Label6_Click(object sender, EventArgs e)
-        {
-
-
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -126,7 +114,6 @@ namespace proyectoPantalla
             }
         }
 
-
         private void TbCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -139,20 +126,15 @@ namespace proyectoPantalla
 
         }
 
-        private void TbCorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-  if (tbCorreo.Text.Trim() == "")
+            if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
             else
             {
-                if (ComprobarFormatoEmail(tbCorreo.Text))
+                if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
                 {
                     errorProvider1.SetError(tbCorreo, null);
                 }
@@ -199,13 +181,13 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
- if (tbTelefono1.Text.Trim() == "")
+            if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
             }
             else
             {
-                if (formatoTelefono(tbTelefono1.Text))
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
                 {
                     errorProvider1.SetError(tbTelefono1, null);
                     tbTelefono1.ForeColor = Color.Green;
@@ -248,10 +230,11 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCedula, null);
             }
-            else { 
-                if (VerificaCedula(tbCedula.Text))
+            else
+            {
+                if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
-                    int r = verificarCedulaRepetida(tbCedula.Text);
+                    int r = Validaciones.verificarCedulaRepetida(tbCedula , conexion);
                     if (r != 0)
                     {
                         tbCedula.ForeColor = Color.Red;
@@ -271,31 +254,6 @@ namespace proyectoPantalla
                     tbCedula.ForeColor = Color.Red;
                 }
             }
-            
-
-
-
-        }
-
-        public int verificarCedulaRepetida(String ced)
-        {
-            int result = -1;
-            conexion.Open();
-            SqlCommand cmd = new SqlCommand("SP_VERIFICAR_CEDULA", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@identificacion", tbCedula.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                result = reader.GetInt32(0);
-            }
-            conexion.Close();
-            return result;
-        }
-
-
-        private void LTelfCelular_Click(object sender, EventArgs e)
-        {
         }
 
         public void limpiarCampos()
@@ -319,13 +277,13 @@ namespace proyectoPantalla
 
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-if (tbTelefono1.Text.Trim() == "")
+            if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
             }
             else
             {
-                if (formatoTelefono(tbTelefono1.Text))
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
                 {
                     errorProvider1.SetError(tbTelefono1, null);
                     tbTelefono1.ForeColor = Color.Green;
@@ -364,7 +322,7 @@ if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
-                
+
             }
             else
             {

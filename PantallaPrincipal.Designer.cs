@@ -46,8 +46,8 @@
             this.MSAlzarTécnico = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarTécnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarCasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,31 +146,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             label22 = new System.Windows.Forms.Label();
-            this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
-            this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
-            this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
-            this.registroDeCliente2 = new RegistroDeCliente(tabControl, tabInicio);
-            this.eliminaciónDeCliente1 = new DarDeBajaCliente(tabControl, tabInicio);
-            this.eliminaciónDeTécnico1 = new DarDeBajaTécnico(tabControl, tabInicio);
-            this.cierreDeCaso1 = new CierreDeCaso(tabControl, tabInicio);
-            this.disminuciónDeProducto1 = new DisminuciónDeProducto(tabControl, tabInicio);
-            this.registroDeUsuario1 = new RegistroDeUsuario(tabControl, tabInicio);
-            this.eliminaciónDeUsuario1 = new EliminaciónDeUsuario(tabControl, tabInicio);
-            this.modificaciónDeTécnico1 = new ModificaciónDeTécnico(tabControl, tabInicio);
-            this.cancelaciónDeCaso1 = new CancelaciónDeCaso(tabControl, tabInicio);
-            this.muestraDeCliente1 = new MuestraDeCliente(tabControl, tabInicio);
-            this.generaciónDeInforme1 = new GeneraciónDeInforme(tabControl, tabInicio);
-            this.vistaDeDetalles1 = new VistaDeDetalles(tabControl, tabInicio);
-            this.finalizaciónDeCaso1 = new FinalizaciónDeCaso(tabControl, tabInicio);
-            this.asignaciónDeProductos1 = new Módulo_Casos.AsignaciónDeProductos(tabControl, tabInicio);
-            this.darDeAltaCliente1 = new DarDeAltaCliente(tabControl, tabInicio);
-            this.darDeAltaTécnico1 = new DarDeAltaTécnico(tabControl, tabInicio);
-            this.muestraDeTécnico1 = new MuestraDeTécnico(tabControl, tabInicio);
-            this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente(tabControl, tabInicio);
-            this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico(tabControl, tabInicio);
-            this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
-            this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
-            this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -383,8 +358,8 @@
             // 
             this.casoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.casoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem2,
-            this.modificarToolStripMenuItem2,
+            this.registrarToolStripMenuItem2,
+            this.cerrarToolStripMenuItem2,
             this.asignarProductoToolStripMenuItem,
             this.finalizarCasoToolStripMenuItem,
             this.cancelarCasoToolStripMenuItem,
@@ -394,21 +369,21 @@
             this.casoToolStripMenuItem.Size = new System.Drawing.Size(84, 46);
             this.casoToolStripMenuItem.Text = "Casos";
             // 
-            // nuevoToolStripMenuItem2
+            // registrarToolStripMenuItem2
             // 
-            this.nuevoToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
-            this.nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            this.nuevoToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
-            this.nuevoToolStripMenuItem2.Text = "Registrar Caso";
-            this.nuevoToolStripMenuItem2.Click += new System.EventHandler(this.NuevoToolStripMenuItem2_Click);
+            this.registrarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
+            this.registrarToolStripMenuItem2.Name = "registrarToolStripMenuItem2";
+            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
+            this.registrarToolStripMenuItem2.Text = "Registrar Caso";
+            this.registrarToolStripMenuItem2.Click += new System.EventHandler(this.NuevoToolStripMenuItem2_Click);
             // 
-            // modificarToolStripMenuItem2
+            // cerrarToolStripMenuItem2
             // 
-            this.modificarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
-            this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
-            this.modificarToolStripMenuItem2.Text = "Cerrar Caso";
-            this.modificarToolStripMenuItem2.Click += new System.EventHandler(this.ModificarToolStripMenuItem2_Click);
+            this.cerrarToolStripMenuItem2.BackColor = System.Drawing.SystemColors.Window;
+            this.cerrarToolStripMenuItem2.Name = "cerrarToolStripMenuItem2";
+            this.cerrarToolStripMenuItem2.Size = new System.Drawing.Size(198, 24);
+            this.cerrarToolStripMenuItem2.Text = "Cerrar Caso";
+            this.cerrarToolStripMenuItem2.Click += new System.EventHandler(this.ModificarToolStripMenuItem2_Click);
             // 
             // asignarProductoToolStripMenuItem
             // 
@@ -529,7 +504,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.eliminarUsuarioToolStripMenuItem});
             this.crearUsusarioToolStripMenuItem.Name = "crearUsusarioToolStripMenuItem";
-            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.crearUsusarioToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.crearUsusarioToolStripMenuItem.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -1172,7 +1147,7 @@
             this.registroDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
             this.registroDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registroDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
             this.registroDeUsuario1.Name = "registroDeUsuario1";
             this.registroDeUsuario1.Size = new System.Drawing.Size(972, 458);
             this.registroDeUsuario1.TabIndex = 1;
@@ -1219,7 +1194,7 @@
             this.eliminaciónDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
             this.eliminaciónDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eliminaciónDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eliminaciónDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
             this.eliminaciónDeUsuario1.Name = "eliminaciónDeUsuario1";
             this.eliminaciónDeUsuario1.Size = new System.Drawing.Size(972, 458);
             this.eliminaciónDeUsuario1.TabIndex = 1;
@@ -1948,8 +1923,8 @@
         private System.Windows.Forms.ToolStripMenuItem casoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem generarInformeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darDeBajaProductoToolStripMenuItem;
