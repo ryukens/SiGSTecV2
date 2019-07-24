@@ -28,6 +28,7 @@ namespace proyectoPantalla
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
+            dgvMostrar.DataSource = dt;
             dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -35,6 +36,7 @@ namespace proyectoPantalla
             dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvMostrar.Columns[0].HeaderText = "Estado";
             dgvMostrar.Columns[1].HeaderText = "Número";
             dgvMostrar.Columns[2].HeaderText = "Nombre";
@@ -42,6 +44,8 @@ namespace proyectoPantalla
             dgvMostrar.Columns[4].HeaderText = "Fecha";
             dgvMostrar.Columns[5].HeaderText = "SLA";
             dgvMostrar.Columns[6].HeaderText = "Sector";
+            dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+            this.dgvMostrar.Columns[7].Visible = false;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
         }
@@ -173,6 +177,11 @@ namespace proyectoPantalla
         {
             tbBuscar.ResetText();
             tabControl.SelectTab(tabInicio);
+        }
+
+        private void DgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
