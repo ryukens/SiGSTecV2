@@ -33,6 +33,7 @@ namespace proyectoPantalla
             InitializeComponent();
             tbTelefono2.Enabled = false;
             tbCelular2.Enabled = false;
+
             bAceptar.Enabled = false;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
@@ -46,11 +47,7 @@ namespace proyectoPantalla
 
 
 
-        private void Label6_Click(object sender, EventArgs e)
-        {
 
-
-        }
 
         private void Button2_Click(object sender, EventArgs e)
         {
@@ -139,7 +136,6 @@ namespace proyectoPantalla
             }
         }
 
-
         private void TbCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -149,11 +145,6 @@ namespace proyectoPantalla
                 return;
             }
 
-
-        }
-
-        private void TbCorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
         }
 
@@ -218,7 +209,9 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
+
             if (tbTelefono2.Text.Trim() == "")
+
             {
                 errorProvider1.SetError(tbTelefono2, null);
                 flagTelefonos2 = true;
@@ -226,7 +219,9 @@ namespace proyectoPantalla
             }
             else
             {
+
                 if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
                 {
                     errorProvider1.SetError(tbTelefono2, null);
                     tbTelefono2.ForeColor = Color.Green;
@@ -279,7 +274,7 @@ namespace proyectoPantalla
             {
                 if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
-                    int r = verificarCedulaRepetida(tbCedula.Text);
+                    int r = Validaciones.verificarCedulaRepetida(tbCedula , conexion);
                     if (r != 0)
                     {
                         tbCedula.ForeColor = Color.Red;
@@ -309,6 +304,7 @@ namespace proyectoPantalla
 
 
 
+
         }
 
         public int verificarCedulaRepetida(String ced)
@@ -330,6 +326,7 @@ namespace proyectoPantalla
 
         private void LTelfCelular_Click(object sender, EventArgs e)
         {
+
         }
 
         public void limpiarCampos()
@@ -423,8 +420,13 @@ namespace proyectoPantalla
             if (tbCelular2.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular2, null);
+
                 flagMoviles2 = true;
                 activarBoton();
+
+                tbCelular2.ForeColor = Color.Green;
+
+
             }
             else
             {

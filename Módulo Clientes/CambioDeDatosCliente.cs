@@ -15,33 +15,10 @@ namespace proyectoPantalla
     public partial class CambioDeDatosCliente : Form
     {
         int ippersona;
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
-        {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
         public CambioDeDatosCliente(String cedula)
         {
             InitializeComponent();
             consultaCliente(cedula);
-
         }
 
         private void consultaCliente(String cedula)
@@ -136,7 +113,7 @@ namespace proyectoPantalla
                     "NOMBRE_CONTACTO = '" + tbNombreCont.Text + "'," +
                     " DESCRIPCION_CONTACTO = '" + tbDescripcion.Text + "'," +
                     " SLA = '" + cbSLA.Text + "'," +
-                    "CUENTA = '" + tbCuenta.Text + "'," +
+                    " CUENTA = '" + tbCuenta.Text + "'," +
                     " TIPO_PAGO = '" + tipoPago + "'," +
                     " TIPO = '" + tipo + "' WHERE" +
                     " IDPERSONA = " + ippersona + "; ", conexion);
@@ -149,10 +126,10 @@ namespace proyectoPantalla
                     while (lector.Read())
                     {
                         MessageBox.Show(lector.GetValue(0).ToString());
-                        if (Int32.Parse(lector.GetValue(0).ToString())==1)
+                        if (Int32.Parse(lector.GetValue(0).ToString()) == 1)
                         {
                             lector.Close();
-                            SqlCommand comando2 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbTelefono1.Text + "' where TIPO = 'CONVENCIONAL1' and TELEFONO.IDPERSONA = "+ippersona, conexion);
+                            SqlCommand comando2 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbTelefono1.Text + "' where TIPO = 'CONVENCIONAL1' and TELEFONO.IDPERSONA = " + ippersona, conexion);
                             comando2.ExecuteNonQuery();
                         }
                         else
@@ -301,30 +278,14 @@ namespace proyectoPantalla
             }
         }
 
-        private void CambioDeDatosCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
-
-        }
-
-        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void TextBox4_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 Console.WriteLine("CORREO BUENO");
@@ -359,7 +320,7 @@ namespace proyectoPantalla
 
         private void TextBox8_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -393,14 +354,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (ComprobarFormatoEmail(tbCorreo.Text))
+            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
@@ -410,14 +366,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void Label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono1.Text))
+            if (Validaciones.formatoTelefono(tbTelefono1.Text))
             {
                 errorProvider1.SetError(tbTelefono1, null);
                 tbTelefono1.ForeColor = Color.Green;
@@ -442,7 +393,7 @@ namespace proyectoPantalla
 
         private void TbTelefono2_TextChanged_1(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono2.Text))
+            if (Validaciones.formatoTelefono(tbTelefono2.Text))
             {
                 errorProvider1.SetError(tbTelefono2, null);
                 tbTelefono2.ForeColor = Color.Green;
@@ -467,7 +418,7 @@ namespace proyectoPantalla
 
         private void TbCelular1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -493,7 +444,7 @@ namespace proyectoPantalla
 
         private void TbCelular2_TextChanged_1(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular2.Text))
+            if (Validaciones.formatoCelular(tbCelular2.Text))
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
@@ -506,48 +457,5 @@ namespace proyectoPantalla
                 tbCelular2.ForeColor = Color.Red;
             }
         }
-
-        public static bool formatoTelefono(string telefono)
-        {
-            String formato;
-            formato = "^0([2-7])([0-9]{7})$";
-            if (Regex.IsMatch(telefono, formato))
-            {
-                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool formatoCelular(string celular)
-        {
-            String formato;
-            formato = "^09([0-9]{8})$";
-            if (Regex.IsMatch(celular, formato))
-            {
-                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
     }
 }

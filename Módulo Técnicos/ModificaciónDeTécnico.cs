@@ -24,7 +24,7 @@ namespace proyectoPantalla
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
         }
-        private void mostrarTecnicos()
+        public void mostrarTecnicos()
         {
             String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA;";
             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);

@@ -44,22 +44,6 @@ namespace proyectoPantalla
             dgvEliminar.Columns[4].HeaderText = "Alcance";
         }
 
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea Dar de Baja este técnico?", "Dar de Baja Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
