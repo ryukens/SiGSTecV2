@@ -15,33 +15,10 @@ namespace proyectoPantalla
     public partial class CambioDeDatosCliente : Form
     {
         int ippersona;
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
-        {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
         public CambioDeDatosCliente(String cedula)
         {
             InitializeComponent();
             consultaCliente(cedula);
-
         }
 
         private void consultaCliente(String cedula)
@@ -136,161 +113,21 @@ namespace proyectoPantalla
                     "NOMBRE_CONTACTO = '" + tbNombreCont.Text + "'," +
                     " DESCRIPCION_CONTACTO = '" + tbDescripcion.Text + "'," +
                     " SLA = '" + cbSLA.Text + "'," +
-                    "CUENTA = '" + tbCuenta.Text + "'," +
+                    " CUENTA = '" + tbCuenta.Text + "'," +
                     " TIPO_PAGO = '" + tipoPago + "'," +
                     " TIPO = '" + tipo + "' WHERE" +
                     " IDPERSONA = " + ippersona + "; ", conexion);
                 command.ExecuteNonQuery();
 
-                if (!tbTelefono1.Text.Trim().Equals(""))
-                {
-                    SqlCommand comando1 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CONVENCIONAL1' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector = comando1.ExecuteReader();
-                    while (lector.Read())
-                    {
-                        MessageBox.Show(lector.GetValue(0).ToString());
-                        if (Int32.Parse(lector.GetValue(0).ToString())==1)
-                        {
-                            lector.Close();
-                            SqlCommand comando2 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbTelefono1.Text + "' where TIPO = 'CONVENCIONAL1' and TELEFONO.IDPERSONA = "+ippersona, conexion);
-                            comando2.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            lector.Close();
-                            SqlCommand comando3 = new SqlCommand("insert into TELEFONO values (" + ippersona + ",'" + tbTelefono1.Text + "','CONVENCIONAL1')");
-                            comando3.ExecuteNonQuery();
-                        }
 
-                    }
-                }
-                else
-                {
-                    SqlCommand comando4 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CONVENCIONAL1' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector2 = comando4.ExecuteReader();
-                    while (lector2.Read())
-                    {
-                        if (Int32.Parse(lector2.GetValue(0).ToString()) != 1)
-                        {
-                            lector2.Close();
-                            SqlCommand comando5 = new SqlCommand("delete TELEFONO where TIPO = 'CONVENCIONAL1' AND TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando5.ExecuteNonQuery();
-                        }
-                    }
-                }
-
-                if (!tbTelefono2.Text.Trim().Equals(""))
-                {
-                    SqlCommand comando6 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CONVENCIONAL2' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector3 = comando6.ExecuteReader();
-                    while (lector3.Read())
-                    {
-                        MessageBox.Show(lector3.GetValue(0).ToString());
-                        if (Int32.Parse(lector3.GetValue(0).ToString()) == 1)
-                        {
-                            lector3.Close();
-                            SqlCommand comando7 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbTelefono2.Text + "' where TIPO = 'CONVENCIONAL2' and TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando7.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            lector3.Close();
-                            SqlCommand comando8 = new SqlCommand("insert into TELEFONO values (" + ippersona + ",'" + tbTelefono2.Text + "','CONVENCIONAL2')");
-                            comando8.ExecuteNonQuery();
-                        }
-
-                    }
-                }
-                else
-                {
-                    SqlCommand comando9 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CONVENCIONAL2' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector4 = comando9.ExecuteReader();
-                    while (lector4.Read())
-                    {
-                        if (Int32.Parse(lector4.GetValue(0).ToString()) != 1)
-                        {
-                            lector4.Close();
-                            SqlCommand comando10 = new SqlCommand("delete TELEFONO where TIPO = 'CONVENCIONAL2' AND TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando10.ExecuteNonQuery();
-                        }
-                    }
-                }
-
-                if (!tbCelular1.Text.Trim().Equals(""))
-                {
-                    SqlCommand comando11 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CELULAR1' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector5 = comando11.ExecuteReader();
-                    while (lector5.Read())
-                    {
-                        MessageBox.Show(lector5.GetValue(0).ToString());
-                        if (Int32.Parse(lector5.GetValue(0).ToString()) == 1)
-                        {
-                            lector5.Close();
-                            SqlCommand comando12 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbCelular1.Text + "' where TIPO = CELULAR1'' and TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando12.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            lector5.Close();
-                            SqlCommand comando13 = new SqlCommand("insert into TELEFONO values (" + ippersona + ",'" + tbCelular1.Text + "','CELULAR1')");
-                            comando13.ExecuteNonQuery();
-                        }
-
-                    }
-                }
-                else
-                {
-                    SqlCommand comando14 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CELULAR1' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector6 = comando14.ExecuteReader();
-                    while (lector6.Read())
-                    {
-                        if (Int32.Parse(lector6.GetValue(0).ToString()) != 1)
-                        {
-                            lector6.Close();
-                            SqlCommand comando15 = new SqlCommand("delete TELEFONO where TIPO = 'CELULAR1' AND TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando15.ExecuteNonQuery();
-                        }
-                    }
-                }
-
-
-                if (!tbCelular2.Text.Trim().Equals(""))
-                {
-                    SqlCommand comando16 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CELULAR2' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector7 = comando16.ExecuteReader();
-                    while (lector7.Read())
-                    {
-                        MessageBox.Show(lector7.GetValue(0).ToString());
-                        if (Int32.Parse(lector7.GetValue(0).ToString()) == 1)
-                        {
-                            lector7.Close();
-                            SqlCommand comando17 = new SqlCommand("update TELEFONO set TELEFONO = '" + tbCelular2.Text + "' where TIPO = 'CELULAR2' and TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando17.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            lector7.Close();
-                            SqlCommand comando18 = new SqlCommand("insert into TELEFONO values (" + ippersona + ",'" + tbCelular2.Text + "','CELULAR2')");
-                            comando18.ExecuteNonQuery();
-                        }
-
-                    }
-                }
-                else
-                {
-                    SqlCommand comando19 = new SqlCommand("select COUNT(*) from PERSONA, TELEFONO where PERSONA.IDPERSONA=TELEFONO.IDPERSONA  and TIPO = 'CELULAR2' And persona.IDENTIFICACION = '" + tbCedula.Text + "'", conexion);
-                    SqlDataReader lector8 = comando19.ExecuteReader();
-                    while (lector8.Read())
-                    {
-                        if (Int32.Parse(lector8.GetValue(0).ToString()) != 1)
-                        {
-                            lector8.Close();
-                            SqlCommand comando20 = new SqlCommand("delete TELEFONO where TIPO = 'CELULAR2' AND TELEFONO.IDPERSONA = " + ippersona, conexion);
-                            comando20.ExecuteNonQuery();
-                        }
-                    }
-                }
-
+                SqlCommand command2 = new SqlCommand("SP_MODIFICACION_TELFONOS", conexion);
+                command2.CommandType = CommandType.StoredProcedure;
+                command2.Parameters.AddWithValue("@convencional1",tbTelefono1.Text);
+                command2.Parameters.AddWithValue("@convencional2", tbTelefono2.Text);
+                command2.Parameters.AddWithValue("@movil1", tbCelular1.Text);
+                command2.Parameters.AddWithValue("@movil2", tbCelular2.Text);
+                command2.Parameters.AddWithValue("@idpersona", ippersona);
+                command2.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Cliente Modificado Correctamente", "Cliente Modificado");
                 this.Dispose();
@@ -301,30 +138,14 @@ namespace proyectoPantalla
             }
         }
 
-        private void CambioDeDatosCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
-
-        }
-
-        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void TextBox4_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 Console.WriteLine("CORREO BUENO");
@@ -359,7 +180,7 @@ namespace proyectoPantalla
 
         private void TextBox8_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -393,14 +214,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (ComprobarFormatoEmail(tbCorreo.Text))
+            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
@@ -410,14 +226,9 @@ namespace proyectoPantalla
             }
         }
 
-        private void Label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono1.Text))
+            if (Validaciones.formatoTelefono(tbTelefono1.Text))
             {
                 errorProvider1.SetError(tbTelefono1, null);
                 tbTelefono1.ForeColor = Color.Green;
@@ -442,7 +253,7 @@ namespace proyectoPantalla
 
         private void TbTelefono2_TextChanged_1(object sender, EventArgs e)
         {
-            if (formatoTelefono(tbTelefono2.Text))
+            if (Validaciones.formatoTelefono(tbTelefono2.Text))
             {
                 errorProvider1.SetError(tbTelefono2, null);
                 tbTelefono2.ForeColor = Color.Green;
@@ -467,7 +278,7 @@ namespace proyectoPantalla
 
         private void TbCelular1_TextChanged(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular1.Text))
+            if (Validaciones.formatoCelular(tbCelular1.Text))
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
@@ -493,7 +304,7 @@ namespace proyectoPantalla
 
         private void TbCelular2_TextChanged_1(object sender, EventArgs e)
         {
-            if (formatoCelular(tbCelular2.Text))
+            if (Validaciones.formatoCelular(tbCelular2.Text))
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
@@ -506,48 +317,5 @@ namespace proyectoPantalla
                 tbCelular2.ForeColor = Color.Red;
             }
         }
-
-        public static bool formatoTelefono(string telefono)
-        {
-            String formato;
-            formato = "^0([2-7])([0-9]{7})$";
-            if (Regex.IsMatch(telefono, formato))
-            {
-                if (Regex.Replace(telefono, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool formatoCelular(string celular)
-        {
-            String formato;
-            formato = "^09([0-9]{8})$";
-            if (Regex.IsMatch(celular, formato))
-            {
-                if (Regex.Replace(celular, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
     }
 }

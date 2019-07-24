@@ -22,9 +22,13 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
+        }
 
+        public void mostrarCasos()
+        {
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
-
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
@@ -45,8 +49,6 @@ namespace proyectoPantalla
             dgvMostrar.Columns[6].HeaderText = "Sector";
             dgvMostrar.Columns[7].HeaderText = "ID Cliente";
             this.dgvMostrar.Columns[7].Visible = false;
-            this.tabControl = tabControl;
-            this.tabInicio = tabInicio;
         }
 
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)

@@ -96,7 +96,9 @@
             this.tableLayoutPanel1.Controls.Add(this.tbCorreo, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -106,7 +108,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(972, 481);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(729, 391);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lTelefonos
@@ -114,10 +116,9 @@
             this.lTelefonos.AutoSize = true;
             this.lTelefonos.Dock = System.Windows.Forms.DockStyle.Right;
             this.lTelefonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTelefonos.Location = new System.Drawing.Point(23, 204);
-            this.lTelefonos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTelefonos.Location = new System.Drawing.Point(9, 165);
             this.lTelefonos.Name = "lTelefonos";
-            this.lTelefonos.Size = new System.Drawing.Size(118, 68);
+            this.lTelefonos.Size = new System.Drawing.Size(97, 55);
             this.lTelefonos.TabIndex = 1;
             this.lTelefonos.Text = "Teléfonos\r\nConvencionales:";
             this.lTelefonos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,41 +126,50 @@
             // panel13
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel13.Location = new System.Drawing.Point(5, 413);
-            this.panel13.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel13.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(135, 63);
+            this.panel13.Size = new System.Drawing.Size(101, 53);
             this.panel13.TabIndex = 12;
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.tbAlcance);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel12.Location = new System.Drawing.Point(150, 345);
-            this.panel12.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel12.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(719, 58);
+            this.panel12.Size = new System.Drawing.Size(538, 47);
             this.panel12.TabIndex = 11;
             // 
             // tbAlcance
             // 
             this.tbAlcance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbAlcance.Location = new System.Drawing.Point(0, 0);
-            this.tbAlcance.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.tbAlcance.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbAlcance.MaxLength = 256;
             this.tbAlcance.Multiline = true;
             this.tbAlcance.Name = "tbAlcance";
-            this.tbAlcance.Size = new System.Drawing.Size(719, 58);
+            this.tbAlcance.Size = new System.Drawing.Size(538, 47);
             this.tbAlcance.TabIndex = 1;
+            this.tbAlcance.TextChanged += new System.EventHandler(this.TbAlcance_TextChanged);
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.lAlcance);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel11.Location = new System.Drawing.Point(5, 345);
-            this.panel11.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel11.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(135, 58);
+            this.panel11.Size = new System.Drawing.Size(101, 47);
             this.panel11.TabIndex = 10;
             // 
             // lAlcance
@@ -167,10 +177,9 @@
             this.lAlcance.AutoSize = true;
             this.lAlcance.Dock = System.Windows.Forms.DockStyle.Right;
             this.lAlcance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAlcance.Location = new System.Drawing.Point(71, 0);
-            this.lAlcance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAlcance.Location = new System.Drawing.Point(48, 0);
             this.lAlcance.Name = "lAlcance";
-            this.lAlcance.Size = new System.Drawing.Size(64, 18);
+            this.lAlcance.Size = new System.Drawing.Size(53, 15);
             this.lAlcance.TabIndex = 1;
             this.lAlcance.Text = "Alcance:";
             // 
@@ -178,30 +187,37 @@
             // 
             this.panel10.Controls.Add(this.tbSector);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel10.Location = new System.Drawing.Point(150, 277);
-            this.panel10.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel10.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(719, 58);
+            this.panel10.Size = new System.Drawing.Size(538, 47);
             this.panel10.TabIndex = 9;
             // 
             // tbSector
             // 
             this.tbSector.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbSector.Location = new System.Drawing.Point(0, 0);
-            this.tbSector.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.tbSector.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbSector.MaxLength = 64;
             this.tbSector.Name = "tbSector";
-            this.tbSector.Size = new System.Drawing.Size(719, 22);
+            this.tbSector.Size = new System.Drawing.Size(538, 20);
             this.tbSector.TabIndex = 23;
+            this.tbSector.TextChanged += new System.EventHandler(this.TbSector_TextChanged);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.lSector);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel9.Location = new System.Drawing.Point(5, 277);
-            this.panel9.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel9.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(135, 58);
+            this.panel9.Size = new System.Drawing.Size(101, 47);
             this.panel9.TabIndex = 8;
             // 
             // lSector
@@ -209,10 +225,9 @@
             this.lSector.AutoSize = true;
             this.lSector.Dock = System.Windows.Forms.DockStyle.Right;
             this.lSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSector.Location = new System.Drawing.Point(79, 0);
-            this.lSector.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lSector.Location = new System.Drawing.Point(56, 0);
             this.lSector.Name = "lSector";
-            this.lSector.Size = new System.Drawing.Size(56, 18);
+            this.lSector.Size = new System.Drawing.Size(45, 15);
             this.lSector.TabIndex = 1;
             this.lSector.Text = "Sector:";
             // 
@@ -220,10 +235,12 @@
             // 
             this.panel5.Controls.Add(this.lCorreo);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel5.Location = new System.Drawing.Point(5, 141);
-            this.panel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel5.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(135, 58);
+            this.panel5.Size = new System.Drawing.Size(101, 47);
             this.panel5.TabIndex = 4;
             // 
             // lCorreo
@@ -231,10 +248,9 @@
             this.lCorreo.AutoSize = true;
             this.lCorreo.Dock = System.Windows.Forms.DockStyle.Right;
             this.lCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCorreo.Location = new System.Drawing.Point(-3, 0);
-            this.lCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCorreo.Location = new System.Drawing.Point(-10, 0);
             this.lCorreo.Name = "lCorreo";
-            this.lCorreo.Size = new System.Drawing.Size(138, 18);
+            this.lCorreo.Size = new System.Drawing.Size(111, 15);
             this.lCorreo.TabIndex = 1;
             this.lCorreo.Text = "Correo Electrónico:";
             // 
@@ -242,10 +258,12 @@
             // 
             this.panel3.Controls.Add(this.lCedula);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel3.Location = new System.Drawing.Point(5, 73);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(135, 58);
+            this.panel3.Size = new System.Drawing.Size(101, 47);
             this.panel3.TabIndex = 2;
             // 
             // lCedula
@@ -253,10 +271,9 @@
             this.lCedula.AutoSize = true;
             this.lCedula.Dock = System.Windows.Forms.DockStyle.Right;
             this.lCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCedula.Location = new System.Drawing.Point(-17, 0);
-            this.lCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCedula.Location = new System.Drawing.Point(-29, 0);
             this.lCedula.Name = "lCedula";
-            this.lCedula.Size = new System.Drawing.Size(152, 18);
+            this.lCedula.Size = new System.Drawing.Size(130, 15);
             this.lCedula.TabIndex = 1;
             this.lCedula.Text = "Cédula de ciudadanía:";
             // 
@@ -264,31 +281,38 @@
             // 
             this.panel2.Controls.Add(this.tbNombre);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel2.Location = new System.Drawing.Point(150, 5);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(719, 58);
+            this.panel2.Size = new System.Drawing.Size(538, 47);
             this.panel2.TabIndex = 1;
             // 
             // tbNombre
             // 
             this.tbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbNombre.Location = new System.Drawing.Point(0, 0);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbNombre.MaxLength = 128;
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(719, 22);
+            this.tbNombre.Size = new System.Drawing.Size(538, 20);
             this.tbNombre.TabIndex = 0;
+            this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lNombre);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 58);
+            this.panel1.Size = new System.Drawing.Size(101, 47);
             this.panel1.TabIndex = 0;
             // 
             // lNombre
@@ -296,10 +320,9 @@
             this.lNombre.AutoSize = true;
             this.lNombre.Dock = System.Windows.Forms.DockStyle.Right;
             this.lNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNombre.Location = new System.Drawing.Point(69, 0);
-            this.lNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombre.Location = new System.Drawing.Point(46, 0);
             this.lNombre.Name = "lNombre";
-            this.lNombre.Size = new System.Drawing.Size(66, 18);
+            this.lNombre.Size = new System.Drawing.Size(55, 15);
             this.lNombre.TabIndex = 0;
             this.lNombre.Text = "Nombre:";
             // 
@@ -311,22 +334,26 @@
             this.tableLayoutPanel2.Controls.Add(this.bAceptar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tableLayoutPanel2.Location = new System.Drawing.Point(150, 413);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(719, 63);
+
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // bAceptar
             // 
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.bAceptar.Location = new System.Drawing.Point(5, 5);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(5);
+
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(349, 53);
+            this.bAceptar.Size = new System.Drawing.Size(261, 45);
             this.bAceptar.TabIndex = 3;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -335,10 +362,12 @@
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.bCancelar.Location = new System.Drawing.Point(364, 5);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(5);
+
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(350, 53);
+            this.bCancelar.Size = new System.Drawing.Size(261, 45);
             this.bCancelar.TabIndex = 0;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -357,23 +386,27 @@
             this.tableLayoutPanel6.Controls.Add(this.tbTelefono1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tbCelular2, 2, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tableLayoutPanel6.Location = new System.Drawing.Point(150, 209);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(5);
+
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(719, 58);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(538, 47);
             this.tableLayoutPanel6.TabIndex = 22;
             // 
             // tbCelular1
             // 
             this.tbCelular1.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbCelular1.Location = new System.Drawing.Point(385, 5);
-            this.tbCelular1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCelular1.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbCelular1.MaxLength = 10;
             this.tbCelular1.Name = "tbCelular1";
-            this.tbCelular1.Size = new System.Drawing.Size(313, 22);
+            this.tbCelular1.Size = new System.Drawing.Size(234, 20);
             this.tbCelular1.TabIndex = 5;
             this.tbCelular1.TextChanged += new System.EventHandler(this.TbCelular1_TextChanged);
             this.tbCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox8_KeyPress);
@@ -383,11 +416,11 @@
             this.tbTelefono2.Dock = System.Windows.Forms.DockStyle.Fill;
 
             this.tbTelefono2.Location = new System.Drawing.Point(5, 34);
-            this.tbTelefono2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbTelefono2.Margin = new System.Windows.Forms.Padding(5);
 
             this.tbTelefono2.MaxLength = 9;
             this.tbTelefono2.Name = "tbTelefono2";
-            this.tbTelefono2.Size = new System.Drawing.Size(263, 22);
+            this.tbTelefono2.Size = new System.Drawing.Size(196, 20);
             this.tbTelefono2.TabIndex = 4;
             this.tbTelefono2.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
             this.tbTelefono2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox4_KeyPress);
@@ -397,10 +430,9 @@
             this.lCelulares.AutoSize = true;
             this.lCelulares.Dock = System.Windows.Forms.DockStyle.Right;
             this.lCelulares.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCelulares.Location = new System.Drawing.Point(302, 0);
-            this.lCelulares.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCelulares.Location = new System.Drawing.Point(219, 0);
             this.lCelulares.Name = "lCelulares";
-            this.lCelulares.Size = new System.Drawing.Size(74, 29);
+            this.lCelulares.Size = new System.Drawing.Size(62, 23);
             this.lCelulares.TabIndex = 2;
             this.lCelulares.Text = "Celulares:";
             this.lCelulares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -408,11 +440,13 @@
             // tbTelefono1
             // 
             this.tbTelefono1.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbTelefono1.Location = new System.Drawing.Point(5, 5);
-            this.tbTelefono1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbTelefono1.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbTelefono1.MaxLength = 9;
             this.tbTelefono1.Name = "tbTelefono1";
-            this.tbTelefono1.Size = new System.Drawing.Size(263, 22);
+            this.tbTelefono1.Size = new System.Drawing.Size(196, 20);
             this.tbTelefono1.TabIndex = 3;
             this.tbTelefono1.TextChanged += new System.EventHandler(this.TbTelefono1_TextChanged);
             this.tbTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox6_KeyPress);
@@ -420,11 +454,13 @@
             // tbCelular2
             // 
             this.tbCelular2.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.tbCelular2.Location = new System.Drawing.Point(385, 34);
-            this.tbCelular2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCelular2.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbCelular2.MaxLength = 10;
             this.tbCelular2.Name = "tbCelular2";
-            this.tbCelular2.Size = new System.Drawing.Size(313, 22);
+            this.tbCelular2.Size = new System.Drawing.Size(234, 20);
             this.tbCelular2.TabIndex = 6;
             this.tbCelular2.TextChanged += new System.EventHandler(this.TbCelular2_TextChanged);
             this.tbCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox9_KeyPress);
@@ -432,11 +468,13 @@
             // tbCedula
             // 
             this.tbCedula.Dock = System.Windows.Forms.DockStyle.Top;
+
             this.tbCedula.Location = new System.Drawing.Point(150, 73);
-            this.tbCedula.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCedula.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbCedula.MaxLength = 10;
             this.tbCedula.Name = "tbCedula";
-            this.tbCedula.Size = new System.Drawing.Size(719, 22);
+            this.tbCedula.Size = new System.Drawing.Size(538, 20);
             this.tbCedula.TabIndex = 1;
             this.tbCedula.TextChanged += new System.EventHandler(this.TbCedula_TextChanged);
             this.tbCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCedula_KeyPress);
@@ -444,14 +482,15 @@
             // tbCorreo
             // 
             this.tbCorreo.Dock = System.Windows.Forms.DockStyle.Top;
+
             this.tbCorreo.Location = new System.Drawing.Point(150, 141);
-            this.tbCorreo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbCorreo.Margin = new System.Windows.Forms.Padding(5);
+
             this.tbCorreo.MaxLength = 64;
             this.tbCorreo.Name = "tbCorreo";
-            this.tbCorreo.Size = new System.Drawing.Size(719, 22);
+            this.tbCorreo.Size = new System.Drawing.Size(538, 20);
             this.tbCorreo.TabIndex = 1;
             this.tbCorreo.TextChanged += new System.EventHandler(this.TbCorreo_TextChanged);
-            this.tbCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbCorreo_KeyPress);
             this.tbCorreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbCorreo_KeyUp);
             // 
             // errorProvider1
@@ -460,13 +499,15 @@
             // 
             // RegistroDeTécnico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.Margin = new System.Windows.Forms.Padding(5);
+
             this.Name = "RegistroDeTécnico";
-            this.Size = new System.Drawing.Size(972, 481);
+            this.Size = new System.Drawing.Size(729, 391);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel12.ResumeLayout(false);

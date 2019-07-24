@@ -24,8 +24,13 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            muestraCasos();
 
 
+        }
+
+        public void muestraCasos()
+        {
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
@@ -50,21 +55,6 @@ namespace proyectoPantalla
             this.dgvCerrar.Columns[7].Visible = false;
         }
 
-        public void actualizarAnterior()
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FlowLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void ButtonEliminar_Click(object sender, EventArgs e)
         {
 
@@ -76,7 +66,7 @@ namespace proyectoPantalla
             String nombreVendedor = "";
 
 
-            
+
             SqlCommand comando2 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO1", conexion);
             comando2.CommandType = CommandType.StoredProcedure;
             comando2.Parameters.AddWithValue("@IDCASO", idcaso);

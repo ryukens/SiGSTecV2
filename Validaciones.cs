@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
 
 namespace proyectoPantalla
 {
     public class Validaciones
     {
+
         public static bool VerificaCedula(string ced)
         {
             int isNumeric;
@@ -138,6 +145,22 @@ namespace proyectoPantalla
             {
                 return false;
             }
+        }
+
+        public static int verificarCedulaRepetida(TextBox tbCedula, SqlConnection conexion)
+        {
+            int result = -1;
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SP_VERIFICAR_CEDULA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@identificacion", tbCedula.Text);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                result = reader.GetInt32(0);
+            }
+            conexion.Close();
+            return result;
         }
     }
 }
