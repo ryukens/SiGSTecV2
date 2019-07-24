@@ -18,7 +18,7 @@ namespace proyectoPantalla
         public static bool ComprobarFormatoEmail(string sEmailAComprobar)
         {
             String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            sFormato = "\\w+([-+.']\\w+)@\\w+([-.]\\w+)\\.\\w+([-.]\\w+)*";
             if (Regex.IsMatch(sEmailAComprobar, sFormato))
             {
                 if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
@@ -40,26 +40,28 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             consultaTecnico(cedula);
+            MessageBox.Show(cedula);
         }
         private void consultaTecnico(String cedula)
         {
             SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-            SqlCommand command;
+            SqlCommand command, command2;
             SqlDataReader lector, lector2;
             conexion.Open();
-            command = new SqlCommand("select TECNICO.IDPERSONA, NOMBRE, CORREO, IDENTIFICACION, SECTOR,ALCANCE,ESTADO from PERSONA, TECNICO where PERSONA.IDPERSONA=TECNICO.IDPERSONA AND PERSONA.IDENTIFICACION = '" + cedula + "';", conexion);
+            command = new SqlCommand("select PERSONA.IDPERSONA, NOMBRE, IDENTIFICACION, CORREO, SECTOR, ALCANCE from TECNICO, PERSONA where TECNICO.IDPERSONA = PERSONA.IDPERSONA and PERSONA.IDENTIFICACION = '" + cedula + "'", conexion);
             lector = command.ExecuteReader();
             while (lector.Read())
             {
                 tbNombre.Text = lector.GetValue(1).ToString();
-                tbCorreo.Text = lector.GetValue(2).ToString();
-                tbCedula.Text = lector.GetValue(3).ToString();
+                tbCorreo.Text = lector.GetValue(3).ToString();
+                tbCedula.Text = lector.GetValue(2).ToString();
                 tbSector.Text = lector.GetValue(4).ToString();
                 tbAlcance.Text = lector.GetValue(5).ToString();
                 ippersona = Int32.Parse(lector.GetValue(0).ToString());
             }
-            command = new SqlCommand("select PERSONA.IDPERSONA, TELEFONO, TIPO from TELEFONO, PERSONA where TELEFONO.IDPERSONA=PERSONA.IDPERSONA and PERSONA.IDENTIFICACION = '" + lector.GetValue(3).ToString() + "' order by persona.IDPERSONA", conexion);
-            lector2 = command.ExecuteReader();
+            lector.Close();
+            command2 = new SqlCommand("select PERSONA.IDPERSONA, TELEFONO, TIPO from TELEFONO, PERSONA where TELEFONO.IDPERSONA=PERSONA.IDPERSONA and PERSONA.IDPERSONA = " + ippersona + " order by persona.IDPERSONA", conexion);
+            lector2 = command2.ExecuteReader();
             while (lector2.Read())
             {
                 if (lector2.GetValue(2).ToString().Equals("CONVENCIONAL1"))
@@ -74,7 +76,8 @@ namespace proyectoPantalla
                 {
                     tbCelular1.Text = lector2.GetValue(1).ToString();
                 }
-                else if (lector2.GetValue(2).ToString().Equals("CELULAR2")) {
+                else if (lector2.GetValue(2).ToString().Equals("CELULAR2"))
+                {
                     tbCelular2.Text = lector2.GetValue(1).ToString();
                 }
                 lector2.GetValue(1).ToString();
@@ -94,9 +97,7 @@ namespace proyectoPantalla
                     " ALCANCE = '" + tbAlcance.Text + "' " +
                     "where IDPERSONA = " + ippersona + ";", conexion);
                 command.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Técnico Modificado Correctamente", "Técnico Modificado");
-                this.Dispose();
+
 
                 SqlCommand command2 = new SqlCommand("SP_MODIFICACION_TELFONOS", conexion);
                 command2.CommandType = CommandType.StoredProcedure;
@@ -106,6 +107,9 @@ namespace proyectoPantalla
                 command2.Parameters.AddWithValue("@movil2", tbCelular2.Text);
                 command2.Parameters.AddWithValue("@idpersona", ippersona);
                 command2.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Técnico Modificado Correctamente", "Técnico Modificado");
+                this.Dispose();
             }
             catch (Exception ex)
             {
