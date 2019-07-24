@@ -15,57 +15,19 @@ namespace proyectoPantalla
     public partial class RegistroDeProducto : UserControl
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        public RegistroDeProducto()
+        TabControl tabControl;
+        TabPage tabInicio;
+        public RegistroDeProducto(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
+            this.tabControl = tabControl;
+            this.tabInicio = tabInicio;
         }
-
-        private void NuevoProducto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel29_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             bool flagVacios = ValidarCamposVacios();
             if (flagVacios == true)
             {
-
                 conexion.Open();
                 SqlCommand comando1 = new SqlCommand("SP_REGISTRO_PRODUCTO", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
@@ -76,7 +38,6 @@ namespace proyectoPantalla
                 comando1.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Producto Registrado Correctamente", "Producto Registrado");
-
             }
             else
             {
@@ -87,11 +48,6 @@ namespace proyectoPantalla
             limpiarCampos();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8)
@@ -99,8 +55,6 @@ namespace proyectoPantalla
                 e.Handled = false;
                 return;
             }
-
-
             bool IsDec = false;
             int nroDec = 0;
 
@@ -114,8 +68,6 @@ namespace proyectoPantalla
                     e.Handled = true;
                     return;
                 }
-
-
             }
 
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
@@ -125,7 +77,8 @@ namespace proyectoPantalla
             else
                 e.Handled = true;
 
-            }
+        }
+
         private void limpiarCampos()
         {
             tbCodigo.ResetText();
@@ -159,36 +112,13 @@ namespace proyectoPantalla
 
         private void NudCantidad_ValueChanged(object sender, EventArgs e)
         {
-            soloNumero(nudCantidad.ToString());
-           
-
+            Validaciones.soloNumero(nudCantidad.ToString());
         }
-
-        public static bool soloNumero(string valor)
-        {
-            String formato;
-            formato = "/^[0-9]+$/";
-            if (Regex.IsMatch(valor, formato))
-            {
-                if (Regex.Replace(valor, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            tabControl.SelectTab(tabInicio);
         }
     }
 }

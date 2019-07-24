@@ -171,7 +171,6 @@
             this.lAlcance.Size = new System.Drawing.Size(53, 15);
             this.lAlcance.TabIndex = 1;
             this.lAlcance.Text = "Alcance:";
-            this.lAlcance.Click += new System.EventHandler(this.Label6_Click);
             // 
             // panel10
             // 
@@ -192,7 +191,6 @@
             this.tbSector.Name = "tbSector";
             this.tbSector.Size = new System.Drawing.Size(538, 20);
             this.tbSector.TabIndex = 23;
-            this.tbSector.TextChanged += new System.EventHandler(this.TextBox7_TextChanged);
             // 
             // panel9
             // 
@@ -256,7 +254,6 @@
             this.lCedula.Size = new System.Drawing.Size(130, 15);
             this.lCedula.TabIndex = 1;
             this.lCedula.Text = "Cédula de ciudadanía:";
-            this.lCedula.Click += new System.EventHandler(this.Label2_Click);
             // 
             // panel2
             // 
@@ -277,7 +274,6 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(538, 20);
             this.tbNombre.TabIndex = 0;
-            this.tbNombre.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // panel1
@@ -399,7 +395,6 @@
             this.lCelulares.TabIndex = 2;
             this.lCelulares.Text = "Celulares:";
             this.lCelulares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lCelulares.Click += new System.EventHandler(this.LTelfCelular_Click);
             // 
             // tbTelefono1
             // 
