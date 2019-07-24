@@ -61,7 +61,7 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@identificacion", dgvAlzar.CurrentRow.Cells[2].Value.ToString());
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Técnico Eliminado Correctamente", "Técnico Eliminado");
+                MessageBox.Show("Técnico Dado de Alta Correctamente", "Técnico Dado de Alta");
                 mostrarTecnicos();
             }
         }

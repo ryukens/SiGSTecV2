@@ -29,7 +29,6 @@ namespace proyectoPantalla
 
         private void mostrarDatos()
         {
-            
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
@@ -47,37 +46,20 @@ namespace proyectoPantalla
 
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea eliminar este usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 conexion.Open();
 
-                
                 SqlCommand comando1 = new SqlCommand("SP_ELIMINACION_USUARIO", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
-
                 comando1.ExecuteNonQuery();
-
-
                 conexion.Close();
-
-
                 MessageBox.Show("Usuario Eliminado Correctamente", "Usuario Eliminado");
                 mostrarDatos();
             }
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         public void mostrarUsuarioPorNombre()
@@ -98,9 +80,7 @@ namespace proyectoPantalla
             dgvEliminar.Columns[1].HeaderText = "Nombre";
             dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
             dgvEliminar.Columns[3].HeaderText = "Correo";
-
         }
-
 
         public void mostrarUsuarioPorIdentificacion()
         {
@@ -120,27 +100,24 @@ namespace proyectoPantalla
             dgvEliminar.Columns[1].HeaderText = "Nombre";
             dgvEliminar.Columns[2].HeaderText = "Cédula de Ciudadanía";
             dgvEliminar.Columns[3].HeaderText = "Correo";
-
         }
+
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
                 mostrarUsuarioPorNombre();
-            
             }
             else
             {
-
                 mostrarUsuarioPorIdentificacion();
-
-
             }
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
+            tbBuscar.ResetText();
         }
     }
 }

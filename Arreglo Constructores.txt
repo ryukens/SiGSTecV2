@@ -1,4 +1,4 @@
-﻿this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
+this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
 this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
 this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
 this.registroDeCliente2 = new RegistroDeCliente(tabControl, tabInicio);
@@ -22,3 +22,4 @@ this.modificaciónDeCliente1 = new proyectoPantalla.ModificaciónDeCliente(tabCo
 this.tecnicos1 = new proyectoPantalla.RegistroDeTécnico(tabControl, tabInicio);
 this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
 this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
+this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);

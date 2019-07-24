@@ -17,7 +17,6 @@ namespace proyectoPantalla
     {
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog =SIGSTEC; Integrated Security = True");
 
-
         static string RandomString(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -33,7 +32,6 @@ namespace proyectoPantalla
                     res.Append(valid[(int)(num % (uint)valid.Length)]);
                 }
             }
-
             return res.ToString();
         }
 
@@ -50,39 +48,6 @@ namespace proyectoPantalla
             return hash.ToString();
         }
 
-
-
-        public bool VerificaCedula(string ced)
-        {
-            int isNumeric;
-            var total = 0;
-            const int tamanoLongitudCedula = 10;
-            int[] coeficientes = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
-            const int numeroProvincia = 24;
-            const int tercerDigito = 6;
-
-            if (int.TryParse(ced, out isNumeric) && ced.Length == tamanoLongitudCedula)
-            {
-                var provincia = Convert.ToInt32(string.Concat(ced[0], ced[1], string.Empty));
-                var digitoTres = Convert.ToInt32(ced[2] + string.Empty);
-                if ((provincia > 0 && provincia <= numeroProvincia) && digitoTres < tercerDigito)
-                {
-                    var digitoVerificadorRecibido = Convert.ToInt32(ced[9] + string.Empty);
-                    for (var k = 0; k < coeficientes.Length; k++)
-                    {
-                        var valor = Convert.ToInt32(coeficientes[k] + string.Empty) * Convert.ToInt32(ced[k] + string.Empty);
-                        total = valor >= 10 ? total + (valor - 9) : total + valor;
-                    }
-                    var digitoVerificadorObtenido = total >= 10 ? (total % 10) != 0 ? 10 - (total % 10) : (total % 10) : total;
-                    return digitoVerificadorObtenido == digitoVerificadorRecibido;
-                }
-                return false;
-            }
-            return false;
-        }
-
-
-
         TabControl tabControl;
         TabPage tabInicio;
         public RegistroDeUsuario(TabControl tabControl, TabPage tabInicio)
@@ -93,38 +58,15 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        private void NuevoUsuario_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void Panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
-            bool flag = VerificaCedula(tbCedula.Text);
-            bool flag2 = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.VerificaCedula(tbCedula.Text);
+            bool flag2 = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag && flag2)
             {
-
                 String salt = RandomString(64);
-
-
                 conexion.Open();
 
-                
                 SqlCommand comando1 = new SqlCommand("SP_REGISTRO_USUARIO", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
@@ -138,54 +80,10 @@ namespace proyectoPantalla
 
                 comando1.ExecuteNonQuery();
 
-
                 conexion.Close();
 
                 MessageBox.Show("Usuario Registrado Correctamente", "Usuario Registrado");
             }
-        }
-
-        private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel17_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
-        {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -228,40 +126,25 @@ namespace proyectoPantalla
 
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = VerificaCedula(tbCedula.Text);
-            if (flag)
-            {
-                Console.WriteLine("Cédula correcta");
-                tbCedula.ForeColor = Color.Green;
-
-            }
-            else
-            {
-                tbCedula.ForeColor = Color.Red;
-            }
-
-
         }
 
         private void TbCorreo_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = ComprobarFormatoEmail(tbCorreo.Text);
+            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 Console.WriteLine("CORREO BUENO");
                 tbCorreo.ForeColor = Color.Green;
-
             }
             else
             {
                 tbCorreo.ForeColor = Color.Red;
             }
-
         }
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (ComprobarFormatoEmail(tbCorreo.Text))
+            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
@@ -273,13 +156,23 @@ namespace proyectoPantalla
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-            if (VerificaCedula(tbCedula.Text))
+            if (Validaciones.VerificaCedula(tbCedula.Text))
             {
-                errorProvider1.SetError(tbCedula, null);
+                if (Validaciones.verificarCedulaRepetida(tbCedula, conexion) != 0)
+                {
+                    tbCedula.ForeColor = Color.Red;
+                    errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCedula, null);
+                    tbCedula.ForeColor = Color.Green;
+                }
             }
             else
             {
                 errorProvider1.SetError(tbCedula, "Ingrese cédula correctamente");
+                tbCedula.ForeColor = Color.Red;
             }
         }
 
@@ -288,11 +181,6 @@ namespace proyectoPantalla
             tbCedula.ResetText();
             tbCorreo.ResetText();
             tbNombre.ResetText();
-
-        }
-
-        private void CbTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

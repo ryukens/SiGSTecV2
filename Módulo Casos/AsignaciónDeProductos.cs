@@ -20,7 +20,9 @@ namespace proyectoPantalla.Módulo_Casos
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
+
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO_PARA_ASIGANCION_PRODUCTO", conexion);
+
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvMostrar.DataSource = dt;
@@ -103,8 +105,6 @@ namespace proyectoPantalla.Módulo_Casos
                 dgvMostrar.DataSource = dt;
                 llenarTabla();
             }
-
-
         }
 
         public void llenarTabla()
