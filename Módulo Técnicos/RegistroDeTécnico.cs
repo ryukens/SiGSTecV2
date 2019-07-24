@@ -304,5 +304,6 @@ namespace proyectoPantalla
                 tbCelular2.ForeColor = Color.Red;
             }
         }
+
     }
 }

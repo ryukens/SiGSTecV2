@@ -151,7 +151,6 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(317, 41);
             this.tbUsuario.TabIndex = 3;
-            this.tbUsuario.TextChanged += new System.EventHandler(this.TbUsuario_TextChanged);
             // 
             // tbContraseña
             // 
@@ -164,7 +163,7 @@
             this.tbContraseña.PasswordChar = '*';
             this.tbContraseña.Size = new System.Drawing.Size(317, 41);
             this.tbContraseña.TabIndex = 4;
-            this.tbContraseña.TextChanged += new System.EventHandler(this.TbContraseña_TextChanged);
+            this.tbContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbContraseña_KeyPress);
             // 
             // tableLayoutPanel3
             // 
@@ -203,7 +202,6 @@
             this.Name = "InicioDeSesión";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio De Sesión";
-            this.Load += new System.EventHandler(this.InicioDeSesión_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
