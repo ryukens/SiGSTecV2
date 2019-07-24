@@ -187,7 +187,7 @@ namespace proyectoPantalla
         private void AsignarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAsignarProducto);
-            asignaciónDeProductos1.muestraCasos();
+            //asignaciónDeProductos1.muestraCasos();
         }
 
         private void MSAlzarCliente_Click(object sender, EventArgs e)

@@ -185,7 +185,7 @@ namespace proyectoPantalla
             }
             else
             {
-                if (ComprobarFormatoEmail(tbCorreo.Text))
+                if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
                 {
                     errorProvider1.SetError(tbCorreo, null);
                     flagCorreo = true;
@@ -211,9 +211,9 @@ namespace proyectoPantalla
             }
             else
             {
-                if (VerificaCedula(tbCedula.Text))
+                if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
-                    if (verificarCedulaRepetida(tbCedula.Text) != 0)
+                    if (Validaciones.verificarCedulaRepetida(tbCedula, conexion) != 0)
                     {
                         tbCedula.ForeColor = Color.Red;
                         errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
