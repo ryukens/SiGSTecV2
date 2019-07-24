@@ -21,8 +21,22 @@ namespace proyectoPantalla
         public RegistroDeTécnico(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
-            this.tabControl = tabControl;
-            this.tabInicio = tabInicio;
+            tbTelefono2.Enabled = false;
+            tbCelular2.Enabled = false;
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -125,20 +139,6 @@ namespace proyectoPantalla
 
         }
 
-        private void TbCedula_KeyUp(object sender, KeyEventArgs e)
-        {
-            bool flag = Validaciones.VerificaCedula(tbCedula.Text);
-            if (flag)
-            {
-                tbCedula.ForeColor = Color.Green;
-
-            }
-            else
-            {
-                tbCedula.ForeColor = Color.Red;
-            }
-        }
-
         private void TbCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -146,13 +146,20 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
+  if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
             }
             else
             {
-                errorProvider1.SetError(tbCorreo, "Ingrese un correo electrónico correcto");
+                if (ComprobarFormatoEmail(tbCorreo.Text))
+                {
+                    errorProvider1.SetError(tbCorreo, null);
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCorreo, "Ingrese un correo electrónico correcto");
+                }
             }
         }
 
@@ -192,17 +199,25 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono2.Text))
+ if (tbTelefono1.Text.Trim() == "")
             {
-                errorProvider1.SetError(tbTelefono2, null);
-                tbTelefono2.ForeColor = Color.Green;
+                errorProvider1.SetError(tbTelefono1, null);
             }
             else
             {
-                errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono2.ForeColor = Color.Red;
+                if (formatoTelefono(tbTelefono1.Text))
+                {
+                    errorProvider1.SetError(tbTelefono1, null);
+                    tbTelefono1.ForeColor = Color.Green;
+                    tbTelefono2.Enabled = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono1.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -228,14 +243,59 @@ namespace proyectoPantalla
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.VerificaCedula(tbCedula.Text))
+
+            if (tbCedula.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCedula, null);
             }
-            else
-            {
-                errorProvider1.SetError(tbCedula, "Ingrese una cédula correcta");
+            else { 
+                if (VerificaCedula(tbCedula.Text))
+                {
+                    int r = verificarCedulaRepetida(tbCedula.Text);
+                    if (r != 0)
+                    {
+                        tbCedula.ForeColor = Color.Red;
+                        errorProvider1.SetError(tbCedula, "Esta cédula ya existe");
+
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(tbCedula, null);
+                        tbCedula.ForeColor = Color.Green;
+                    }
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCedula, "Ingrese una cédula correcta");
+                    tbCedula.ForeColor = Color.Red;
+                }
             }
+            
+
+
+
+        }
+
+        public int verificarCedulaRepetida(String ced)
+        {
+            int result = -1;
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SP_VERIFICAR_CEDULA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@identificacion", tbCedula.Text);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                result = reader.GetInt32(0);
+            }
+            conexion.Close();
+            return result;
+        }
+
+
+        private void LTelfCelular_Click(object sender, EventArgs e)
+        {
         }
 
         public void limpiarCampos()
@@ -259,17 +319,25 @@ namespace proyectoPantalla
 
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono1.Text))
+if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
-                tbTelefono1.ForeColor = Color.Green;
             }
             else
             {
-                errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono1.ForeColor = Color.Red;
+                if (formatoTelefono(tbTelefono1.Text))
+                {
+                    errorProvider1.SetError(tbTelefono1, null);
+                    tbTelefono1.ForeColor = Color.Green;
+                    tbTelefono2.Enabled = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono1.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -279,6 +347,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCelular1, null);
                 tbCelular1.ForeColor = Color.Green;
+                tbCelular2.Enabled = true;
             }
             else
             {
@@ -295,6 +364,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCelular2, null);
                 tbCelular2.ForeColor = Color.Green;
+                
             }
             else
             {
