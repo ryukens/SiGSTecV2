@@ -85,7 +85,9 @@
             this.dgvMostrar.RowHeadersWidth = 51;
             this.dgvMostrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrar.Size = new System.Drawing.Size(452, 341);
+
             this.dgvMostrar.TabIndex = 1;
+            this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMostrar_CellContentClick);
             // 
             // tableLayoutPanel2
             // 

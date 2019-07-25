@@ -132,6 +132,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(350, 20);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -169,6 +170,7 @@
             this.bFinalizar.TabIndex = 1;
             this.bFinalizar.Text = "Finalizar";
             this.bFinalizar.UseVisualStyleBackColor = true;
+            this.bFinalizar.Click += new System.EventHandler(this.BFinalizar_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -205,6 +207,7 @@
             this.tbFactura.Name = "tbFactura";
             this.tbFactura.Size = new System.Drawing.Size(350, 20);
             this.tbFactura.TabIndex = 1;
+            this.tbFactura.TextChanged += new System.EventHandler(this.TbFactura_TextChanged);
             // 
             // FinalizaciónDeCaso
             // 
