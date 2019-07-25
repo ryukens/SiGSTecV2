@@ -213,7 +213,7 @@ namespace proyectoPantalla
             {
                 if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
-                    if (Validaciones.verificarCedulaRepetida(tbCedula, conexion) != 0)
+                    if (Validaciones.verificarCedulaRepetida(tbCedula,conexion) != 0)
                     {
                         tbCedula.ForeColor = Color.Red;
                         errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
@@ -251,6 +251,20 @@ namespace proyectoPantalla
         {
             limpiarCampos();
             tabControl.SelectTab(tabInicio);
+        }
+
+        private void TbNombre_TextChanged(object sender, EventArgs e)
+        {
+            if(tbNombre.Text.Trim() == "")
+            {
+                flagNombre = false;
+                cambiarBoton();
+            }
+            else
+            {
+                flagNombre = true;
+                cambiarBoton();
+            }
         }
     }
 }
