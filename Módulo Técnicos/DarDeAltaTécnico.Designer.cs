@@ -120,10 +120,13 @@
             // 
             // dgvAlzar
             // 
+            this.dgvAlzar.AllowUserToAddRows = false;
+            this.dgvAlzar.AllowUserToDeleteRows = false;
             this.dgvAlzar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlzar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlzar.Location = new System.Drawing.Point(117, 56);
             this.dgvAlzar.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvAlzar.MultiSelect = false;
             this.dgvAlzar.Name = "dgvAlzar";
             this.dgvAlzar.ReadOnly = true;
             this.dgvAlzar.RowHeadersWidth = 51;

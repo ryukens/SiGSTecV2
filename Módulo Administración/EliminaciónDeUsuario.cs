@@ -27,7 +27,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        private void mostrarDatos()
+        public void mostrarDatos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
