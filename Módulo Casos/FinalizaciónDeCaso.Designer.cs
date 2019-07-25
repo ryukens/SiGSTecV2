@@ -108,7 +108,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(547, 40);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // cbBuscar
             // 
@@ -148,7 +148,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(547, 42);
-            this.tableLayoutPanel3.TabIndex = 4;
+            this.tableLayoutPanel3.TabIndex = 3;
             // 
             // bCancelar
             // 
@@ -156,7 +156,7 @@
             this.bCancelar.Location = new System.Drawing.Point(276, 3);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(268, 36);
-            this.bCancelar.TabIndex = 0;
+            this.bCancelar.TabIndex = 2;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
@@ -185,7 +185,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(547, 40);
-            this.tableLayoutPanel4.TabIndex = 5;
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // lFactura
             // 

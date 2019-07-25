@@ -86,7 +86,7 @@
             this.dgvCancelar.RowHeadersWidth = 51;
             this.dgvCancelar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCancelar.Size = new System.Drawing.Size(478, 322);
-            this.dgvCancelar.TabIndex = 5;
+            this.dgvCancelar.TabIndex = 1;
             this.dgvCancelar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // tableLayoutPanel2
@@ -103,7 +103,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(478, 35);
-            this.tableLayoutPanel2.TabIndex = 9;
+            this.tableLayoutPanel2.TabIndex = 2;
             // 
             // bCancelar
             // 
@@ -140,7 +140,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(478, 35);
-            this.tableLayoutPanel3.TabIndex = 12;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // cbBuscar
             // 

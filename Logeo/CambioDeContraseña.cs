@@ -18,7 +18,7 @@ namespace proyectoPantalla
         public int idUsuario;
         public String salt;
         SqlConnection conexion = new SqlConnection("Data Source =.; Initial Catalog = SIGSTEC; Integrated Security = True");
-        
+
         InicioDeSesión inicioDeSesión;
         PantallaPrincipal pantallaPrincipal;
         public CambioDeContraseña()
@@ -55,7 +55,6 @@ namespace proyectoPantalla
         private void BIngresar_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            String consulta = "update usuario set [password] = @pass where idusuario = @id; ";
             SqlCommand comando = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
             comando.CommandType = CommandType.StoredProcedure;
 
@@ -86,7 +85,7 @@ namespace proyectoPantalla
                 errorProvider1.SetError(tbContraseña2, "Las Contraseñas no coinciden");
                 bGuardar.Enabled = false;
             }
-            if (formatoContraseña(tbContraseña2.Text))
+            if (Validaciones.formatoContraseña(tbContraseña2.Text))
             {
                 //errorProvider1.SetError(tbContraseña2, null);
             }
@@ -108,7 +107,7 @@ namespace proyectoPantalla
                 errorProvider1.SetError(tbContraseña2, "Las Contraseñas no coinciden");
                 bGuardar.Enabled = false;
             }
-            if (formatoContraseña(tbContraseña1.Text))
+            if (Validaciones.formatoContraseña(tbContraseña1.Text))
             {
                 errorProvider1.SetError(tbContraseña1, null);
             }
@@ -123,31 +122,20 @@ namespace proyectoPantalla
             }
         }
 
-        public static bool formatoContraseña(string contraseña)
-        {
-            String formato;
-            //sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            formato = "^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$";
-            if (Regex.IsMatch(contraseña, formato))
-            {
-                if (Regex.Replace(contraseña, formato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
+
 
         private void BSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void TbContraseña1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

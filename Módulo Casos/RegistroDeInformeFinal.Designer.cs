@@ -115,7 +115,7 @@
             this.tbInformeFinal.Multiline = true;
             this.tbInformeFinal.Name = "tbInformeFinal";
             this.tbInformeFinal.Size = new System.Drawing.Size(476, 37);
-            this.tbInformeFinal.TabIndex = 26;
+            this.tbInformeFinal.TabIndex = 0;
             // 
             // lInformeFinal
             // 
@@ -173,7 +173,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(476, 50);
-            this.tableLayoutPanel2.TabIndex = 32;
+            this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
             // 
             // bAceptar
@@ -257,7 +257,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(476, 47);
-            this.tableLayoutPanel3.TabIndex = 43;
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // bSeleccionar
             // 
@@ -265,7 +265,7 @@
             this.bSeleccionar.Location = new System.Drawing.Point(3, 3);
             this.bSeleccionar.Name = "bSeleccionar";
             this.bSeleccionar.Size = new System.Drawing.Size(142, 23);
-            this.bSeleccionar.TabIndex = 0;
+            this.bSeleccionar.TabIndex = 1;
             this.bSeleccionar.Text = "Seleccionar Imagen";
             this.bSeleccionar.UseVisualStyleBackColor = true;
             this.bSeleccionar.Click += new System.EventHandler(this.Button3_Click_1);
@@ -296,7 +296,6 @@
             this.Name = "RegistroDeInformeFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Informe Final";
-          //  this.Load += new System.EventHandler(this.CambioDeDatosCaso_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

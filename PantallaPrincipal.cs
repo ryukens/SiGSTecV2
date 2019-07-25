@@ -204,5 +204,15 @@ namespace proyectoPantalla
             tabControl.SelectTab(tabAlzarTécnico);
             darDeAltaTécnico1.mostrarTecnicos();
         }
+
+        private void RegistrarUsusarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabRegUsuario);
+        }
+
+        private void EliminarUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabEliminarUsuario);
+        }
     }
 }
