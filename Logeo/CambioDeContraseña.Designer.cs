@@ -109,7 +109,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 41);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // bGuardar
             // 
@@ -118,7 +118,7 @@
             this.bGuardar.Location = new System.Drawing.Point(3, 3);
             this.bGuardar.Name = "bGuardar";
             this.bGuardar.Size = new System.Drawing.Size(153, 35);
-            this.bGuardar.TabIndex = 0;
+            this.bGuardar.TabIndex = 1;
             this.bGuardar.Text = "GUARDAR";
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.BIngresar_Click);
@@ -129,7 +129,7 @@
             this.bSalir.Location = new System.Drawing.Point(162, 3);
             this.bSalir.Name = "bSalir";
             this.bSalir.Size = new System.Drawing.Size(153, 35);
-            this.bSalir.TabIndex = 1;
+            this.bSalir.TabIndex = 2;
             this.bSalir.Text = "SALIR";
             this.bSalir.UseVisualStyleBackColor = true;
             this.bSalir.Click += new System.EventHandler(this.BSalir_Click);
@@ -144,8 +144,9 @@
             this.tbContraseña1.Name = "tbContraseña1";
             this.tbContraseña1.PasswordChar = '*';
             this.tbContraseña1.Size = new System.Drawing.Size(318, 41);
-            this.tbContraseña1.TabIndex = 3;
+            this.tbContraseña1.TabIndex = 1;
             this.tbContraseña1.TextChanged += new System.EventHandler(this.TbContraseña1_TextChanged);
+            this.tbContraseña1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbContraseña1_KeyPress);
             // 
             // tbContraseña2
             // 
@@ -157,7 +158,7 @@
             this.tbContraseña2.Name = "tbContraseña2";
             this.tbContraseña2.PasswordChar = '*';
             this.tbContraseña2.Size = new System.Drawing.Size(318, 41);
-            this.tbContraseña2.TabIndex = 4;
+            this.tbContraseña2.TabIndex = 2;
             this.tbContraseña2.TextChanged += new System.EventHandler(this.TbContraseña2_TextChanged);
             // 
             // tableLayoutPanel3
@@ -199,7 +200,7 @@
             this.MinimumSize = new System.Drawing.Size(570, 370);
             this.Name = "CambioDeContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CambioDeContraseña";
+            this.Text = "Cambio De Contraseña";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

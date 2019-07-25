@@ -91,10 +91,10 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-             Application.Exit();
-            //PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
-            //pantallaprincipal.Show();
-            //this.Hide();
+            //Application.Exit();
+            PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
+            pantallaprincipal.Show();
+            this.Hide();
         }
 
         private void TbContraseña_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,6 +102,15 @@ namespace proyectoPantalla
             if (e.KeyChar == (char)Keys.Enter)
             {
                 iniciarSesión();
+            }
+        }
+
+        private void TbUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
             }
         }
     }
