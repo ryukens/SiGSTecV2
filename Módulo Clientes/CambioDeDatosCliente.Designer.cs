@@ -163,7 +163,6 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(540, 20);
             this.tbNombre.TabIndex = 3;
-            this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             // 
             // lCuenta
             // 

@@ -185,7 +185,7 @@
             this.bCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(327, 29);
-\
+
             this.bCancelar.TabIndex = 1;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;

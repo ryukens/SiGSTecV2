@@ -43,12 +43,14 @@ namespace proyectoPantalla
                 cbVendedor.Items.Add(reader[0].ToString());
             }
 
-            conexion.Close();
-
+            
             if (cbVendedor.Items.Count > 0)
             {
                 cbVendedor.SelectedIndex = 0;
             }
+
+            conexion.Close();
+
         }
 
 
@@ -136,11 +138,12 @@ namespace proyectoPantalla
             }
             else
             {
-                conexion.Close();
+                
                 limpiarCampos();
                 MessageBox.Show("Existen campos vacios", "Campos Vacios");
             }
 
+            conexion.Close();
             limpiarCampos();
         }
 
@@ -202,6 +205,11 @@ namespace proyectoPantalla
 
         private void LFechaActual_Click(object sender, EventArgs e)
         {
+        }
+
+        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
