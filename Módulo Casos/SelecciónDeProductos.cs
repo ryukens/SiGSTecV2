@@ -175,22 +175,28 @@ namespace proyectoPantalla
             int indice = -1;
             for (int i = 0; i < dgvDisminuir.Rows.Count; i++)
             {
-                MessageBox.Show(codigo);
+                
+                MessageBox.Show(i.ToString());
+
                 if (dgvDisminuir.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
                     indice = i;
                     break;
                 }
+                
             }
 
             return indice;
         }
+
+
 
         public int encontrarIndiceQuitar(String codigo)
         {
             int indice = -1;
             for (int i = 0; i < dgvAsignar.Rows.Count; i++)
             {
+                MessageBox.Show(i.ToString());
 
                 if (dgvAsignar.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
@@ -204,7 +210,41 @@ namespace proyectoPantalla
 
         private void BQuitar_Click(object sender, EventArgs e)
         {
-            
+            if (nudCantidad.Value == 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
+            }
+            else
+            {
+                if (nudCantidad.Value > Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value))
+                {
+                    MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
+                }
+                else
+                {
+
+                    int indice = encontrarIndiceQuitar(dgvDisminuir.SelectedRows[0].Cells[0].Value.ToString());
+
+                    if (indice == -1)
+                    {
+
+                        MessageBox.Show("Seleccione una fila", "Error de Selección");
+
+
+                    }
+                    else
+                    {
+                        dgvDisminuir.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                        dgvAsignar.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvAsignar.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
+
+                        if (Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) == 0)
+                        {
+                            dgvDisminuir.Rows.RemoveAt(dgvDisminuir.SelectedRows[0].Index);
+                        }
+
+                    }
+                }
+            }
         }
 
        
