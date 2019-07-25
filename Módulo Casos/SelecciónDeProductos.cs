@@ -105,11 +105,6 @@ namespace proyectoPantalla
 
 
 
-        private void BCancelar_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BAsignar_Click(object sender, EventArgs e)
         {
             if (nudCantidad.Value == 0)
@@ -129,8 +124,6 @@ namespace proyectoPantalla
 
                     if (indice == -1)
                     {
-
-
 
                         DataTable dt = (DataTable)dgvDisminuir.DataSource;
                         dgvDisminuir.DataSource = dt;
@@ -175,17 +168,13 @@ namespace proyectoPantalla
             int indice = -1;
             for (int i = 0; i < dgvDisminuir.Rows.Count; i++)
             {
-                
-                MessageBox.Show(i.ToString());
-
+              //  MessageBox.Show(dgvDisminuir.Rows[i].Cells[0].Value.ToString());
                 if (dgvDisminuir.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
                     indice = i;
                     break;
                 }
-                
             }
-
             return indice;
         }
 
@@ -196,7 +185,7 @@ namespace proyectoPantalla
             int indice = -1;
             for (int i = 0; i < dgvAsignar.Rows.Count; i++)
             {
-                MessageBox.Show(i.ToString());
+              //  MessageBox.Show(i.ToString());
 
                 if (dgvAsignar.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
@@ -262,6 +251,125 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void DgvDisminuir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BAsignar_Click_1(object sender, EventArgs e)
+        {
+            if (nudCantidad.Value == 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
+            }
+            else
+            {
+                if (nudCantidad.Value > Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value))
+                {
+                    MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
+                }
+                else
+                {
+
+                    int indice = encontrarIndiceAsignar(dgvAsignar.SelectedRows[0].Cells[0].Value.ToString());
+
+                    if (indice == -1)
+                    {
+
+                        DataTable dt = (DataTable)dgvDisminuir.DataSource;
+                        dgvDisminuir.DataSource = dt;
+                        dt.Rows.Add(dgvAsignar.SelectedRows[0].Cells[0].Value, dgvAsignar.SelectedRows[0].Cells[1].Value, nudCantidad.Value);
+                        dgvDisminuir.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvDisminuir.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        dgvDisminuir.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                    }
+                    else
+                    {
+                        dgvDisminuir.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvDisminuir.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
+                        dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                    }
+                }
+            }
+
+        }
+
+        private void BQuitar_Click_1(object sender, EventArgs e)
+        {
+            if (nudCantidad.Value == 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
+            }
+            else
+            {
+                if (nudCantidad.Value > Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value))
+                {
+                    MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
+                }
+                else
+                {
+
+                    int indice = encontrarIndiceQuitar(dgvDisminuir.SelectedRows[0].Cells[0].Value.ToString());
+
+                    if (indice == -1)
+                    {
+
+                        MessageBox.Show("Seleccione una fila", "Error de Selección");
+
+
+                    }
+                    else
+                    {
+                        dgvDisminuir.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                        dgvAsignar.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvAsignar.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
+
+                        if (Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) == 0)
+                        {
+                            dgvDisminuir.Rows.RemoveAt(dgvDisminuir.SelectedRows[0].Index);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void BCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TbBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                mostrarProductosPorCodigo();
+            }
+            else
+            {
+                mostrarProductoPorDescripcion();
+            }
         }
     }
 }

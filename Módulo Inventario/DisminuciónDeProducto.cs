@@ -42,8 +42,6 @@ namespace proyectoPantalla
             dgvAsignar.Columns[1].HeaderText = "Descripción";
             dgvAsignar.Columns[2].HeaderText = "Cantidad";
 
-
-
         }
 
         public void copiarFormatoTabla()
@@ -122,6 +120,7 @@ namespace proyectoPantalla
                     break;
                 }
             }
+            
 
             return indice;
         }
@@ -169,8 +168,6 @@ namespace proyectoPantalla
 
                     if (indice == -1)
                     {
-
-
 
                         DataTable dt = (DataTable)dgvDisminuir.DataSource;
                         dgvDisminuir.DataSource = dt;
