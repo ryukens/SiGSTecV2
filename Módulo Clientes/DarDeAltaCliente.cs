@@ -143,6 +143,22 @@ namespace proyectoPantalla
                 dgvAlzar.Columns[3].HeaderText = "Identificación";
                 dgvAlzar.Columns[4].HeaderText = "SLA";
             }
+
+            if(dgvAlzar.RowCount == 0)
+            {
+                MessageBox.Show("Cliente no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarDatosCompleto();
+            }
+        }
+
+
+
+
+
+        private void DgvAlzar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

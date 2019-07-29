@@ -21,6 +21,11 @@ namespace proyectoPantalla
 
         InicioDeSesión inicioDeSesión;
         PantallaPrincipal pantallaPrincipal;
+
+        bool flagCorrecto = false;
+        bool flagIguales = false;
+        bool vacios1 = true;
+        bool vacios2 = true;
         public CambioDeContraseña()
         {
             InitializeComponent();
@@ -57,25 +62,76 @@ namespace proyectoPantalla
             conexion.Open();
             SqlCommand comando = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
             comando.CommandType = CommandType.StoredProcedure;
+            if (vacios1 || vacios2)
+            {
+                MessageBox.Show("Existen campos vacíos", "Error");
+            }
+            else
+            {
 
-            comando.Parameters.AddWithValue("@pass", MD5Hash(salt + tbContraseña1.Text));
-            comando.Parameters.AddWithValue("@id", idUsuario);
 
-            comando.ExecuteNonQuery();
+                if (!flagCorrecto)
+                {
+                    MessageBox.Show("Contraseña incorrecta", "Error");
+                    tbContraseña1.ResetText();
+                    tbContraseña2.ResetText();
+                    errorProvider1.SetError(tbContraseña1, null);
+                }
+                else if (!flagIguales)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden", "Error");
+                    tbContraseña2.ResetText();
+                }
+                else
+                {
 
-            conexion.Close();
-            MessageBox.Show("Contraseña cambiada correctamente", "Cambio de contraseña");
+                    conexion.Open();
 
-            this.Hide();
-            inicioDeSesión.Hide();
-            pantallaPrincipal.Show();
+                    SqlCommand comando = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
 
+                    comando.Parameters.AddWithValue("@pass", MD5Hash(salt + tbContraseña1.Text));
+                    comando.Parameters.AddWithValue("@id", idUsuario);
+
+                    comando.ExecuteNonQuery();
+
+                    conexion.Close();
+                    MessageBox.Show("Contraseña cambiada correctamente", "Cambio de contraseña");
+
+                    this.Hide();
+                    inicioDeSesión.Hide();
+                    pantallaPrincipal.Show();
+                }
+            }
         }
 
 
         private void TbContraseña2_TextChanged(object sender, EventArgs e)
         {
-            if (tbContraseña2.Text.Equals(tbContraseña1.Text))
+            if (tbContraseña2.Text.Trim() == "")
+            {
+                vacios2 = true;
+                errorProvider1.SetError(tbContraseña2, null);
+            }
+            else
+            {
+
+                vacios2 = false;
+                if (flagCorrecto)
+                {
+                    if (tbContraseña2.Text.Equals(tbContraseña1.Text))
+                    {
+                        errorProvider1.SetError(tbContraseña2, null);
+                        flagIguales = true;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(tbContraseña2, "Las contraseñas no coinciden");
+                        flagIguales = false;
+                    }
+                }
+            }
+            /*if (tbContraseña2.Text.Equals(tbContraseña1.Text))
             {
                 errorProvider1.SetError(tbContraseña2, null);
                 bGuardar.Enabled = true;
@@ -92,20 +148,42 @@ namespace proyectoPantalla
             else
             {
                 bGuardar.Enabled = false;
-            }
+            }*/
         }
 
         private void TbContraseña1_TextChanged(object sender, EventArgs e)
         {
-            if (tbContraseña1.Text.Equals(tbContraseña2.Text))
+            if (tbContraseña1.Text.Trim() == "")
+            {
+                vacios1 = true;
+                errorProvider1.SetError(tbContraseña1, null);
+            }
+            else
+            {
+                vacios1 = false;
+
+                if (formatoContraseña(tbContraseña1.Text))
+                {
+                    errorProvider1.SetError(tbContraseña1, null);
+                    flagCorrecto = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(tbContraseña1, "Contraseña incorrecta");
+                    flagCorrecto = false;
+                }
+            }
+            /*if (tbContraseña1.Text.Equals(tbContraseña2.Text))
             {
                 errorProvider1.SetError(tbContraseña2, null);
-                bGuardar.Enabled = true;
+                
+                flagIguales = true;
             }
             else
             {
                 errorProvider1.SetError(tbContraseña2, "Las Contraseñas no coinciden");
-                bGuardar.Enabled = false;
+                
+                flagIguales = false;
             }
             if (Validaciones.formatoContraseña(tbContraseña1.Text))
             {
@@ -119,7 +197,7 @@ namespace proyectoPantalla
                     "- Almenos un dígito\r\n" +
                     "- Entre 8 a 16 caracteres");
                 bGuardar.Enabled = false;
-            }
+            }*/
         }
 
 

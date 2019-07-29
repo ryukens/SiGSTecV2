@@ -15,6 +15,21 @@ namespace proyectoPantalla
     public partial class CambioDeDatosCliente : Form
     {
         int ippersona;
+        
+        
+        bool flagCorreo = false;
+        bool flagNContacto = false;
+        bool flagDescripcion = false;
+        bool flagTelefonos = false;
+        bool flagTelefonos2 = false;
+        bool flagMoviles = false;
+        bool flagMoviles2 = false;
+
+        bool errorTelefonos = false;
+        bool errorTelefonos2 = false;
+        bool errorMoviles = false;
+        bool errorMoviles2 = false;
+        bool errorCorreo = false;
         public CambioDeDatosCliente(String cedula)
         {
             InitializeComponent();
@@ -83,58 +98,106 @@ namespace proyectoPantalla
             lector2.Close();
         }
 
+
+
+        public bool validarEntrada()
+        {
+            //Console.WriteLine("alcance " + flagAlcance + "cedula " + flagCedula + "correo " + flagCorreo + "moviles " + flagMoviles + "nombre " + flagNombre + "sector " + flagSector + "telefonos " + flagTelefonos);
+            if (flagNContacto  && flagCorreo && flagMoviles  && flagDescripcion && flagTelefonos )
+            {
+                
+                if (errorCorreo)
+                {
+
+                    MessageBox.Show("Correo electrónico incorrecto", "Error");
+                    return false;
+                }
+                if (errorTelefonos)
+                {
+                    MessageBox.Show("Teléfono convencional incorrecto", "Error");
+                    return false;
+                }
+                if (errorTelefonos2)
+                {
+                    MessageBox.Show("Teléfono convencional incorrecto", "Error");
+                    return false;
+                }
+                if (errorMoviles)
+                {
+                    MessageBox.Show("Celular incorrecto", "Error");
+                    return false;
+                }
+                if (errorMoviles2)
+                {
+                    MessageBox.Show("Celular incorrecto", "Error");
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Existen campos vacíos", "Campos Vacíos");
+                return false;
+            }
+        }
+
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            String tipo, tipoPago;
-            if (rbEmpresa.Checked)
+            if (validarEntrada())
             {
-                tipo = rbEmpresa.Text;
-            }
-            else
-            {
-                tipo = rbPersona.Text;
-            }
-            if (rbAcordado.Checked)
-            {
-                tipoPago = rbAcordado.Text;
-            }
-            else
-            {
-                tipoPago = rbDefinido.Text;
-            }
-            try
-            {
-                SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-                conexion.Open();
-                SqlCommand command;
-                command = new SqlCommand("update PERSONA set CORREO = '" + tbCorreo.Text + "' where " +
-                    "IDPERSONA = " + ippersona + ";" +
-                    "UPDATE CLIENTE SET " +
-                    "NOMBRE_CONTACTO = '" + tbNombreCont.Text + "'," +
-                    " DESCRIPCION_CONTACTO = '" + tbDescripcion.Text + "'," +
-                    " SLA = '" + cbSLA.Text + "'," +
-                    " CUENTA = '" + tbCuenta.Text + "'," +
-                    " TIPO_PAGO = '" + tipoPago + "'," +
-                    " TIPO = '" + tipo + "' WHERE" +
-                    " IDPERSONA = " + ippersona + "; ", conexion);
-                command.ExecuteNonQuery();
+                String tipo, tipoPago;
+                if (rbEmpresa.Checked)
+                {
+                    tipo = rbEmpresa.Text;
+                }
+                else
+                {
+                    tipo = rbPersona.Text;
+                }
+                if (rbAcordado.Checked)
+                {
+                    tipoPago = rbAcordado.Text;
+                }
+                else
+                {
+                    tipoPago = rbDefinido.Text;
+                }
+                try
+                {
+                    SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
+                    conexion.Open();
+                    SqlCommand command;
+                    command = new SqlCommand("SP_ACTUALIZAR_CLIENTE", conexion);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@correo", tbCorreo.Text);
+                    command.Parameters.AddWithValue("@idpersona", ippersona);
+                    command.Parameters.AddWithValue("@nombre_contacto", tbNombreCont.Text);
+                    command.Parameters.AddWithValue("@descripcion_contacto", tbDescripcion.Text);
+                    command.Parameters.AddWithValue("@sla", cbSLA.Text);
+                    command.Parameters.AddWithValue("@cuenta", tbCuenta.Text);
+                    command.Parameters.AddWithValue("@tipo_pago", tipoPago);
+                    command.Parameters.AddWithValue("@tipo", tipo);
+
+                    command.ExecuteNonQuery();
 
 
-                SqlCommand command2 = new SqlCommand("SP_MODIFICACION_TELFONOS", conexion);
-                command2.CommandType = CommandType.StoredProcedure;
-                command2.Parameters.AddWithValue("@convencional1",tbTelefono1.Text);
-                command2.Parameters.AddWithValue("@convencional2", tbTelefono2.Text);
-                command2.Parameters.AddWithValue("@movil1", tbCelular1.Text);
-                command2.Parameters.AddWithValue("@movil2", tbCelular2.Text);
-                command2.Parameters.AddWithValue("@idpersona", ippersona);
-                command2.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Cliente Modificado Correctamente", "Cliente Modificado");
-                this.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectar con la base:" + ex);
+                    SqlCommand command2 = new SqlCommand("SP_MODIFICACION_TELFONOS", conexion);
+                    command2.CommandType = CommandType.StoredProcedure;
+                    command2.Parameters.AddWithValue("@convencional1", tbTelefono1.Text);
+                    command2.Parameters.AddWithValue("@convencional2", tbTelefono2.Text);
+                    command2.Parameters.AddWithValue("@movil1", tbCelular1.Text);
+                    command2.Parameters.AddWithValue("@movil2", tbCelular2.Text);
+                    command2.Parameters.AddWithValue("@idpersona", ippersona);
+                    command2.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Cliente Modificado Correctamente", "Cliente Modificado");
+                    this.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base:" + ex);
+                }
             }
         }
 
@@ -180,17 +243,37 @@ namespace proyectoPantalla
 
         private void TextBox8_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoCelular(tbCelular1.Text))
+            if (tbCelular1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular1, null);
-                tbCelular1.ForeColor = Color.Green;
+                flagMoviles = false;
+                errorMoviles = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
-                    "- Iniciar con prefijo 09\r\n" +
-                    "- Tener 10 dígitos");
-                tbCelular1.ForeColor = Color.Red;
+
+                flagMoviles = true;
+                if (Validaciones.formatoCelular(tbCelular1.Text))
+                {
+                    errorProvider1.SetError(tbCelular1, null);
+                    tbCelular1.ForeColor = Color.Green;
+                    tbCelular2.Enabled = true;
+
+                    errorMoviles = false;
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
+                        "- Iniciar con prefijo 09\r\n" +
+                        "- Tener 10 dígitos");
+                    tbCelular1.ForeColor = Color.Red;
+                    tbCelular2.Enabled = false;
+
+                    errorMoviles = true;
+                }
             }
         }
 
@@ -216,29 +299,68 @@ namespace proyectoPantalla
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
+            if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
+                flagCorreo = false;
+
             }
             else
             {
-                errorProvider1.SetError(tbCorreo, "Ingrese correo electrónico correctamente");
+                flagCorreo = true;
+                if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
+                {
+                    errorProvider1.SetError(tbCorreo, null);
+                    tbCorreo.ForeColor = Color.Green;
+                    errorCorreo = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCorreo, "Ingrese un correo electrónico correcto");
+                    errorCorreo = true;
+                    tbCorreo.ForeColor = Color.Red;
+                }
             }
         }
 
         private void TbTelefono1_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono1.Text))
+            if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
-                tbTelefono1.ForeColor = Color.Green;
+                flagTelefonos = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono1.ForeColor = Color.Red;
+                flagTelefonos = true;
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
+                {
+                    errorProvider1.SetError(tbTelefono1, null);
+                    tbTelefono1.ForeColor = Color.Green;
+                    tbTelefono2.Enabled = true;
+
+                    errorTelefonos = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono1.ForeColor = Color.Red;
+                    tbTelefono2.Enabled = false;
+
+                    errorTelefonos = true;
+
+
+
+
+                }
             }
         }
 
@@ -253,17 +375,40 @@ namespace proyectoPantalla
 
         private void TbTelefono2_TextChanged_1(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
+            if (tbTelefono2.Text.Trim() == "")
+
             {
                 errorProvider1.SetError(tbTelefono2, null);
-                tbTelefono2.ForeColor = Color.Green;
+                errorTelefonos2 = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono2.ForeColor = Color.Red;
+
+
+                if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
+
+                {
+                    errorProvider1.SetError(tbTelefono2, null);
+                    tbTelefono2.ForeColor = Color.Green;
+
+                    errorTelefonos2 = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono2.ForeColor = Color.Red;
+
+                    errorTelefonos2 = true;
+
+                }
             }
         }
 
@@ -304,17 +449,68 @@ namespace proyectoPantalla
 
         private void TbCelular2_TextChanged_1(object sender, EventArgs e)
         {
-            if (Validaciones.formatoCelular(tbCelular2.Text))
+            if (tbCelular2.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular2, null);
+
+
+
+
                 tbCelular2.ForeColor = Color.Green;
+                errorMoviles2 = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
-                    "- Iniciar con prefijo 09\r\n" +
-                    "- Tener 10 dígitos");
-                tbCelular2.ForeColor = Color.Red;
+
+                if (Validaciones.formatoCelular(tbCelular2.Text))
+                {
+                    errorProvider1.SetError(tbCelular2, null);
+                    tbCelular2.ForeColor = Color.Green;
+
+                    errorMoviles2 = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
+                        "- Iniciar con prefijo 09\r\n" +
+                        "- Tener 10 dígitos");
+                    tbCelular2.ForeColor = Color.Red;
+
+                    errorMoviles2 = true;
+
+                }
+            }
+        }
+
+        private void TbNombreCont_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombreCont.Text.Trim() == "")
+            {
+                flagNContacto = false;
+
+            }
+            else
+            {
+                flagNContacto = true;
+
+            }
+        }
+
+        private void TbDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text.Trim() == "")
+            {
+                flagDescripcion = false;
+
+            }
+            else
+            {
+                flagDescripcion = true;
+
             }
         }
     }

@@ -168,7 +168,7 @@
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(341, 5);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(327, 29);
 

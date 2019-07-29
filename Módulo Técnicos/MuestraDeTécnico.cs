@@ -56,7 +56,6 @@ namespace proyectoPantalla
             sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-
             dgvMostrar.DataSource = dt;
             dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -104,10 +103,17 @@ namespace proyectoPantalla
             if (cbBuscar.SelectedIndex == 0)
             {
                 muestraTecnicoPorNombre();
+                
             }
             else
             {
                 muestraTecnicoPorIdentificacion();
+             
+            }
+            if (dgvMostrar.RowCount == 0)
+            {
+                MessageBox.Show("Técnico no encontrado", "Error");
+                tbBuscar.ResetText();
             }
 
 
@@ -123,6 +129,7 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabInicio);
             tbBuscar.ResetText();
+            muestraTecnicos();
         }
     }
 }

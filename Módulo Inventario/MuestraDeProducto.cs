@@ -98,6 +98,12 @@ namespace proyectoPantalla
             {
                 mostrarProductoPorDescripcion();
             }
+            if(dgvMostrar.RowCount == 0)
+            {
+                MessageBox.Show("Producto no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarProductos();
+            }
         }
 
         private void DgvMostrar_SelectionChanged(object sender, EventArgs e)

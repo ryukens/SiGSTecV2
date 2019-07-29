@@ -23,12 +23,54 @@ namespace proyectoPantalla
             mostrarTecnicos();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            
         }
         public void mostrarTecnicos()
         {
-            String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA;";
-            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvModificar.DataSource = dt;
+            dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvModificar.Columns[0].HeaderText = "Estado";
+            dgvModificar.Columns[1].HeaderText = "Nombre";
+            dgvModificar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvModificar.Columns[3].HeaderText = "Sector";
+            dgvModificar.Columns[4].HeaderText = "Alcance";
+        }
+
+        public void MostrarTecnicoPorCedula()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_IDENTIFICACION", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvModificar.DataSource = dt;
+            dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvModificar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvModificar.Columns[0].HeaderText = "Estado";
+            dgvModificar.Columns[1].HeaderText = "Nombre";
+            dgvModificar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvModificar.Columns[3].HeaderText = "Sector";
+            dgvModificar.Columns[4].HeaderText = "Alcance";
+        }
+        public void mostraTecnicoPorNombre()
+        {
+
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_NOMBRE", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
             sda.Fill(dt);
             dgvModificar.DataSource = dt;
             dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -64,53 +106,43 @@ namespace proyectoPantalla
         private void BCancelar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
-            tbBuscar.ResetText();
+            tbBuscar.Text = "";
         }
+
+
+
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
 
-                String consulta = "select t.estado, p.nombre, p.identificacion, t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where nombre like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvModificar.DataSource = dt;
-                dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvModificar.Columns[0].HeaderText = "Estado";
-                dgvModificar.Columns[1].HeaderText = "Nombre";
-                dgvModificar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvModificar.Columns[3].HeaderText = "Sector";
-                dgvModificar.Columns[4].HeaderText = "Alcance";
+                mostraTecnicoPorNombre();
             }
             else
             {
 
 
 
-
-                String consulta = "select t.estado, p.nombre, p.identificacion,  t.sector,t.alcance from persona as p join tecnico as t on p.IDPERSONA = t.IDPERSONA where p.identificacion like '%" + tbBuscar.Text + "%' order by t.sector;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvModificar.DataSource = dt;
-                dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvModificar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvModificar.Columns[0].HeaderText = "Estado";
-                dgvModificar.Columns[1].HeaderText = "Nombre";
-                dgvModificar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvModificar.Columns[3].HeaderText = "Sector";
-                dgvModificar.Columns[4].HeaderText = "Alcance";
+                MostrarTecnicoPorCedula();
 
             }
+            if (dgvModificar.RowCount == 0)
+            {
+                MessageBox.Show("Técnico no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarTecnicos();
+            }
+        }
+
+        private void TbBuscar_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TbBuscar_Leave(object sender, EventArgs e)
+        {
+            
         }
     }
 }
