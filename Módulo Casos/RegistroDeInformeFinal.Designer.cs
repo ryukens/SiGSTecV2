@@ -96,6 +96,7 @@
             this.lMostrarCliente.TabIndex = 41;
             this.lMostrarCliente.Text = "NOMBRE DEL CLIENTE";
             this.lMostrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMostrarCliente.Click += new System.EventHandler(this.LMostrarCliente_Click);
             // 
             // lNumCaso
             // 

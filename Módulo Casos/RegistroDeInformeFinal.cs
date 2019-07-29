@@ -16,7 +16,7 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         
 
-        public RegistroDeInformeFinal( String idcaso, String nombreCliente, String numeroCaso, String nombreTecnico, String nombreVendedor)
+        public RegistroDeInformeFinal( String idcaso, String nombreCliente, String numeroCaso, String nombreTecnico, String nombreVendedor, CierreDeCaso cierreDeCaso)
         {
             InitializeComponent();
             this.idcaso = idcaso;
@@ -24,8 +24,8 @@ namespace proyectoPantalla
             this.numeroCaso = numeroCaso;
             this.nombreCliente = nombreTecnico;
             this.nombreVendedor = nombreVendedor;
-          
-
+            this.cierreDeCaso = cierreDeCaso;
+            
             lMostrarCliente.Text = nombreCliente;
             lMostrarCaso.Text = numeroCaso;
             lMostrarTecnico.Text = nombreTecnico;
@@ -38,7 +38,7 @@ namespace proyectoPantalla
         String numeroCaso;
         String nombreTecnico;
         String nombreVendedor;
-       
+        CierreDeCaso cierreDeCaso;
 
         OpenFileDialog openFileD = new OpenFileDialog();
 
@@ -87,6 +87,8 @@ namespace proyectoPantalla
 
                 MessageBox.Show("Informe Final Registrado Correctamente", "Informe Final Registrado");
 
+                cierreDeCaso.muestraCasos();
+
                 this.Dispose();
 
             }
@@ -130,6 +132,9 @@ namespace proyectoPantalla
             
         }
 
-        
+        private void LMostrarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

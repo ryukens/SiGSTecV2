@@ -85,7 +85,7 @@ namespace proyectoPantalla
                 else
                 {
 
-                    conexion.Open();
+                    
 
                     SqlCommand comando1 = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
                     comando1.CommandType = CommandType.StoredProcedure;
@@ -103,6 +103,7 @@ namespace proyectoPantalla
                     pantallaPrincipal.Show();
                 }
             }
+            
         }
 
 
