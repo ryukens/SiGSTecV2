@@ -65,7 +65,7 @@ namespace proyectoPantalla
                 {
                     if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
                     {
-                        MessageBox.Show("Primer ingreso, cambie su contraseña", "Primer Ingreso");
+                        MessageBox.Show("Debe cambiar su contraseña", "Cambio de contraseña");
                         CambioDeContraseña cambioDeContraseña = new CambioDeContraseña(salt, idUsuario, this);
                         cambioDeContraseña.ShowDialog();
                     }

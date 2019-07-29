@@ -14,7 +14,6 @@ namespace proyectoPantalla
     public partial class RegistroDeInformeFinal : Form
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        
 
         public RegistroDeInformeFinal( String idcaso, String nombreCliente, String numeroCaso, String nombreTecnico, String nombreVendedor, CierreDeCaso cierreDeCaso)
         {
