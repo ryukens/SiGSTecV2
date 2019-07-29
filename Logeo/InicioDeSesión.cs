@@ -104,5 +104,14 @@ namespace proyectoPantalla
                 iniciarSesión();
             }
         }
+
+        private void TbUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

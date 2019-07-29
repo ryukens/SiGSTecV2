@@ -147,6 +147,11 @@ namespace proyectoPantalla
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
+            if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
+            {
+                errorProvider1.SetError(tbCedula, null);
+                tbCedula.ForeColor = Color.Green;
+
 
             if (tbCedula.Text.Trim() == "")
             {
@@ -465,6 +470,7 @@ namespace proyectoPantalla
             }
         }
 
+
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
           /*  if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
@@ -501,6 +507,7 @@ namespace proyectoPantalla
             limpiarCampos();
             tabControl.SelectTab(tabInicio);
         }
+
 
         private void TbNombre_TextChanged(object sender, EventArgs e)
         {

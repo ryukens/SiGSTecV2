@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace proyectoPantalla
 {
@@ -23,6 +24,7 @@ namespace proyectoPantalla
             timer1.Enabled = true;
             cbSLA.SelectedIndex = 0;
             llenarCBVendedor();
+            asignarNumeroCaso(lCaso);
             if (cbVendedor.Items.Count != 0)
             {
                 cbVendedor.SelectedIndex = 0;
@@ -43,13 +45,17 @@ namespace proyectoPantalla
                 cbVendedor.Items.Add(reader[0].ToString());
             }
 
-            conexion.Close();
-
+            
             if (cbVendedor.Items.Count > 0)
             {
                 cbVendedor.SelectedIndex = 0;
             }
+
+            conexion.Close();
+
         }
+
+        
 
 
         private void Label10_Click(object sender, EventArgs e)
@@ -90,6 +96,61 @@ namespace proyectoPantalla
 
         }
 
+        private void asignarNumeroCaso(Label label)
+        {
+            conexion.Open();
+
+            String now = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
+            SqlCommand comando1 = new SqlCommand("SP_SACAR_NUMEROCASO_MAXIMO", conexion);
+            comando1.CommandType = CommandType.StoredProcedure;
+            comando1.ExecuteNonQuery();
+            SqlDataReader consulta = comando1.ExecuteReader();
+            String ultimoRegistro = consulta.ToString();
+            consulta.Read();
+
+            String numeroConsulta = consulta.GetString(0);
+            //  label.Text = consulta.GetString(0);           
+
+            conexion.Close();
+
+            string solofecha = numeroConsulta.Substring(0, 10);
+            string solonum = numeroConsulta.Substring(11);
+
+         //   MessageBox.Show( "fecha hoy" + now + " y fecha sacada de la base " + solofecha );
+
+            if (solofecha != now)
+            {
+                String numeroCASO = now + "-001";
+                label.Text = numeroCASO;
+
+
+            }
+            else if(solofecha == now)
+            {
+                int solonumINT = Int32.Parse(solonum);
+                solonumINT = solonumINT + 1;
+
+               String numeritosNumeroCASO = solonumINT.ToString().PadLeft(3, '0');
+
+
+                String numeroCASO = now + "-" + numeritosNumeroCASO;
+
+
+                label.Text = numeroCASO.ToString().PadLeft(3, '0');
+
+
+
+
+            }
+
+
+
+        }
+
+
+
+
         private void limpiarCampos()
         {
             tbInformeInicial.ResetText();
@@ -101,7 +162,10 @@ namespace proyectoPantalla
             lIdTecnico.Text = "id del técnico";
             lIdCliente.Text = "id del Cliente";
             lIdUsuario.Text = "id del Usuario";
+
+            asignarNumeroCaso(lCaso);
         }
+
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
@@ -136,11 +200,12 @@ namespace proyectoPantalla
             }
             else
             {
-                conexion.Close();
+                
                 limpiarCampos();
                 MessageBox.Show("Existen campos vacios", "Campos Vacios");
             }
 
+            conexion.Close();
             limpiarCampos();
         }
 
@@ -202,6 +267,11 @@ namespace proyectoPantalla
 
         private void LFechaActual_Click(object sender, EventArgs e)
         {
+        }
+
+        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

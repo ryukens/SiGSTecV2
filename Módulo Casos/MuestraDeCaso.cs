@@ -179,5 +179,10 @@ namespace proyectoPantalla
             tbBuscar.ResetText();
             tabControl.SelectTab(tabInicio);
         }
+
+        private void DgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

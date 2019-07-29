@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvDisminuir = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lBuscar = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.bAsignar = new System.Windows.Forms.Button();
             this.bQuitar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lNumCaso = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lNombreCliente = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignar)).BeginInit();
@@ -72,11 +73,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lBuscar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.55901F));
@@ -88,35 +90,40 @@
             // bAceptar
             // 
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAceptar.Location = new System.Drawing.Point(101, 423);
+            this.bAceptar.Location = new System.Drawing.Point(102, 424);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(338, 35);
+            this.bAceptar.Size = new System.Drawing.Size(336, 33);
             this.bAceptar.TabIndex = 18;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
-            this.bAceptar.Click += new System.EventHandler(this.BAceptar_Click_1);
             // 
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(543, 423);
+            this.bCancelar.Location = new System.Drawing.Point(544, 424);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(338, 35);
+            this.bCancelar.Size = new System.Drawing.Size(336, 33);
             this.bCancelar.TabIndex = 16;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
-            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click_1);
             // 
             // dgvAsignar
             // 
+            this.dgvAsignar.AllowUserToAddRows = false;
+            this.dgvAsignar.AllowUserToDeleteRows = false;
             this.dgvAsignar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAsignar.Location = new System.Drawing.Point(543, 47);
+            this.dgvAsignar.Location = new System.Drawing.Point(544, 48);
+            this.dgvAsignar.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAsignar.MultiSelect = false;
             this.dgvAsignar.Name = "dgvAsignar";
             this.dgvAsignar.ReadOnly = true;
             this.dgvAsignar.RowHeadersWidth = 51;
             this.dgvAsignar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAsignar.Size = new System.Drawing.Size(338, 370);
+            this.dgvAsignar.Size = new System.Drawing.Size(336, 368);
             this.dgvAsignar.TabIndex = 13;
             // 
             // tableLayoutPanel3
@@ -127,11 +134,12 @@
             this.tableLayoutPanel3.Controls.Add(this.cbBuscar, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tbBuscar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(543, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(544, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(338, 38);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(336, 36);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
             // cbBuscar
@@ -142,21 +150,22 @@
             this.cbBuscar.Items.AddRange(new object[] {
             "Código",
             "Descripción"});
-            this.cbBuscar.Location = new System.Drawing.Point(3, 3);
+            this.cbBuscar.Location = new System.Drawing.Point(4, 4);
+            this.cbBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(95, 21);
+            this.cbBuscar.Size = new System.Drawing.Size(92, 21);
             this.cbBuscar.TabIndex = 0;
-            this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.CbBuscar_SelectedIndexChanged);
             // 
             // tbBuscar
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbBuscar.Location = new System.Drawing.Point(104, 3);
+            this.tbBuscar.Location = new System.Drawing.Point(104, 4);
+            this.tbBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.tbBuscar.Multiline = true;
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(231, 32);
+            this.tbBuscar.Size = new System.Drawing.Size(228, 28);
             this.tbBuscar.TabIndex = 1;
-            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
+            this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged_1);
             // 
             // label1
             // 
@@ -177,37 +186,42 @@
             // 
             this.panel3.Controls.Add(this.dgvDisminuir);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(101, 47);
+            this.panel3.Location = new System.Drawing.Point(102, 48);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 370);
+            this.panel3.Size = new System.Drawing.Size(336, 368);
             this.panel3.TabIndex = 4;
             // 
             // dgvDisminuir
             // 
+            this.dgvDisminuir.AllowUserToAddRows = false;
+            this.dgvDisminuir.AllowUserToDeleteRows = false;
             this.dgvDisminuir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisminuir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDisminuir.Location = new System.Drawing.Point(0, 0);
+            this.dgvDisminuir.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDisminuir.MultiSelect = false;
             this.dgvDisminuir.Name = "dgvDisminuir";
             this.dgvDisminuir.ReadOnly = true;
             this.dgvDisminuir.RowHeadersWidth = 51;
             this.dgvDisminuir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisminuir.Size = new System.Drawing.Size(338, 370);
+            this.dgvDisminuir.Size = new System.Drawing.Size(336, 368);
             this.dgvDisminuir.TabIndex = 0;
+            this.dgvDisminuir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDisminuir_CellContentClick);
             // 
-            // label3
+            // lBuscar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label3.Size = new System.Drawing.Size(92, 44);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Datos del caso:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.UseMnemonic = false;
+            this.lBuscar.AutoSize = true;
+            this.lBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lBuscar.Location = new System.Drawing.Point(3, 0);
+            this.lBuscar.Name = "lBuscar";
+            this.lBuscar.Size = new System.Drawing.Size(92, 44);
+            this.lBuscar.TabIndex = 8;
+            this.lBuscar.Text = "Número de Caso:";
+            this.lBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lBuscar.UseMnemonic = false;
             // 
             // tableLayoutPanel5
             // 
@@ -217,7 +231,8 @@
             this.tableLayoutPanel5.Controls.Add(this.bQuitar, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(445, 47);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(446, 48);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 5;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -225,30 +240,32 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(92, 370);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(90, 368);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
             // bAsignar
             // 
             this.bAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bAsignar.Location = new System.Drawing.Point(3, 76);
+            this.bAsignar.Location = new System.Drawing.Point(4, 77);
+            this.bAsignar.Margin = new System.Windows.Forms.Padding(4);
             this.bAsignar.Name = "bAsignar";
-            this.bAsignar.Size = new System.Drawing.Size(86, 67);
+            this.bAsignar.Size = new System.Drawing.Size(82, 65);
             this.bAsignar.TabIndex = 15;
             this.bAsignar.Text = "Asignar\r\n<---------";
             this.bAsignar.UseVisualStyleBackColor = true;
-            this.bAsignar.Click += new System.EventHandler(this.BAsignar_Click);
+            this.bAsignar.Click += new System.EventHandler(this.BAsignar_Click_1);
             // 
             // bQuitar
             // 
             this.bQuitar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bQuitar.Location = new System.Drawing.Point(3, 222);
+            this.bQuitar.Location = new System.Drawing.Point(4, 223);
+            this.bQuitar.Margin = new System.Windows.Forms.Padding(4);
             this.bQuitar.Name = "bQuitar";
-            this.bQuitar.Size = new System.Drawing.Size(86, 67);
+            this.bQuitar.Size = new System.Drawing.Size(82, 65);
             this.bQuitar.TabIndex = 16;
             this.bQuitar.Text = "Quitar\r\n--------->";
             this.bQuitar.UseVisualStyleBackColor = true;
-            this.bQuitar.Click += new System.EventHandler(this.BQuitar_Click);
+            this.bQuitar.Click += new System.EventHandler(this.BQuitar_Click_1);
             // 
             // tableLayoutPanel2
             // 
@@ -256,60 +273,75 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.nudCantidad, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 149);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 150);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(86, 67);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(82, 65);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // nudCantidad
             // 
             this.nudCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudCantidad.Location = new System.Drawing.Point(3, 25);
+            this.nudCantidad.Location = new System.Drawing.Point(4, 25);
+            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.ReadOnly = true;
-            this.nudCantidad.Size = new System.Drawing.Size(80, 20);
+            this.nudCantidad.Size = new System.Drawing.Size(74, 20);
             this.nudCantidad.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.Controls.Add(this.lNumCaso, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lNombreCliente, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lNombreCliente, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(101, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(338, 38);
             this.tableLayoutPanel4.TabIndex = 19;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel4_Paint);
             // 
             // lNumCaso
             // 
             this.lNumCaso.AutoSize = true;
-            this.lNumCaso.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lNumCaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNumCaso.Location = new System.Drawing.Point(3, 0);
             this.lNumCaso.Name = "lNumCaso";
-            this.lNumCaso.Size = new System.Drawing.Size(163, 38);
+            this.lNumCaso.Size = new System.Drawing.Size(62, 18);
             this.lNumCaso.TabIndex = 0;
-            this.lNumCaso.Text = "-#CASO-";
-            this.lNumCaso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lNumCaso.Text = "Número";
+            this.lNumCaso.Click += new System.EventHandler(this.Label2_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(115, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 36);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nombre \r\nde Cliente:";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // lNombreCliente
             // 
             this.lNombreCliente.AutoSize = true;
-            this.lNombreCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lNombreCliente.Location = new System.Drawing.Point(172, 0);
+            this.lNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNombreCliente.Location = new System.Drawing.Point(227, 0);
             this.lNombreCliente.Name = "lNombreCliente";
-            this.lNombreCliente.Size = new System.Drawing.Size(163, 38);
-            this.lNombreCliente.TabIndex = 1;
-            this.lNombreCliente.Text = "-CLIENTE-";
-            this.lNombreCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lNombreCliente.Size = new System.Drawing.Size(62, 18);
+            this.lNombreCliente.TabIndex = 2;
+            this.lNombreCliente.Text = "Nombre";
             // 
             // SelecciónDeProductos
             // 
@@ -350,14 +382,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvDisminuir;
+        private System.Windows.Forms.Label lBuscar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button bAsignar;
         private System.Windows.Forms.Button bQuitar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.NumericUpDown nudCantidad;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lNumCaso;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lNombreCliente;
     }
 }

@@ -52,7 +52,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(554, 330);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 8;
             // 
             // tableLayoutPanel1
             // 
@@ -80,7 +80,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(554, 330);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.TabStop = true;
             // 
             // lUsuario
             // 
@@ -117,7 +118,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(317, 41);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // bIngresar
             // 
@@ -125,7 +126,7 @@
             this.bIngresar.Location = new System.Drawing.Point(3, 3);
             this.bIngresar.Name = "bIngresar";
             this.bIngresar.Size = new System.Drawing.Size(152, 35);
-            this.bIngresar.TabIndex = 0;
+            this.bIngresar.TabIndex = 1;
             this.bIngresar.Text = "INGRESAR";
             this.bIngresar.UseVisualStyleBackColor = true;
             this.bIngresar.Click += new System.EventHandler(this.Button1_Click);
@@ -136,7 +137,7 @@
             this.bSalir.Location = new System.Drawing.Point(161, 3);
             this.bSalir.Name = "bSalir";
             this.bSalir.Size = new System.Drawing.Size(153, 35);
-            this.bSalir.TabIndex = 1;
+            this.bSalir.TabIndex = 2;
             this.bSalir.Text = "SALIR";
             this.bSalir.UseVisualStyleBackColor = true;
             this.bSalir.Click += new System.EventHandler(this.Button2_Click);
@@ -150,7 +151,8 @@
             this.tbUsuario.Multiline = true;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(317, 41);
-            this.tbUsuario.TabIndex = 3;
+            this.tbUsuario.TabIndex = 1;
+            this.tbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbUsuario_KeyPress);
             // 
             // tbContraseña
             // 
@@ -162,7 +164,7 @@
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.PasswordChar = '*';
             this.tbContraseña.Size = new System.Drawing.Size(317, 41);
-            this.tbContraseña.TabIndex = 4;
+            this.tbContraseña.TabIndex = 2;
             this.tbContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbContraseña_KeyPress);
             // 
             // tableLayoutPanel3

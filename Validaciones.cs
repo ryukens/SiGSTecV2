@@ -164,6 +164,28 @@ namespace proyectoPantalla
             conexion.Close();
             return result;
         }
+
+        public static bool formatoContraseña(string contraseña)
+        {
+            String formato;
+            //sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            formato = "^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$";
+            if (Regex.IsMatch(contraseña, formato))
+            {
+                if (Regex.Replace(contraseña, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 

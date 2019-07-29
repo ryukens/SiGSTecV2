@@ -142,7 +142,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(503, 49);
-            this.tableLayoutPanel2.TabIndex = 32;
+            this.tableLayoutPanel2.TabIndex = 6;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
             // 
             // bCancelar
             // 
@@ -182,7 +183,7 @@
             this.tbSector.MaxLength = 64;
             this.tbSector.Name = "tbSector";
             this.tbSector.Size = new System.Drawing.Size(503, 20);
-            this.tbSector.TabIndex = 0;
+            this.tbSector.TabIndex = 5;
             // 
             // tbInformeInicial
             // 
@@ -192,7 +193,7 @@
             this.tbInformeInicial.Multiline = true;
             this.tbInformeInicial.Name = "tbInformeInicial";
             this.tbInformeInicial.Size = new System.Drawing.Size(503, 45);
-            this.tbInformeInicial.TabIndex = 24;
+            this.tbInformeInicial.TabIndex = 3;
             this.tbInformeInicial.TextChanged += new System.EventHandler(this.TbInformeInicial_TextChanged);
             // 
             // panel12
@@ -202,7 +203,7 @@
             this.panel12.Location = new System.Drawing.Point(104, 207);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(503, 45);
-            this.panel12.TabIndex = 27;
+            this.panel12.TabIndex = 2;
             // 
             // cbSLA
             // 
@@ -221,7 +222,7 @@
             this.cbSLA.Location = new System.Drawing.Point(0, 0);
             this.cbSLA.Name = "cbSLA";
             this.cbSLA.Size = new System.Drawing.Size(503, 21);
-            this.cbSLA.TabIndex = 0;
+            this.cbSLA.TabIndex = 2;
             // 
             // panel11
             // 
@@ -390,7 +391,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(503, 45);
-            this.tableLayoutPanel3.TabIndex = 33;
+            this.tableLayoutPanel3.TabIndex = 4;
             // 
             // lTecnicoSeleccionado
             // 
@@ -409,7 +410,7 @@
             this.bSeleccionarTecnico.Location = new System.Drawing.Point(3, 3);
             this.bSeleccionarTecnico.Name = "bSeleccionarTecnico";
             this.bSeleccionarTecnico.Size = new System.Drawing.Size(119, 39);
-            this.bSeleccionarTecnico.TabIndex = 2;
+            this.bSeleccionarTecnico.TabIndex = 0;
             this.bSeleccionarTecnico.Text = "Seleccionar";
             this.bSeleccionarTecnico.UseVisualStyleBackColor = true;
             this.bSeleccionarTecnico.Click += new System.EventHandler(this.Button4_Click);
@@ -428,7 +429,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(503, 45);
-            this.tableLayoutPanel4.TabIndex = 34;
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lClienteSeleccionado
             // 
@@ -491,7 +492,7 @@
             this.cbVendedor.Location = new System.Drawing.Point(104, 156);
             this.cbVendedor.Name = "cbVendedor";
             this.cbVendedor.Size = new System.Drawing.Size(503, 21);
-            this.cbVendedor.TabIndex = 37;
+            this.cbVendedor.TabIndex = 1;
             this.cbVendedor.SelectedIndexChanged += new System.EventHandler(this.CbVendedor_SelectedIndexChanged);
             this.cbVendedor.TextChanged += new System.EventHandler(this.CbVendedor_TextChanged);
             // 
