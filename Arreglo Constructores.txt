@@ -24,3 +24,4 @@ this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tab
 this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
 this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
 this.dadaDeAltaUsuario1 = new proyectoPantalla.Módulo_Administración.DadaDeAltaUsuario(tabControl, tabInicio);
+this.recuperaciónContraseña1 = new proyectoPantalla.Módulo_Administración.RecuperaciónContraseña(tabControl, tabInicio);
