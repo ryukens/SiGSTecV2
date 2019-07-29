@@ -209,7 +209,7 @@ namespace proyectoPantalla
             }
             else
             {
-                mostrarProductoPorDescripcion();
+                filtrarProductoPorDescripcion();
             }
             
         }

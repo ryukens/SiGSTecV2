@@ -85,9 +85,12 @@
             // 
             // dgvMostrar
             // 
+            this.dgvMostrar.AllowUserToAddRows = false;
+            this.dgvMostrar.AllowUserToDeleteRows = false;
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMostrar.Location = new System.Drawing.Point(113, 95);
+            this.dgvMostrar.MultiSelect = false;
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;

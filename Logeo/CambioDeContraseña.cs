@@ -87,13 +87,13 @@ namespace proyectoPantalla
 
                     conexion.Open();
 
-                    SqlCommand comando = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
-                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlCommand comando1 = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
 
-                    comando.Parameters.AddWithValue("@pass", MD5Hash(salt + tbContraseña1.Text));
-                    comando.Parameters.AddWithValue("@id", idUsuario);
+                    comando1.Parameters.AddWithValue("@pass", MD5Hash(salt + tbContraseña1.Text));
+                    comando1.Parameters.AddWithValue("@id", idUsuario);
 
-                    comando.ExecuteNonQuery();
+                    comando1.ExecuteNonQuery();
 
                     conexion.Close();
                     MessageBox.Show("Contraseña cambiada correctamente", "Cambio de contraseña");
@@ -162,7 +162,7 @@ namespace proyectoPantalla
             {
                 vacios1 = false;
 
-                if (formatoContraseña(tbContraseña1.Text))
+                if (Validaciones.formatoContraseña(tbContraseña1.Text))
                 {
                     errorProvider1.SetError(tbContraseña1, null);
                     flagCorrecto = true;

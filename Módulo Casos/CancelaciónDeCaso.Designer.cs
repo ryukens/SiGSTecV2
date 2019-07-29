@@ -78,9 +78,12 @@
             // 
             // dgvCancelar
             // 
+            this.dgvCancelar.AllowUserToAddRows = false;
+            this.dgvCancelar.AllowUserToDeleteRows = false;
             this.dgvCancelar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCancelar.Location = new System.Drawing.Point(99, 44);
+            this.dgvCancelar.MultiSelect = false;
             this.dgvCancelar.Name = "dgvCancelar";
             this.dgvCancelar.ReadOnly = true;
             this.dgvCancelar.RowHeadersWidth = 51;
