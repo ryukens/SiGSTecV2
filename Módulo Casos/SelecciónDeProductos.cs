@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoPantalla.Módulo_Casos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,21 +16,24 @@ namespace proyectoPantalla
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         
-        public SelecciónDeProductos(String numero, String cliente)
+        public SelecciónDeProductos(String numero, String cliente, AsignaciónDeProductos asignaciónDeProductos)
         {
             InitializeComponent();
             cbBuscar.SelectedIndex = 0;
             this.numero = numero;
             this.cliente = cliente;
+            this.asignaciónDeProductos = asignaciónDeProductos;
             llenarTablaProductos();
             copiarFormatoTabla();
             lNumCaso.Text = numero;
             lNombreCliente.Text = cliente;
 
+
         }
 
         String numero;
         String cliente;
+        AsignaciónDeProductos asignaciónDeProductos;
 
         public void llenarTablaProductos()
         {
@@ -391,6 +395,7 @@ namespace proyectoPantalla
         private void BAceptar_Click(object sender, EventArgs e)
         {
 
+
             if (dgvDisminuir.Rows.Count > 0)
             {
                 conexion.Open();
@@ -409,14 +414,19 @@ namespace proyectoPantalla
                 conexion.Close();
                 MessageBox.Show("Productos Disminuidos Correctamente", "Producto Disminuido");
                 limpiarCampos();
+
+                asignaciónDeProductos.llenarTablaPublico();
                 this.Dispose();
+
+
+
             }
             else
             {
                 MessageBox.Show("Seleccione uno o más Productos", "Error de Asignación de Productos");
             }
 
-
+        
         }
     }
 }

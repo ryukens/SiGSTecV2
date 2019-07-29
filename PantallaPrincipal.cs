@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace proyectoPantalla
@@ -67,6 +60,7 @@ namespace proyectoPantalla
         private void NuevoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabRegCaso);
+            registroDeCaso1.llenarCBVendedor();
 
         }
 
@@ -146,6 +140,7 @@ namespace proyectoPantalla
         private void VerDetalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabVerDetalle);
+            vistaDeDetalles1.muestraCasos();
         }
 
 
@@ -191,6 +186,7 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabAsignarProducto);
             asignaciónDeProductos1.llenarTabla();
+
         }
 
         private void MSAlzarCliente_Click(object sender, EventArgs e)
