@@ -129,9 +129,12 @@
             // 
             // dgvCerrar
             // 
+            this.dgvCerrar.AllowUserToAddRows = false;
+            this.dgvCerrar.AllowUserToDeleteRows = false;
             this.dgvCerrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCerrar.Location = new System.Drawing.Point(0, 0);
+            this.dgvCerrar.MultiSelect = false;
             this.dgvCerrar.Name = "dgvCerrar";
             this.dgvCerrar.ReadOnly = true;
             this.dgvCerrar.RowHeadersWidth = 51;

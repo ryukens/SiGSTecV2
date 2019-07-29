@@ -360,16 +360,63 @@ namespace proyectoPantalla
 
         }
 
+        public void filtrarProductoPorCodigo()
+        {
+            DataTable dt = (DataTable)dgvAsignar.DataSource;
+            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "codigo", tbBuscar.Text);
+            dgvAsignar.DataSource = dt;
+
+        }
+        public void filtrarProductoPorDescripcion()
+        {
+            DataTable dt = (DataTable)dgvAsignar.DataSource;
+            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "descripcion", tbBuscar.Text);
+            dgvAsignar.DataSource = dt;
+
+        }
+
+
         private void TbBuscar_TextChanged_1(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-                mostrarProductosPorCodigo();
+                filtrarProductoPorCodigo();
             }
             else
             {
-                mostrarProductoPorDescripcion();
+                filtrarProductoPorDescripcion();
             }
+        }
+
+        private void BAceptar_Click(object sender, EventArgs e)
+        {
+
+            if (dgvDisminuir.Rows.Count > 0)
+            {
+                conexion.Open();
+
+                for (int i = 0; i < dgvDisminuir.Rows.Count; i++)
+                {
+                    SqlCommand comando1 = new SqlCommand("SP_ASIGNACION_PRODUCTO_CASO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@numero", lNumCaso.Text);
+                    comando1.Parameters.AddWithValue("@codigo", dgvDisminuir.Rows[i].Cells[0].Value.ToString());
+                    comando1.Parameters.AddWithValue("@cantidad", Convert.ToInt32(dgvDisminuir.Rows[i].Cells[2].Value));
+                    comando1.ExecuteNonQuery();
+
+                }
+
+                conexion.Close();
+                MessageBox.Show("Productos Disminuidos Correctamente", "Producto Disminuido");
+                limpiarCampos();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione uno o más Productos", "Error de Asignación de Productos");
+            }
+
+
         }
     }
 }
