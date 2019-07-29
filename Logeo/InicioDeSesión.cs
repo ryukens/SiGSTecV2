@@ -65,20 +65,22 @@ namespace proyectoPantalla
                 {
                     if (MD5Hash(salt + tbContraseña.Text).Equals(MD5Hash(salt + "12345678")))
                     {
-                        MessageBox.Show("Primer ingreso, por favor cambie su contraseña", "Primer Ingreso");
+                        MessageBox.Show("Primer ingreso, cambie su contraseña", "Primer Ingreso");
                         CambioDeContraseña cambioDeContraseña = new CambioDeContraseña(salt, idUsuario, this);
                         cambioDeContraseña.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Ingreso Exitoso");
+                        MessageBox.Show("Ingreso Exitoso", "Ingreso al Sistema");
                         this.Hide();
                         pantallaPrincipal.Show();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Credenciales Incorrectas");
+                    MessageBox.Show("Credenciales Incorrectas", "Error de Ingreso al Sistema");
+                    tbUsuario.ResetText();
+                    tbContraseña.ResetText();
                 }
             }
             else
@@ -89,10 +91,10 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            // Application.Exit();
-            PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
-            pantallaprincipal.Show();
-            this.Hide();
+             Application.Exit();
+            //PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
+            //pantallaprincipal.Show();
+            //this.Hide();
         }
 
         private void TbContraseña_KeyPress(object sender, KeyPressEventArgs e)

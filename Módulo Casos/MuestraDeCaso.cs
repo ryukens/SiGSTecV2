@@ -26,7 +26,7 @@ namespace proyectoPantalla
             this.tabInicio = tabInicio;
         }
 
-        public void muestraCasos()
+        public void mostrarCasos()
         {
             SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_LLENAR_TABLA_CASO", conexion);
             DataTable dt = new DataTable();

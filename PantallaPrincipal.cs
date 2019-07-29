@@ -30,7 +30,7 @@ namespace proyectoPantalla
         private void Button1_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabInicio);
-
+            muestraDeCaso2.mostrarCasos();
         }
 
 
@@ -99,11 +99,13 @@ namespace proyectoPantalla
         private void DarDeBajaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabDismProd);
+            disminuciónDeProducto1.llenarTablaProductos();
         }
 
         private void AumentarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAumProd);
+            aumentoDeProducto1.mostrarProducto();
         }
 
         private void CancelarCasoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,6 +129,7 @@ namespace proyectoPantalla
         private void MostrarCasoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabMostrarCaso);
+            muestraDeCaso1.mostrarCasos();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -149,6 +152,7 @@ namespace proyectoPantalla
         private void MuestraProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabMostrarProducto);
+            muestraDeProducto1.mostrarProductos();
         }
 
 
@@ -165,6 +169,7 @@ namespace proyectoPantalla
         private void EliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabEliminarUsuario);
+            eliminaciónDeUsuario1.mostrarDatos();
         }
 
         private void PantallaPrincipal_Load(object sender, EventArgs e)

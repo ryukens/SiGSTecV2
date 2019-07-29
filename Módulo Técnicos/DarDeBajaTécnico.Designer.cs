@@ -55,9 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -74,14 +72,12 @@
             this.tableLayoutPanel3.Controls.Add(this.cbBuscar, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tbBuscar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.tableLayoutPanel3.Location = new System.Drawing.Point(144, 6);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(673, 38);
-
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // cbBuscar
@@ -92,24 +88,20 @@
             this.cbBuscar.Items.AddRange(new object[] {
             "Nombre",
             "Cédula de Ciudadanía"});
-
             this.cbBuscar.Location = new System.Drawing.Point(7, 6);
             this.cbBuscar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(221, 24);
-
             this.cbBuscar.TabIndex = 0;
             this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.CbBuscar_SelectedIndexChanged);
             // 
             // tbBuscar
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.tbBuscar.Location = new System.Drawing.Point(242, 6);
             this.tbBuscar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(424, 22);
-
             this.tbBuscar.TabIndex = 1;
             this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
@@ -129,19 +121,18 @@
             // 
             // dgvEliminar
             // 
+            this.dgvEliminar.AllowUserToAddRows = false;
+            this.dgvEliminar.AllowUserToDeleteRows = false;
             this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.dgvEliminar.Location = new System.Drawing.Point(144, 56);
             this.dgvEliminar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-
+            this.dgvEliminar.MultiSelect = false;
             this.dgvEliminar.Name = "dgvEliminar";
             this.dgvEliminar.ReadOnly = true;
             this.dgvEliminar.RowHeadersWidth = 51;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-
             this.dgvEliminar.Size = new System.Drawing.Size(673, 388);
-
             this.dgvEliminar.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -152,7 +143,6 @@
             this.tableLayoutPanel2.Controls.Add(this.bEliminar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.tableLayoutPanel2.Location = new System.Drawing.Point(144, 456);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -160,18 +150,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(673, 39);
-
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // bEliminar
             // 
             this.bEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.bEliminar.Location = new System.Drawing.Point(7, 6);
             this.bEliminar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(322, 27);
-
             this.bEliminar.TabIndex = 0;
             this.bEliminar.Text = "Dar de Baja";
             this.bEliminar.UseVisualStyleBackColor = true;
@@ -180,7 +167,6 @@
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.bCancelar.Location = new System.Drawing.Point(341, 5);
             this.bCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bCancelar.Name = "bCancelar";
@@ -197,9 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel1);
-
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-
             this.Name = "DarDeBajaTécnico";
             this.Size = new System.Drawing.Size(916, 501);
             this.tableLayoutPanel1.ResumeLayout(false);

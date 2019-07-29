@@ -220,7 +220,9 @@ namespace proyectoPantalla
             else
             {
 
+
                 if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
 
                 {
                     errorProvider1.SetError(tbTelefono2, null);
@@ -270,8 +272,9 @@ namespace proyectoPantalla
                 flagCedula = false;
                 activarBoton();
             }
-            else
-            {
+
+            else { 
+
                 if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
                     int r = Validaciones.verificarCedulaRepetida(tbCedula , conexion);
