@@ -213,11 +213,19 @@ namespace proyectoPantalla
         private void EliminarUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabEliminarUsuario);
+            eliminaciónDeUsuario1.mostrarDatos();
         }
 
         private void DarDeAltaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAltaUsuario);
+            dadaDeAltaUsuario1.mostrarDatos();
+        }
+
+        private void RecuperarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabRecuperar);
+            recuperaciónContraseña1.mostrarDatos();
         }
     }
 }

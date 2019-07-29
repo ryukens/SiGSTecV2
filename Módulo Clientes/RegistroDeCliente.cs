@@ -153,47 +153,48 @@ namespace proyectoPantalla
                 tbCedula.ForeColor = Color.Green;
 
 
-            if (tbCedula.Text.Trim() == "")
-            {
-                errorProvider1.SetError(tbCedula, null);
-                flagCedula = false;
-
-            }
-
-            else
-            {
-                flagCedula = true;
-                if (Validaciones.VerificaCedula(tbCedula.Text))
+                if (tbCedula.Text.Trim() == "")
                 {
+                    errorProvider1.SetError(tbCedula, null);
+                    flagCedula = false;
 
-                    int r = Validaciones.verificarCedulaRepetida(tbCedula, conexion);
-                    
-                    if (r != 0)
+                }
+
+                else
+                {
+                    flagCedula = true;
+                    if (Validaciones.VerificaCedula(tbCedula.Text))
                     {
-                        tbCedula.ForeColor = Color.Red;
-                        errorProvider1.SetError(tbCedula, "Cédula de ciudadanía ya registrada");
-                        errorCedula = 1;
-                        
+
+                        int r = Validaciones.verificarCedulaRepetida(tbCedula, conexion);
+
+                        if (r != 0)
+                        {
+                            tbCedula.ForeColor = Color.Red;
+                            errorProvider1.SetError(tbCedula, "Cédula de ciudadanía ya registrada");
+                            errorCedula = 1;
 
 
+
+
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(tbCedula, null);
+                            tbCedula.ForeColor = Color.Green;
+                            errorCedula = 0;
+
+                        }
 
                     }
                     else
                     {
-                        errorProvider1.SetError(tbCedula, null);
-                        tbCedula.ForeColor = Color.Green;
-                        errorCedula = 0;
+                        errorProvider1.SetError(tbCedula, "Cédula de ciudadanía incorrecta");
+                        tbCedula.ForeColor = Color.Red;
+                        errorCedula = 2;
+
 
                     }
-
-                }
-                else
-                {
-                    errorProvider1.SetError(tbCedula, "Cédula de ciudadanía incorrecta");
-                    tbCedula.ForeColor = Color.Red;
-                    errorCedula = 2;
-
-
                 }
             }
 

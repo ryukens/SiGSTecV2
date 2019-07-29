@@ -29,7 +29,7 @@ namespace proyectoPantalla
 
         public void mostrarDatos()
         {
-            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO", conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_ACTIVO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -48,16 +48,16 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea eliminar este usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que desea dar de baja este usuario?", "Dar de baja Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 conexion.Open();
 
-                SqlCommand comando1 = new SqlCommand("SP_ELIMINACION_USUARIO", conexion);
+                SqlCommand comando1 = new SqlCommand("SP_DAR_DE_BAJA_USUARIO", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Usuario Eliminado Correctamente", "Usuario Eliminado");
+                MessageBox.Show("Usuario dado de baja correctamente", "Usuario Dado de Baja");
                 mostrarDatos();
             }
         }
@@ -65,7 +65,7 @@ namespace proyectoPantalla
         public void mostrarUsuarioPorNombre()
         {
             String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.nombre like '%" + tbBuscar.Text + "%' order by u.tipo;  ";
-            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_NOMBRE", conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_NOMBRE_ACTIVO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
             DataTable dt = new DataTable();
@@ -85,7 +85,7 @@ namespace proyectoPantalla
         public void mostrarUsuarioPorIdentificacion()
         {
             String consulta = "select u.tipo, p.nombre, p.identificacion, p.correo from persona as p join usuario as u on p.idpersona = u.idpersona where p.identificacion like '%" + tbBuscar.Text + "%' order by u.tipo;";
-            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_IDENTIFICACION", conexion);
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_USUARIO_IDENTIFICACION_ACTIVO", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
             DataTable dt = new DataTable();
@@ -111,6 +111,12 @@ namespace proyectoPantalla
             else
             {
                 mostrarUsuarioPorIdentificacion();
+            }
+            if (dgvEliminar.RowCount==0)
+            {
+                MessageBox.Show("Usuario no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarDatos();
             }
         }
 

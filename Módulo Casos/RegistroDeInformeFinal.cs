@@ -14,8 +14,13 @@ namespace proyectoPantalla
     public partial class RegistroDeInformeFinal : Form
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        
 
+
+        String idcaso;
+        String nombreCliente;
+        String numeroCaso;
+
+        String nombreVendedor;
         public RegistroDeInformeFinal( String idcaso, String nombreCliente, String numeroCaso, String nombreTecnico, String nombreVendedor)
         {
             InitializeComponent();
@@ -33,11 +38,6 @@ namespace proyectoPantalla
 
         }
 
-        String idcaso;
-        String nombreCliente;
-        String numeroCaso;
-        String nombreTecnico;
-        String nombreVendedor;
        
 
         OpenFileDialog openFileD = new OpenFileDialog();

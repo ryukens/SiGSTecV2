@@ -20,6 +20,9 @@ namespace proyectoPantalla
         bool flagNombre = false;
         bool flagCedula = false;
         bool flagCorreo = false;
+        bool errorCorreo = false;
+        int errorCedula = -1;
+
 
         static string RandomString(int length)
         {
@@ -60,14 +63,43 @@ namespace proyectoPantalla
             cbTipo.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-            bCrear.Enabled = false;
+            
+        }
+        public bool validarEntrada()
+        {
+           
+            if ( flagCedula && flagCorreo && flagNombre )
+            {
+                if (errorCedula == 1)
+                {
+                    MessageBox.Show("Cédula de ciudadanía ya registrada", "Error");
+                    return false;
+                }
+                else if (errorCedula == 2)
+                {
+                    MessageBox.Show("Cédula de ciudadanía incorrecta", "Error");
+                    return false;
+                }
+                if (errorCorreo)
+                {
+
+                    MessageBox.Show("Correo electrónico incorrecto", "Error");
+                    return false;
+                }
+                
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Existen campos vacíos", "Campos Vacíos");
+                return false;
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            bool flag = Validaciones.VerificaCedula(tbCedula.Text);
-            bool flag2 = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
-            if (flag && flag2)
+           
+            if (validarEntrada())
             {
                 String salt = RandomString(64);
                 conexion.Open();
@@ -82,7 +114,7 @@ namespace proyectoPantalla
                 comando1.Parameters.AddWithValue("@username", tbCedula.Text);
                 comando1.Parameters.AddWithValue("@pass", MD5Hash(salt + "12345678"));
                 comando1.Parameters.AddWithValue("@salt", salt);
-
+                
                 comando1.ExecuteNonQuery();
 
                 conexion.Close();
@@ -177,65 +209,75 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-        if (tbCorreo.Text.Trim() == "")
+            if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
                 flagCorreo = false;
-                cambiarBoton();
+
             }
             else
             {
+                flagCorreo = true;
                 if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
                 {
                     errorProvider1.SetError(tbCorreo, null);
-                    flagCorreo = true;
-                    cambiarBoton();
+                    errorCorreo = false;
+
+
                 }
                 else
                 {
-                    errorProvider1.SetError(tbCorreo, "Ingrese correo electrónico correctamente");
-                    flagCorreo = false;
-                    cambiarBoton();
+                    errorProvider1.SetError(tbCorreo, "Ingrese un correo electrónico correcto");
+                    errorCorreo = true;
+
                 }
             }
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-        if (tbCedula.Text.Trim() == "")
+            if (tbCedula.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCedula, null);
-               
                 flagCedula = false;
-                cambiarBoton();
+
             }
+
             else
             {
+                flagCedula = true;
                 if (Validaciones.VerificaCedula(tbCedula.Text))
                 {
-                    if (Validaciones.verificarCedulaRepetida(tbCedula,conexion) != 0)
+
+                    int r = Validaciones.verificarCedulaRepetida(tbCedula, conexion);
+                    if (r != 0)
                     {
                         tbCedula.ForeColor = Color.Red;
-                        errorProvider1.SetError(tbCedula, "Cédula de Ciudadanía ya registrada");
-                        flagCedula = false;
-                        cambiarBoton();
+                        errorProvider1.SetError(tbCedula, "Cédula de ciudadanía ya registrada");
+                        errorCedula = 1;
+
+
 
                     }
                     else
                     {
                         errorProvider1.SetError(tbCedula, null);
                         tbCedula.ForeColor = Color.Green;
-                        flagCedula = true;
-                        cambiarBoton();
+                        errorCedula = 0;
+
                     }
+
                 }
                 else
                 {
-                    errorProvider1.SetError(tbCedula, "Ingrese cédula correctamente");
+                    errorProvider1.SetError(tbCedula, "Cédula de ciudadanía incorrecta");
                     tbCedula.ForeColor = Color.Red;
-                    flagCedula = false;
+                    errorCedula = 2;
+
+
                 }
             }
+
         }
 
         private void limpiarCampos()
@@ -258,12 +300,12 @@ namespace proyectoPantalla
             if(tbNombre.Text.Trim() == "")
             {
                 flagNombre = false;
-                cambiarBoton();
+                
             }
             else
             {
                 flagNombre = true;
-                cambiarBoton();
+                
             }
         }
     }

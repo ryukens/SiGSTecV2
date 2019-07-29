@@ -98,6 +98,9 @@ namespace proyectoPantalla
 
         private void asignarNumeroCaso(Label label)
         {
+            String numeroConsulta="";
+            string solofecha = "";
+            string solonum = "";
             conexion.Open();
 
             String now = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
@@ -107,15 +110,24 @@ namespace proyectoPantalla
             comando1.ExecuteNonQuery();
             SqlDataReader consulta = comando1.ExecuteReader();
             String ultimoRegistro = consulta.ToString();
-            consulta.Read();
+            while (consulta.Read())
+            {
 
-            String numeroConsulta = consulta.GetString(0);
+                numeroConsulta = consulta.GetString(0);
+            }
             //  label.Text = consulta.GetString(0);           
 
             conexion.Close();
-
-            string solofecha = numeroConsulta.Substring(0, 10);
-            string solonum = numeroConsulta.Substring(11);
+            if (numeroConsulta.Length < 10)
+            {
+                solofecha = Convert.ToString(DateTime.Now) + "-001";
+            }
+            else
+            {
+                solofecha = numeroConsulta.Substring(0, 10);
+                solonum = numeroConsulta.Substring(11);
+            }
+            
 
          //   MessageBox.Show( "fecha hoy" + now + " y fecha sacada de la base " + solofecha );
 
