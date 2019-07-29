@@ -189,17 +189,32 @@ namespace proyectoPantalla
             }
 
         }
+        public void filtrarProductoPorCodigo()
+        {
+            DataTable dt = (DataTable)dgvAsignar.DataSource;
+            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "codigo", tbBuscar.Text);
+            dgvAsignar.DataSource = dt;
+
+        }
+        public void filtrarProductoPorDescripcion()
+        {
+            DataTable dt = (DataTable)dgvAsignar.DataSource;
+            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "descripcion", tbBuscar.Text);
+            dgvAsignar.DataSource = dt;
+
+        }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-                mostrarProductosPorCodigo();
+                filtrarProductoPorCodigo();
             }
             else
             {
                 mostrarProductoPorDescripcion();
             }
+            
         }
 
         private void BQuitar_Click(object sender, EventArgs e)
@@ -278,6 +293,11 @@ namespace proyectoPantalla
                 }
 
             }
+        }
+
+        private void DgvAsignar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

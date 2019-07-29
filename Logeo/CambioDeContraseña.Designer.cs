@@ -62,6 +62,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -71,16 +72,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(554, 331);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(736, 398);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lUsuario
             // 
             this.lUsuario.AutoSize = true;
             this.lUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lUsuario.Location = new System.Drawing.Point(64, 94);
+            this.lUsuario.Location = new System.Drawing.Point(85, 112);
+            this.lUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lUsuario.Name = "lUsuario";
-            this.lUsuario.Size = new System.Drawing.Size(94, 47);
+            this.lUsuario.Size = new System.Drawing.Size(125, 56);
             this.lUsuario.TabIndex = 0;
             this.lUsuario.Text = "CONTRASEÑA NUEVA:";
             this.lUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,9 +91,10 @@
             // 
             this.lContraseña.AutoSize = true;
             this.lContraseña.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lContraseña.Location = new System.Drawing.Point(64, 141);
+            this.lContraseña.Location = new System.Drawing.Point(85, 168);
+            this.lContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lContraseña.Name = "lContraseña";
-            this.lContraseña.Size = new System.Drawing.Size(94, 47);
+            this.lContraseña.Size = new System.Drawing.Size(125, 56);
             this.lContraseña.TabIndex = 1;
             this.lContraseña.Text = "INGRESE LA MISMA CONTRASEÑA:";
             this.lContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,20 +107,21 @@
             this.tableLayoutPanel2.Controls.Add(this.bGuardar, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bSalir, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(164, 191);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(218, 228);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(422, 48);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // bGuardar
             // 
             this.bGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bGuardar.Enabled = false;
-            this.bGuardar.Location = new System.Drawing.Point(3, 3);
+            this.bGuardar.Location = new System.Drawing.Point(4, 4);
+            this.bGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(153, 35);
+            this.bGuardar.Size = new System.Drawing.Size(203, 40);
             this.bGuardar.TabIndex = 0;
             this.bGuardar.Text = "GUARDAR";
             this.bGuardar.UseVisualStyleBackColor = true;
@@ -126,9 +130,10 @@
             // bSalir
             // 
             this.bSalir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bSalir.Location = new System.Drawing.Point(162, 3);
+            this.bSalir.Location = new System.Drawing.Point(215, 4);
+            this.bSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(153, 35);
+            this.bSalir.Size = new System.Drawing.Size(203, 40);
             this.bSalir.TabIndex = 1;
             this.bSalir.Text = "SALIR";
             this.bSalir.UseVisualStyleBackColor = true;
@@ -138,12 +143,13 @@
             // 
             this.tbContraseña1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbContraseña1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseña1.Location = new System.Drawing.Point(164, 97);
+            this.tbContraseña1.Location = new System.Drawing.Point(218, 116);
+            this.tbContraseña1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbContraseña1.MaxLength = 16;
             this.tbContraseña1.Multiline = true;
             this.tbContraseña1.Name = "tbContraseña1";
             this.tbContraseña1.PasswordChar = '*';
-            this.tbContraseña1.Size = new System.Drawing.Size(318, 41);
+            this.tbContraseña1.Size = new System.Drawing.Size(422, 48);
             this.tbContraseña1.TabIndex = 3;
             this.tbContraseña1.TextChanged += new System.EventHandler(this.TbContraseña1_TextChanged);
             // 
@@ -151,12 +157,13 @@
             // 
             this.tbContraseña2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbContraseña2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseña2.Location = new System.Drawing.Point(164, 144);
+            this.tbContraseña2.Location = new System.Drawing.Point(218, 172);
+            this.tbContraseña2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbContraseña2.MaxLength = 16;
             this.tbContraseña2.Multiline = true;
             this.tbContraseña2.Name = "tbContraseña2";
             this.tbContraseña2.PasswordChar = '*';
-            this.tbContraseña2.Size = new System.Drawing.Size(318, 41);
+            this.tbContraseña2.Size = new System.Drawing.Size(422, 48);
             this.tbContraseña2.TabIndex = 4;
             this.tbContraseña2.TextChanged += new System.EventHandler(this.TbContraseña2_TextChanged);
             // 
@@ -167,12 +174,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.29653F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(164, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(218, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(318, 41);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(422, 48);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // label3
@@ -180,9 +188,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Image = global::proyectoPantalla.Properties.Resources.logo_Redinco;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(4, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 41);
+            this.label3.Size = new System.Drawing.Size(336, 48);
             this.label3.TabIndex = 0;
             // 
             // errorProvider1
@@ -191,12 +200,13 @@
             // 
             // CambioDeContraseña
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 331);
+            this.ClientSize = new System.Drawing.Size(736, 398);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MaximumSize = new System.Drawing.Size(570, 370);
-            this.MinimumSize = new System.Drawing.Size(570, 370);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(754, 445);
+            this.MinimumSize = new System.Drawing.Size(754, 445);
             this.Name = "CambioDeContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CambioDeContraseña";

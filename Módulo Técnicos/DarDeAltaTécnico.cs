@@ -66,48 +66,62 @@ namespace proyectoPantalla
             }
         }
 
+        public void buscarTecnicoPorNombre()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_NOMBRE2", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvAlzar.DataSource = dt;
+            dgvAlzar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvAlzar.Columns[0].HeaderText = "Estado";
+            dgvAlzar.Columns[1].HeaderText = "Nombre";
+            dgvAlzar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvAlzar.Columns[3].HeaderText = "Sector";
+            dgvAlzar.Columns[4].HeaderText = "Alcance";
 
+        }
+
+        public void mostrarTecnicoPorCedula()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_IDENTIFICACION2", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvAlzar.DataSource = dt;
+            dgvAlzar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvAlzar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvAlzar.Columns[0].HeaderText = "Estado";
+            dgvAlzar.Columns[1].HeaderText = "Nombre";
+            dgvAlzar.Columns[2].HeaderText = "Cédula de Ciudadanía";
+            dgvAlzar.Columns[3].HeaderText = "Sector";
+            dgvAlzar.Columns[4].HeaderText = "Alcance";
+        }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
             if (cbBuscar.SelectedIndex == 0)
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_NOMBRE2", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvAlzar.DataSource = dt;
-                dgvAlzar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvAlzar.Columns[0].HeaderText = "Estado";
-                dgvAlzar.Columns[1].HeaderText = "Nombre";
-                dgvAlzar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvAlzar.Columns[3].HeaderText = "Sector";
-                dgvAlzar.Columns[4].HeaderText = "Alcance";
+                buscarTecnicoPorNombre();
             }
             else
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_TECNICOS_IDENTIFICACION2", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@identificacion", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvAlzar.DataSource = dt;
-                dgvAlzar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvAlzar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvAlzar.Columns[0].HeaderText = "Estado";
-                dgvAlzar.Columns[1].HeaderText = "Nombre";
-                dgvAlzar.Columns[2].HeaderText = "Cédula de Ciudadanía";
-                dgvAlzar.Columns[3].HeaderText = "Sector";
-                dgvAlzar.Columns[4].HeaderText = "Alcance";
-
+                mostrarTecnicoPorCedula();
+            }
+            if (dgvAlzar.RowCount == 0)
+            {
+                MessageBox.Show("Técnico no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarTecnicos();
             }
         }
     }

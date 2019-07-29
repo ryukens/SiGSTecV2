@@ -17,11 +17,18 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
+        bool flagCodigo = false;
+        bool flagDescripción = false;
+        bool flagPrecio = false;
+        bool flagCantidad = false;
+
         public RegistroDeProducto(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            nudCantidad.Minimum = 1;
+            nudCantidad.Maximum = 1000;
         }
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -38,6 +45,7 @@ namespace proyectoPantalla
                 comando1.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Producto Registrado Correctamente", "Producto Registrado");
+                limpiarCampos();
             }
             else
             {
@@ -45,7 +53,6 @@ namespace proyectoPantalla
                 MessageBox.Show("Existen campos vacios", "Campos Vacios");
             }
 
-            limpiarCampos();
         }
 
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,6 +91,7 @@ namespace proyectoPantalla
             tbCodigo.ResetText();
             tbDescripcion.ResetText();
             tbPrecio.ResetText();
+            nudCantidad.Value = nudCantidad.Minimum;
         }
 
         public bool ValidarCamposVacios()

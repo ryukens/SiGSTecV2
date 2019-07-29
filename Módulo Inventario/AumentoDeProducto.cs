@@ -154,6 +154,13 @@ namespace proyectoPantalla
                 mostrarProductoPorDescripcion();
 
             }
+
+            if (dgvAumentar.RowCount == 0)
+            {
+                MessageBox.Show("Producto no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarProducto();
+            }
         }
     }
 }

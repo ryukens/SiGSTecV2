@@ -151,6 +151,7 @@ namespace proyectoPantalla
         {
             int result = -1;
             conexion.Open();
+            Console.WriteLine(tbCedula.Text);
             SqlCommand cmd = new SqlCommand("SP_VERIFICAR_CEDULA", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@identificacion", tbCedula.Text);
@@ -159,6 +160,7 @@ namespace proyectoPantalla
             {
                 result = reader.GetInt32(0);
             }
+            Console.WriteLine(result);
             conexion.Close();
             return result;
         }

@@ -107,6 +107,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1045, 444);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // lTelefonos
             // 
@@ -348,6 +349,7 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(775, 22);
             this.tbNombre.TabIndex = 0;
+            this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             // 
             // panel1
             // 
@@ -420,6 +422,7 @@
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(775, 22);
             this.tbCedula.TabIndex = 25;
+            this.tbCedula.TextChanged += new System.EventHandler(this.TbCedula_TextChanged);
             // 
             // tbCorreo
             // 

@@ -169,6 +169,12 @@ namespace proyectoPantalla
                 dgvBajar.Columns[3].HeaderText = "Identificación";
                 dgvBajar.Columns[4].HeaderText = "SLA";
             }
+            if (dgvBajar.RowCount == 0)
+            {
+                MessageBox.Show("Cliente no encontrado", "Error");
+                tbBuscar.ResetText();
+                mostrarDatosCompleto();
+            }
         }
 
         private void CbBuscar_SelectedIndexChanged(object sender, EventArgs e)

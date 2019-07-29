@@ -18,6 +18,25 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
+        //flag = false cuando hay campo vacio
+        bool flagCedula = false;
+        bool flagNombre = false;
+        bool flagCuenta = true;
+        bool flagCorreo = false;
+        bool flagNContacto = false;
+        bool flagDescripcion = false;
+        bool flagTelefonos = false;
+        bool flagTelefonos2 = false;
+        bool flagMoviles = false;
+        bool flagMoviles2 = false;
+
+        bool errorTelefonos = false;
+        bool errorTelefonos2 = false;
+        bool errorMoviles = false;
+        bool errorMoviles2 = false;
+        bool errorCorreo = false;
+
+        int errorCedula = -1;
 
         public RegistroDeCliente(TabControl tabControl, TabPage tabInicio)
         {
@@ -25,87 +44,87 @@ namespace proyectoPantalla
             cbSLA.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            tbTelefono2.Enabled = false;
+            tbCelular2.Enabled = false;
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            bool flagVacios = ValidarCamposVacios();
-            if (!flagVacios)
+
+            if (validarEntrada())
             {
+
+
+
+                conexion.Open();
+                SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
+                comando1.CommandType = CommandType.StoredProcedure;
+                comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
+                comando1.Parameters.AddWithValue("@correo", tbCorreo.Text);
+                comando1.Parameters.AddWithValue("@identificacion", tbCedula.Text);
+                comando1.Parameters.AddWithValue("@nombre_contacto", tbNombreCont.Text);
+                comando1.Parameters.AddWithValue("@descripcion_contacto", tbDescripcion.Text);
+                comando1.Parameters.AddWithValue("@sla", cbSLA.SelectedItem.ToString());
+                comando1.Parameters.AddWithValue("@cuenta", tbCuenta.Text);
+
+
+                if (rbAcordado.Checked)
+                {
+                    comando1.Parameters.AddWithValue("@tipo_pago", rbAcordado.Text);
+                }
+                else
+                {
+                    comando1.Parameters.AddWithValue("@tipo_pago", rbDefinido.Text);
+                }
+                if (rbEmpresa.Checked)
+                {
+                    comando1.Parameters.AddWithValue("@tipo", rbEmpresa.Text);
+                }
+                else
+                {
+                    comando1.Parameters.AddWithValue("@tipo", rbPersona.Text);
+                }
+
+                comando1.ExecuteNonQuery();
+
+
+                if (!tbTelefono1.Text.Trim().Equals(""))
+                {
+
+                    SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
+                    comando3.CommandType = CommandType.StoredProcedure;
+                    comando3.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
+                    comando3.ExecuteNonQuery();
+                }
+
+                if (!tbTelefono2.Text.Trim().Equals(""))
+                {
+                    SqlCommand comando4 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
+                    comando4.CommandType = CommandType.StoredProcedure;
+                    comando4.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
+                    comando4.ExecuteNonQuery();
+                }
+
+                if (!tbCelular1.Text.Trim().Equals(""))
+                {
+                    SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
+                    comando5.CommandType = CommandType.StoredProcedure;
+                    comando5.Parameters.AddWithValue("@telefono", tbCelular1.Text);
+                    comando5.ExecuteNonQuery();
+                }
+                if (!tbCelular2.Text.Trim().Equals(""))
+                {
+                    SqlCommand comando6 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
+                    comando6.CommandType = CommandType.StoredProcedure;
+                    comando6.Parameters.AddWithValue("@telefono", tbCelular2.Text);
+                    comando6.ExecuteNonQuery();
+                }
+
+                conexion.Close();
                 MessageBox.Show("Cliente Registrado Correctamente", "Cliente Registrado");
+                limpiarCampos();
             }
-            else
-            {
-                //MessageBox.Show("Existen campos vacios", "Campos Vacios");
-            }
-
-            conexion.Open();
-            SqlCommand comando1 = new SqlCommand("SP_REGISTRO_CLIENTE", conexion);
-            comando1.CommandType = CommandType.StoredProcedure;
-            comando1.Parameters.AddWithValue("@nombre", tbNombre.Text);
-            comando1.Parameters.AddWithValue("@correo", tbCorreo.Text);
-            comando1.Parameters.AddWithValue("@identificacion", tbCedula.Text);
-            comando1.Parameters.AddWithValue("@nombre_contacto", tbNombreCont.Text);
-            comando1.Parameters.AddWithValue("@descripcion_contacto", tbDescripcion.Text);
-            comando1.Parameters.AddWithValue("@sla", cbSLA.SelectedItem.ToString());
-            comando1.Parameters.AddWithValue("@cuenta", tbCuenta.Text);
-
-
-            if (rbAcordado.Checked)
-            {
-                comando1.Parameters.AddWithValue("@tipo_pago", rbAcordado.Text);
-            }
-            else
-            {
-                comando1.Parameters.AddWithValue("@tipo_pago", rbDefinido.Text);
-            }
-            if (rbEmpresa.Checked)
-            {
-                comando1.Parameters.AddWithValue("@tipo", rbEmpresa.Text);
-            }
-            else
-            {
-                comando1.Parameters.AddWithValue("@tipo", rbPersona.Text);
-            }
-
-            comando1.ExecuteNonQuery();
-
-
-            if (!tbTelefono1.Text.Trim().Equals(""))
-            {
-
-                SqlCommand comando3 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL1", conexion);
-                comando3.CommandType = CommandType.StoredProcedure;
-                comando3.Parameters.AddWithValue("@telefono", tbTelefono1.Text);
-                comando3.ExecuteNonQuery();
-            }
-
-            if (!tbTelefono2.Text.Trim().Equals(""))
-            {
-                SqlCommand comando4 = new SqlCommand("SP_REGISTRO_TELEFONO_CONVENCIONAL2", conexion);
-                comando4.CommandType = CommandType.StoredProcedure;
-                comando4.Parameters.AddWithValue("@telefono", tbTelefono2.Text);
-                comando4.ExecuteNonQuery();
-            }
-
-            if (!tbCelular1.Text.Trim().Equals(""))
-            {
-                SqlCommand comando5 = new SqlCommand("SP_REGISTRO_CELULAR1", conexion);
-                comando5.CommandType = CommandType.StoredProcedure;
-                comando5.Parameters.AddWithValue("@telefono", tbCelular1.Text);
-                comando5.ExecuteNonQuery();
-            }
-            if (!tbCelular2.Text.Trim().Equals(""))
-            {
-                SqlCommand comando6 = new SqlCommand("SP_REGISTRO_CELULAR2", conexion);
-                comando6.CommandType = CommandType.StoredProcedure;
-                comando6.Parameters.AddWithValue("@telefono", tbCelular2.Text);
-                comando6.ExecuteNonQuery();
-            }
-
-            conexion.Close();
-            MessageBox.Show("Cliente Registrado Correctamente", "Cliente Registrado");
-            limpiarCampos();
         }
 
 
@@ -114,6 +133,7 @@ namespace proyectoPantalla
             tbCuenta.Text = "N/A";
             tbCedula.MaxLength = 10;
             tbCedula.ResetText();
+            flagCuenta = true;
         }
 
         private void RbEmpresa_CheckedChanged(object sender, EventArgs e)
@@ -122,10 +142,55 @@ namespace proyectoPantalla
             tbCuenta.Text = "";
             tbCedula.MaxLength = 13;
             tbCedula.ResetText();
+
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
+
+            if (tbCedula.Text.Trim() == "")
+            {
+                errorProvider1.SetError(tbCedula, null);
+                flagCedula = false;
+
+            }
+
+            else
+            {
+                flagCedula = true;
+                if (Validaciones.VerificaCedula(tbCedula.Text))
+                {
+
+                    int r = Validaciones.verificarCedulaRepetida(tbCedula, conexion);
+                    
+                    if (r != 0)
+                    {
+                        tbCedula.ForeColor = Color.Red;
+                        errorProvider1.SetError(tbCedula, "Cédula de ciudadanía ya registrada");
+                        errorCedula = 1;
+                        
+
+
+
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(tbCedula, null);
+                        tbCedula.ForeColor = Color.Green;
+                        errorCedula = 0;
+
+                    }
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCedula, "Cédula de ciudadanía incorrecta");
+                    tbCedula.ForeColor = Color.Red;
+                    errorCedula = 2;
+
+
+                }
+            }
 
         }
 
@@ -170,19 +235,35 @@ namespace proyectoPantalla
 
         private void TbCorreo_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
+            if (tbCorreo.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCorreo, null);
+                flagCorreo = false;
+
             }
             else
             {
-                errorProvider1.SetError(tbCorreo, "Ingrese correo electrónico correctamente");
+                flagCorreo = true;
+                if (Validaciones.ComprobarFormatoEmail(tbCorreo.Text))
+                {
+                    errorProvider1.SetError(tbCorreo, null);
+                    tbCorreo.ForeColor = Color.Green;
+                    errorCorreo = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCorreo, "Ingrese un correo electrónico correcto");
+                    errorCorreo = true;
+                    tbCorreo.ForeColor = Color.Red;
+                }
             }
         }
 
         private void TbCorreo_KeyUp(object sender, KeyEventArgs e)
         {
-            bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
+            /*bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
                 tbCorreo.ForeColor = Color.Green;
@@ -190,22 +271,45 @@ namespace proyectoPantalla
             else
             {
                 tbCorreo.ForeColor = Color.Red;
-            }
+            }*/
         }
 
         private void TbTelf1_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono1.Text))
+            if (tbTelefono1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbTelefono1, null);
-                tbTelefono1.ForeColor = Color.Green;
+                flagTelefonos = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono1.ForeColor = Color.Red;
+                flagTelefonos = true;
+                if (Validaciones.formatoTelefono(tbTelefono1.Text))
+                {
+                    errorProvider1.SetError(tbTelefono1, null);
+                    tbTelefono1.ForeColor = Color.Green;
+                    tbTelefono2.Enabled = true;
+
+                    errorTelefonos = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono1, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono1.ForeColor = Color.Red;
+                    tbTelefono2.Enabled = false;
+
+                    errorTelefonos = true;
+
+
+
+
+                }
             }
         }
 
@@ -220,17 +324,40 @@ namespace proyectoPantalla
 
         private void TbTelf2_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
+            if (tbTelefono2.Text.Trim() == "")
+
             {
                 errorProvider1.SetError(tbTelefono2, null);
-                tbTelefono2.ForeColor = Color.Green;
+                errorTelefonos2 = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
-                    "- Iniciar con prefijo (02 - 07)\r\n" +
-                    "- Tener 9 dígitos");
-                tbTelefono2.ForeColor = Color.Red;
+
+
+                if (Validaciones.formatoTelefono(tbTelefono2.Text))
+
+
+                {
+                    errorProvider1.SetError(tbTelefono2, null);
+                    tbTelefono2.ForeColor = Color.Green;
+
+                    errorTelefonos2 = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbTelefono2, "El teléfono debe:\r\n" +
+                        "- Iniciar con prefijo (02 - 07)\r\n" +
+                        "- Tener 9 dígitos");
+                    tbTelefono2.ForeColor = Color.Red;
+
+                    errorTelefonos2 = true;
+
+                }
             }
         }
 
@@ -245,17 +372,37 @@ namespace proyectoPantalla
 
         private void TbCel1_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoCelular(tbCelular1.Text))
+            if (tbCelular1.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular1, null);
-                tbCelular1.ForeColor = Color.Green;
+                flagMoviles = false;
+                errorMoviles = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
-                    "- Iniciar con prefijo 09\r\n" +
-                    "- Tener 10 dígitos");
-                tbCelular1.ForeColor = Color.Red;
+
+                flagMoviles = true;
+                if (Validaciones.formatoCelular(tbCelular1.Text))
+                {
+                    errorProvider1.SetError(tbCelular1, null);
+                    tbCelular1.ForeColor = Color.Green;
+                    tbCelular2.Enabled = true;
+
+                    errorMoviles = false;
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCelular1, "El celular debe:\r\n" +
+                        "- Iniciar con prefijo 09\r\n" +
+                        "- Tener 10 dígitos");
+                    tbCelular1.ForeColor = Color.Red;
+                    tbCelular2.Enabled = false;
+
+                    errorMoviles = true;
+                }
             }
         }
 
@@ -271,17 +418,40 @@ namespace proyectoPantalla
 
         private void TbCel2_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.formatoCelular(tbCelular2.Text))
+            if (tbCelular2.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCelular2, null);
+
+
+
+
                 tbCelular2.ForeColor = Color.Green;
+                errorMoviles2 = false;
+
+
             }
             else
             {
-                errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
-                    "- Iniciar con prefijo 09\r\n" +
-                    "- Tener 10 dígitos");
-                tbCelular2.ForeColor = Color.Red;
+
+                if (Validaciones.formatoCelular(tbCelular2.Text))
+                {
+                    errorProvider1.SetError(tbCelular2, null);
+                    tbCelular2.ForeColor = Color.Green;
+
+                    errorMoviles2 = false;
+
+
+                }
+                else
+                {
+                    errorProvider1.SetError(tbCelular2, "El celular debe:\r\n" +
+                        "- Iniciar con prefijo 09\r\n" +
+                        "- Tener 10 dígitos");
+                    tbCelular2.ForeColor = Color.Red;
+
+                    errorMoviles2 = true;
+
+                }
             }
         }
 
@@ -297,7 +467,7 @@ namespace proyectoPantalla
 
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
+          /*  if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
             {
                 errorProvider1.SetError(tbCedula, null);
                 tbCedula.ForeColor = Color.Green;
@@ -307,7 +477,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCedula, "Ingrese cédula o RUC correctamente");
                 tbCedula.ForeColor = Color.Red;
-            }
+            }*/
         }
 
         public void limpiarCampos()
@@ -322,6 +492,8 @@ namespace proyectoPantalla
             tbNombreCont.ResetText();
             tbTelefono1.ResetText();
             tbTelefono2.ResetText();
+            tbTelefono2.Enabled = false;
+            tbCelular2.Enabled = false;
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
@@ -332,8 +504,19 @@ namespace proyectoPantalla
 
         private void TbNombre_TextChanged(object sender, EventArgs e)
         {
+            if (tbNombre.Text.Trim() == "")
+            {
+                flagNombre = false;
+
+            }
+            else
+            {
+                flagNombre = true;
+
+            }
         }
 
+      
         private void TbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (rbPersona.Checked)
@@ -360,6 +543,98 @@ namespace proyectoPantalla
                     e.Handled = true;
                     return;
                 }
+            }
+        }
+
+        private void TbCuenta_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCuenta.Text.Trim() == "")
+            {
+                flagCuenta = false;
+
+            }
+            else
+            {
+                flagCuenta = true;
+
+            }
+        }
+
+        private void TbNombreCont_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombreCont.Text.Trim() == "")
+            {
+                flagNContacto = false;
+
+            }
+            else
+            {
+                flagNContacto = true;
+
+            }
+        }
+
+        public bool validarEntrada()
+        {
+            //Console.WriteLine("alcance " + flagAlcance + "cedula " + flagCedula + "correo " + flagCorreo + "moviles " + flagMoviles + "nombre " + flagNombre + "sector " + flagSector + "telefonos " + flagTelefonos);
+            if (flagNContacto && flagCedula && flagCorreo && flagMoviles && flagNombre && flagDescripcion && flagTelefonos &&flagCuenta)
+            {
+                if (errorCedula == 1)
+                {
+                    MessageBox.Show("Cédula de ciudadanía ya registrada", "Error");
+                    return false;
+                }
+                else if (errorCedula == 2)
+                {
+                    MessageBox.Show("Cédula de ciudadanía incorrecta", "Error");
+                    return false;
+                }
+                if (errorCorreo)
+                {
+
+                    MessageBox.Show("Correo electrónico incorrecto", "Error");
+                    return false;
+                }
+                if (errorTelefonos)
+                {
+                    MessageBox.Show("Teléfono convencional incorrecto", "Error");
+                    return false;
+                }
+                if (errorTelefonos2)
+                {
+                    MessageBox.Show("Teléfono convencional incorrecto", "Error");
+                    return false;
+                }
+                if (errorMoviles)
+                {
+                    MessageBox.Show("Celular incorrecto", "Error");
+                    return false;
+                }
+                if (errorMoviles2)
+                {
+                    MessageBox.Show("Celular incorrecto", "Error");
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Existen campos vacíos", "Campos Vacíos");
+                return false;
+            }
+        }
+
+        private void TbDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text.Trim() == "")
+            {
+                flagDescripcion = false;
+
+            }
+            else
+            {
+                flagDescripcion = true;
+
             }
         }
     }
