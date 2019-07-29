@@ -87,6 +87,18 @@
     <Compile Include="Correo.Designer.cs">
       <DependentUpon>Correo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Módulo Administración\DadaDeAltaUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\DadaDeAltaUsuario.Designer.cs">
+      <DependentUpon>DadaDeAltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Administración\RecuperaciónContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\RecuperaciónContraseña.Designer.cs">
+      <DependentUpon>RecuperaciónContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Módulo Casos\AsignaciónDeProductos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Correo.resx">
       <DependentUpon>Correo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\DadaDeAltaUsuario.resx">
+      <DependentUpon>DadaDeAltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\RecuperaciónContraseña.resx">
+      <DependentUpon>RecuperaciónContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Módulo Casos\AsignaciónDeProductos.resx">
       <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
