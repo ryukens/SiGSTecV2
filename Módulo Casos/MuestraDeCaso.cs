@@ -24,6 +24,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
+            mostrarCasos();
         }
 
         public void mostrarCasos()

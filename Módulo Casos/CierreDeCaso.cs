@@ -93,10 +93,10 @@ namespace proyectoPantalla
             }
 
 
-
+            
             conexion.Close();
 
-            RegistroDeInformeFinal cambioDeDatosCaso = new RegistroDeInformeFinal(idcaso, nombreCliente, numeroCaso, nombreTecnico, nombreVendedor);
+            RegistroDeInformeFinal cambioDeDatosCaso = new RegistroDeInformeFinal(idcaso, nombreCliente, numeroCaso, nombreTecnico, nombreVendedor, this);
             cambioDeDatosCaso.ShowDialog();
 
 

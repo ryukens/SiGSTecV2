@@ -85,6 +85,7 @@ namespace proyectoPantalla
                 else
                 {
 
+
                   
 
                     SqlCommand cmd = new SqlCommand("SP_CAMBIO_DE_PASSWORD", conexion);
@@ -95,6 +96,10 @@ namespace proyectoPantalla
 
                     cmd.ExecuteNonQuery();
 
+                    
+
+              
+
                     conexion.Close();
                     MessageBox.Show("Contraseña cambiada correctamente", "Cambio de contraseña");
 
@@ -103,6 +108,7 @@ namespace proyectoPantalla
                     pantallaPrincipal.Show();
                 }
             }
+            
         }
 
 

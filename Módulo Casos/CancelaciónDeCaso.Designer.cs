@@ -78,9 +78,12 @@
             // 
             // dgvCancelar
             // 
+            this.dgvCancelar.AllowUserToAddRows = false;
+            this.dgvCancelar.AllowUserToDeleteRows = false;
             this.dgvCancelar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCancelar.Location = new System.Drawing.Point(99, 44);
+            this.dgvCancelar.MultiSelect = false;
             this.dgvCancelar.Name = "dgvCancelar";
             this.dgvCancelar.ReadOnly = true;
             this.dgvCancelar.RowHeadersWidth = 51;
@@ -141,6 +144,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(478, 35);
             this.tableLayoutPanel3.TabIndex = 0;
+  //          this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel3_Paint);
             // 
             // cbBuscar
             // 
