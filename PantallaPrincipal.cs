@@ -214,5 +214,10 @@ namespace proyectoPantalla
         {
             tabControl.SelectTab(tabEliminarUsuario);
         }
+
+        private void DarDeAltaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabAltaUsuario);
+        }
     }
 }

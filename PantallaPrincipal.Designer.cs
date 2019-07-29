@@ -144,6 +144,10 @@
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabAltaUsuario = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.darDeAltaUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             label22 = new System.Windows.Forms.Label();
             this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
             this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
@@ -170,6 +174,7 @@
             this.aumentoDeProducto1 = new proyectoPantalla.AumentoDeProducto(tabControl, tabInicio);
             this.muestraDeProducto1 = new proyectoPantalla.MuestraDeProducto(tabControl, tabInicio);
             this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
+            this.dadaDeAltaUsuario1 = new proyectoPantalla.Módulo_Administración.DadaDeAltaUsuario(tabControl, tabInicio);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -225,6 +230,8 @@
             this.tabAlzarTécnico.SuspendLayout();
             this.tableLayoutPanel30.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
+            this.tabAltaUsuario.SuspendLayout();
+            this.tableLayoutPanel26.SuspendLayout();
             this.SuspendLayout();
             // 
             // label22
@@ -516,7 +523,8 @@
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarUsusarioToolStripMenuItem,
-            this.eliminarUsuarioToolStripMenuItem1});
+            this.eliminarUsuarioToolStripMenuItem1,
+            this.darDeAltaUsuarioToolStripMenuItem});
             this.administraciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("administraciónToolStripMenuItem.Image")));
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(146, 46);
@@ -534,8 +542,8 @@
             // 
             this.eliminarUsuarioToolStripMenuItem1.BackColor = System.Drawing.SystemColors.Window;
             this.eliminarUsuarioToolStripMenuItem1.Name = "eliminarUsuarioToolStripMenuItem1";
-            this.eliminarUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(191, 24);
-            this.eliminarUsuarioToolStripMenuItem1.Text = "Eliminar Usuario";
+            this.eliminarUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(212, 24);
+            this.eliminarUsuarioToolStripMenuItem1.Text = "Dar De Baja Usuario";
             this.eliminarUsuarioToolStripMenuItem1.Click += new System.EventHandler(this.EliminarUsuarioToolStripMenuItem1_Click);
             // 
             // tableLayoutPanel14
@@ -595,6 +603,7 @@
             this.tabControl.Controls.Add(this.tabAsignarProducto);
             this.tabControl.Controls.Add(this.tabAlzarCliente);
             this.tabControl.Controls.Add(this.tabAlzarTécnico);
+            this.tabControl.Controls.Add(this.tabAltaUsuario);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -1162,7 +1171,7 @@
             this.registroDeUsuario1.BackColor = System.Drawing.SystemColors.Window;
             this.registroDeUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registroDeUsuario1.Location = new System.Drawing.Point(4, 28);
-            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registroDeUsuario1.Margin = new System.Windows.Forms.Padding(4);
             this.registroDeUsuario1.Name = "registroDeUsuario1";
             this.registroDeUsuario1.Size = new System.Drawing.Size(972, 458);
             this.registroDeUsuario1.TabIndex = 1;
@@ -1202,7 +1211,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(974, 24);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Eliminación de Usuario";
+            this.label12.Text = "Baja de Usuario";
             // 
             // eliminaciónDeUsuario1
             // 
@@ -1753,7 +1762,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(974, 24);
             this.label27.TabIndex = 0;
-            this.label27.Text = "Alza De Cliente";
+            this.label27.Text = "Alta De Cliente";
             // 
             // darDeAltaCliente1
             // 
@@ -1798,7 +1807,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(974, 24);
             this.label28.TabIndex = 0;
-            this.label28.Text = "Alza De Técnico";
+            this.label28.Text = "Alta De Técnico";
             // 
             // darDeAltaTécnico1
             // 
@@ -1823,6 +1832,59 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(994, 561);
             this.tableLayoutPanel15.TabIndex = 1;
+            // 
+            // tabAltaUsuario
+            // 
+            this.tabAltaUsuario.Controls.Add(this.tableLayoutPanel26);
+            this.tabAltaUsuario.Location = new System.Drawing.Point(4, 5);
+            this.tabAltaUsuario.Name = "tabAltaUsuario";
+            this.tabAltaUsuario.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAltaUsuario.Size = new System.Drawing.Size(986, 496);
+            this.tabAltaUsuario.TabIndex = 28;
+            this.tabAltaUsuario.Text = resources.GetString("tabAltaUsuario.Text");
+            this.tabAltaUsuario.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel26
+            // 
+            this.tableLayoutPanel26.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel26.ColumnCount = 1;
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.dadaDeAltaUsuario1, 0, 1);
+            this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            this.tableLayoutPanel26.RowCount = 2;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(980, 490);
+            this.tableLayoutPanel26.TabIndex = 3;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(974, 24);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Alta De Usuario";
+            // 
+            // dadaDeAltaUsuario1
+            // 
+            this.dadaDeAltaUsuario1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dadaDeAltaUsuario1.Location = new System.Drawing.Point(3, 27);
+            this.dadaDeAltaUsuario1.Name = "dadaDeAltaUsuario1";
+            this.dadaDeAltaUsuario1.Size = new System.Drawing.Size(974, 460);
+            this.dadaDeAltaUsuario1.TabIndex = 1;
+            // 
+            // darDeAltaUsuarioToolStripMenuItem
+            // 
+            this.darDeAltaUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.darDeAltaUsuarioToolStripMenuItem.Name = "darDeAltaUsuarioToolStripMenuItem";
+            this.darDeAltaUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 24);
+            this.darDeAltaUsuarioToolStripMenuItem.Text = "Dar De Alta Usuario";
+            this.darDeAltaUsuarioToolStripMenuItem.Click += new System.EventHandler(this.DarDeAltaUsuarioToolStripMenuItem_Click);
             // 
             // PantallaPrincipal
             // 
@@ -1920,6 +1982,9 @@
             this.tableLayoutPanel30.ResumeLayout(false);
             this.tableLayoutPanel30.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tabAltaUsuario.ResumeLayout(false);
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2063,6 +2128,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bAyuda;
         private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem1;
+        private System.Windows.Forms.TabPage tabAltaUsuario;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.Label label25;
+        private Módulo_Administración.DadaDeAltaUsuario dadaDeAltaUsuario1;
+        private System.Windows.Forms.ToolStripMenuItem darDeAltaUsuarioToolStripMenuItem;
     }
 }
 
