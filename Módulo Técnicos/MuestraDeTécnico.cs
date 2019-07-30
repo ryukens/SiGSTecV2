@@ -114,6 +114,7 @@ namespace proyectoPantalla
             {
                 MessageBox.Show("Técnico no encontrado", "Error");
                 tbBuscar.ResetText();
+                muestraTecnicos();
             }
 
 
