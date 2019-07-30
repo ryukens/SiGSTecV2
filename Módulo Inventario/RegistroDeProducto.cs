@@ -17,11 +17,11 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
-        bool flagCodigo = false;
+   /*     bool flagCodigo = false;
         bool flagDescripción = false;
         bool flagPrecio = false;
         bool flagCantidad = false;
-
+*/
         public RegistroDeProducto(TabControl tabControl, TabPage tabInicio)
         {
             InitializeComponent();

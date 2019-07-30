@@ -76,11 +76,121 @@ namespace proyectoPantalla
             dgvVerDetalles.Columns[6].HeaderText = "Sector";
             dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
             this.dgvVerDetalles.Columns[7].Visible = false;
-            this.dgvVerDetalles.Columns[7].Visible = false;
         }
 
         private void DgvVerDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0) //numero de caso
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgvVerDetalles.DataSource = dt;
+                dgvVerDetalles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvVerDetalles.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[0].HeaderText = "Estado";
+                dgvVerDetalles.Columns[1].HeaderText = "Número";
+                dgvVerDetalles.Columns[2].HeaderText = "Nombre";
+                dgvVerDetalles.Columns[3].HeaderText = "Cuenta";
+                dgvVerDetalles.Columns[4].HeaderText = "Fecha";
+                dgvVerDetalles.Columns[5].HeaderText = "SLA";
+                dgvVerDetalles.Columns[6].HeaderText = "Sector";
+                dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
+                this.dgvVerDetalles.Columns[7].Visible = false;
+                
+            }
+            else if (cbBuscar.SelectedIndex == 1) // Cliente
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgvVerDetalles.DataSource = dt;
+                dgvVerDetalles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvVerDetalles.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[0].HeaderText = "Estado";
+                dgvVerDetalles.Columns[1].HeaderText = "Número";
+                dgvVerDetalles.Columns[2].HeaderText = "Nombre";
+                dgvVerDetalles.Columns[3].HeaderText = "Cuenta";
+                dgvVerDetalles.Columns[4].HeaderText = "Fecha";
+                dgvVerDetalles.Columns[5].HeaderText = "SLA";
+                dgvVerDetalles.Columns[6].HeaderText = "Sector";
+                dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
+                this.dgvVerDetalles.Columns[7].Visible = false;
+            }
+            else if (cbBuscar.SelectedIndex == 2) // Cuenta
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgvVerDetalles.DataSource = dt;
+                dgvVerDetalles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvVerDetalles.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[0].HeaderText = "Estado";
+                dgvVerDetalles.Columns[1].HeaderText = "Número";
+                dgvVerDetalles.Columns[2].HeaderText = "Nombre";
+                dgvVerDetalles.Columns[3].HeaderText = "Cuenta";
+                dgvVerDetalles.Columns[4].HeaderText = "Fecha";
+                dgvVerDetalles.Columns[5].HeaderText = "SLA";
+                dgvVerDetalles.Columns[6].HeaderText = "Sector";
+                dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
+                this.dgvVerDetalles.Columns[7].Visible = false;
+
+            }
+            else if (cbBuscar.SelectedIndex == 3) // Sector
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgvVerDetalles.DataSource = dt;
+                dgvVerDetalles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvVerDetalles.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dgvVerDetalles.Columns[0].HeaderText = "Estado";
+                dgvVerDetalles.Columns[1].HeaderText = "Número";
+                dgvVerDetalles.Columns[2].HeaderText = "Nombre";
+                dgvVerDetalles.Columns[3].HeaderText = "Cuenta";
+                dgvVerDetalles.Columns[4].HeaderText = "Fecha";
+                dgvVerDetalles.Columns[5].HeaderText = "SLA";
+                dgvVerDetalles.Columns[6].HeaderText = "Sector";
+                dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
+                this.dgvVerDetalles.Columns[7].Visible = false;
+            }
 
         }
     }

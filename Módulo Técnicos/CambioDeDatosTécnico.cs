@@ -97,8 +97,7 @@ namespace proyectoPantalla
                 {
                     SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
                     conexion.Open();
-                    SqlCommand command;
-
+                  
                     SqlCommand cmd = new SqlCommand("SP_ACTUALIZAR_TECNICO", conexion);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text);
