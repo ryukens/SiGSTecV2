@@ -22,7 +22,7 @@ namespace proyectoPantalla
             cbBuscar.SelectedIndex = 0;
             this.lTecnicoSeleccionado = lTecnicoSeleccionado;
             this.lIdTecnico = lIdTecnico;
-
+            muestraTecnicos();
             
 
         }
