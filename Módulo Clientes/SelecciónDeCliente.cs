@@ -94,10 +94,51 @@ namespace proyectoPantalla
 
         private void CbBuscar_TextChanged(object sender, EventArgs e)
         {
+            llenarCampos();
+        }
+
+        private void CbBuscar_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            tbBuscar.ResetText();
+            this.Dispose();
+        }
+
+        public void llenarCampos()
+        {
+            //String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
+            SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_CLIENTE_SELECCION_PARA_CASO", conexion);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            var topLeftHeaderCell = dgvSeleccionar.TopLeftHeaderCell;
+            sda.Fill(dt);
+            dgvSeleccionar.DataSource = dt;
+            dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+            dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+            dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+            dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+            dgvSeleccionar.Columns[4].HeaderText = "SLA";
+            dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+            this.dgvSeleccionar.Columns[5].Visible = false;
+        }
+
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
+        {
             if (cbBuscar.SelectedIndex == 0)
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla, c.idcliente  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.nombre like '%" + tbBuscar.Text + "%' order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_NOMBRE_SELECCION_PARA_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvSeleccionar.DataSource = dt;
@@ -113,12 +154,13 @@ namespace proyectoPantalla
                 dgvSeleccionar.Columns[3].HeaderText = "Identificación";
                 dgvSeleccionar.Columns[4].HeaderText = "SLA";
                 dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
-
+                this.dgvSeleccionar.Columns[5].Visible = false;
             }
             else if (cbBuscar.SelectedIndex == 1) // cedula
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla, c.idcliente  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.identificacion like '%" + tbBuscar.Text + "%'  and c.tipo = Persona order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CEDULA_SELECCION_PARA_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CEDULA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvSeleccionar.DataSource = dt;
@@ -138,8 +180,9 @@ namespace proyectoPantalla
             }
             else if (cbBuscar.SelectedIndex == 2) // ruc
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla, c.idcliente  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where p.identificacion like '%" + tbBuscar.Text + "%'  and c.tipo = Empresa order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_RUC_SELECCION_PARA_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@RUC", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvSeleccionar.DataSource = dt;
@@ -159,8 +202,9 @@ namespace proyectoPantalla
             }
             else // cuenta
             {
-                String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla, c.idcliente  from persona as p join cliente as c on p.idpersona = c.IDPERSONA  where c.cuenta like '%" + tbBuscar.Text + "%'  and c.tipo = Empresa order by c.tipo;";
-                SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CUENTA_SELECCION_PARA_CASO", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgvSeleccionar.DataSource = dt;
@@ -178,22 +222,12 @@ namespace proyectoPantalla
                 dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
                 this.dgvSeleccionar.Columns[5].Visible = false;
             }
-        }
-
-        private void CbBuscar_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BCancelar_Click(object sender, EventArgs e)
-        {
-            tbBuscar.ResetText();
-            this.Dispose();
-        }
-
-        private void TbBuscar_TextChanged(object sender, EventArgs e)
-        {
-
+            if (dgvSeleccionar.RowCount == 0)
+            {
+                MessageBox.Show("Cliente no encontrado", "Error");
+                tbBuscar.ResetText();
+                llenarCampos();
+            }
         }
     }
 }

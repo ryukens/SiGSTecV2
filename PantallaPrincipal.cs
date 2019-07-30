@@ -185,7 +185,8 @@ namespace proyectoPantalla
         private void AsignarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabAsignarProducto);
-            asignaciónDeProductos1.llenarTabla();
+            asignaciónDeProductos1.llenarTablaPublico();
+
 
         }
 
