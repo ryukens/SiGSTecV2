@@ -119,6 +119,7 @@ namespace proyectoPantalla
 
                 conexion.Close();
 
+
                 MessageBox.Show("Usuario Registrado Correctamente", "Usuario Registrado");
                 limpiarCampos();
             }
