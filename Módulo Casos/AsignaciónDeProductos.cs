@@ -43,46 +43,57 @@ namespace proyectoPantalla.Módulo_Casos
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0) //numero de caso
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO_PARA_ASIGANCION_PRODUCTO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                llenarTabla();
-            }
-            else if (cbBuscar.SelectedIndex == 1) // Cliente
+
+            if (tbBuscar.Text.Trim() != "")
             {
 
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE_PARA_ASIGANCION_PRODUCTO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                llenarTabla();
-            }
-            else if (cbBuscar.SelectedIndex == 2) // Cuenta
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA_PARA_ASIGANCION_PRODUCTO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                llenarTabla();
-            }
-            else if (cbBuscar.SelectedIndex == 3) // Sector
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR_PARA_ASIGANCION_PRODUCTO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvMostrar.DataSource = dt;
-                llenarTabla();
+                if (cbBuscar.SelectedIndex == 0) //numero de caso
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NUMERO_DE_CASO_PARA_ASIGANCION_PRODUCTO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@NUMERO", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvMostrar.DataSource = dt;
+                    llenarTabla();
+                }
+                else if (cbBuscar.SelectedIndex == 1) // Cliente
+                {
+
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_NOMBRE_PARA_ASIGANCION_PRODUCTO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvMostrar.DataSource = dt;
+                    llenarTabla();
+                }
+                else if (cbBuscar.SelectedIndex == 2) // Cuenta
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_CUENTA_PARA_ASIGANCION_PRODUCTO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvMostrar.DataSource = dt;
+                    llenarTabla();
+                }
+                else if (cbBuscar.SelectedIndex == 3) // Sector
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_MUESTRA_BUSCAR_CASO_POR_SECTOR_PARA_ASIGANCION_PRODUCTO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@SECTOR", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvMostrar.DataSource = dt;
+                    llenarTabla();
+                }
+                if(dgvMostrar.RowCount == 0)
+                {
+                    MessageBox.Show("Caso no encontrado", "Error");
+                    tbBuscar.ResetText();
+                    llenarTabla();
+                }
             }
         }
 

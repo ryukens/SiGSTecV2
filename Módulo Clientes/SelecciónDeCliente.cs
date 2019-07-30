@@ -134,99 +134,104 @@ namespace proyectoPantalla
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
+            if (tbBuscar.Text.Trim() != "")
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_NOMBRE_SELECCION_PARA_CASO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvSeleccionar.DataSource = dt;
-                dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[0].HeaderText = "Tipo";
-                dgvSeleccionar.Columns[1].HeaderText = "Nombre";
-                dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
-                dgvSeleccionar.Columns[3].HeaderText = "Identificación";
-                dgvSeleccionar.Columns[4].HeaderText = "SLA";
-                dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
-                this.dgvSeleccionar.Columns[5].Visible = false;
-            }
-            else if (cbBuscar.SelectedIndex == 1) // cedula
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CEDULA_SELECCION_PARA_CASO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@CEDULA", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvSeleccionar.DataSource = dt;
-                dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[0].HeaderText = "Tipo";
-                dgvSeleccionar.Columns[1].HeaderText = "Nombre";
-                dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
-                dgvSeleccionar.Columns[3].HeaderText = "Identificación";
-                dgvSeleccionar.Columns[4].HeaderText = "SLA";
-                dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
-                this.dgvSeleccionar.Columns[5].Visible = false;
-            }
-            else if (cbBuscar.SelectedIndex == 2) // ruc
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_RUC_SELECCION_PARA_CASO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@RUC", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvSeleccionar.DataSource = dt;
-                dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[0].HeaderText = "Tipo";
-                dgvSeleccionar.Columns[1].HeaderText = "Nombre";
-                dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
-                dgvSeleccionar.Columns[3].HeaderText = "Identificación";
-                dgvSeleccionar.Columns[4].HeaderText = "SLA";
-                dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
-                this.dgvSeleccionar.Columns[5].Visible = false;
-            }
-            else // cuenta
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CUENTA_SELECCION_PARA_CASO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvSeleccionar.DataSource = dt;
-                dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvSeleccionar.Columns[0].HeaderText = "Tipo";
-                dgvSeleccionar.Columns[1].HeaderText = "Nombre";
-                dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
-                dgvSeleccionar.Columns[3].HeaderText = "Identificación";
-                dgvSeleccionar.Columns[4].HeaderText = "SLA";
-                dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
-                this.dgvSeleccionar.Columns[5].Visible = false;
-            }
-            if (dgvSeleccionar.RowCount == 0)
-            {
-                MessageBox.Show("Cliente no encontrado", "Error");
-                tbBuscar.ResetText();
-                llenarCampos();
+
+
+                if (cbBuscar.SelectedIndex == 0)
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_NOMBRE_SELECCION_PARA_CASO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@NOMBRE", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvSeleccionar.DataSource = dt;
+                    dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+                    dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+                    dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+                    dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+                    dgvSeleccionar.Columns[4].HeaderText = "SLA";
+                    dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                    this.dgvSeleccionar.Columns[5].Visible = false;
+                }
+                else if (cbBuscar.SelectedIndex == 1) // cedula
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CEDULA_SELECCION_PARA_CASO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@CEDULA", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvSeleccionar.DataSource = dt;
+                    dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+                    dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+                    dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+                    dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+                    dgvSeleccionar.Columns[4].HeaderText = "SLA";
+                    dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                    this.dgvSeleccionar.Columns[5].Visible = false;
+                }
+                else if (cbBuscar.SelectedIndex == 2) // ruc
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_RUC_SELECCION_PARA_CASO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@RUC", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvSeleccionar.DataSource = dt;
+                    dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+                    dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+                    dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+                    dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+                    dgvSeleccionar.Columns[4].HeaderText = "SLA";
+                    dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                    this.dgvSeleccionar.Columns[5].Visible = false;
+                }
+                else // cuenta
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_BUSCAR_CLIENTE_POR_CUENTA_SELECCION_PARA_CASO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.AddWithValue("@CUENTA", tbBuscar.Text);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvSeleccionar.DataSource = dt;
+                    dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+                    dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+                    dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+                    dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+                    dgvSeleccionar.Columns[4].HeaderText = "SLA";
+                    dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+                    this.dgvSeleccionar.Columns[5].Visible = false;
+                }
+                if (dgvSeleccionar.RowCount == 0)
+                {
+                    MessageBox.Show("Cliente no encontrado", "Error");
+                    tbBuscar.ResetText();
+                    llenarCampos();
+                }
             }
         }
     }
