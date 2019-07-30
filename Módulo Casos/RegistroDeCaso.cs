@@ -237,7 +237,10 @@ namespace proyectoPantalla
             {
                 flag = false;
             }
-
+            if (tbInformeInicial.Text.Equals(""))
+            {
+                flag = false;
+            }
 
             return flag;
         }

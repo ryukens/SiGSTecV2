@@ -103,6 +103,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(390, 22);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.Text = " ";
             this.tbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
             // 
             // dgvSeleccionar
