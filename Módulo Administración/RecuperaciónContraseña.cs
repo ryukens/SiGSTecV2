@@ -119,7 +119,7 @@ namespace proyectoPantalla.Módulo_Administración
                 comando1.Parameters.AddWithValue("@pass", MD5Hash(salt + "12345678"));
                 comando1.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Contraseña cambiada. Se pedirá el cambio de contrseña en el siguiente ingreso", "Recuperar Contraseña");
+                MessageBox.Show("Contraseña cambiada. Se pedirá el cambio de contraseña en el siguiente ingreso", "Recuperar Contraseña");
                 mostrarDatos();
             }
         }

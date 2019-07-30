@@ -105,7 +105,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.4908F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.5092F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 318F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 2, 0);
@@ -147,7 +147,7 @@
             this.panel7.Location = new System.Drawing.Point(130, 4);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(178, 34);
+            this.panel7.Size = new System.Drawing.Size(177, 34);
             this.panel7.TabIndex = 1;
             // 
             // nudCantidad
@@ -161,7 +161,7 @@
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(178, 22);
+            this.nudCantidad.Size = new System.Drawing.Size(177, 22);
             this.nudCantidad.TabIndex = 0;
             this.nudCantidad.Value = new decimal(new int[] {
             1,
@@ -173,10 +173,10 @@
             // bCancelar
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bCancelar.Location = new System.Drawing.Point(316, 4);
+            this.bCancelar.Location = new System.Drawing.Point(315, 4);
             this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(311, 34);
+            this.bCancelar.Size = new System.Drawing.Size(312, 34);
             this.bCancelar.TabIndex = 2;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
@@ -200,8 +200,10 @@
             this.dgvAumentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAumentar.Location = new System.Drawing.Point(0, 0);
             this.dgvAumentar.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAumentar.MultiSelect = false;
             this.dgvAumentar.Name = "dgvAumentar";
             this.dgvAumentar.ReadOnly = true;
+            this.dgvAumentar.RowHeadersVisible = false;
             this.dgvAumentar.RowHeadersWidth = 51;
             this.dgvAumentar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAumentar.Size = new System.Drawing.Size(631, 387);

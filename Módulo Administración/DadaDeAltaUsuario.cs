@@ -108,19 +108,23 @@ namespace proyectoPantalla.Módulo_Administración
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
+            if (tbBuscar.Text.Trim() != "")
             {
-                mostrarUsuarioPorNombre();
-            }
-            else
-            {
-                mostrarUsuarioPorIdentificacion();
-            }
-            if (dgvDarDeAlta.RowCount == 0)
-            {
-                MessageBox.Show("Usuario no encontrado", "Error");
-                tbBuscar.ResetText();
-                mostrarDatos();
+            
+                if (cbBuscar.SelectedIndex == 0)
+                {
+                    mostrarUsuarioPorNombre();
+                }
+                else
+                {
+                    mostrarUsuarioPorIdentificacion();
+                }
+                if (dgvDarDeAlta.RowCount == 0)
+                {
+                    MessageBox.Show("Usuario no encontrado", "Error");
+                    tbBuscar.ResetText();
+                    mostrarDatos();
+                }
             }
         }
 

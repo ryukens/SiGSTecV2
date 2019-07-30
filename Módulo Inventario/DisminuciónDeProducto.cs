@@ -216,38 +216,46 @@ namespace proyectoPantalla
 
         private void BQuitar_Click(object sender, EventArgs e)
         {
-            if (nudCantidad.Value == 0)
+            if (dgvDisminuir.RowCount == 0)
             {
-                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
+                MessageBox.Show("No hay productos por quitar", "Error");
             }
             else
             {
-                if (nudCantidad.Value > Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value))
+
+                if (nudCantidad.Value == 0)
                 {
-                    MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
+                    MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
                 }
                 else
                 {
-
-                    int indice = encontrarIndiceQuitar(dgvDisminuir.SelectedRows[0].Cells[0].Value.ToString());
-
-                    if (indice == -1)
+                    if (nudCantidad.Value > Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value))
                     {
-
-                        MessageBox.Show("Seleccione una fila", "Error de Selección");
-
-
+                        MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
                     }
                     else
                     {
-                        dgvDisminuir.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
-                        dgvAsignar.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvAsignar.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
 
-                        if (Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) == 0)
+                        int indice = encontrarIndiceQuitar(dgvDisminuir.SelectedRows[0].Cells[0].Value.ToString());
+
+                        if (indice == -1)
                         {
-                            dgvDisminuir.Rows.RemoveAt(dgvDisminuir.SelectedRows[0].Index);
-                        }
 
+                            MessageBox.Show("Seleccione una fila", "Error de Selección");
+
+
+                        }
+                        else
+                        {
+                            dgvDisminuir.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                            dgvAsignar.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvAsignar.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
+
+                            if (Convert.ToInt32(dgvDisminuir.SelectedRows[0].Cells[2].Value) == 0)
+                            {
+                                dgvDisminuir.Rows.RemoveAt(dgvDisminuir.SelectedRows[0].Index);
+                            }
+
+                        }
                     }
                 }
             }
@@ -295,6 +303,21 @@ namespace proyectoPantalla
         private void DgvAsignar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void TbFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                //    MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

@@ -139,6 +139,7 @@
             this.dgvEliminar.MultiSelect = false;
             this.dgvEliminar.Name = "dgvEliminar";
             this.dgvEliminar.ReadOnly = true;
+            this.dgvEliminar.RowHeadersVisible = false;
             this.dgvEliminar.RowHeadersWidth = 51;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEliminar.Size = new System.Drawing.Size(642, 424);
@@ -176,7 +177,7 @@
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(326, 5);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(311, 33);
             this.bCancelar.TabIndex = 2;
