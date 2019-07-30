@@ -71,7 +71,7 @@ namespace proyectoPantalla
             sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            sda.Fill(dt);
+            
             dgvModificar.DataSource = dt;
             dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;

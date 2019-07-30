@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lBuscar, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -73,7 +73,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tbBuscar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(136, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -89,7 +89,7 @@
             "Nombre",
             "Cédula"});
             this.cbBuscar.Location = new System.Drawing.Point(4, 4);
-            this.cbBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(205, 24);
             this.cbBuscar.TabIndex = 0;
@@ -99,7 +99,7 @@
             // 
             this.tbBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbBuscar.Location = new System.Drawing.Point(217, 4);
-            this.tbBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(390, 22);
             this.tbBuscar.TabIndex = 1;
@@ -112,10 +112,11 @@
             this.dgvSeleccionar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSeleccionar.Location = new System.Drawing.Point(136, 54);
-            this.dgvSeleccionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSeleccionar.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSeleccionar.MultiSelect = false;
             this.dgvSeleccionar.Name = "dgvSeleccionar";
             this.dgvSeleccionar.ReadOnly = true;
+            this.dgvSeleccionar.RowHeadersVisible = false;
             this.dgvSeleccionar.RowHeadersWidth = 51;
             this.dgvSeleccionar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeleccionar.Size = new System.Drawing.Size(611, 447);
@@ -131,7 +132,7 @@
             this.tableLayoutPanel2.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(136, 509);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -142,7 +143,7 @@
             // 
             this.bSeleccionar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bSeleccionar.Location = new System.Drawing.Point(4, 4);
-            this.bSeleccionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bSeleccionar.Margin = new System.Windows.Forms.Padding(4);
             this.bSeleccionar.Name = "bSeleccionar";
             this.bSeleccionar.Size = new System.Drawing.Size(297, 34);
             this.bSeleccionar.TabIndex = 0;
@@ -154,7 +155,7 @@
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(309, 4);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(298, 34);
             this.bCancelar.TabIndex = 1;
@@ -182,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 555);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(901, 590);
             this.Name = "SelecciónDeTécnico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

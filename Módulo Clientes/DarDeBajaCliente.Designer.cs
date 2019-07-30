@@ -172,10 +172,12 @@
             this.dgvBajar.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBajar.Name = "dgvBajar";
             this.dgvBajar.ReadOnly = true;
+            this.dgvBajar.RowHeadersVisible = false;
             this.dgvBajar.RowHeadersWidth = 51;
             this.dgvBajar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBajar.Size = new System.Drawing.Size(628, 402);
             this.dgvBajar.TabIndex = 6;
+            this.dgvBajar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBajar_CellContentClick);
             // 
             // DarDeBajaCliente
             // 

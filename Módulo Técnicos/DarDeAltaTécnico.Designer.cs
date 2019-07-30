@@ -129,6 +129,7 @@
             this.dgvAlzar.MultiSelect = false;
             this.dgvAlzar.Name = "dgvAlzar";
             this.dgvAlzar.ReadOnly = true;
+            this.dgvAlzar.RowHeadersVisible = false;
             this.dgvAlzar.RowHeadersWidth = 51;
             this.dgvAlzar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlzar.Size = new System.Drawing.Size(553, 404);

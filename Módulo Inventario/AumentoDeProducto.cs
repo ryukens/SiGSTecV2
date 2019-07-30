@@ -68,6 +68,7 @@ namespace proyectoPantalla
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sda.SelectCommand.Parameters.AddWithValue("@descripcion", tbBuscar.Text);
             DataTable dt = new DataTable();
+            sda.Fill(dt);
             dgvAumentar.DataSource = dt;
             dgvAumentar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvAumentar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

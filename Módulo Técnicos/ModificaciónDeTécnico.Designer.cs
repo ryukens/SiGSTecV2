@@ -173,6 +173,7 @@
             this.dgvModificar.MultiSelect = false;
             this.dgvModificar.Name = "dgvModificar";
             this.dgvModificar.ReadOnly = true;
+            this.dgvModificar.RowHeadersVisible = false;
             this.dgvModificar.RowHeadersWidth = 51;
             this.dgvModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModificar.Size = new System.Drawing.Size(601, 436);

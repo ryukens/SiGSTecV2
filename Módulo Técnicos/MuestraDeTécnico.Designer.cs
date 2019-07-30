@@ -89,6 +89,7 @@
             this.dgvMostrar.MultiSelect = false;
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
+            this.dgvMostrar.RowHeadersVisible = false;
             this.dgvMostrar.RowHeadersWidth = 51;
             this.dgvMostrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrar.Size = new System.Drawing.Size(657, 396);

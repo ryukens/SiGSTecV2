@@ -129,6 +129,7 @@
             this.dgvDarDeAlta.MultiSelect = false;
             this.dgvDarDeAlta.Name = "dgvDarDeAlta";
             this.dgvDarDeAlta.ReadOnly = true;
+            this.dgvDarDeAlta.RowHeadersVisible = false;
             this.dgvDarDeAlta.RowHeadersWidth = 51;
             this.dgvDarDeAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDarDeAlta.Size = new System.Drawing.Size(604, 381);

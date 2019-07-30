@@ -142,27 +142,27 @@ namespace proyectoPantalla
             tbCuenta.Text = "";
             tbCedula.MaxLength = 13;
             tbCedula.ResetText();
+            flagCuenta = false;
 
         }
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-            if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
+
+
+            if (tbCedula.Text.Trim() == "")
             {
                 errorProvider1.SetError(tbCedula, null);
-                tbCedula.ForeColor = Color.Green;
+                flagCedula = false;
 
+            }
 
-                if (tbCedula.Text.Trim() == "")
+            else
+            {
+                flagCedula = true;
+
+                if (rbPersona.Checked)
                 {
-                    errorProvider1.SetError(tbCedula, null);
-                    flagCedula = false;
-
-                }
-
-                else
-                {
-                    flagCedula = true;
                     if (Validaciones.VerificaCedula(tbCedula.Text))
                     {
 
@@ -173,9 +173,6 @@ namespace proyectoPantalla
                             tbCedula.ForeColor = Color.Red;
                             errorProvider1.SetError(tbCedula, "Cédula de ciudadanía ya registrada");
                             errorCedula = 1;
-
-
-
 
                         }
                         else
@@ -196,8 +193,40 @@ namespace proyectoPantalla
 
                     }
                 }
-            }
+                else
+                {
+                    if (Validaciones.RucPersonaNatural(tbCedula.Text))
+                    {
 
+                        int r = Validaciones.verificarCedulaRepetida(tbCedula, conexion);
+
+                        if (r != 0)
+                        {
+                            tbCedula.ForeColor = Color.Red;
+                            errorProvider1.SetError(tbCedula, "RUC ya registrado");
+                            errorCedula = 1;
+
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(tbCedula, null);
+                            tbCedula.ForeColor = Color.Green;
+                            errorCedula = 0;
+
+                        }
+
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(tbCedula, "RUC incorrecto");
+                        tbCedula.ForeColor = Color.Red;
+                        errorCedula = 2;
+
+
+                    }
+                }
+
+            }
         }
 
         public bool ValidarCamposVacios()
@@ -474,17 +503,17 @@ namespace proyectoPantalla
 
         private void TbCedula_KeyUp(object sender, KeyEventArgs e)
         {
-          /*  if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
-            {
-                errorProvider1.SetError(tbCedula, null);
-                tbCedula.ForeColor = Color.Green;
+            /*  if (Validaciones.VerificaCedula(tbCedula.Text) || Validaciones.RucPersonaNatural(tbCedula.Text))
+              {
+                  errorProvider1.SetError(tbCedula, null);
+                  tbCedula.ForeColor = Color.Green;
 
-            }
-            else
-            {
-                errorProvider1.SetError(tbCedula, "Ingrese cédula o RUC correctamente");
-                tbCedula.ForeColor = Color.Red;
-            }*/
+              }
+              else
+              {
+                  errorProvider1.SetError(tbCedula, "Ingrese cédula o RUC correctamente");
+                  tbCedula.ForeColor = Color.Red;
+              }*/
         }
 
         public void limpiarCampos()
@@ -524,7 +553,7 @@ namespace proyectoPantalla
             }
         }
 
-      
+
         private void TbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (rbPersona.Checked)
@@ -584,8 +613,8 @@ namespace proyectoPantalla
 
         public bool validarEntrada()
         {
-            //Console.WriteLine("alcance " + flagAlcance + "cedula " + flagCedula + "correo " + flagCorreo + "moviles " + flagMoviles + "nombre " + flagNombre + "sector " + flagSector + "telefonos " + flagTelefonos);
-            if (flagNContacto && flagCedula && flagCorreo && flagMoviles && flagNombre && flagDescripcion && flagTelefonos &&flagCuenta)
+            Console.WriteLine("ncontacto " + flagNContacto + "cedula " + flagCedula + "correo " + flagCorreo + "moviles " + flagMoviles + "nombre " + flagNombre + "descr " + flagDescripcion + "telefonos " + flagTelefonos + " Cuante" + flagCuenta );
+            if (flagNContacto && flagCedula && flagCorreo && flagMoviles && flagNombre && flagDescripcion && flagTelefonos && flagCuenta)
             {
                 if (errorCedula == 1)
                 {
@@ -642,6 +671,20 @@ namespace proyectoPantalla
             else
             {
                 flagDescripcion = true;
+
+            }
+        }
+
+        private void TbNombre_TextChanged_1(object sender, EventArgs e)
+        {
+            if (tbNombre.Text.Trim() == "")
+            {
+                flagNombre = false;
+
+            }
+            else
+            {
+                flagNombre = true;
 
             }
         }
