@@ -151,8 +151,8 @@
             this.tabRecuperar = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.label26 = new System.Windows.Forms.Label();
-            this.recuperaciónContraseña1 = new proyectoPantalla.Módulo_Administración.RecuperaciónContraseña();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            label22 = new System.Windows.Forms.Label();
             this.muestraDeCaso1 = new MuestraDeCaso(tabControl, tabInicio);
             this.muestraDeCaso2 = new MuestraDeCaso(tabControl, tabInicio);
             this.registroDeCaso1 = new RegistroDeCaso(tabControl, tabInicio);
@@ -180,7 +180,6 @@
             this.registroDeProducto1 = new proyectoPantalla.RegistroDeProducto(tabControl, tabInicio);
             this.dadaDeAltaUsuario1 = new proyectoPantalla.Módulo_Administración.DadaDeAltaUsuario(tabControl, tabInicio);
             this.recuperaciónContraseña1 = new proyectoPantalla.Módulo_Administración.RecuperaciónContraseña(tabControl, tabInicio);
-            label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -927,7 +926,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1301, 30);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Eliminación de Técnico";
+            this.label5.Text = "Baja de Técnico";
             // 
             // eliminaciónDeTécnico1
             // 

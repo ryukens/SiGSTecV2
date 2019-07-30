@@ -15,7 +15,7 @@ namespace proyectoPantalla
     public partial class SelecciónDeProductos : Form
     {
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
-        
+
         public SelecciónDeProductos(String numero, String cliente, AsignaciónDeProductos asignaciónDeProductos)
         {
             InitializeComponent();
@@ -172,7 +172,7 @@ namespace proyectoPantalla
             int indice = -1;
             for (int i = 0; i < dgvDisminuir.Rows.Count; i++)
             {
-              //  MessageBox.Show(dgvDisminuir.Rows[i].Cells[0].Value.ToString());
+                //  MessageBox.Show(dgvDisminuir.Rows[i].Cells[0].Value.ToString());
                 if (dgvDisminuir.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
                     indice = i;
@@ -189,7 +189,7 @@ namespace proyectoPantalla
             int indice = -1;
             for (int i = 0; i < dgvAsignar.Rows.Count; i++)
             {
-              //  MessageBox.Show(i.ToString());
+                //  MessageBox.Show(i.ToString());
 
                 if (dgvAsignar.Rows[i].Cells[0].Value.ToString() == codigo)
                 {
@@ -240,7 +240,7 @@ namespace proyectoPantalla
             }
         }
 
-       
+
 
         private void CbBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -434,7 +434,8 @@ namespace proyectoPantalla
                 MessageBox.Show("Seleccione uno o más Productos", "Error de Asignación de Productos");
             }
 
-        
+
         }
+
     }
 }

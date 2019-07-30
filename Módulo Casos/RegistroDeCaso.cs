@@ -214,7 +214,7 @@ namespace proyectoPantalla
             {
                 
                 limpiarCampos();
-                MessageBox.Show("Existen campos vacios", "Campos Vacios");
+                MessageBox.Show("Existen campos vacíos", "Campos Vacíos");
             }
 
             conexion.Close();

@@ -64,37 +64,43 @@ namespace proyectoPantalla
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            
-            SqlDataAdapter sda = new SqlDataAdapter("SP_GENERAR_INFORME_FINAL", conexion);
-            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             DateTime datei = DateTime.Parse(dtFechaInicio.Text);
             DateTime datef = DateTime.Parse(dtFechaFinal.Text);
-            sda.SelectCommand.Parameters.AddWithValue("@FECHAI", datei);
-            sda.SelectCommand.Parameters.AddWithValue("@FECHAF", datef);
+            if (DateTime.Compare(datei, datef) > 0)
+            {
+                MessageBox.Show("Intervalo de tiempo incorrecto", "Error");
+            }
+            else
+            {
 
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[0].HeaderText = "Estado";
-            dataGridView1.Columns[1].HeaderText = "Número";
-            dataGridView1.Columns[2].HeaderText = "Nombre";
-            dataGridView1.Columns[3].HeaderText = "Cuenta";
-            dataGridView1.Columns[4].HeaderText = "Fecha";
-            dataGridView1.Columns[5].HeaderText = "SLA";
-            dataGridView1.Columns[6].HeaderText = "Sector";
-            dataGridView1.Columns[7].HeaderText = "ID Cliente";
-            this.dataGridView1.Columns[7].Visible = false;
+                SqlDataAdapter sda = new SqlDataAdapter("SP_GENERAR_INFORME_FINAL", conexion);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@FECHAI", datei);
+                sda.SelectCommand.Parameters.AddWithValue("@FECHAF", datef);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[0].HeaderText = "Estado";
+                dataGridView1.Columns[1].HeaderText = "Número";
+                dataGridView1.Columns[2].HeaderText = "Nombre";
+                dataGridView1.Columns[3].HeaderText = "Cuenta";
+                dataGridView1.Columns[4].HeaderText = "Fecha";
+                dataGridView1.Columns[5].HeaderText = "SLA";
+                dataGridView1.Columns[6].HeaderText = "Sector";
+                dataGridView1.Columns[7].HeaderText = "ID Cliente";
+                this.dataGridView1.Columns[7].Visible = false;
 
 
-
+            }
 
 
         }

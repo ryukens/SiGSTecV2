@@ -45,6 +45,7 @@
             this.bQuitar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -63,15 +64,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvDisminuir, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.bAceptar, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.bCancelar, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dgvAsignar, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lBuscar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lBuscar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbFactura, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbFactura, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
@@ -113,7 +114,7 @@
             this.dgvAsignar.AllowUserToDeleteRows = false;
             this.dgvAsignar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAsignar.Location = new System.Drawing.Point(555, 50);
+            this.dgvAsignar.Location = new System.Drawing.Point(0, 0);
             this.dgvAsignar.Margin = new System.Windows.Forms.Padding(5);
             this.dgvAsignar.MultiSelect = false;
             this.dgvAsignar.Name = "dgvAsignar";
@@ -133,7 +134,7 @@
             this.tableLayoutPanel3.Controls.Add(this.cbBuscar, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tbBuscar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(555, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(105, 5);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -168,14 +169,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Location = new System.Drawing.Point(454, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label1.Size = new System.Drawing.Size(92, 45);
+            this.label1.Size = new System.Drawing.Size(68, 45);
             this.label1.TabIndex = 11;
             this.label1.Text = "Buscar por:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -183,7 +183,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dgvDisminuir);
+            this.panel3.Controls.Add(this.dgvAsignar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(105, 50);
             this.panel3.Margin = new System.Windows.Forms.Padding(5);
@@ -197,7 +197,7 @@
             this.dgvDisminuir.AllowUserToDeleteRows = false;
             this.dgvDisminuir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisminuir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDisminuir.Location = new System.Drawing.Point(0, 0);
+            this.dgvDisminuir.Location = new System.Drawing.Point(555, 50);
             this.dgvDisminuir.Margin = new System.Windows.Forms.Padding(5);
             this.dgvDisminuir.MultiSelect = false;
             this.dgvDisminuir.Name = "dgvDisminuir";
@@ -214,7 +214,7 @@
             this.lBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.lBuscar.Location = new System.Drawing.Point(4, 0);
+            this.lBuscar.Location = new System.Drawing.Point(454, 0);
             this.lBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lBuscar.Name = "lBuscar";
             this.lBuscar.Size = new System.Drawing.Size(92, 45);
@@ -226,7 +226,7 @@
             // tbFactura
             // 
             this.tbFactura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFactura.Location = new System.Drawing.Point(105, 5);
+            this.tbFactura.Location = new System.Drawing.Point(555, 5);
             this.tbFactura.Margin = new System.Windows.Forms.Padding(5);
             this.tbFactura.MaxLength = 16;
             this.tbFactura.Name = "tbFactura";
@@ -263,7 +263,7 @@
             this.bAsignar.Name = "bAsignar";
             this.bAsignar.Size = new System.Drawing.Size(80, 64);
             this.bAsignar.TabIndex = 15;
-            this.bAsignar.Text = "Asignar\r\n<---------";
+            this.bAsignar.Text = "Asignar\r\n--------->";
             this.bAsignar.UseVisualStyleBackColor = true;
             this.bAsignar.Click += new System.EventHandler(this.BAsignar_Click);
             // 
@@ -275,7 +275,7 @@
             this.bQuitar.Name = "bQuitar";
             this.bQuitar.Size = new System.Drawing.Size(80, 64);
             this.bQuitar.TabIndex = 16;
-            this.bQuitar.Text = "Quitar\r\n--------->";
+            this.bQuitar.Text = "Quitar\r\n<---------";
             this.bQuitar.UseVisualStyleBackColor = true;
             this.bQuitar.Click += new System.EventHandler(this.BQuitar_Click);
             // 
@@ -284,6 +284,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.nudCantidad, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 153);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
@@ -305,6 +306,17 @@
             this.nudCantidad.Size = new System.Drawing.Size(70, 22);
             this.nudCantidad.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cantidad";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // DisminuciónDeProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,6 +335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisminuir)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
 
@@ -347,5 +360,6 @@
         private System.Windows.Forms.Button bAceptar;
         private System.Windows.Forms.Button bQuitar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
     }
 }
