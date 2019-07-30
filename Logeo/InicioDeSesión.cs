@@ -91,10 +91,10 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
-            PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
-            pantallaprincipal.Show();
-            this.Hide();
+           Application.Exit();
+           // PantallaPrincipal pantallaprincipal = new PantallaPrincipal();
+            //pantallaprincipal.Show();
+            //this.Hide();
         }
 
         private void TbContraseña_KeyPress(object sender, KeyPressEventArgs e)

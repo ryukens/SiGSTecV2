@@ -74,11 +74,13 @@ namespace proyectoPantalla
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[0].HeaderText = "Cantidad";
+            dataGridView1.Columns[0].HeaderText = "Código";
             dataGridView1.Columns[1].HeaderText = "Descripción";
-            dataGridView1.Columns[2].HeaderText = "Nombre";
+            dataGridView1.Columns[2].HeaderText = "Cantidad";
+
+
 
         }
 

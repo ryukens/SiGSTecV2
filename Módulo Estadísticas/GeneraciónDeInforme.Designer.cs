@@ -59,7 +59,7 @@
             this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -73,7 +73,7 @@
             // 
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel28.Location = new System.Drawing.Point(793, 436);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(35, 40);
             this.panel28.TabIndex = 14;
@@ -82,7 +82,7 @@
             // 
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel26.Location = new System.Drawing.Point(4, 436);
-            this.panel26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel26.Margin = new System.Windows.Forms.Padding(4);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(33, 40);
             this.panel26.TabIndex = 12;
@@ -95,11 +95,11 @@
             this.tableLayoutPanel1.Controls.Add(this.bCancelar, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(45, 436);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(740, 40);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
@@ -107,7 +107,7 @@
             // 
             this.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bCancelar.Location = new System.Drawing.Point(374, 4);
-            this.bCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(362, 32);
             this.bCancelar.TabIndex = 1;
@@ -130,7 +130,7 @@
             this.tableLayoutPanel3.Controls.Add(this.dtFechaFinal, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(45, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -154,7 +154,7 @@
             // 
             this.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAceptar.Location = new System.Drawing.Point(596, 4);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(140, 32);
             this.bAceptar.TabIndex = 1;
@@ -181,11 +181,11 @@
             this.dtFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtFechaInicio.Location = new System.Drawing.Point(152, 4);
-            this.dtFechaInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(140, 22);
             this.dtFechaInicio.TabIndex = 16;
-            this.dtFechaInicio.Value = new System.DateTime(2019, 7, 6, 21, 49, 0, 0);
+            this.dtFechaInicio.Value = new System.DateTime(2019, 7, 30, 0, 0, 0, 0);
             // 
             // dtFechaFinal
             // 
@@ -193,11 +193,11 @@
             this.dtFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtFechaFinal.Location = new System.Drawing.Point(448, 4);
-            this.dtFechaFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaFinal.Margin = new System.Windows.Forms.Padding(4);
             this.dtFechaFinal.Name = "dtFechaFinal";
             this.dtFechaFinal.Size = new System.Drawing.Size(140, 22);
             this.dtFechaFinal.TabIndex = 17;
-            this.dtFechaFinal.Value = new System.DateTime(2019, 7, 21, 12, 14, 0, 0);
+            this.dtFechaFinal.Value = new System.DateTime(2019, 7, 30, 0, 0, 0, 0);
             this.dtFechaFinal.ValueChanged += new System.EventHandler(this.DtFechaFinal_ValueChanged);
             // 
             // dataGridView1
@@ -207,7 +207,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(45, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -222,7 +222,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GeneraciónDeInforme";
             this.Size = new System.Drawing.Size(832, 480);
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -61,16 +61,24 @@ namespace proyectoPantalla
 
         private void BSeleccionar_Click(object sender, EventArgs e)
         {
-            String nombreTecnico = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
-            lTecnicoSeleccionado.Text = nombreTecnico;
 
-            String IdTecnico = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
-            lIdTecnico.Text = IdTecnico;
+            if (dgvSeleccionar.SelectedRows[0].Cells[0].Value.ToString() == "OCUPADO")
+            {
+                MessageBox.Show("No se puede asignar un técnico ocupado", "Error");
+            }
+            else
+            {
 
-            this.Dispose();
+                String nombreTecnico = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
+                lTecnicoSeleccionado.Text = nombreTecnico;
+
+                String IdTecnico = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
+                lIdTecnico.Text = IdTecnico;
+
+                this.Dispose();
 
 
-
+            }
             
             
         }

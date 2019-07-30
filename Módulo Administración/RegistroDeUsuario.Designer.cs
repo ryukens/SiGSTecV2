@@ -242,7 +242,10 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegistroDeUsuario";
-            this.Size = new System.Drawing.Size(579, 393);
+
+            this.Size = new System.Drawing.Size(772, 484);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegistroDeUsuario_KeyPress);
+
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
