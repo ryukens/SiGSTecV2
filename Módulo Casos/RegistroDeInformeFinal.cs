@@ -67,8 +67,6 @@ namespace proyectoPantalla
 
                 conexion.Open();
 
-               // String consulta1 = "UPDATE Caso SET ESTADO = 'CERRADO', INFORME_FINAL = @INFORME_FINAL, PARTE_PATH = @PARTE_PATH WHERE IDCASO = @IDCASO;";
-
                 SqlCommand comando1 = new SqlCommand("SP_REGISTRO_INFORME_FINAL_PATH", conexion);
                 comando1.CommandType = CommandType.StoredProcedure;
                 comando1.Parameters.AddWithValue("@IDCASO", idcaso);

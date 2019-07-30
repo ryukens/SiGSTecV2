@@ -89,7 +89,7 @@ namespace proyectoPantalla
 
                     String idcaso = dgvMostrar.CurrentRow.Cells[7].Value.ToString();
 
-                    String numeroFactura = tbFactura.ToString();
+                    String numeroFactura = tbFactura.Text;
 
                     SqlCommand comando1 = new SqlCommand("SP_FINALIZAR_CASO", conexion);
                     comando1.CommandType = CommandType.StoredProcedure;

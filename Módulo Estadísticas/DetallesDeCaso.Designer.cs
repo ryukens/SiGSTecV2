@@ -88,6 +88,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(678, 96);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
             // 
             // label1
             // 
