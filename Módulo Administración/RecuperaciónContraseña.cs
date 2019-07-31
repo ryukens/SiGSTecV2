@@ -96,31 +96,34 @@ namespace proyectoPantalla.Módulo_Administración
         private void BRecuperar_Click(object sender, EventArgs e)
         {
             String salt="";
-            if (MessageBox.Show("¿Está seguro que desea recuperar la contraseña de este usuario?", "Recuperar Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvDarDeAlta.CurrentRow != null)
             {
-                conexion.Open();
-
-                SqlCommand comando = new SqlCommand("SP_OBTENER_SALT", conexion);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
-                SqlDataReader dr = comando.ExecuteReader();
-                while (dr.Read())
+                if (MessageBox.Show("¿Está seguro que desea recuperar la contraseña de este usuario?", "Recuperar Contraseña", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    salt = dr.GetString(0);
+                    conexion.Open();
+
+                    SqlCommand comando = new SqlCommand("SP_OBTENER_SALT", conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
+                    SqlDataReader dr = comando.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        salt = dr.GetString(0);
+                    }
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    SqlCommand comando1 = new SqlCommand("SP_RECUPERAR_CONTRASEÑA", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
+                    comando1.Parameters.AddWithValue("@pass", MD5Hash(salt + "12345678"));
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Contraseña cambiada. Se pedirá el cambio de contraseña en el siguiente ingreso", "Recuperar Contraseña");
+                    mostrarDatos();
                 }
-
-                conexion.Close();
-
-                conexion.Open();
-
-                SqlCommand comando1 = new SqlCommand("SP_RECUPERAR_CONTRASEÑA", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
-                comando1.Parameters.AddWithValue("@pass", MD5Hash(salt + "12345678"));
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Contraseña cambiada. Se pedirá el cambio de contraseña en el siguiente ingreso", "Recuperar Contraseña");
-                mostrarDatos();
             }
         }
 

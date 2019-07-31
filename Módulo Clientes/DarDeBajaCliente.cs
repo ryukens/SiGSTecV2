@@ -78,16 +78,19 @@ namespace proyectoPantalla
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea Dar de Baja este Cliente?", "Dar de Baja Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvBajar.CurrentRow != null)
             {
-                conexion.Open();
-                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvBajar.CurrentRow.Cells[3].Value.ToString());
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Cliente Dado de Baja Correctamente", "Cliente Dado de Baja");
-                mostrarDatosCompleto();
+                if (MessageBox.Show("¿Está seguro que desea Dar de Baja este Cliente?", "Dar de Baja Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvBajar.CurrentRow.Cells[3].Value.ToString());
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Cliente Dado de Baja Correctamente", "Cliente Dado de Baja");
+                    mostrarDatosCompleto();
+                }
             }
         }
 

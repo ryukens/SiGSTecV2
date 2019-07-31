@@ -47,10 +47,13 @@ namespace proyectoPantalla
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            String cedula = dgvModificar.SelectedRows[0].Cells[3].Value.ToString();
-            //MessageBox.Show(cedula);
-            CambioDeDatosCliente cambioDeDatosCliente = new CambioDeDatosCliente(cedula);
-            cambioDeDatosCliente.ShowDialog();
+            if (dgvModificar.CurrentRow != null)
+            {
+                String cedula = dgvModificar.SelectedRows[0].Cells[3].Value.ToString();
+                //MessageBox.Show(cedula);
+                CambioDeDatosCliente cambioDeDatosCliente = new CambioDeDatosCliente(cedula);
+                cambioDeDatosCliente.ShowDialog();
+            }
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace proyectoPantalla
         }
         private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void BCancelar_Click(object sender, EventArgs e)
         {
@@ -154,7 +157,7 @@ namespace proyectoPantalla
                     MessageBox.Show("Cliente no encontrado", "Error");
                     tbBuscar.ResetText();
                     mostrarCliente();
-                    
+
                 }
             }
         }

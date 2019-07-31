@@ -51,17 +51,20 @@ namespace proyectoPantalla.Módulo_Administración
 
         private void BDarDeAlta_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea dar de alta este usuario?", "Dar de alte Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvDarDeAlta.CurrentRow != null)
             {
-                conexion.Open();
+                if (MessageBox.Show("¿Está seguro que desea dar de alta este usuario?", "Dar de alte Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
 
-                SqlCommand comando1 = new SqlCommand("SP_DAR_DE_ALTA_USUARIO", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Usuario dado de alta correctamente", "Usuario Dado de alta");
-                mostrarDatos();
+                    SqlCommand comando1 = new SqlCommand("SP_DAR_DE_ALTA_USUARIO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvDarDeAlta.CurrentRow.Cells[2].Value.ToString());
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Usuario dado de alta correctamente", "Usuario Dado de alta");
+                    mostrarDatos();
+                }
             }
         }
 

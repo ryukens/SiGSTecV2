@@ -97,33 +97,25 @@ namespace proyectoPantalla
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (nudCantidad.Value == 0)
+            if (dgvAumentar.CurrentRow != null)
             {
-                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en Cantidad");
+                if (nudCantidad.Value == 0)
+                {
+                    MessageBox.Show("La cantidad debe ser mayor a 0", "Error en Cantidad");
+                }
+                else
+                {
+                    conexion.Open();
+                    SqlCommand comando1 = new SqlCommand("SP_AUMENTO_PRODUCTO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@codigo", dgvAumentar.SelectedRows[0].Cells[0].Value);
+                    comando1.Parameters.AddWithValue("@cantidad", nudCantidad.Value);
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Producto Aumentado Correctamente", "Producto Aumentado");
+                    mostrarProducto();
+                }
             }
-            else
-            {
-                conexion.Open();
-
-
-                SqlCommand comando1 = new SqlCommand("SP_AUMENTO_PRODUCTO", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@codigo", dgvAumentar.SelectedRows[0].Cells[0].Value);
-                comando1.Parameters.AddWithValue("@cantidad", nudCantidad.Value);
-
-
-                comando1.ExecuteNonQuery();
-
-
-                conexion.Close();
-                MessageBox.Show("Producto Aumentado Correctamente", "Producto Aumentado");
-                mostrarProducto();
-            }
-
-
-
-
-
         }
 
         private void NumericUpDown1_KeyPress(object sender, KeyPressEventArgs e)

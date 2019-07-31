@@ -46,17 +46,19 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de que desea dar de baja este técnico?", "Dar de Baja Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                conexion.Open();
-                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA_TECNICO", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Técnico Dado de Baja Correctamente", "Técnico Dado de Baja");
-                tbBuscar.ResetText();
-                mostrarTecnicos();
+            if(dgvEliminar.CurrentRow != null) {
+                if (MessageBox.Show("¿Está seguro de que desea dar de baja este técnico?", "Dar de Baja Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    SqlCommand comando1 = new SqlCommand("SP_DADO_DE_BAJA_TECNICO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvEliminar.CurrentRow.Cells[2].Value.ToString());
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Técnico Dado de Baja Correctamente", "Técnico Dado de Baja");
+                    tbBuscar.ResetText();
+                    mostrarTecnicos();
+                }
             }
         }
 

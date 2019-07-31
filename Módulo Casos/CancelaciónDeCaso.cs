@@ -53,45 +53,47 @@ namespace proyectoPantalla
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea cancelar este caso?", "Cancelar Caso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvCancelar.CurrentRow != null)
             {
-                conexion.Open();
+                if (MessageBox.Show("¿Está seguro que desea cancelar este caso?", "Cancelar Caso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
 
-                String idcaso = dgvCancelar.CurrentRow.Cells[7].Value.ToString();
+                    String idcaso = dgvCancelar.CurrentRow.Cells[7].Value.ToString();
 
-                SqlCommand comando1 = new SqlCommand("SP_CANCELAR_CASO", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@IDCASO", idcaso);
-                comando1.ExecuteNonQuery();
+                    SqlCommand comando1 = new SqlCommand("SP_CANCELAR_CASO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@IDCASO", idcaso);
+                    comando1.ExecuteNonQuery();
 
 
-                MessageBox.Show("Caso Cancelado Correctamente", "Caso Cancelado");
+                    MessageBox.Show("Caso Cancelado Correctamente", "Caso Cancelado");
 
-                conexion.Close();
+                    conexion.Close();
 
-                SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
-                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dgvCancelar.DataSource = dt;
-                dgvCancelar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgvCancelar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvCancelar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvCancelar.Columns[0].HeaderText = "Estado";
-                dgvCancelar.Columns[1].HeaderText = "Número";
-                dgvCancelar.Columns[2].HeaderText = "Nombre";
-                dgvCancelar.Columns[3].HeaderText = "Cuenta";
-                dgvCancelar.Columns[4].HeaderText = "Fecha";
-                dgvCancelar.Columns[5].HeaderText = "SLA";
-                dgvCancelar.Columns[6].HeaderText = "Sector";
-                dgvCancelar.Columns[7].HeaderText = "ID Cliente";
-                this.dgvCancelar.Columns[7].Visible = false;
-
+                    SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO", conexion);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    dgvCancelar.DataSource = dt;
+                    dgvCancelar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvCancelar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvCancelar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvCancelar.Columns[0].HeaderText = "Estado";
+                    dgvCancelar.Columns[1].HeaderText = "Número";
+                    dgvCancelar.Columns[2].HeaderText = "Nombre";
+                    dgvCancelar.Columns[3].HeaderText = "Cuenta";
+                    dgvCancelar.Columns[4].HeaderText = "Fecha";
+                    dgvCancelar.Columns[5].HeaderText = "SLA";
+                    dgvCancelar.Columns[6].HeaderText = "Sector";
+                    dgvCancelar.Columns[7].HeaderText = "ID Cliente";
+                    this.dgvCancelar.Columns[7].Visible = false;
+                }
             }
         }
 
@@ -230,6 +232,6 @@ namespace proyectoPantalla
             }
         }
 
-        
+
     }
 }

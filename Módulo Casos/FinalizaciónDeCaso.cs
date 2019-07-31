@@ -54,7 +54,7 @@ namespace proyectoPantalla
             this.dgvMostrar.Columns[7].Visible = false;
         }
 
-        
+
 
         private void FinalizaciónDeCaso_Load(object sender, EventArgs e)
         {
@@ -80,56 +80,56 @@ namespace proyectoPantalla
 
         private void BFinalizar_Click(object sender, EventArgs e)
         {
-            bool flagVacios = ValidarCamposVacios();
-            if (flagVacios == true)
+            if (dgvMostrar.CurrentRow != null)
             {
-                if (MessageBox.Show("¿Está seguro que desea finalizar este caso?", "Finalizar Caso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                bool flagVacios = ValidarCamposVacios();
+                if (flagVacios == true)
                 {
-                    conexion.Open();
-
-                    String idcaso = dgvMostrar.CurrentRow.Cells[7].Value.ToString();
-
-                    String numeroFactura = tbFactura.Text;
-
-                    SqlCommand comando1 = new SqlCommand("SP_FINALIZAR_CASO", conexion);
-                    comando1.CommandType = CommandType.StoredProcedure;
-                    comando1.Parameters.AddWithValue("@IDCASO", idcaso);
-                    comando1.Parameters.AddWithValue("@NUMEROFACTURA", numeroFactura);
-                    comando1.ExecuteNonQuery();
-                    MessageBox.Show("Caso Finalizado Correctamente", "Caso Finalizado");
-                    conexion.Close();
-                    SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO_PORFACTURAR", conexion);
-                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    dgvMostrar.DataSource = dt;
-                    dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dgvMostrar.Columns[0].HeaderText = "Estado";
-                    dgvMostrar.Columns[1].HeaderText = "Número";
-                    dgvMostrar.Columns[2].HeaderText = "Nombre";
-                    dgvMostrar.Columns[3].HeaderText = "Cuenta";
-                    dgvMostrar.Columns[4].HeaderText = "Fecha";
-                    dgvMostrar.Columns[5].HeaderText = "SLA";
-                    dgvMostrar.Columns[6].HeaderText = "Sector";
-                    dgvMostrar.Columns[7].HeaderText = "ID Cliente";
-                    this.dgvMostrar.Columns[7].Visible = false;
+                    if (MessageBox.Show("¿Está seguro que desea finalizar este caso?", "Finalizar Caso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        conexion.Open();
+                        String idcaso = dgvMostrar.CurrentRow.Cells[7].Value.ToString();
+                        String numeroFactura = tbFactura.Text;
+                        SqlCommand comando1 = new SqlCommand("SP_FINALIZAR_CASO", conexion);
+                        comando1.CommandType = CommandType.StoredProcedure;
+                        comando1.Parameters.AddWithValue("@IDCASO", idcaso);
+                        comando1.Parameters.AddWithValue("@NUMEROFACTURA", numeroFactura);
+                        comando1.ExecuteNonQuery();
+                        MessageBox.Show("Caso Finalizado Correctamente", "Caso Finalizado");
+                        conexion.Close();
+                        SqlDataAdapter sda = new SqlDataAdapter("SP_LLENAR_TABLA_CASO_PORFACTURAR", conexion);
+                        sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        dgvMostrar.DataSource = dt;
+                        dgvMostrar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        dgvMostrar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        dgvMostrar.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        dgvMostrar.Columns[0].HeaderText = "Estado";
+                        dgvMostrar.Columns[1].HeaderText = "Número";
+                        dgvMostrar.Columns[2].HeaderText = "Nombre";
+                        dgvMostrar.Columns[3].HeaderText = "Cuenta";
+                        dgvMostrar.Columns[4].HeaderText = "Fecha";
+                        dgvMostrar.Columns[5].HeaderText = "SLA";
+                        dgvMostrar.Columns[6].HeaderText = "Sector";
+                        dgvMostrar.Columns[7].HeaderText = "ID Cliente";
+                        this.dgvMostrar.Columns[7].Visible = false;
+                    }
                 }
-            }
-            else
-            {
-                limpiarCampos();
-                MessageBox.Show("Ingrese un número de factura", "Campos Vacios");
-            }
+                else
+                {
+                    limpiarCampos();
+                    MessageBox.Show("Ingrese un número de factura", "Campos Vacios");
+                }
 
-            conexion.Close();
-            limpiarCampos();
+                conexion.Close();
+                limpiarCampos();
+            }
         }
 
         private void TbBuscar_TextChanged(object sender, EventArgs e)
