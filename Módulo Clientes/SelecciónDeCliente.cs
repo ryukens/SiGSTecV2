@@ -25,23 +25,23 @@ namespace proyectoPantalla
             this.lIdCliente = lIdCliente;
 
             String consulta = "select c.tipo, p.nombre, c.cuenta,  p.identificacion, c.sla, c.idcliente  from persona as p join cliente as c on p.idpersona = c.IDPERSONA   order by c.tipo;";
-             SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
-             DataTable dt = new DataTable();
-             sda.Fill(dt);
-             dgvSeleccionar.DataSource = dt;
-             var topLeftHeaderCell = dgvSeleccionar.TopLeftHeaderCell;
-             dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-             dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-             dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-             dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-             dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-             dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-             dgvSeleccionar.Columns[0].HeaderText = "Tipo";
-             dgvSeleccionar.Columns[1].HeaderText = "Nombre";
-             dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
-             dgvSeleccionar.Columns[3].HeaderText = "Identificación";
-             dgvSeleccionar.Columns[4].HeaderText = "SLA";
-             dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
+            SqlDataAdapter sda = new SqlDataAdapter(consulta, conexion);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvSeleccionar.DataSource = dt;
+            var topLeftHeaderCell = dgvSeleccionar.TopLeftHeaderCell;
+            dgvSeleccionar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSeleccionar.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvSeleccionar.Columns[0].HeaderText = "Tipo";
+            dgvSeleccionar.Columns[1].HeaderText = "Nombre";
+            dgvSeleccionar.Columns[2].HeaderText = "Cuenta";
+            dgvSeleccionar.Columns[3].HeaderText = "Identificación";
+            dgvSeleccionar.Columns[4].HeaderText = "SLA";
+            dgvSeleccionar.Columns[5].HeaderText = "Id Cliente";
 
         }
 
@@ -60,15 +60,14 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            String nombreCliente = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
-            lClienteSeleccionado.Text = nombreCliente;
-
-            String IdCliente = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
-            lIdCliente.Text = IdCliente;
-
-
-            this.Dispose();
+            if (dgvSeleccionar.CurrentRow != null)
+            {
+                String nombreCliente = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
+                lClienteSeleccionado.Text = nombreCliente;
+                String IdCliente = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
+                lIdCliente.Text = IdCliente;
+                this.Dispose();
+            }
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -83,7 +82,7 @@ namespace proyectoPantalla
 
         private void DgvSeleccionar_SelectionChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 

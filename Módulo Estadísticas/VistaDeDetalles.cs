@@ -28,16 +28,14 @@ namespace proyectoPantalla
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //  , tecnico, vendedor
-
-
-            String numero = dgvVerDetalles.CurrentRow.Cells[1].Value.ToString();
-            String sector = dgvVerDetalles.CurrentRow.Cells[6].Value.ToString();
-            String fecha = dgvVerDetalles.CurrentRow.Cells[4].Value.ToString();
-
-
-            DetallesDeCaso detallesDeCaso = new DetallesDeCaso(numero, sector, fecha);
-            detallesDeCaso.ShowDialog();
+            if (dgvVerDetalles.CurrentRow != null)
+            {
+                String numero = dgvVerDetalles.CurrentRow.Cells[1].Value.ToString();
+                String sector = dgvVerDetalles.CurrentRow.Cells[6].Value.ToString();
+                String fecha = dgvVerDetalles.CurrentRow.Cells[4].Value.ToString();
+                DetallesDeCaso detallesDeCaso = new DetallesDeCaso(numero, sector, fecha);
+                detallesDeCaso.ShowDialog();
+            }
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,7 +191,7 @@ namespace proyectoPantalla
                     dgvVerDetalles.Columns[7].HeaderText = "ID Cliente";
                     this.dgvVerDetalles.Columns[7].Visible = false;
                 }
-                if(dgvVerDetalles.RowCount == 0)
+                if (dgvVerDetalles.RowCount == 0)
                 {
                     MessageBox.Show("Caso no encontrado", "Error");
                     tbBuscar.ResetText();

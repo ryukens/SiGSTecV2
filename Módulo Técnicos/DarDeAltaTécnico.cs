@@ -53,16 +53,19 @@ namespace proyectoPantalla
 
         private void BAlzar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea Dar de Alta este técnico?", "Dar de Alta Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvAlzar.CurrentRow != null)
             {
-                conexion.Open();
-                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_ALTA_TECNICO", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvAlzar.CurrentRow.Cells[2].Value.ToString());
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Técnico Dado de Alta Correctamente", "Técnico Dado de Alta");
-                mostrarTecnicos();
+                if (MessageBox.Show("¿Está seguro que desea Dar de Alta este técnico?", "Dar de Alta Técnico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    SqlCommand comando1 = new SqlCommand("SP_DADO_DE_ALTA_TECNICO", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvAlzar.CurrentRow.Cells[2].Value.ToString());
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Técnico Dado de Alta Correctamente", "Técnico Dado de Alta");
+                    mostrarTecnicos();
+                }
             }
         }
 

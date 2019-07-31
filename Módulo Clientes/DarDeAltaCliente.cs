@@ -31,7 +31,8 @@ namespace proyectoPantalla
             tbBuscar.ResetText();
         }
 
-        public void mostrarDatosCompleto() {
+        public void mostrarDatosCompleto()
+        {
 
             SqlDataAdapter sda = new SqlDataAdapter("SP_LLENADO_TABLA_CLIENTE2", conexion);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -52,22 +53,25 @@ namespace proyectoPantalla
 
         private void BAlzar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea Dar de Alta este Cliente?", "Dar de Alta Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvAlzar.CurrentRow != null)
             {
-                conexion.Open();
-                SqlCommand comando1 = new SqlCommand("SP_DADO_DE_ALTA", conexion);
-                comando1.CommandType = CommandType.StoredProcedure;
-                comando1.Parameters.AddWithValue("@identificacion", dgvAlzar.CurrentRow.Cells[3].Value.ToString());
-                comando1.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Cliente Dado de Alta Correctamente", "Cliente Dado de Alta");
-                mostrarDatosCompleto();
+                if (MessageBox.Show("¿Está seguro que desea Dar de Alta este Cliente?", "Dar de Alta Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conexion.Open();
+                    SqlCommand comando1 = new SqlCommand("SP_DADO_DE_ALTA", conexion);
+                    comando1.CommandType = CommandType.StoredProcedure;
+                    comando1.Parameters.AddWithValue("@identificacion", dgvAlzar.CurrentRow.Cells[3].Value.ToString());
+                    comando1.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Cliente Dado de Alta Correctamente", "Cliente Dado de Alta");
+                    mostrarDatosCompleto();
+                }
             }
         }
 
         private void TbBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
 

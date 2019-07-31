@@ -23,7 +23,7 @@ namespace proyectoPantalla
             mostrarTecnicos();
             this.tabControl = tabControl;
             this.tabInicio = tabInicio;
-            
+
         }
         public void mostrarTecnicos()
         {
@@ -71,7 +71,7 @@ namespace proyectoPantalla
             sda.SelectCommand.Parameters.AddWithValue("@nombre", tbBuscar.Text);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            
+
             dgvModificar.DataSource = dt;
             dgvModificar.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvModificar.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -92,10 +92,13 @@ namespace proyectoPantalla
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            String cedula = dgvModificar.CurrentRow.Cells[2].Value.ToString();
-            CambioDeDatosTécnico cambioDeDatosTécnico = new CambioDeDatosTécnico(cedula);
-            cambioDeDatosTécnico.ShowDialog();
-            mostrarTecnicos();
+            if (dgvModificar.CurrentRow != null)
+            {
+                String cedula = dgvModificar.CurrentRow.Cells[2].Value.ToString();
+                CambioDeDatosTécnico cambioDeDatosTécnico = new CambioDeDatosTécnico(cedula);
+                cambioDeDatosTécnico.ShowDialog();
+                mostrarTecnicos();
+            }
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,12 +140,12 @@ namespace proyectoPantalla
 
         private void TbBuscar_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TbBuscar_Leave(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

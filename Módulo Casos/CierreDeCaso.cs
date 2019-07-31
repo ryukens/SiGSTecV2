@@ -16,7 +16,7 @@ namespace proyectoPantalla
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
         TabControl tabControl;
         TabPage tabInicio;
-        
+
 
         public CierreDeCaso(TabControl tabControl, TabPage tabInicio)
         {
@@ -57,48 +57,45 @@ namespace proyectoPantalla
 
         private void ButtonEliminar_Click(object sender, EventArgs e)
         {
-
-            conexion.Open();
-            String nombreCliente = dgvCerrar.CurrentRow.Cells[2].Value.ToString();
-            String numeroCaso = dgvCerrar.CurrentRow.Cells[1].Value.ToString();
-            String idcaso = dgvCerrar.CurrentRow.Cells[7].Value.ToString();
-            String nombreTecnico = "";
-            String nombreVendedor = "";
-
-
-
-            SqlCommand comando2 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO1", conexion);
-            comando2.CommandType = CommandType.StoredProcedure;
-            comando2.Parameters.AddWithValue("@IDCASO", idcaso);
-            comando2.ExecuteNonQuery();
-            SqlDataReader reader = comando2.ExecuteReader();
-
-            while (reader.Read())
+            if (dgvCerrar.CurrentRow != null)
             {
-                nombreTecnico = reader.GetString(0);
+                conexion.Open();
+                String nombreCliente = dgvCerrar.CurrentRow.Cells[2].Value.ToString();
+                String numeroCaso = dgvCerrar.CurrentRow.Cells[1].Value.ToString();
+                String idcaso = dgvCerrar.CurrentRow.Cells[7].Value.ToString();
+                String nombreTecnico = "";
+                String nombreVendedor = "";
+                               
+                SqlCommand comando2 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO1", conexion);
+                comando2.CommandType = CommandType.StoredProcedure;
+                comando2.Parameters.AddWithValue("@IDCASO", idcaso);
+                comando2.ExecuteNonQuery();
+                SqlDataReader reader = comando2.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    nombreTecnico = reader.GetString(0);
+                }
+
+                conexion.Close();
+                conexion.Open();
+
+                SqlCommand comando3 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO2", conexion);
+                comando3.CommandType = CommandType.StoredProcedure;
+                comando3.Parameters.AddWithValue("@IDCASO", idcaso);
+                comando3.ExecuteNonQuery();
+                SqlDataReader read = comando3.ExecuteReader();
+
+                while (read.Read())
+                {
+                    nombreVendedor = read.GetString(0);
+                }
+                               
+                conexion.Close();
+
+                RegistroDeInformeFinal cambioDeDatosCaso = new RegistroDeInformeFinal(idcaso, nombreCliente, numeroCaso, nombreTecnico, nombreVendedor, this);
+                cambioDeDatosCaso.ShowDialog();
             }
-
-            conexion.Close();
-            conexion.Open();
-
-            SqlCommand comando3 = new SqlCommand("SP_SELECCION_TECNICO_PARA_CASO2", conexion);
-            comando3.CommandType = CommandType.StoredProcedure;
-            comando3.Parameters.AddWithValue("@IDCASO", idcaso);
-            comando3.ExecuteNonQuery();
-            SqlDataReader read = comando3.ExecuteReader();
-
-            while (read.Read())
-            {
-                nombreVendedor = read.GetString(0);
-            }
-
-
-            
-            conexion.Close();
-
-            RegistroDeInformeFinal cambioDeDatosCaso = new RegistroDeInformeFinal(idcaso, nombreCliente, numeroCaso, nombreTecnico, nombreVendedor, this);
-            cambioDeDatosCaso.ShowDialog();
-
 
         }
 
@@ -232,7 +229,7 @@ namespace proyectoPantalla
                     MessageBox.Show("Caso no encontrado", "Error");
                     tbBuscar.ResetText();
                     muestraCasos();
-                    
+
                 }
             }
 

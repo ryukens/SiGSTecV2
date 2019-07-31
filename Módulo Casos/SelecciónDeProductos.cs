@@ -264,36 +264,39 @@ namespace proyectoPantalla
 
         private void BAsignar_Click_1(object sender, EventArgs e)
         {
-            if (nudCantidad.Value == 0)
+            if (dgvAsignar.CurrentRow != null)
             {
-                MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
-            }
-            else
-            {
-                if (nudCantidad.Value > Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value))
+                if (nudCantidad.Value == 0)
                 {
-                    MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
+                    MessageBox.Show("La cantidad debe ser mayor a 0", "Error en la Cantidad");
                 }
                 else
                 {
-
-                    int indice = encontrarIndiceAsignar(dgvAsignar.SelectedRows[0].Cells[0].Value.ToString());
-
-                    if (indice == -1)
+                    if (nudCantidad.Value > Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value))
                     {
-
-                        DataTable dt = (DataTable)dgvDisminuir.DataSource;
-                        dgvDisminuir.DataSource = dt;
-                        dt.Rows.Add(dgvAsignar.SelectedRows[0].Cells[0].Value, dgvAsignar.SelectedRows[0].Cells[1].Value, nudCantidad.Value);
-                        dgvDisminuir.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                        dgvDisminuir.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        dgvDisminuir.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                        dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                        MessageBox.Show("La cantidad excede a la cantidad disponible", "Error en la Cantidad");
                     }
                     else
                     {
-                        dgvDisminuir.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvDisminuir.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
-                        dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+
+                        int indice = encontrarIndiceAsignar(dgvAsignar.SelectedRows[0].Cells[0].Value.ToString());
+
+                        if (indice == -1)
+                        {
+
+                            DataTable dt = (DataTable)dgvDisminuir.DataSource;
+                            dgvDisminuir.DataSource = dt;
+                            dt.Rows.Add(dgvAsignar.SelectedRows[0].Cells[0].Value, dgvAsignar.SelectedRows[0].Cells[1].Value, nudCantidad.Value);
+                            dgvDisminuir.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                            dgvDisminuir.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                            dgvDisminuir.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                            dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                        }
+                        else
+                        {
+                            dgvDisminuir.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvDisminuir.Rows[indice].Cells[2].Value) + Convert.ToInt32(nudCantidad.Value);
+                            dgvAsignar.SelectedRows[0].Cells[2].Value = Convert.ToInt32(dgvAsignar.SelectedRows[0].Cells[2].Value) - Convert.ToInt32(nudCantidad.Value);
+                        }
                     }
                 }
             }

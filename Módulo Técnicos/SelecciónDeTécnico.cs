@@ -23,7 +23,7 @@ namespace proyectoPantalla
             this.lTecnicoSeleccionado = lTecnicoSeleccionado;
             this.lIdTecnico = lIdTecnico;
             muestraTecnicos();
-            
+
 
         }
 
@@ -52,7 +52,7 @@ namespace proyectoPantalla
 
         Label lTecnicoSeleccionado;
         Label lIdTecnico;
-        
+
 
         private void BusquedaDeTécnico_Load(object sender, EventArgs e)
         {
@@ -61,26 +61,21 @@ namespace proyectoPantalla
 
         private void BSeleccionar_Click(object sender, EventArgs e)
         {
-
-            if (dgvSeleccionar.SelectedRows[0].Cells[0].Value.ToString() == "OCUPADO")
+            if (dgvSeleccionar.CurrentRow != null)
             {
-                MessageBox.Show("No se puede asignar un técnico ocupado", "Error");
+                if (dgvSeleccionar.SelectedRows[0].Cells[0].Value.ToString() == "OCUPADO")
+                {
+                    MessageBox.Show("No se puede asignar un técnico ocupado", "Error");
+                }
+                else
+                {
+                    String nombreTecnico = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
+                    lTecnicoSeleccionado.Text = nombreTecnico;
+                    String IdTecnico = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
+                    lIdTecnico.Text = IdTecnico;
+                    this.Dispose();
+                }
             }
-            else
-            {
-
-                String nombreTecnico = dgvSeleccionar.CurrentRow.Cells[1].Value.ToString();
-                lTecnicoSeleccionado.Text = nombreTecnico;
-
-                String IdTecnico = dgvSeleccionar.CurrentRow.Cells[5].Value.ToString();
-                lIdTecnico.Text = IdTecnico;
-
-                this.Dispose();
-
-
-            }
-            
-            
         }
 
         private void CbBuscar_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,4 +159,4 @@ namespace proyectoPantalla
         }
     }
 }
-   
+

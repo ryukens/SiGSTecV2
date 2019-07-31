@@ -28,11 +28,14 @@ namespace proyectoPantalla.Módulo_Casos
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            String numero = dgvMostrar.SelectedRows[0].Cells[1].Value.ToString();
-            String cliente = dgvMostrar.SelectedRows[0].Cells[2].Value.ToString();
-           // MessageBox.Show(numero, cliente);
-            SelecciónDeProductos selecciónDeProductos = new SelecciónDeProductos(numero, cliente, this);
-            selecciónDeProductos.ShowDialog();
+            if (dgvMostrar.CurrentRow != null)
+            {
+                String numero = dgvMostrar.SelectedRows[0].Cells[1].Value.ToString();
+                String cliente = dgvMostrar.SelectedRows[0].Cells[2].Value.ToString();
+                // MessageBox.Show(numero, cliente);
+                SelecciónDeProductos selecciónDeProductos = new SelecciónDeProductos(numero, cliente, this);
+                selecciónDeProductos.ShowDialog();
+            }
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
